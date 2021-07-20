@@ -134,16 +134,6 @@ export const Skill = {
     imgSrc: '/images/skills/material-ui.svg',
     href: 'https://material-ui.com/',
   },
-  bootstrap: {
-    name: 'Bootstrap',
-    imgSrc: '/images/skills/bootstrap.svg',
-    href: 'https://getbootstrap.com/',
-  },
-  semanticui: {
-    name: 'Semantic UI',
-    imgSrc: '/images/skills/semantic-ui.svg',
-    href: 'https://semantic-ui.com/',
-  },
 } as const;
 
 export type Skill = typeof Skill[keyof typeof Skill];
@@ -204,8 +194,6 @@ export const SkillGroup = {
       Skill.gulp,
       Skill.swagger,
       Skill.materialui,
-      Skill.bootstrap,
-      Skill.semanticui,
     ],
   },
 } as const;
