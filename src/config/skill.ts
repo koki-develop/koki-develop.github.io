@@ -119,6 +119,11 @@ export const Skill = {
     imgSrc: '/images/skills/webpack.svg',
     href: 'https://webpack.js.org/',
   },
+  graphql: {
+    name: 'GraphQL',
+    imgSrc: '/images/skills/graphql.svg',
+    href: 'https://graphql.org/',
+  },
 } as const;
 
 export type Skill = typeof Skill[keyof typeof Skill];
@@ -173,6 +178,7 @@ export const SkillGroup = {
     name: 'Other',
     skills: [
       Skill.docker,
+      Skill.graphql,
       Skill.serverless,
       Skill.terraform,
       Skill.webpack,
