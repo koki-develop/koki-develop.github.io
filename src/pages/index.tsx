@@ -12,9 +12,9 @@ const Home: React.VFC = () => {
         <SocialList items={config.socials}/>
       </Section>
 
-      <Divider id='skills'/>
+      <Divider id='skill'/>
 
-      <Section title='Skills'>
+      <Section title='Skill'>
         {config.skillGroups.map(group => (
           <SkillCardList key={group.name} name={group.name} skills={group.skills}/>
         ))}
