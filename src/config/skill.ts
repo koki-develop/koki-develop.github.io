@@ -129,11 +129,6 @@ export const Skill = {
     imgSrc: '/images/skills/swagger.svg',
     href: 'https://swagger.io/',
   },
-  materialui: {
-    name: 'Material-UI',
-    imgSrc: '/images/skills/material-ui.svg',
-    href: 'https://material-ui.com/',
-  },
 } as const;
 
 export type Skill = typeof Skill[keyof typeof Skill];
@@ -193,7 +188,6 @@ export const SkillGroup = {
       Skill.webpack,
       Skill.gulp,
       Skill.swagger,
-      Skill.materialui,
     ],
   },
 } as const;

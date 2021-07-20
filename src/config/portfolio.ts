@@ -18,8 +18,6 @@ export const Portfolio = {
       Skill.vercel,
       // ci/cd
       Skill.circleci,
-      // other
-      Skill.materialui,
     ],
   },
   nojov: {
@@ -45,7 +43,6 @@ export const Portfolio = {
       Skill.serverless,
       Skill.terraform,
       Skill.webpack,
-      Skill.materialui,
     ],
   },
   lgtmGenerator: {
@@ -73,7 +70,6 @@ export const Portfolio = {
       Skill.docker,
       Skill.serverless,
       Skill.terraform,
-      Skill.materialui,
     ],
   },
   qiitaLgtmRanking: {
