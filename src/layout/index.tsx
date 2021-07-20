@@ -1,45 +1,16 @@
 import React from 'react';
 import Head from 'next/head';
-import { CssBaseline } from '@material-ui/core';
-import { makeStyles, createStyles, createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import {
+  CssBaseline,
+} from '@material-ui/core';
+import {
+  makeStyles,
+  createStyles,
+  ThemeProvider,
+} from '@material-ui/core/styles';
 import { Header } from './header';
 import { Footer } from './footer';
-
-const theme = createMuiTheme({
-  typography: {
-    fontFamily: ['"Open Sans"', 'sans-serif'].join(','),
-  },
-  overrides: {
-    MuiCssBaseline: {
-      '@global': {
-        body: {
-          fontFamily: '"Open Sans", sans-serif',
-          letterSpacing: 1,
-        },
-        a: {
-          color: '#000000',
-          cursor: 'pointer',
-          textDecoration: 'none',
-          transition: '0.2s',
-          '&:hover': {
-            opacity: 0.5,
-          },
-        },
-        ul: {
-          listStyleType: 'none',
-          padding: 0,
-        },
-      },
-    },
-  },
-  palette: {
-    primary: {
-      main: '#FFFFFF',
-      dark: '#FAFAFA',
-      contrastText: '#000000',
-    },
-  },
-});
+import { theme } from './theme';
 
 const useStyles = makeStyles(() =>
   createStyles({
