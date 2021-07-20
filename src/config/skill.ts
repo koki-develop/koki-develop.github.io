@@ -124,11 +124,6 @@ export const Skill = {
     imgSrc: '/images/skills/gulp.svg',
     href: 'https://gulpjs.com/',
   },
-  swagger: {
-    name: 'Swagger',
-    imgSrc: '/images/skills/swagger.svg',
-    href: 'https://swagger.io/',
-  },
 } as const;
 
 export type Skill = typeof Skill[keyof typeof Skill];
@@ -187,7 +182,6 @@ export const SkillGroup = {
       Skill.terraform,
       Skill.webpack,
       Skill.gulp,
-      Skill.swagger,
     ],
   },
 } as const;
