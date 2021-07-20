@@ -119,11 +119,6 @@ export const Skill = {
     imgSrc: '/images/skills/webpack.svg',
     href: 'https://webpack.js.org/',
   },
-  gulp: {
-    name: 'Gulp',
-    imgSrc: '/images/skills/gulp.svg',
-    href: 'https://gulpjs.com/',
-  },
 } as const;
 
 export type Skill = typeof Skill[keyof typeof Skill];
@@ -181,7 +176,6 @@ export const SkillGroup = {
       Skill.serverless,
       Skill.terraform,
       Skill.webpack,
-      Skill.gulp,
     ],
   },
 } as const;
