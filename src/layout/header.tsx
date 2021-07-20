@@ -1,14 +1,31 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { Box, Avatar, Divider, Drawer, Hidden, Container, AppBar, Toolbar, IconButton, List, ListItem } from '@material-ui/core';
-import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
+import { Routes } from '../routes';
+import {
+  AppBar,
+  Avatar,
+  Box,
+  Container,
+  Divider,
+  Drawer,
+  Hidden,
+  IconButton,
+  List,
+  ListItem,
+  Toolbar,
+} from '@material-ui/core';
+import {
+  createStyles,
+  makeStyles,
+  Theme,
+} from '@material-ui/core/styles';
 import { Menu } from '@material-ui/icons';
 import { AnchorLink } from '../components';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     toolbar: {
-      height: 80,
+      height: theme.spacing(10),
     },
     user: {
       alignItems: 'center',
@@ -26,7 +43,9 @@ const useStyles = makeStyles((theme: Theme) =>
       display: 'flex',
     },
     menuItem: {
-      marginLeft: theme.spacing(2),
+      '&:not(:first-child)': {
+        marginLeft: theme.spacing(2),
+      },
     },
     sideMenu: {
       padding: 0,
@@ -38,26 +57,18 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-type Props = {
+type HeaderProps = {
   hideMenu: boolean;
 };
 
-export const Header: React.VFC<Props> = (props: Props) => {
+const Header: React.VFC<HeaderProps> = (props: HeaderProps) => {
   const classes = useStyles();
 
   const [openSideMenu, setOpenSideMenu] = useState<boolean>(false);
 
-  const handleClickSideMenuItem = () => {
-    setOpenSideMenu(false);
-  };
-
-  const handleClickHamburger = () => {
-    setOpenSideMenu(true);
-  };
-
-  const handleCloseSideMenu = () => {
-    setOpenSideMenu(false);
-  };
+  const handleClickSideMenuItem = () => setOpenSideMenu(false);
+  const handleClickHamburger = () => setOpenSideMenu(true);
+  const handleCloseSideMenu = () => setOpenSideMenu(false);
 
   const menuItems = [
     { text: 'Skill', to: 'skill' },
@@ -71,12 +82,12 @@ export const Header: React.VFC<Props> = (props: Props) => {
         <Toolbar className={classes.toolbar}>
           <Box className={classes.user}>
             <Avatar className={classes.avatar} src='/images/profile.png'/>
-            <Link href='/'>
+            <Link href={Routes.home}>
               <a className={classes.name}>Koki Sato</a>
             </Link>
           </Box>
           {!props.hideMenu && (
-            <>
+            <Box>
               <Hidden xsDown>
                 <ul className={classes.menu}>
                   {menuItems.map(item => (
@@ -106,10 +117,12 @@ export const Header: React.VFC<Props> = (props: Props) => {
                   </List>
                 </Drawer>
               </Hidden>
-            </>
+            </Box>
           )}
         </Toolbar>
       </Container>
     </AppBar>
   );
 };
+
+export default Header;

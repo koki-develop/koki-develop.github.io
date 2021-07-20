@@ -8,25 +8,25 @@ import {
   createStyles,
   ThemeProvider,
 } from '@material-ui/core/styles';
-import { Header } from './header';
-import { Footer } from './footer';
+import Header from './header';
+import Footer from './footer';
 import { theme } from './theme';
 
 const useStyles = makeStyles(() =>
   createStyles({
     main: {
-      paddingTop: 80,
+      paddingTop: theme.spacing(10),
     },
   }),
 );
 
-type Props = {
+type LayoutProps = {
   children: React.ReactNode;
   title?: string;
   hideMenu?: boolean;
 };
 
-export const Layout: React.VFC<Props> = (props: Props) => {
+export const Layout: React.VFC<LayoutProps> = (props: LayoutProps) => {
   const classes = useStyles();
 
   return (
@@ -34,11 +34,15 @@ export const Layout: React.VFC<Props> = (props: Props) => {
       <Head>
         <title>{props.title && `${props.title} | `}Koki Sato</title>
       </Head>
+
       <CssBaseline/>
+
       <Header hideMenu={props.hideMenu}/>
+
       <main className={classes.main}>
         {props.children}
       </main>
+
       <Footer/>
     </ThemeProvider>
   );
