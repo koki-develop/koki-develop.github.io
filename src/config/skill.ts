@@ -24,11 +24,11 @@ export const Skill = {
     imgSrc: '/images/skills/typescript.svg',
     href: 'https://www.typescriptlang.org/',
   },
-  // javascript: {
-  //   name: 'JavaScript',
-  //   imgSrc: '/images/skills/javascript.svg',
-  //   href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
-  // },
+  javascript: {
+    name: 'JavaScript',
+    imgSrc: '/images/skills/javascript.svg',
+    href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
+  },
   // html: {
   //   name: 'HTML',
   //   imgSrc: '/images/skills/html.svg',
@@ -212,7 +212,7 @@ export const SkillGroup = {
       Skill.ruby,
       Skill.nodejs,
       Skill.typescript,
-      // Skill.javascript,
+      Skill.javascript,
       // Skill.html,
       // Skill.css,
       // Skill.sass,
