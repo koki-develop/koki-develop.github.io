@@ -20,9 +20,9 @@ const Home: React.VFC = () => {
         ))}
       </Section>
 
-      <Divider id='portfolios'/>
+      <Divider id='portfolio'/>
 
-      <Section title='Portfolios'>
+      <Section title='Portfolio'>
         <PortfolioCardList portfolios={config.portfolios}/>
       </Section>
 

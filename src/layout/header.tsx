@@ -61,7 +61,7 @@ export const Header: React.VFC<Props> = (props: Props) => {
 
   const menuItems = [
     { text: 'Skill', to: 'skill' },
-    { text: 'Portfolios', to: 'portfolios' },
+    { text: 'Portfolio', to: 'portfolio' },
     { text: 'History', to: 'history' },
   ];
 
