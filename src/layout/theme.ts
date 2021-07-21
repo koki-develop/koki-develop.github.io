@@ -12,6 +12,11 @@ const primary: PaletteColorOptions = {
 };
 
 export const theme = createMuiTheme({
+  props: {
+    MuiButtonBase: {
+      disableRipple: true,
+    },
+  },
   typography: {
     fontFamily,
   },
