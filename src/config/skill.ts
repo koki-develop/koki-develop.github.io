@@ -129,6 +129,11 @@ export const Skill = {
     imgSrc: '/images/skills/swagger.svg',
     href: 'https://swagger.io/',
   },
+  ansible: {
+    name: 'Ansible',
+    imgSrc: '/images/skills/ansible.svg',
+    href: 'https://www.ansible.com/',
+  },
 } as const;
 
 export type Skill = typeof Skill[keyof typeof Skill];
@@ -183,10 +188,11 @@ export const SkillGroup = {
     name: 'Other',
     skills: [
       Skill.docker,
-      Skill.graphql,
       Skill.serverless,
       Skill.terraform,
+      Skill.ansible,
       Skill.webpack,
+      Skill.graphql,
       Skill.swagger,
     ],
   },
