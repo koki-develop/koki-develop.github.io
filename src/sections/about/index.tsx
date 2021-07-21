@@ -18,6 +18,7 @@ const useStyles = makeStyles((theme: Theme) =>
       alignItems: 'center',
       display: 'flex',
       flexDirection: 'column',
+      marginBottom: theme.spacing(1),
     },
     userAvatar: {
       height: 150,
@@ -25,7 +26,6 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     userName: {
       fontSize: theme.typography.h5.fontSize,
-      marginBottom: theme.spacing(1),
     },
     userTagline: {
       color: '#999',
@@ -41,6 +41,13 @@ const useStyles = makeStyles((theme: Theme) =>
     socialListItemImg: {
       height: 40,
       width: 40,
+    },
+    descriptionContainer: {
+      display: 'flex',
+      justifyContent: 'center',
+    },
+    description: {
+      whiteSpace: 'nowrap',
     },
   }),
 );
@@ -62,6 +69,12 @@ const AboutSection: React.VFC<AboutSectionProps> = (props: AboutSectionProps) =>
         />
         <Typography className={classes.userName}>Koki Sato</Typography>
         <Typography className={classes.userTagline}>Developer</Typography>
+      </Box>
+
+      <Box className={classes.descriptionContainer}>
+        <Typography className={classes.description}>
+          埼玉県在住の23歳。のんびり生きています。
+        </Typography>
       </Box>
 
       <ul className={classes.socialList}>
