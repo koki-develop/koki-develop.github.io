@@ -1,9 +1,14 @@
 import React from 'react';
+import * as Scroll from 'react-scroll';
 import Head from 'next/head';
 import {
   Box,
   CssBaseline,
+  Fab,
 } from '@material-ui/core';
+import {
+  KeyboardArrowUp as KeyboardArrowUpIcon,
+} from '@material-ui/icons';
 import {
   makeStyles,
   createStyles,
@@ -18,6 +23,11 @@ const useStyles = makeStyles(() =>
     main: {
       paddingTop: theme.spacing(10),
     },
+    backToTop: {
+      bottom: theme.spacing(2),
+      position: 'fixed',
+      right: theme.spacing(2),
+    },
   }),
 );
 
@@ -29,6 +39,13 @@ type LayoutProps = {
 
 export const Layout: React.VFC<LayoutProps> = (props: LayoutProps) => {
   const classes = useStyles();
+
+  const handleClickBackToTop = () => {
+    Scroll.animateScroll.scrollToTop({
+      smooth: true,
+      duration: 500,
+    });
+  };
 
   return (
     <ThemeProvider theme={theme}>
@@ -45,6 +62,13 @@ export const Layout: React.VFC<LayoutProps> = (props: LayoutProps) => {
       </Box>
 
       <Footer/>
+
+      <Fab
+        className={classes.backToTop}
+        onClick={handleClickBackToTop}
+      >
+        <KeyboardArrowUpIcon/>
+      </Fab>
     </ThemeProvider>
   );
 };
