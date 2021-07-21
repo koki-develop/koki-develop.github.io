@@ -49,3 +49,5 @@ export const Section: React.VFC<Props> = (props: Props) => {
     </Box>
   );
 };
+
+export default Section;

@@ -4,7 +4,7 @@ import { SkillGroup } from './skill';
 import { History } from './history';
 import { Portfolio } from './portfolio';
 
-type Config = {
+export type Config = {
   socials: Readonly<SocialType[]>;
   skillGroups: Readonly<SkillGroupType[]>;
   portfolios: Readonly<Portfolio[]>;

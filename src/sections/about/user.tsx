@@ -1,6 +1,13 @@
 import React from 'react';
-import { Box, Typography } from '@material-ui/core';
-import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
+import {
+  Box,
+  Typography,
+} from '@material-ui/core';
+import {
+  createStyles,
+  makeStyles,
+  Theme,
+} from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -29,7 +36,7 @@ type Props = {
   imgSrc: string;
 };
 
-export const User: React.VFC<Props> = (props: Props) => {
+const User: React.VFC<Props> = (props: Props) => {
   const classes = useStyles();
 
   return (
@@ -40,3 +47,5 @@ export const User: React.VFC<Props> = (props: Props) => {
     </Box>
   );
 };
+
+export default User;

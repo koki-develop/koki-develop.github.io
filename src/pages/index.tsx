@@ -1,22 +1,18 @@
 import React from 'react';
 import { Layout } from '../layout';
+import AboutSection from '../sections/about';
 import {
-  SocialList,
   PortfolioCardList,
   Section,
   SkillCardList,
   HistoryList,
-  User,
 } from '../components';
 import config from '../config';
 
 const Home: React.VFC = () => {
   return (
     <Layout>
-      <Section>
-        <User name='Koki Sato' imgSrc='/images/profile.png'/>
-        <SocialList items={config.socials}/>
-      </Section>
+      <AboutSection config={config}/>
 
       <Section title='Skill'>
         {config.skillGroups.map(group => (

@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
-import { Social } from '../domain';
-import { ExternalLink } from '.';
+import { Social } from '../../domain';
+import { ExternalLink } from '../../components';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -23,7 +23,7 @@ type Props = {
   items: Readonly<Social[]>;
 };
 
-export const SocialList: React.VFC<Props> = (props: Props) => {
+const SocialList: React.VFC<Props> = (props: Props) => {
   const classes = useStyles();
 
   return (
@@ -38,3 +38,5 @@ export const SocialList: React.VFC<Props> = (props: Props) => {
     </ul>
   );
 };
+
+export default SocialList;
