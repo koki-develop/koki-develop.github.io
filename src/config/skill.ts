@@ -124,6 +124,11 @@ export const Skill = {
     imgSrc: '/images/skills/graphql.svg',
     href: 'https://graphql.org/',
   },
+  swagger: {
+    name: 'Swagger',
+    imgSrc: '/images/skills/swagger.svg',
+    href: 'https://swagger.io/',
+  },
 } as const;
 
 export type Skill = typeof Skill[keyof typeof Skill];
@@ -182,6 +187,7 @@ export const SkillGroup = {
       Skill.serverless,
       Skill.terraform,
       Skill.webpack,
+      Skill.swagger,
     ],
   },
 } as const;
