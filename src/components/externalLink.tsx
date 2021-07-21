@@ -9,3 +9,5 @@ export const ExternalLink: React.VFC<Props> = (props: Props) => {
     </a>
   );
 };
+
+export default ExternalLink;

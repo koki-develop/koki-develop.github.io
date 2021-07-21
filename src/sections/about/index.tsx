@@ -1,7 +1,6 @@
 import React from 'react';
 import Section from '../../components/section';
 import { Config } from '../../config';
-import SocialList from './socialList';
 import {
   Box,
   Typography,
@@ -11,6 +10,7 @@ import {
   makeStyles,
   Theme,
 } from '@material-ui/core/styles';
+import ExternalLink from '../../components/externalLink';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -30,6 +30,17 @@ const useStyles = makeStyles((theme: Theme) =>
     userTagline: {
       color: '#999',
       fontSize: theme.typography.h6.fontSize,
+    },
+    socialList: {
+      display: 'flex',
+      justifyContent: 'center',
+    },
+    socialListItem: {
+      margin: theme.spacing(2),
+    },
+    socialListItemImg: {
+      height: 40,
+      width: 40,
     },
   }),
 );
@@ -53,7 +64,19 @@ const AboutSection: React.VFC<AboutSectionProps> = (props: AboutSectionProps) =>
         <Typography className={classes.userTagline}>Developer</Typography>
       </Box>
 
-      <SocialList items={props.config.socials}/>
+      <ul className={classes.socialList}>
+        {props.config.socials.map(social => (
+          <li key={social.name} className={classes.socialListItem}>
+            <ExternalLink href={social.href}>
+              <img
+                className={classes.socialListItemImg}
+                src={social.imgSrc}
+                alt={social.name}
+              />
+            </ExternalLink>
+          </li>
+        ))}
+      </ul>
     </Section>
   );
 };
