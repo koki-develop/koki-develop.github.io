@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme: Theme) =>
       padding: theme.spacing(2),
     },
     listItem: {
-      fontSize: 12,
+      fontSize: theme.typography.caption.fontSize,
       marginBottom: theme.spacing(1),
       textAlign: 'center',
     },
@@ -27,19 +27,31 @@ const useStyles = makeStyles((theme: Theme) =>
 const Footer: React.VFC = () => {
   const classes = useStyles();
 
+  const items: { body: React.ReactNode }[] = [
+    {
+      body: (
+        <ExternalLink href='https://github.com/kou-pg-0131/portfolio'>View on GitHub</ExternalLink>
+      ),
+    },
+    {
+      body: (
+        <Link href={Routes.privacyPolicy}>
+          <a>プライバシーポリシー</a>
+        </Link>
+      ),
+    },
+  ];
+
   return (
     <footer className={classes.footer}>
       <small>&copy;2021</small>
 
       <ul>
-        <li className={classes.listItem}>
-          <ExternalLink href='https://github.com/kou-pg-0131/portfolio'>View on GitHub</ExternalLink>
-        </li>
-        <li className={classes.listItem}>
-          <Link href={Routes.privacyPolicy}>
-            <a>プライバシーポリシー</a>
-          </Link>
-        </li>
+        {items.map((item, i) =>
+          <li key={i} className={classes.listItem}>
+            {item.body}
+          </li>,
+        )}
       </ul>
     </footer>
   );

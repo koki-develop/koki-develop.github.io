@@ -32,12 +32,11 @@ const useStyles = makeStyles((theme: Theme) =>
       display: 'flex',
       flexGrow: 1,
     },
-    avatar: {
+    userAvatar: {
       marginRight: theme.spacing(1),
     },
-    name: {
-      fontSize: 18,
-      marginBottom: 0,
+    userName: {
+      fontSize: theme.typography.h6.fontSize,
     },
     menu: {
       display: 'flex',
@@ -48,7 +47,6 @@ const useStyles = makeStyles((theme: Theme) =>
       },
     },
     sideMenu: {
-      padding: 0,
       width: 200,
     },
     sideMenuItem: {
@@ -81,11 +79,15 @@ const Header: React.VFC<HeaderProps> = (props: HeaderProps) => {
       <Container maxWidth='md'>
         <Toolbar className={classes.toolbar}>
           <Box className={classes.user}>
-            <Avatar className={classes.avatar} src='/images/profile.png'/>
+            <Avatar
+              className={classes.userAvatar}
+              src='/images/profile.png'
+            />
             <Link href={Routes.home}>
-              <a className={classes.name}>Koki Sato</a>
+              <a className={classes.userName}>Koki Sato</a>
             </Link>
           </Box>
+
           {!props.hideMenu && (
             <Box>
               <Hidden xsDown>
@@ -102,12 +104,23 @@ const Header: React.VFC<HeaderProps> = (props: HeaderProps) => {
                 <Box>
                   <IconButton onClick={handleClickHamburger}><Menu/></IconButton>
                 </Box>
-                <Drawer anchor='right' open={openSideMenu} onClose={handleCloseSideMenu}>
-                  <List className={classes.sideMenu}>
+                <Drawer
+                  anchor='right'
+                  open={openSideMenu}
+                  onClose={handleCloseSideMenu}
+                >
+                  <List
+                    className={classes.sideMenu}
+                    disablePadding
+                  >
                     {menuItems.map(item => (
                       <React.Fragment key={item.to}>
                         <AnchorLink to={item.to}>
-                          <ListItem className={classes.sideMenuItem} onClick={handleClickSideMenuItem}>
+                          <ListItem
+                            className={classes.sideMenuItem}
+                            button
+                            onClick={handleClickSideMenuItem}
+                          >
                             {item.text}
                           </ListItem>
                         </AnchorLink>

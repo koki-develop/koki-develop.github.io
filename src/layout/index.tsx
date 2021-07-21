@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import {
+  Box,
   CssBaseline,
 } from '@material-ui/core';
 import {
@@ -39,9 +40,9 @@ export const Layout: React.VFC<LayoutProps> = (props: LayoutProps) => {
 
       <Header hideMenu={props.hideMenu}/>
 
-      <main className={classes.main}>
+      <Box component='main' className={classes.main}>
         {props.children}
-      </main>
+      </Box>
 
       <Footer/>
     </ThemeProvider>
