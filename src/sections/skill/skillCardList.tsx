@@ -1,8 +1,8 @@
 import React from 'react';
 import { Typography, Card, CardActionArea, CardContent, Grid } from '@material-ui/core';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
-import { Skill } from '../domain';
-import { ExternalLink } from '.';
+import { Skill } from '../../domain';
+import ExternalLink from '../../components/externalLink';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -71,3 +71,5 @@ export const SkillCardList: React.VFC<Props> = (props: Props) => {
     </>
   );
 };
+
+export default SkillCardList;

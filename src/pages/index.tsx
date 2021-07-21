@@ -1,10 +1,10 @@
 import React from 'react';
 import { Layout } from '../layout';
 import AboutSection from '../sections/about';
+import SkillSection from '../sections/skill';
 import {
   PortfolioCardList,
   Section,
-  SkillCardList,
   HistoryList,
 } from '../components';
 import config from '../config';
@@ -14,11 +14,7 @@ const Home: React.VFC = () => {
     <Layout>
       <AboutSection config={config}/>
 
-      <Section title='Skill'>
-        {config.skillGroups.map(group => (
-          <SkillCardList key={group.name} name={group.name} skills={group.skills}/>
-        ))}
-      </Section>
+      <SkillSection config={config}/>
 
       <Section title='Portfolio'>
         <PortfolioCardList portfolios={config.portfolios}/>

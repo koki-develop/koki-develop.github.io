@@ -1,6 +1,6 @@
 import React from 'react';
-import Section from '../../components/section';
 import { Config } from '../../config';
+import Section from '../../components/section';
 import {
   Box,
   Typography,
