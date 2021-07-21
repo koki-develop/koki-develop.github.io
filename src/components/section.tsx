@@ -1,6 +1,15 @@
 import React from 'react';
-import { Typography, Container } from '@material-ui/core';
-import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
+import {
+  Box,
+  Container,
+  Divider,
+  Typography,
+} from '@material-ui/core';
+import {
+  createStyles,
+  makeStyles,
+  Theme,
+} from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -25,15 +34,18 @@ export const Section: React.VFC<Props> = (props: Props) => {
   const classes = useStyles();
 
   return (
-    <section className={classes.section}>
-      {props.title && (
-        <Typography className={classes.title}>
-          {props.title}
-        </Typography>
-      )}
-      <Container maxWidth='md'>
-        {props.children}
-      </Container>
-    </section>
+    <Box>
+      {props.title && <Divider id={props.title}/>}
+      <Box className={classes.section} component='section'>
+        {props.title && (
+          <Typography className={classes.title}>
+            {props.title}
+          </Typography>
+        )}
+        <Container maxWidth='md'>
+          {props.children}
+        </Container>
+      </Box>
+    </Box>
   );
 };

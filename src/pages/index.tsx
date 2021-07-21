@@ -1,7 +1,13 @@
 import React from 'react';
 import { Layout } from '../layout';
-import { SocialList, PortfolioCardList, Section, SkillCardList, HistoryList, User } from '../components';
-import { Divider } from '@material-ui/core';
+import {
+  SocialList,
+  PortfolioCardList,
+  Section,
+  SkillCardList,
+  HistoryList,
+  User,
+} from '../components';
 import config from '../config';
 
 const Home: React.VFC = () => {
@@ -12,21 +18,15 @@ const Home: React.VFC = () => {
         <SocialList items={config.socials}/>
       </Section>
 
-      <Divider id='skill'/>
-
       <Section title='Skill'>
         {config.skillGroups.map(group => (
           <SkillCardList key={group.name} name={group.name} skills={group.skills}/>
         ))}
       </Section>
 
-      <Divider id='portfolio'/>
-
       <Section title='Portfolio'>
         <PortfolioCardList portfolios={config.portfolios}/>
       </Section>
-
-      <Divider id='history'/>
 
       <Section title='History'>
         <HistoryList histories={config.histories}/>

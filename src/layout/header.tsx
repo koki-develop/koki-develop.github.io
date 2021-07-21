@@ -68,11 +68,7 @@ const Header: React.VFC<HeaderProps> = (props: HeaderProps) => {
   const handleClickHamburger = () => setOpenSideMenu(true);
   const handleCloseSideMenu = () => setOpenSideMenu(false);
 
-  const menuItems = [
-    { text: 'Skill', to: 'skill' },
-    { text: 'Portfolio', to: 'portfolio' },
-    { text: 'History', to: 'history' },
-  ];
+  const menuItems = ['Skill', 'Portfolio', 'History'];
 
   return (
     <AppBar>
@@ -93,8 +89,8 @@ const Header: React.VFC<HeaderProps> = (props: HeaderProps) => {
               <Hidden xsDown>
                 <ul className={classes.menu}>
                   {menuItems.map(item => (
-                    <li key={item.to} className={classes.menuItem}>
-                      <AnchorLink to={item.to}>{item.text}</AnchorLink>
+                    <li key={item} className={classes.menuItem}>
+                      <AnchorLink to={item}>{item}</AnchorLink>
                     </li>
                   ))}
                 </ul>
@@ -114,14 +110,14 @@ const Header: React.VFC<HeaderProps> = (props: HeaderProps) => {
                     disablePadding
                   >
                     {menuItems.map(item => (
-                      <React.Fragment key={item.to}>
-                        <AnchorLink to={item.to}>
+                      <React.Fragment key={item}>
+                        <AnchorLink to={item}>
                           <ListItem
                             className={classes.sideMenuItem}
                             button
                             onClick={handleClickSideMenuItem}
                           >
-                            {item.text}
+                            {item}
                           </ListItem>
                         </AnchorLink>
                         <Divider/>
