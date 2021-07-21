@@ -47,11 +47,11 @@ const Footer: React.VFC = () => {
       <small>&copy;2021</small>
 
       <ul>
-        {items.map((item, i) =>
+        {items.map((item, i) => (
           <li key={i} className={classes.listItem}>
             {item.body}
-          </li>,
-        )}
+          </li>
+        ))}
       </ul>
     </footer>
   );
