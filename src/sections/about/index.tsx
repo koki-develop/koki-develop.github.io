@@ -69,9 +69,9 @@ const AboutSection: React.VFC<AboutSectionProps> = (props: AboutSectionProps) =>
         <img
           className={classes.userAvatar}
           src='/images/profile.png'
-          alt='Koki Sato'
+          alt={props.config.name}
         />
-        <Typography className={classes.userName}>Koki Sato</Typography>
+        <Typography className={classes.userName}>{props.config.name}</Typography>
         <Typography className={classes.userTagline}>Developer</Typography>
       </Box>
 

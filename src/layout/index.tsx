@@ -19,6 +19,7 @@ import {
 import Header from './header';
 import Footer from './footer';
 import { theme } from './theme';
+import config from '../config';
 
 const useStyles = makeStyles(() =>
   createStyles({
@@ -57,7 +58,7 @@ const Layout: React.VFC<LayoutProps> = (props: LayoutProps) => {
   return (
     <ThemeProvider theme={theme}>
       <Head>
-        <title>{props.title && `${props.title} | `}Koki Sato</title>
+        <title>{props.title && `${props.title} | `}{config.name}</title>
       </Head>
 
       <CssBaseline/>

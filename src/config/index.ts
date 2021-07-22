@@ -9,6 +9,7 @@ import { History } from './history';
 import { Portfolio } from './portfolio';
 
 export type Config = {
+  name: string;
   description: string;
   email: string;
   socials: SocialType[];
@@ -18,6 +19,7 @@ export type Config = {
 };
 
 const config: Config = {
+  name: 'Koki Sato',
   description: '埼玉県在住の23歳。\nのんびり生きています。',
   email: 'kou.pg.0131@gmail.com',
   socials: Object.values(Social),

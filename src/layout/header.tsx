@@ -22,6 +22,7 @@ import {
 } from '@material-ui/core/styles';
 import { Menu as MenuIcon } from '@material-ui/icons';
 import AnchorLink from '../components/anchorLink';
+import config from '../config';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -90,7 +91,7 @@ const Header: React.VFC<HeaderProps> = (props: HeaderProps) => {
                   src='/images/profile.png'
                 />
                 <Typography className={classes.userName}>
-                  Koki Sato
+                  {config.name}
                 </Typography>
               </a>
             </Link>

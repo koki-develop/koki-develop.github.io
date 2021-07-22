@@ -1,6 +1,13 @@
 import React from 'react';
-import NextDocument, { Html, Head, Main, NextScript, DocumentContext } from 'next/document';
+import NextDocument, {
+  DocumentContext,
+  Head,
+  Html,
+  Main,
+  NextScript,
+} from 'next/document';
 import { ServerStyleSheets } from '@material-ui/core/styles';
+import config from '../config';
 
 export default class Document extends NextDocument {
   render(): JSX.Element {
@@ -26,9 +33,9 @@ export default class Document extends NextDocument {
             </>
           )}
 
-          <meta property="og:site_name"   content="Koki Sato"/>
-          <meta property="og:title"       content="Koki Sato"/>
-          <meta property="og:description" content=""/>
+          <meta property="og:site_name"   content={config.name}/>
+          <meta property="og:title"       content={config.name}/>
+          <meta property="og:description" content={config.description}/>
           <meta property="og:url"         content="https://kou-pg.com"/>
           <meta property="og:image"       content="https://kou-pg.com/images/profile.jpg"/>
           <meta property="og:type"        content="website"/>
