@@ -28,6 +28,7 @@ const useStyles = makeStyles((theme: Theme) =>
 type Props = {
   title?: string;
   hideTitle?: boolean;
+  disablePadding?: boolean;
   children: React.ReactNode;
 };
 
@@ -37,13 +38,19 @@ export const Section: React.VFC<Props> = (props: Props) => {
   return (
     <Box>
       {props.title && <Divider id={props.title}/>}
-      <Box className={classes.section} component='section'>
+      <Box
+        className={classes.section}
+        component='section'
+      >
         {props.title && !props.hideTitle && (
           <Typography className={classes.title}>
             {props.title}
           </Typography>
         )}
-        <Container maxWidth='md'>
+        <Container
+          disableGutters={props.disablePadding}
+          maxWidth='md'
+        >
           {props.children}
         </Container>
       </Box>
