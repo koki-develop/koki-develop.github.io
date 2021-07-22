@@ -55,10 +55,14 @@ const Layout: React.VFC<LayoutProps> = (props: LayoutProps) => {
     });
   };
 
+  const subTitle = props.title && `${props.title} | `;
+  const title = `${subTitle}${config.name}`;
+
   return (
     <ThemeProvider theme={theme}>
       <Head>
-        <title>{props.title && `${props.title} | `}{config.name}</title>
+        <title>{title}</title>
+        <meta property="og:title" content={title}/>
       </Head>
 
       <CssBaseline/>
