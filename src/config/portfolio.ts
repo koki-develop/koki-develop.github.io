@@ -3,7 +3,7 @@ import { Skill } from './skill';
 export const Portfolio = {
   portfolio: {
     title: 'Koki Sato',
-    description: 'このサイト。',
+    description: '個人用ポートフォリオサイト。',
     imgSrc: '/images/portfolios/portfolio.png',
     url: 'https://kou-pg.com',
     githubUrl: 'https://github.com/kou-pg-0131/portfolio',
