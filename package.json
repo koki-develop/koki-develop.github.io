@@ -15,6 +15,7 @@
     "classnames": "^2.3.1",
     "next": "^10.0.5",
     "react": "^17.0.1",
+    "react-copy-to-clipboard": "^5.0.3",
     "react-dom": "^17.0.1",
     "react-scroll": "^1.8.1",
     "sass": "^1.32.4"
@@ -22,6 +23,7 @@
   "devDependencies": {
     "@types/gtag.js": "^0.0.4",
     "@types/react": "^17.0.0",
+    "@types/react-copy-to-clipboard": "^5.0.1",
     "@typescript-eslint/eslint-plugin": "^4.13.0",
     "@typescript-eslint/parser": "^4.13.0",
     "eslint": "^7.18.0",
