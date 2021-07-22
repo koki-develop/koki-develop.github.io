@@ -16,11 +16,20 @@ export const theme = createMuiTheme({
     MuiButtonBase: {
       disableRipple: true,
     },
+    MuiButton: {
+      color: 'primary',
+      variant: 'contained',
+    },
   },
   typography: {
     fontFamily,
   },
   overrides: {
+    MuiButton: {
+      root: {
+        textTransform: 'none',
+      },
+    },
     MuiCssBaseline: {
       '@global': {
         body: {

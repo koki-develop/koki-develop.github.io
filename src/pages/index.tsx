@@ -4,18 +4,17 @@ import AboutSection from '../sections/about';
 import SkillSection from '../sections/skill';
 import PortfolioSection from '../sections/portfolio';
 import HistorySection from '../sections/history';
+import ContactSection from '../sections/contact';
 import config from '../config';
 
 const Home: React.VFC = () => {
   return (
     <Layout>
       <AboutSection config={config}/>
-
       <SkillSection config={config}/>
-
       <PortfolioSection config={config}/>
-
       <HistorySection config={config}/>
+      <ContactSection config={config}/>
     </Layout>
   );
 };

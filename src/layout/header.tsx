@@ -76,7 +76,7 @@ const Header: React.VFC<HeaderProps> = (props: HeaderProps) => {
   const handleClickHamburger = () => setOpenSideMenu(true);
   const handleCloseSideMenu = () => setOpenSideMenu(false);
 
-  const menuItems = ['About', 'Skill', 'Portfolio', 'History'];
+  const menuItems = ['About', 'Skill', 'Portfolio', 'History', 'Contact'];
 
   return (
     <AppBar>
