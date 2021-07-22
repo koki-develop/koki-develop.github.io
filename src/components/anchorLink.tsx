@@ -12,7 +12,6 @@ export const AnchorLink: React.VFC<Props> = (props: Props) => {
     <ScrollLink
       className={props.className}
       smooth
-      activeClass='active'
       to={props.to}
       offset={-80}
       duration={500}
