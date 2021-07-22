@@ -32,7 +32,7 @@ type SectionProps = {
   children: React.ReactNode;
 };
 
-export const Section: React.VFC<SectionProps> = (props: SectionProps) => {
+const Section: React.VFC<SectionProps> = (props: SectionProps) => {
   const classes = useStyles();
 
   return (

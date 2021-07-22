@@ -1,6 +1,6 @@
 export type SkillGroup = {
   name: string;
-  skills: Skill[];
+  skills: Readonly<Skill[]>;
 };
 
 export type Skill = {

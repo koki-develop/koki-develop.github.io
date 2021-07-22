@@ -6,7 +6,7 @@ import {
   makeStyles,
   Theme,
 } from '@material-ui/core/styles';
-import { ExternalLink } from '../components';
+import ExternalLink from '../components/externalLink';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({

@@ -1,7 +1,11 @@
 import React from 'react';
-import { createStyles, makeStyles } from '@material-ui/core/styles';
+import {
+  createStyles,
+  makeStyles,
+} from '@material-ui/core/styles';
 import Layout from '../layout';
-import { ExternalLink, Section } from '../components';
+import ExternalLink from '../components/externalLink';
+import Section from '../components/section';
 
 const useStyles = makeStyles(() =>
   createStyles({
@@ -44,7 +48,10 @@ const PrivacyPolicy: React.VFC = () => {
   return (
     <Layout hideMenu title='プライバシーポリシー'>
       {items.map(item => (
-        <Section key={item.title} title={item.title}>
+        <Section
+          key={item.title}
+          title={item.title}
+        >
           {item.content}
         </Section>
       ))}

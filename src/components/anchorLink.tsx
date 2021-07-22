@@ -7,7 +7,7 @@ type AnchorLinkProps = {
   to: string;
 };
 
-export const AnchorLink: React.VFC<AnchorLinkProps> = (props: AnchorLinkProps) => {
+const AnchorLink: React.VFC<AnchorLinkProps> = (props: AnchorLinkProps) => {
   return (
     <ScrollLink
       className={props.className}
@@ -20,3 +20,5 @@ export const AnchorLink: React.VFC<AnchorLinkProps> = (props: AnchorLinkProps) =
     </ScrollLink>
   );
 };
+
+export default AnchorLink;

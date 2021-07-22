@@ -20,8 +20,8 @@ import {
   makeStyles,
   Theme,
 } from '@material-ui/core/styles';
-import { Menu } from '@material-ui/icons';
-import { AnchorLink } from '../components';
+import { Menu as MenuIcon } from '@material-ui/icons';
+import AnchorLink from '../components/anchorLink';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -110,7 +110,7 @@ const Header: React.VFC<HeaderProps> = (props: HeaderProps) => {
 
               <Hidden smUp>
                 <Box>
-                  <IconButton onClick={handleClickHamburger}><Menu/></IconButton>
+                  <IconButton onClick={handleClickHamburger}><MenuIcon/></IconButton>
                 </Box>
                 <Drawer
                   anchor='right'
