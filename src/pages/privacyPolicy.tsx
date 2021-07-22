@@ -1,6 +1,6 @@
 import React from 'react';
 import { createStyles, makeStyles } from '@material-ui/core/styles';
-import { Layout } from '../layout';
+import Layout from '../layout';
 import { ExternalLink, Section } from '../components';
 
 const useStyles = makeStyles(() =>

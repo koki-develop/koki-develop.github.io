@@ -39,7 +39,7 @@ type LayoutProps = {
   hideMenu?: boolean;
 };
 
-export const Layout: React.VFC<LayoutProps> = (props: LayoutProps) => {
+const Layout: React.VFC<LayoutProps> = (props: LayoutProps) => {
   const classes = useStyles();
 
   const trigger = useScrollTrigger({
@@ -82,3 +82,5 @@ export const Layout: React.VFC<LayoutProps> = (props: LayoutProps) => {
     </ThemeProvider>
   );
 };
+
+export default Layout;
