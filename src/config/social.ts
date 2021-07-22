@@ -1,4 +1,4 @@
-import { Social as SocialType } from '../domain';
+import { Social as SocialType } from '../lib';
 
 export const Social: { [name:string]: SocialType } = {
   github: {
