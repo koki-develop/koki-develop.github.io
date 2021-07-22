@@ -3,10 +3,7 @@ import { Layout } from '../layout';
 import AboutSection from '../sections/about';
 import SkillSection from '../sections/skill';
 import PortfolioSection from '../sections/portfolio';
-import {
-  Section,
-  HistoryList,
-} from '../components';
+import HistorySection from '../sections/history';
 import config from '../config';
 
 const Home: React.VFC = () => {
@@ -18,9 +15,7 @@ const Home: React.VFC = () => {
 
       <PortfolioSection config={config}/>
 
-      <Section title='History'>
-        <HistoryList histories={config.histories}/>
-      </Section>
+      <HistorySection config={config}/>
     </Layout>
   );
 };
