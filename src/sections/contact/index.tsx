@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Config } from '../../config';
+import config from '../../config';
 import Section from '../../components/section';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import {
@@ -44,11 +44,7 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-type ContactSectionProps = {
-  config: Config;
-};
-
-const ContactSection: React.VFC<ContactSectionProps> = (props: ContactSectionProps) => {
+const ContactSection: React.VFC = () => {
   const classes = useStyles();
 
   const [showCopied, setShowCopied] = useState<boolean>(false);
@@ -78,14 +74,14 @@ const ContactSection: React.VFC<ContactSectionProps> = (props: ContactSectionPro
           <Button
             className={classes.mailButton}
             startIcon={<MailIcon/>}
-            href={`mailto:${props.config.email}`}
+            href={`mailto:${config.email}`}
           >
-            {props.config.email}
+            {config.email}
           </Button>
         </Box>
         <Box>
           <CopyToClipboard
-            text={props.config.email}
+            text={config.email}
             onCopy={handleCopyEmail}
           >
             <Button

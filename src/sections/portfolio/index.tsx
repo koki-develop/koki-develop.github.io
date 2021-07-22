@@ -1,5 +1,5 @@
 import React from 'react';
-import { Config } from '../../config';
+import config from '../../config';
 import Section from '../../components/section';
 import ExternalLink from '../../components/externalLink';
 import SkillAvatarGroup from './skillAvatarGroup';
@@ -45,11 +45,7 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-type PortfolioSectionProps = {
-  config: Config;
-};
-
-const PortfolioSection: React.VFC<PortfolioSectionProps> = (props: PortfolioSectionProps) => {
+const PortfolioSection: React.VFC = () => {
   const classes = useStyles();
 
   return (
@@ -58,7 +54,7 @@ const PortfolioSection: React.VFC<PortfolioSectionProps> = (props: PortfolioSect
         container
         spacing={4}
       >
-        {props.config.portfolios.map(portfolio => (
+        {config.portfolios.map(portfolio => (
           <Grid
             key={portfolio.title}
             item

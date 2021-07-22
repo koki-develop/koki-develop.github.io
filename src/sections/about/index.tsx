@@ -1,5 +1,5 @@
 import React from 'react';
-import { Config } from '../../config';
+import config from '../../config';
 import Section from '../../components/section';
 import {
   Box,
@@ -53,11 +53,7 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-type AboutSectionProps = {
-  config: Config;
-};
-
-const AboutSection: React.VFC<AboutSectionProps> = (props: AboutSectionProps) => {
+const AboutSection: React.VFC = () => {
   const classes = useStyles();
 
   return (
@@ -69,20 +65,20 @@ const AboutSection: React.VFC<AboutSectionProps> = (props: AboutSectionProps) =>
         <img
           className={classes.userAvatar}
           src='/images/profile.png'
-          alt={props.config.name}
+          alt={config.name}
         />
-        <Typography className={classes.userName}>{props.config.name}</Typography>
+        <Typography className={classes.userName}>{config.name}</Typography>
         <Typography className={classes.userTagline}>Developer</Typography>
       </Box>
 
       <Box className={classes.descriptionContainer}>
         <Typography className={classes.description}>
-          {props.config.description}
+          {config.description}
         </Typography>
       </Box>
 
       <ul className={classes.socialList}>
-        {props.config.socials.map(social => (
+        {config.socials.map(social => (
           <li key={social.name} className={classes.socialListItem}>
             <ExternalLink href={social.href}>
               <img

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Config } from '../../config';
+import config from '../../config';
 import Section from '../../components/section';
 import {
   Card,
@@ -60,11 +60,7 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-type HistorySectionProps = {
-  config: Config;
-};
-
-const HistorySection: React.VFC<HistorySectionProps> = (props: HistorySectionProps) => {
+const HistorySection: React.VFC = () => {
   const classes = useStyles();
 
   return (
@@ -76,7 +72,7 @@ const HistorySection: React.VFC<HistorySectionProps> = (props: HistorySectionPro
         className={classes.timeline}
         align='alternate'
       >
-        {props.config.histories.map((history, i) => (
+        {config.histories.map((history, i) => (
           <TimelineItem
             className={classes.timelineItem}
             key={history.title}
@@ -86,7 +82,7 @@ const HistorySection: React.VFC<HistorySectionProps> = (props: HistorySectionPro
                 color={i === 0 ? 'secondary' : undefined}
                 variant={i === 0 ? undefined : 'outlined'}
               />
-              {i !== props.config.histories.length - 1 && (
+              {i !== config.histories.length - 1 && (
                 <TimelineConnector/>
               )}
             </TimelineSeparator>

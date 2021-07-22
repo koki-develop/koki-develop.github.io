@@ -1,5 +1,5 @@
 import React from 'react';
-import { Config } from '../../config';
+import config from '../../config';
 import Section from '../../components/section';
 import ExternalLink from '../../components/externalLink';
 import {
@@ -49,16 +49,12 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-type SkillSectionProps = {
-  config: Config;
-};
-
-const SkillSection: React.VFC<SkillSectionProps> = (props: SkillSectionProps) => {
+const SkillSection: React.VFC = () => {
   const classes = useStyles();
 
   return (
     <Section title='Skill'>
-      {props.config.skillGroups.map(group => (
+      {config.skillGroups.map(group => (
         <Box key={group.name}>
           <Typography className={classes.groupName}>{group.name}</Typography>
           <Grid
