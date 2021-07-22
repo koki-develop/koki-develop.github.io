@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Config } from '../../config';
 import Section from '../../components/section';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 import {
   Box,
   Button,
@@ -10,7 +11,10 @@ import {
   makeStyles,
   Theme,
 } from '@material-ui/core/styles';
-import { Mail as MailIcon } from '@material-ui/icons';
+import {
+  Done as DoneIcon,
+  Mail as MailIcon,
+} from '@material-ui/icons';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -31,7 +35,11 @@ const useStyles = makeStyles((theme: Theme) =>
       },
     },
     copyButton: {
+      backgroundColor: 'transparent',
       color: theme.palette.primary.contrastText,
+    },
+    copiedIcon: {
+      color: theme.palette.success.main,
     },
   }),
 );
@@ -42,6 +50,26 @@ type ContactSectionProps = {
 
 const ContactSection: React.VFC<ContactSectionProps> = (props: ContactSectionProps) => {
   const classes = useStyles();
+
+  const [showCopied, setShowCopied] = useState<boolean>(false);
+
+  const handleCopyEmail = () => {
+    if (showCopied) return;
+    setShowCopied(true);
+  };
+
+  useEffect(() => {
+    let unmounted = false;
+    if (showCopied) {
+      setTimeout(() => {
+        if (!unmounted) {
+          setShowCopied(false);
+        }
+      }, 1000);
+    }
+
+    return () => { unmounted = true; };
+  }, [showCopied]);
 
   return (
     <Section title='Contact'>
@@ -56,12 +84,18 @@ const ContactSection: React.VFC<ContactSectionProps> = (props: ContactSectionPro
           </Button>
         </Box>
         <Box>
-          <Button
-            className={classes.copyButton}
-            variant='text'
+          <CopyToClipboard
+            text={props.config.email}
+            onCopy={handleCopyEmail}
           >
-            クリップボードにコピー
-          </Button>
+            <Button
+              className={classes.copyButton}
+              variant='text'
+              startIcon={showCopied ? <DoneIcon className={classes.copiedIcon}/> : null}
+            >
+              {showCopied ? 'コピーしました' : 'クリップボードにコピー'}
+            </Button>
+          </CopyToClipboard>
         </Box>
       </Box>
     </Section>
