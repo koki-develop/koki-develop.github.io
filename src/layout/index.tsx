@@ -55,7 +55,7 @@ const Layout: React.VFC<LayoutProps> = (props: LayoutProps) => {
     });
   };
 
-  const subTitle = props.title && `${props.title} | `;
+  const subTitle = props.title ? `${props.title} | ` : '';
   const title = `${subTitle}${config.name}`;
 
   return (
