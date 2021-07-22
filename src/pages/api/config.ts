@@ -5,7 +5,7 @@ import {
 import config from '../../config';
 
 const handler = (_req: NextApiRequest, res: NextApiResponse): void => {
-  res.status(200).json(config.skillGroups);
+  res.status(200).json(config);
 };
 
 export default handler;
