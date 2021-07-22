@@ -13,6 +13,7 @@ import {
   List,
   ListItem,
   Toolbar,
+  Typography,
 } from '@material-ui/core';
 import {
   createStyles,
@@ -34,6 +35,13 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     userAvatar: {
       marginRight: theme.spacing(1),
+    },
+    userLink: {
+      alignItems: 'center',
+      display: 'flex',
+      '&:hover': {
+        opacity: 1,
+      },
     },
     userName: {
       fontSize: theme.typography.h6.fontSize,
@@ -75,12 +83,16 @@ const Header: React.VFC<HeaderProps> = (props: HeaderProps) => {
       <Container maxWidth='md'>
         <Toolbar className={classes.toolbar}>
           <Box className={classes.user}>
-            <Avatar
-              className={classes.userAvatar}
-              src='/images/profile.png'
-            />
             <Link href={Routes.home}>
-              <a className={classes.userName}>Koki Sato</a>
+              <a className={classes.userLink}>
+                <Avatar
+                  className={classes.userAvatar}
+                  src='/images/profile.png'
+                />
+                <Typography className={classes.userName}>
+                  Koki Sato
+                </Typography>
+              </a>
             </Link>
           </Box>
 
