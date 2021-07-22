@@ -1,10 +1,10 @@
 export type SkillGroup = {
-  name: Readonly<string>;
-  skills: Readonly<Skill[]>;
+  name: string;
+  skills: Skill[];
 };
 
 export type Skill = {
-  name: Readonly<string>;
-  imgSrc: Readonly<string>;
-  href: Readonly<string>;
+  name: string;
+  imgSrc: string;
+  href: string;
 };

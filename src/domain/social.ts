@@ -1,5 +1,5 @@
 export type Social = {
-  href: Readonly<string>;
-  name: Readonly<string>;
-  imgSrc: Readonly<string>;
+  href: string;
+  name: string;
+  imgSrc: string;
 };

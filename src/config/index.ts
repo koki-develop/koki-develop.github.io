@@ -5,10 +5,10 @@ import { History } from './history';
 import { Portfolio } from './portfolio';
 
 export type Config = {
-  socials: Readonly<SocialType[]>;
-  skillGroups: Readonly<SkillGroupType[]>;
-  portfolios: Readonly<Portfolio[]>;
-  histories: Readonly<HistoryType[]>;
+  socials: SocialType[];
+  skillGroups: SkillGroupType[];
+  portfolios: Portfolio[];
+  histories: HistoryType[];
 };
 
 const config: Config = {

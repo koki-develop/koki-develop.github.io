@@ -2,8 +2,8 @@ import React from 'react';
 import { Layout } from '../layout';
 import AboutSection from '../sections/about';
 import SkillSection from '../sections/skill';
+import PortfolioSection from '../sections/portfolio';
 import {
-  PortfolioCardList,
   Section,
   HistoryList,
 } from '../components';
@@ -16,9 +16,7 @@ const Home: React.VFC = () => {
 
       <SkillSection config={config}/>
 
-      <Section title='Portfolio'>
-        <PortfolioCardList portfolios={config.portfolios}/>
-      </Section>
+      <PortfolioSection config={config}/>
 
       <Section title='History'>
         <HistoryList histories={config.histories}/>

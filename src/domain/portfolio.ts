@@ -1,10 +1,10 @@
 import { Skill } from '.';
 
 export type Portfolio = {
-  title: Readonly<string>;
-  description: Readonly<string>;
-  imgSrc?: Readonly<string>;
-  url?: Readonly<string>;
-  githubUrl: Readonly<string>;
-  skills: Readonly<Skill[]>;
+  title: string;
+  description: string;
+  imgSrc?: string;
+  url?: string;
+  githubUrl: string;
+  skills: Skill[];
 };

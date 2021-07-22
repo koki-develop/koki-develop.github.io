@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 type Props = {
-  histories: Readonly<History[]>;
+  histories: History[];
 };
 
 export const HistoryList: React.VFC<Props> = (props: Props) => {
