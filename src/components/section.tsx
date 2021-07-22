@@ -27,6 +27,7 @@ const useStyles = makeStyles((theme: Theme) =>
 
 type Props = {
   title?: string;
+  hideTitle?: boolean;
   children: React.ReactNode;
 };
 
@@ -37,7 +38,7 @@ export const Section: React.VFC<Props> = (props: Props) => {
     <Box>
       {props.title && <Divider id={props.title}/>}
       <Box className={classes.section} component='section'>
-        {props.title && (
+        {props.title && !props.hideTitle && (
           <Typography className={classes.title}>
             {props.title}
           </Typography>

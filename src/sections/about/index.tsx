@@ -60,7 +60,10 @@ const AboutSection: React.VFC<AboutSectionProps> = (props: AboutSectionProps) =>
   const classes = useStyles();
 
   return (
-    <Section>
+    <Section
+      title='About'
+      hideTitle
+    >
       <Box className={classes.user}>
         <img
           className={classes.userAvatar}
