@@ -2,7 +2,7 @@ import {
   Social as SocialType,
   SkillGroup as SkillGroupType,
   History as HistoryType,
-} from '../lib';
+} from '../types';
 import { Social } from './social';
 import { SkillGroup } from './skill';
 import { History } from './history';

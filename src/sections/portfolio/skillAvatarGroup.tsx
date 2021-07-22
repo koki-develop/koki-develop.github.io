@@ -1,5 +1,5 @@
 import React from 'react';
-import { Skill } from '../../lib/skill';
+import { Skill } from '../../types/skill';
 import ExternalLink from '../../components/externalLink';
 import { Avatar } from '@material-ui/core';
 import {
