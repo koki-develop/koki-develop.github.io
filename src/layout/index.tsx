@@ -2,9 +2,11 @@ import React from 'react';
 import * as Scroll from 'react-scroll';
 import Head from 'next/head';
 import {
+  useScrollTrigger,
   Box,
   CssBaseline,
   Fab,
+  Zoom,
 } from '@material-ui/core';
 import {
   KeyboardArrowUp as KeyboardArrowUpIcon,
@@ -40,6 +42,11 @@ type LayoutProps = {
 export const Layout: React.VFC<LayoutProps> = (props: LayoutProps) => {
   const classes = useStyles();
 
+  const trigger = useScrollTrigger({
+    disableHysteresis: true,
+    threshold: 200,
+  });
+
   const handleClickBackToTop = () => {
     Scroll.animateScroll.scrollToTop({
       smooth: true,
@@ -63,12 +70,15 @@ export const Layout: React.VFC<LayoutProps> = (props: LayoutProps) => {
 
       <Footer/>
 
-      <Fab
-        className={classes.backToTop}
-        onClick={handleClickBackToTop}
-      >
-        <KeyboardArrowUpIcon/>
-      </Fab>
+      <Zoom in={trigger}>
+        <Fab
+          className={classes.backToTop}
+          color='primary'
+          onClick={handleClickBackToTop}
+        >
+          <KeyboardArrowUpIcon/>
+        </Fab>
+      </Zoom>
     </ThemeProvider>
   );
 };
