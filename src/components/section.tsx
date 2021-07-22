@@ -25,14 +25,14 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-type Props = {
+type SectionProps = {
   title?: string;
   hideTitle?: boolean;
   disablePadding?: boolean;
   children: React.ReactNode;
 };
 
-export const Section: React.VFC<Props> = (props: Props) => {
+export const Section: React.VFC<SectionProps> = (props: SectionProps) => {
   const classes = useStyles();
 
   return (

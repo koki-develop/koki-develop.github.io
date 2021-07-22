@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link as ScrollLink } from 'react-scroll';
 
-type Props = {
+type AnchorLinkProps = {
   children: React.ReactNode;
   className?: string;
   to: string;
 };
 
-export const AnchorLink: React.VFC<Props> = (props: Props) => {
+export const AnchorLink: React.VFC<AnchorLinkProps> = (props: AnchorLinkProps) => {
   return (
     <ScrollLink
       className={props.className}

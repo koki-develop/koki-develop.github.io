@@ -1,8 +1,8 @@
 import React from 'react';
 
-type Props = React.HTMLProps<HTMLAnchorElement>;
+type ExternalLinkProps = React.HTMLProps<HTMLAnchorElement>;
 
-export const ExternalLink: React.VFC<Props> = (props: Props) => {
+export const ExternalLink: React.VFC<ExternalLinkProps> = (props: ExternalLinkProps) => {
   return (
     <a target='_blank' rel='noreferrer noopener' {...props}>
       {props.children}
