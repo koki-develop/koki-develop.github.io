@@ -48,6 +48,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     description: {
       textAlign: 'center',
+      whiteSpace: 'pre',
     },
   }),
 );
@@ -76,7 +77,7 @@ const AboutSection: React.VFC<AboutSectionProps> = (props: AboutSectionProps) =>
 
       <Box className={classes.descriptionContainer}>
         <Typography className={classes.description}>
-          埼玉県在住の23歳。<br/>のんびり生きています。
+          {props.config.description}
         </Typography>
       </Box>
 

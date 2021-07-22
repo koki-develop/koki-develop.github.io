@@ -9,6 +9,7 @@ import { History } from './history';
 import { Portfolio } from './portfolio';
 
 export type Config = {
+  description: string;
   email: string;
   socials: SocialType[];
   skillGroups: SkillGroupType[];
@@ -17,6 +18,7 @@ export type Config = {
 };
 
 const config: Config = {
+  description: '埼玉県在住の23歳。\nのんびり生きています。',
   email: 'kou.pg.0131@gmail.com',
   socials: Object.values(Social),
   skillGroups: Object.values(SkillGroup),
