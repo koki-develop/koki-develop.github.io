@@ -38,11 +38,11 @@
 [<img src="./public/images/skills/aws.svg" alt="AWS" width="40" height="40"/>](https://aws.amazon.com)
 [<img src="./public/images/skills/gcp.svg" alt="GCP" width="40" height="40"/>](https://console.cloud.google.com)
 [<img src="./public/images/skills/vercel.svg" alt="Vercel" width="40" height="40"/>](https://vercel.com)
-[<img src="./public/images/skills/heroku.svg" alt="Heroku" width="40" height="40"/>](https://www.heroku.com/)
 ## CI/CD
 
 [<img src="./public/images/skills/circleci.svg" alt="CircleCI" width="40" height="40"/>](https://circleci.com/)
 [<img src="./public/images/skills/travis-ci.svg" alt="Travis CI" width="40" height="40"/>](https://www.travis-ci.com/)
+[<img src="./public/images/skills/githubactions.svg" alt="GitHub Actions" width="40" height="40"/>](https://github.co.jp/features/actions)
 ## Other
 
 [<img src="./public/images/skills/docker.svg" alt="Docker" width="40" height="40"/>](https://www.docker.com/)
