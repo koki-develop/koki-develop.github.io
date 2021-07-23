@@ -40,6 +40,14 @@ type LayoutProps = {
   hideMenu?: boolean;
 };
 
+const Root: React.VFC<LayoutProps> = (props: LayoutProps) => {
+  return (
+    <ThemeProvider theme={theme}>
+      <Layout {...props}/>
+    </ThemeProvider>
+  );
+};
+
 const Layout: React.VFC<LayoutProps> = (props: LayoutProps) => {
   const classes = useStyles();
 
@@ -59,7 +67,7 @@ const Layout: React.VFC<LayoutProps> = (props: LayoutProps) => {
   const title = `${subTitle}${config.name}`;
 
   return (
-    <ThemeProvider theme={theme}>
+    <Box>
       <Head>
         <title>{title}</title>
         <meta property='og:title' content={title}/>
@@ -84,8 +92,8 @@ const Layout: React.VFC<LayoutProps> = (props: LayoutProps) => {
           <KeyboardArrowUpIcon/>
         </Fab>
       </Zoom>
-    </ThemeProvider>
+    </Box>
   );
 };
 
-export default Layout;
+export default Root;
