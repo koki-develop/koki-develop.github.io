@@ -62,7 +62,7 @@ const Layout: React.VFC<LayoutProps> = (props: LayoutProps) => {
     <ThemeProvider theme={theme}>
       <Head>
         <title>{title}</title>
-        <meta property="og:title" content={title}/>
+        <meta property='og:title' content={title}/>
       </Head>
 
       <CssBaseline/>
