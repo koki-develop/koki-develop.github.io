@@ -85,16 +85,12 @@ const PortfolioSection: React.VFC = () => {
               <CardHeader
                 className={classes.portfolioCardHeader}
                 title={(
-                  portfolio.url ? (
-                    <ExternalLink
-                      className={classes.portfolioCardTitleLink}
-                      href={portfolio.url}
-                    >
-                      {portfolio.title}
-                    </ExternalLink>
-                  ) : (
-                    portfolio.title
-                  )
+                  <ExternalLink
+                    className={classes.portfolioCardTitleLink}
+                    href={portfolio.url}
+                  >
+                    {portfolio.title}
+                  </ExternalLink>
                 )}
                 titleTypographyProps={{ className: classes.portfolioCardTitle }}
               />
