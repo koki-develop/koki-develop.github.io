@@ -22,7 +22,7 @@ import config from '../config';
   lines.push('');
   for (const social of socials) {
     lines.push(
-      `[<img src="https://kou-pg.com${social.imgSrc}" alt="${social.name}" width="40" height="40"/>](${social.href})`,
+      `[<img src="./public${social.imgSrc}" alt="${social.name}" width="40" height="40"/>](${social.href})`,
     );
   }
 
@@ -36,7 +36,7 @@ import config from '../config';
     lines.push('');
     for (const skill of skillGroup.skills) {
       lines.push(
-        `[<img src="https://kou-pg.com${skill.imgSrc}" alt="${skill.name}" width="40" height="40"/>](${skill.href})`,
+        `[<img src="./public${skill.imgSrc}" alt="${skill.name}" width="40" height="40"/>](${skill.href})`,
       );
     }
   }
