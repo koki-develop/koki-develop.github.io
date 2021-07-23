@@ -18,6 +18,10 @@ const useStyles = makeStyles((theme: Theme) =>
       backgroundColor: theme.palette.common.white,
       height: 25,
       width: 25,
+      [theme.breakpoints.down('xs')]: {
+        height: 20,
+        width: 20,
+      },
     },
     skillAvatarImg: {
       height: '100%',

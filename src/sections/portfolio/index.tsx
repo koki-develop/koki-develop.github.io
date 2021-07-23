@@ -20,6 +20,12 @@ import {
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
+    portfolioCardHeader: {
+      [theme.breakpoints.down('xs')]: {
+        paddingTop: theme.spacing(1),
+        paddingBottom: theme.spacing(1),
+      },
+    },
     portfolioCardMedia: {
       height: 300,
       [theme.breakpoints.down('md')]: {
@@ -72,6 +78,7 @@ const PortfolioSection: React.VFC = () => {
                 </CardActionArea>
               )}
               <CardHeader
+                className={classes.portfolioCardHeader}
                 title={portfolio.title}
                 titleTypographyProps={{ className: classes.portfolioCardTitle }}
               />
