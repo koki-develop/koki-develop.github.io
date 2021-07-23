@@ -28,6 +28,7 @@
     "@typescript-eslint/parser": "^4.13.0",
     "eslint": "^7.18.0",
     "eslint-plugin-react": "^7.22.0",
+    "ts-node": "^10.1.0",
     "typescript": "^4.1.3"
   }
 }
