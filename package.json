@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "lint": "eslint './**/*.ts' './**/*.tsx' --max-warnings 0",
-    "test:compile": "tsc --noEmit"
+    "test:compile": "tsc --noEmit",
+    "update:readme": "ts-node ./src/tasks/updateReadme.ts"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.2",
