@@ -8,9 +8,24 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: setup git
+        run: |
+          git config user.name kou-pg-0131
+          git config user.email kou.pg.0131@gmail.com
+      - name: setup nodejs
+        uses: actions/setup-node@v1
         with:
           node-version: '14.x'
-      - run: yarn install
-      - run: yarn run update:readme
+      - name: install dependencies
+        run: yarn install
+      - name: update README.md
+        run: yarn run update:readme
+      - name: commit and push
+      - run: |
+          git add README.md
+          if ! git diff --staged --exit-code --quiet; then
+            git commit -m 'update README.md'
+            git push origin main
+          fi
