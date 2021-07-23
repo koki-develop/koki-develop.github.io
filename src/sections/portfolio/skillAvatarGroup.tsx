@@ -12,7 +12,12 @@ import { AvatarGroup } from '@material-ui/lab';
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     skillAvatarGroup: {
+      marginTop: theme.spacing(2),
       marginBottom: theme.spacing(2),
+      [theme.breakpoints.down('xs')]: {
+        marginTop: theme.spacing(1),
+        marginBottom: theme.spacing(1),
+      },
     },
     skillAvatar: {
       backgroundColor: theme.palette.common.white,

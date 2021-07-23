@@ -21,10 +21,7 @@ import {
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     portfolioCardHeader: {
-      [theme.breakpoints.down('xs')]: {
-        paddingTop: theme.spacing(1),
-        paddingBottom: theme.spacing(1),
-      },
+      paddingBottom: 0,
     },
     portfolioCardMedia: {
       height: 300,
