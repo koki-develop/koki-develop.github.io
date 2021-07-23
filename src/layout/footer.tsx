@@ -30,7 +30,7 @@ const Footer: React.VFC = () => {
   const items: { body: React.ReactNode }[] = [
     {
       body: (
-        <ExternalLink href='https://github.com/kou-pg-0131/portfolio'>View on GitHub</ExternalLink>
+        <ExternalLink href='https://github.com/kou-pg-0131/kou-pg-0131'>View on GitHub</ExternalLink>
       ),
     },
     {

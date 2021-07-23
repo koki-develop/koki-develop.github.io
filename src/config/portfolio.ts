@@ -6,7 +6,7 @@ export const Portfolio = {
     description: '個人用ポートフォリオサイト。',
     imgSrc: '/images/portfolios/portfolio.png',
     url: 'https://kou-pg.com',
-    githubUrl: 'https://github.com/kou-pg-0131/portfolio',
+    githubUrl: 'https://github.com/kou-pg-0131/kou-pg-0131',
     skills: [
       // language
       Skill.nodejs,
