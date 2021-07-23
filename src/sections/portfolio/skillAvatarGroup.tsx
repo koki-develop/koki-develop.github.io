@@ -25,7 +25,12 @@ const useStyles = makeStyles((theme: Theme) =>
       width: '100%',
     },
     skillAvatarLink: {
+      border: '1px solid #999',
       borderRadius: '50%',
+      '&:hover': {
+        opacity: 1,
+        transform: 'translateY(-4px)',
+      },
     },
   }),
 );
