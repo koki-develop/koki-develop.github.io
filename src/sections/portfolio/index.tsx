@@ -41,6 +41,11 @@ const useStyles = makeStyles((theme: Theme) =>
     portfolioCardTitle: {
       fontWeight: 'bold',
     },
+    portfolioCardTitleLink: {
+      '&:hover': {
+        opacity: 1,
+      },
+    },
     portfolioCardContent: {
       paddingTop: 0,
     },
@@ -79,7 +84,18 @@ const PortfolioSection: React.VFC = () => {
               )}
               <CardHeader
                 className={classes.portfolioCardHeader}
-                title={portfolio.title}
+                title={(
+                  portfolio.url ? (
+                    <ExternalLink
+                      className={classes.portfolioCardTitleLink}
+                      href={portfolio.url}
+                    >
+                      {portfolio.title}
+                    </ExternalLink>
+                  ) : (
+                    portfolio.title
+                  )
+                )}
                 titleTypographyProps={{ className: classes.portfolioCardTitle }}
               />
               <CardContent className={classes.portfolioCardContent}>
