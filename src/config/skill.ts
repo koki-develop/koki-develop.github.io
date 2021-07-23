@@ -89,6 +89,11 @@ export const Skill = {
     imgSrc: '/images/skills/circleci.svg',
     href: 'https://circleci.com/',
   },
+  githubactions: {
+    name: 'GitHub Actions',
+    imgSrc: '/images/skills/githubactions.svg',
+    href: 'https://github.co.jp/features/actions',
+  },
   travisci: {
     name: 'Travis CI',
     imgSrc: '/images/skills/travis-ci.svg',
@@ -176,6 +181,7 @@ export const SkillGroup = {
     skills: [
       Skill.circleci,
       Skill.travisci,
+      Skill.githubactions,
     ],
   },
   other: {
