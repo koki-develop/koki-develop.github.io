@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     portfolioCardMedia: {
       height: 300,
-      [theme.breakpoints.down('lg')]: {
+      [theme.breakpoints.down('md')]: {
         height: 280,
       },
       [theme.breakpoints.down('sm')]: {
