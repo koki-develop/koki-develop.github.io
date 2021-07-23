@@ -18,6 +18,11 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '14.x'
+      - name: cache node modules
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: v1-node-${{ runner.os }}-${{ github.ref }}-${{ hashFiles('yarn.lock') }}
       - name: install dependencies
         run: yarn install
       - name: update README.md
