@@ -4,7 +4,7 @@ export const Portfolio = {
   portfolio: {
     title: 'Koki Sato',
     description: '個人用ポートフォリオサイト。',
-    imgSrc: '/images/portfolios/portfolio.png',
+    imgSrc: '/images/portfolios/portfolio.webp',
     url: 'https://kou-pg.com',
     githubUrl: 'https://github.com/kou-pg-0131/kou-pg-0131',
     skills: [
@@ -23,7 +23,7 @@ export const Portfolio = {
   nojov: {
     title: 'Nojov',
     description: 'プログラミング言語ごとの求人数の一覧をチャート形式で見ることができるサービス。',
-    imgSrc: '/images/portfolios/nojov.png',
+    imgSrc: '/images/portfolios/nojov.webp',
     url: 'https://nojov.kou-pg.com',
     githubUrl: 'https://github.com/kou-pg-0131/nojov',
     skills: [
@@ -48,7 +48,7 @@ export const Portfolio = {
   lgtmGenerator: {
     title: 'LGTM Generator',
     description: 'シンプルな LGTM 画像生成サービス。',
-    imgSrc: '/images/portfolios/lgtm-generator.png',
+    imgSrc: '/images/portfolios/lgtm-generator.webp',
     url: 'https://lgtm-generator.kou-pg.com',
     githubUrl: 'https://github.com/kou-pg-0131/lgtm-generator-ui',
     skills: [

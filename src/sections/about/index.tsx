@@ -64,7 +64,7 @@ const AboutSection: React.VFC = () => {
       <Box className={classes.user}>
         <img
           className={classes.userAvatar}
-          src='/images/profile.png'
+          src='/images/profile.webp'
           alt={config.name}
         />
         <Typography className={classes.userName}>{config.name}</Typography>

@@ -88,7 +88,7 @@ const Header: React.VFC<HeaderProps> = (props: HeaderProps) => {
               <a className={classes.userLink}>
                 <Avatar
                   className={classes.userAvatar}
-                  src='/images/profile.png'
+                  src='/images/profile.webp'
                 />
                 <Typography className={classes.userName}>
                   {config.name}
