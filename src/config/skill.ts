@@ -94,11 +94,6 @@ export const Skill = {
     imgSrc: '/images/skills/githubactions.svg',
     href: 'https://github.co.jp/features/actions',
   },
-  travisci: {
-    name: 'Travis CI',
-    imgSrc: '/images/skills/travis-ci.svg',
-    href: 'https://www.travis-ci.com/',
-  },
   docker: {
     name: 'Docker',
     imgSrc: '/images/skills/docker.svg',
@@ -180,7 +175,6 @@ export const SkillGroup = {
     name: 'CI/CD',
     skills: [
       Skill.circleci,
-      Skill.travisci,
       Skill.githubactions,
     ],
   },
