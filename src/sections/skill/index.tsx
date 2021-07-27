@@ -1,12 +1,10 @@
 import React from 'react';
 import config from '../../config';
 import Section from '../../components/section';
-import ExternalLink from '../../components/externalLink';
+import FadeSlideUp from '../../components/fadeSlideUp';
+import SkillCard from './skillCard';
 import {
   Box,
-  Card,
-  CardActionArea,
-  CardContent,
   Grid,
   Typography,
 } from '@material-ui/core';
@@ -27,25 +25,6 @@ const useStyles = makeStyles((theme: Theme) =>
     skillsContainer: {
       marginBottom: theme.spacing(2),
     },
-    skillLink: {
-      '&:hover': {
-        opacity: 1,
-      },
-    },
-    skillCardContent: {
-      alignItems: 'center',
-      display: 'flex',
-      flexDirection: 'column',
-    },
-    skillCardImg: {
-      marginBottom: theme.spacing(2),
-      width: 60,
-      height: 60,
-    },
-    skillCardName: {
-      fontSize: theme.typography.body2.fontSize,
-      fontWeight: 'bold',
-    },
   }),
 );
 
@@ -56,37 +35,19 @@ const SkillSection: React.VFC = () => {
     <Section title='Skill'>
       {config.skillGroups.map(group => (
         <Box key={group.name}>
-          <Typography className={classes.groupName}>{group.name}</Typography>
+          <FadeSlideUp>
+            <Typography className={classes.groupName}>{group.name}</Typography>
+          </FadeSlideUp>
           <Grid
             className={classes.skillsContainer}
             container
             spacing={2}
           >
             {group.skills.map(skill => (
-              <Grid
+              <SkillCard
                 key={skill.name}
-                item
-                xs={6}
-                sm={3}
-              >
-                <ExternalLink
-                  className={classes.skillLink}
-                  href={skill.href}
-                >
-                  <Card>
-                    <CardActionArea>
-                      <CardContent className={classes.skillCardContent}>
-                        <img
-                          className={classes.skillCardImg}
-                          src={skill.imgSrc}
-                          alt={skill.name}
-                        />
-                        <Typography className={classes.skillCardName}>{skill.name}</Typography>
-                      </CardContent>
-                    </CardActionArea>
-                  </Card>
-                </ExternalLink>
-              </Grid>
+                skill={skill}
+              />
             ))}
           </Grid>
         </Box>
