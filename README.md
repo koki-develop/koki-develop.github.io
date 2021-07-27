@@ -41,7 +41,6 @@
 ## CI/CD
 
 [<img src="./public/images/skills/circleci.svg" alt="CircleCI" width="40" height="40"/>](https://circleci.com/)
-[<img src="./public/images/skills/travis-ci.svg" alt="Travis CI" width="40" height="40"/>](https://www.travis-ci.com/)
 [<img src="./public/images/skills/githubactions.svg" alt="GitHub Actions" width="40" height="40"/>](https://github.co.jp/features/actions)
 ## Other
 
