@@ -53,7 +53,7 @@ const Layout: React.VFC<LayoutProps> = (props: LayoutProps) => {
 
   const trigger = useScrollTrigger({
     disableHysteresis: true,
-    threshold: 200,
+    threshold: 100,
   });
 
   const handleClickBackToTop = () => {
