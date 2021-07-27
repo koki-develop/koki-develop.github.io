@@ -18,6 +18,7 @@ export const Portfolio = {
       Skill.vercel,
       // ci/cd
       Skill.circleci,
+      Skill.githubactions,
     ],
   },
   nojov: {
