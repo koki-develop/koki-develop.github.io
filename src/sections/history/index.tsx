@@ -1,6 +1,7 @@
 import React from 'react';
 import config from '../../config';
 import Section from '../../components/section';
+import FadeSlideUp from '../../components/fadeSlideUp';
 import {
   Card,
   CardContent,
@@ -87,13 +88,15 @@ const HistorySection: React.VFC = () => {
               )}
             </TimelineSeparator>
             <TimelineContent>
-              <Card>
-                <CardContent>
-                  <Typography className={classes.period}>{history.period}</Typography>
-                  <Typography className={classes.title}>{history.title}</Typography>
-                  <Typography className={classes.description}>{history.description}</Typography>
-                </CardContent>
-              </Card>
+              <FadeSlideUp>
+                <Card>
+                  <CardContent>
+                    <Typography className={classes.period}>{history.period}</Typography>
+                    <Typography className={classes.title}>{history.title}</Typography>
+                    <Typography className={classes.description}>{history.description}</Typography>
+                  </CardContent>
+                </Card>
+              </FadeSlideUp>
             </TimelineContent>
           </TimelineItem>
         ))}
