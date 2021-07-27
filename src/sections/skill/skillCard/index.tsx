@@ -1,16 +1,12 @@
 import React from 'react';
-import { useInView } from 'react-intersection-observer';
 import { Skill } from '../../../types/skill';
 import ExternalLink from '../../../components/externalLink';
 import FadeSlideUp from '../../../components/fadeSlideUp';
 import {
-  Box,
   Card,
   CardActionArea,
   CardContent,
-  Fade,
   Grid,
-  Slide,
   Typography,
 } from '@material-ui/core';
 import {
@@ -47,7 +43,7 @@ type SkillCardProps = {
   skill: Skill;
 };
 
-const SkillCard: React.VFC<SkillCardProps> = (props: SkillCardProps) => {
+const SkillCard: React.VFC<SkillCardProps> = React.memo((props: SkillCardProps) => {
   const classes = useStyles();
 
   return (
@@ -78,6 +74,8 @@ const SkillCard: React.VFC<SkillCardProps> = (props: SkillCardProps) => {
       </ExternalLink>
     </Grid>
   );
-};
+});
+
+SkillCard.displayName = 'SkillCard';
 
 export default SkillCard;

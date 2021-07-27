@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-const Footer: React.VFC = () => {
+const Footer: React.VFC = React.memo(() => {
   const classes = useStyles();
 
   const items: { body: React.ReactNode }[] = [
@@ -55,6 +55,8 @@ const Footer: React.VFC = () => {
       </ul>
     </footer>
   );
-};
+});
+
+Footer.displayName = 'Footer';
 
 export default Footer;

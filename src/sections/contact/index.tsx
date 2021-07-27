@@ -44,7 +44,7 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-const ContactSection: React.VFC = () => {
+const ContactSection: React.VFC = React.memo(() => {
   const classes = useStyles();
 
   const [showCopied, setShowCopied] = useState<boolean>(false);
@@ -96,6 +96,8 @@ const ContactSection: React.VFC = () => {
       </Box>
     </Section>
   );
-};
+});
+
+ContactSection.displayName = 'ContactSection';
 
 export default ContactSection;

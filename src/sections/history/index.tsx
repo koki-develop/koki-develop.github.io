@@ -61,7 +61,7 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-const HistorySection: React.VFC = () => {
+const HistorySection: React.VFC = React.memo(() => {
   const classes = useStyles();
 
   return (
@@ -103,6 +103,8 @@ const HistorySection: React.VFC = () => {
       </Timeline>
     </Section>
   );
-};
+});
+
+HistorySection.displayName = 'HistorySection';
 
 export default HistorySection;

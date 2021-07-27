@@ -48,7 +48,7 @@ type SkillAvatarGroupProps = {
   skills: Readonly<Skill[]>;
 };
 
-const SkillAvatarGroup: React.VFC<SkillAvatarGroupProps> = (props: SkillAvatarGroupProps) => {
+const SkillAvatarGroup: React.VFC<SkillAvatarGroupProps> = React.memo((props: SkillAvatarGroupProps) => {
   const classes = useStyles();
 
   return (
@@ -72,6 +72,8 @@ const SkillAvatarGroup: React.VFC<SkillAvatarGroupProps> = (props: SkillAvatarGr
       ))}
     </AvatarGroup>
   );
-};
+});
+
+SkillAvatarGroup.displayName = 'SkillAvatarGroup';
 
 export default SkillAvatarGroup;

@@ -32,7 +32,7 @@ type SectionProps = {
   children: React.ReactNode;
 };
 
-const Section: React.VFC<SectionProps> = (props: SectionProps) => {
+const Section: React.VFC<SectionProps> = React.memo((props: SectionProps) => {
   const classes = useStyles();
 
   return (
@@ -56,6 +56,8 @@ const Section: React.VFC<SectionProps> = (props: SectionProps) => {
       </Box>
     </Box>
   );
-};
+});
+
+Section.displayName = 'Section';
 
 export default Section;

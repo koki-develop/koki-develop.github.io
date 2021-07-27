@@ -54,7 +54,7 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-const PortfolioSection: React.VFC = () => {
+const PortfolioSection: React.VFC = React.memo(() => {
   const classes = useStyles();
 
   return (
@@ -107,6 +107,8 @@ const PortfolioSection: React.VFC = () => {
       </Grid>
     </Section>
   );
-};
+});
+
+PortfolioSection.displayName = 'PortfolioSection';
 
 export default PortfolioSection;

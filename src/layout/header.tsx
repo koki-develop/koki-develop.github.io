@@ -68,7 +68,7 @@ type HeaderProps = {
   hideMenu: boolean;
 };
 
-const Header: React.VFC<HeaderProps> = (props: HeaderProps) => {
+const Header: React.VFC<HeaderProps> = React.memo((props: HeaderProps) => {
   const classes = useStyles();
 
   const [openSideMenu, setOpenSideMenu] = useState<boolean>(false);
@@ -145,6 +145,8 @@ const Header: React.VFC<HeaderProps> = (props: HeaderProps) => {
       </Container>
     </AppBar>
   );
-};
+});
+
+Header.displayName = 'Header';
 
 export default Header;

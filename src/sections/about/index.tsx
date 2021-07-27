@@ -53,7 +53,7 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-const AboutSection: React.VFC = () => {
+const AboutSection: React.VFC = React.memo(() => {
   const classes = useStyles();
 
   return (
@@ -92,6 +92,8 @@ const AboutSection: React.VFC = () => {
       </ul>
     </Section>
   );
-};
+});
+
+AboutSection.displayName = 'AboutSection';
 
 export default AboutSection;

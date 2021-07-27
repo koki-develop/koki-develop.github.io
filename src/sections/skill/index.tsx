@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-const SkillSection: React.VFC = () => {
+const SkillSection: React.VFC = React.memo(() => {
   const classes = useStyles();
 
   return (
@@ -54,6 +54,8 @@ const SkillSection: React.VFC = () => {
       ))}
     </Section>
   );
-};
+});
+
+SkillSection.displayName = 'SkillSection';
 
 export default SkillSection;

@@ -26,7 +26,7 @@ type FadeSlideUpProps = {
   children: React.ReactNode;
 };
 
-const FadeSlideUp: React.VFC<FadeSlideUpProps> = (props: FadeSlideUpProps) => {
+const FadeSlideUp: React.VFC<FadeSlideUpProps> = React.memo((props: FadeSlideUpProps) => {
   const classes = useStyles();
 
   const { ref, inView } = useInView({
@@ -46,6 +46,8 @@ const FadeSlideUp: React.VFC<FadeSlideUpProps> = (props: FadeSlideUpProps) => {
       {props.children}
     </div>
   );
-};
+});
+
+FadeSlideUp.displayName = 'FadeSlideUp';
 
 export default FadeSlideUp;

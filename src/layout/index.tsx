@@ -40,13 +40,15 @@ type LayoutProps = {
   hideMenu?: boolean;
 };
 
-const Root: React.VFC<LayoutProps> = (props: LayoutProps) => {
+const Root: React.VFC<LayoutProps> = React.memo((props: LayoutProps) => {
   return (
     <ThemeProvider theme={theme}>
       <Layout {...props}/>
     </ThemeProvider>
   );
-};
+});
+
+Root.displayName = 'LayoutRoot';
 
 const Layout: React.VFC<LayoutProps> = (props: LayoutProps) => {
   const classes = useStyles();
