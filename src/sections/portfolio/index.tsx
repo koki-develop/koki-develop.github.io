@@ -2,6 +2,7 @@ import React from 'react';
 import config from '../../config';
 import Section from '../../components/section';
 import ExternalLink from '../../components/externalLink';
+import FadeSlideUp from '../../components/fadeSlideUp';
 import SkillAvatarGroup from './skillAvatarGroup';
 import {
   Card,
@@ -68,37 +69,39 @@ const PortfolioSection: React.VFC = () => {
             item
             xs={12}
           >
-            <Card raised>
-              {portfolio.imgSrc && portfolio.url && (
-                <CardActionArea>
-                  <ExternalLink href={portfolio.url}>
-                    <CardMedia
-                      className={classes.portfolioCardMedia}
-                      image={portfolio.imgSrc}
-                    />
-                  </ExternalLink>
-                </CardActionArea>
-              )}
-              <CardHeader
-                className={classes.portfolioCardHeader}
-                title={(
-                  <ExternalLink
-                    className={classes.portfolioCardTitleLink}
-                    href={portfolio.url}
-                  >
-                    {portfolio.title}
-                  </ExternalLink>
+            <FadeSlideUp>
+              <Card raised>
+                {portfolio.imgSrc && portfolio.url && (
+                  <CardActionArea>
+                    <ExternalLink href={portfolio.url}>
+                      <CardMedia
+                        className={classes.portfolioCardMedia}
+                        image={portfolio.imgSrc}
+                      />
+                    </ExternalLink>
+                  </CardActionArea>
                 )}
-                titleTypographyProps={{ className: classes.portfolioCardTitle }}
-              />
-              <CardContent className={classes.portfolioCardContent}>
-                <SkillAvatarGroup skills={portfolio.skills}/>
-                <Typography className={classes.portfolioDescription}>{portfolio.description}</Typography>
-                <ExternalLink href={portfolio.githubUrl}>
-                  View on GitHub
-                </ExternalLink>
-              </CardContent>
-            </Card>
+                <CardHeader
+                  className={classes.portfolioCardHeader}
+                  title={(
+                    <ExternalLink
+                      className={classes.portfolioCardTitleLink}
+                      href={portfolio.url}
+                    >
+                      {portfolio.title}
+                    </ExternalLink>
+                  )}
+                  titleTypographyProps={{ className: classes.portfolioCardTitle }}
+                />
+                <CardContent className={classes.portfolioCardContent}>
+                  <SkillAvatarGroup skills={portfolio.skills}/>
+                  <Typography className={classes.portfolioDescription}>{portfolio.description}</Typography>
+                  <ExternalLink href={portfolio.githubUrl}>
+                    View on GitHub
+                  </ExternalLink>
+                </CardContent>
+              </Card>
+            </FadeSlideUp>
           </Grid>
         ))}
       </Grid>
