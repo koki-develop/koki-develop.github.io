@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import './global.scss';
+import '../styles/global.scss';
 import { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
 
