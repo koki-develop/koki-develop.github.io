@@ -64,7 +64,7 @@ const AboutSection: React.VFC = React.memo(() => {
       <Box className={classes.user}>
         <img
           className={classes.userAvatar}
-          src='/images/profile.webp'
+          src='/images/profile.png'
           alt={config.name}
         />
         <Typography className={classes.userName}>{config.name}</Typography>

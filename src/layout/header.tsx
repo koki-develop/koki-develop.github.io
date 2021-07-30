@@ -88,7 +88,7 @@ const Header: React.VFC<HeaderProps> = React.memo((props: HeaderProps) => {
               <a className={classes.userLink}>
                 <Avatar
                   className={classes.userAvatar}
-                  src='/images/profile.webp'
+                  src='/images/profile.png'
                 />
                 <Typography className={classes.userName}>
                   {config.name}
