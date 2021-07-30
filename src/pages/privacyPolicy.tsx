@@ -1,4 +1,5 @@
 import React from 'react';
+import { NextPage } from 'next';
 import {
   createStyles,
   makeStyles,
@@ -15,7 +16,7 @@ const useStyles = makeStyles(() =>
   }),
 );
 
-const PrivacyPolicy: React.VFC = () => {
+const PrivacyPolicy: NextPage = () => {
   const classes = useStyles();
 
   const items = [
