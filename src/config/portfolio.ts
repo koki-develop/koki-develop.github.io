@@ -9,7 +9,6 @@ export const Portfolio = {
     githubUrl: 'https://github.com/kou-pg-0131/kou-pg-0131',
     skills: [
       // language
-      Skill.nodejs,
       Skill.typescript,
       // framework/library
       Skill.react,
@@ -29,7 +28,6 @@ export const Portfolio = {
     githubUrl: 'https://github.com/kou-pg-0131/nojov',
     skills: [
       // language
-      Skill.nodejs,
       Skill.typescript,
       // framework/library
       Skill.react,
@@ -54,7 +52,6 @@ export const Portfolio = {
     githubUrl: 'https://github.com/kou-pg-0131/lgtm-generator-ui',
     skills: [
       // language
-      Skill.nodejs,
       Skill.typescript,
       Skill.go,
       // framework/library

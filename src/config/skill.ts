@@ -14,11 +14,6 @@ export const Skill = {
     imgSrc: '/images/skills/ruby.svg',
     href: 'https://www.ruby-lang.org/ja/',
   },
-  nodejs: {
-    name: 'Node.js',
-    imgSrc: '/images/skills/nodejs.svg',
-    href: 'https://nodejs.org/en/',
-  },
   typescript: {
     name: 'TypeScript',
     imgSrc: '/images/skills/typescript.svg',
@@ -138,11 +133,10 @@ export const SkillGroup = {
     name: 'Language',
     skills: [
       Skill.go,
-      Skill.python,
-      Skill.ruby,
-      Skill.nodejs,
       Skill.typescript,
       Skill.javascript,
+      Skill.ruby,
+      Skill.python,
     ],
   },
   frameworkOrLibary: {
