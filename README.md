@@ -16,11 +16,10 @@
 ## Language
 
 [<img src="./public/images/skills/go.svg" alt="Go" width="40" height="40"/>](https://golang.org/)
-[<img src="./public/images/skills/python.svg" alt="Python" width="40" height="40"/>](https://www.python.org/)
-[<img src="./public/images/skills/ruby.svg" alt="Ruby" width="40" height="40"/>](https://www.ruby-lang.org/ja/)
-[<img src="./public/images/skills/nodejs.svg" alt="Node.js" width="40" height="40"/>](https://nodejs.org/en/)
 [<img src="./public/images/skills/typescript.svg" alt="TypeScript" width="40" height="40"/>](https://www.typescriptlang.org/)
 [<img src="./public/images/skills/javascript.svg" alt="JavaScript" width="40" height="40"/>](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[<img src="./public/images/skills/ruby.svg" alt="Ruby" width="40" height="40"/>](https://www.ruby-lang.org/ja/)
+[<img src="./public/images/skills/python.svg" alt="Python" width="40" height="40"/>](https://www.python.org/)
 ## Framework/Library
 
 [<img src="./public/images/skills/gin.svg" alt="Gin" width="40" height="40"/>](https://gin-gonic.com/)
