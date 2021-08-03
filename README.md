@@ -10,7 +10,6 @@
 [<img src="./public/images/socials/github.svg" alt="GitHub" width="40" height="40"/>](https://github.com/kou-pg-0131)
 [<img src="./public/images/socials/twitter.svg" alt="Twitter" width="40" height="40"/>](https://twitter.com/kou_pg_0131)
 [<img src="./public/images/socials/zenn.svg" alt="Zenn" width="40" height="40"/>](https://zenn.dev/kou_pg_0131)
-[<img src="./public/images/socials/qiita.png" alt="Qiita" width="40" height="40"/>](https://qiita.com/kou_pg_0131)
 # Skill
 
 ## Language
