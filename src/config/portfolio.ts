@@ -16,7 +16,6 @@ export const Portfolio = {
       // cloud
       Skill.vercel,
       // ci/cd
-      Skill.circleci,
       Skill.githubactions,
     ],
   },
@@ -36,7 +35,7 @@ export const Portfolio = {
       Skill.aws,
       Skill.vercel,
       // ci/cd
-      Skill.circleci,
+      Skill.githubactions,
       // other
       Skill.docker,
       Skill.serverless,
