@@ -16,11 +16,6 @@ export const Social: { [name:string]: SocialType } = {
     href: 'https://zenn.dev/kou_pg_0131',
     imgSrc: '/images/socials/zenn.svg',
   },
-  qiita: {
-    name: 'Qiita',
-    href: 'https://qiita.com/kou_pg_0131',
-    imgSrc: '/images/socials/qiita.png',
-  },
 } as const;
 
 export type Social = typeof Social[keyof typeof Social];
