@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "lint": "eslint './**/*.ts' './**/*.tsx' --max-warnings 0",
+    "lint": "eslint --max-warnings 0 --ext .js,.ts,.tsx .",
     "test:compile": "tsc --noEmit",
     "update:readme": "ts-node ./src/tasks/updateReadme.ts"
   },
