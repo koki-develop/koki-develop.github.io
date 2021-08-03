@@ -26,15 +26,24 @@ const useStyles = makeStyles((theme: Theme) =>
       alignItems: 'center',
       display: 'flex',
       flexDirection: 'column',
+      [theme.breakpoints.down('xs')]: {
+        padding: theme.spacing(1.2),
+      },
     },
     skillCardImg: {
       marginBottom: theme.spacing(2),
       width: 60,
       height: 60,
+      [theme.breakpoints.down('xs')]: {
+        height: 40,
+        marginBottom: theme.spacing(1),
+        width: 40,
+      },
     },
     skillCardName: {
       fontSize: theme.typography.body2.fontSize,
       fontWeight: 'bold',
+      whiteSpace: 'pre',
     },
   }),
 );
