@@ -1,7 +1,7 @@
 export const History = {
   second: {
     period: '2019-07 - now',
-    title: 'Web 系自社開発企業に入社',
+    title: 'デジタルマーケティング企業に入社',
     description: 'ジオターゲティング広告配信システムや MEO 対策支援ツール等の新規機能開発・保守を担当。',
   },
   first: {
