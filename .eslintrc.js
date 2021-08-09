@@ -4,11 +4,9 @@ module.exports = {
     'es2021': true,
     'node': true,
   },
-  parser: '@typescript-eslint/parser',
   'extends': [
     'eslint:recommended',
     'plugin:react/recommended',
-    'plugin:@typescript-eslint/recommended',
   ],
   'parserOptions': {
     'ecmaFeatures': {
@@ -19,11 +17,24 @@ module.exports = {
   },
   'plugins': [
     'react',
-    '@typescript-eslint',
   ],
   'rules': {
     'semi': ['error', 'always'],
     'comma-dangle': ['error', 'always-multiline'],
     'quotes': ['error', 'single'],
   },
+  'overrides': [
+    {
+      'files': ['*.ts', '*.tsx'],
+      'extends': [
+        'plugin:@typescript-eslint/recommended',
+      ],
+      'plugins': [
+        '@typescript-eslint',
+      ],
+      'parser': '@typescript-eslint/parser',
+      'rules': {
+      },
+    },
+  ],
 };
