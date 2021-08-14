@@ -19,30 +19,6 @@ export const Portfolio = {
       Skill.githubactions,
     ],
   },
-  nojov: {
-    title: 'Nojov',
-    description: 'プログラミング言語ごとの求人数の一覧をチャート形式で見ることができるサービス。',
-    imgSrc: '/images/portfolios/nojov.png',
-    url: 'https://nojov.kou-pg.com',
-    githubUrl: 'https://github.com/kou-pg-0131/nojov',
-    skills: [
-      // language
-      Skill.typescript,
-      // framework/library
-      Skill.react,
-      Skill.nextjs,
-      // cloud
-      Skill.aws,
-      Skill.vercel,
-      // ci/cd
-      Skill.githubactions,
-      // other
-      Skill.docker,
-      Skill.serverless,
-      Skill.terraform,
-      Skill.webpack,
-    ],
-  },
   lgtmGenerator: {
     title: 'LGTM Generator',
     description: 'シンプルな LGTM 画像生成サービス。',
@@ -97,7 +73,6 @@ export const PortfolioGroup = {
     name: 'Web Service',
     portfolios: [
       Portfolio.portfolio,
-      Portfolio.nojov,
       Portfolio.lgtmGenerator,
     ],
   },
