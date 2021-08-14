@@ -56,11 +56,6 @@
 個人用ポートフォリオサイト。
 
 [View on GitHub](https://github.com/kou-pg-0131/kou-pg-0131)
-## [Nojov](https://nojov.kou-pg.com)
-
-プログラミング言語ごとの求人数の一覧をチャート形式で見ることができるサービス。
-
-[View on GitHub](https://github.com/kou-pg-0131/nojov)
 ## [LGTM Generator](https://lgtm-generator.kou-pg.com)
 
 シンプルな LGTM 画像生成サービス。
