@@ -17,6 +17,7 @@ export const Portfolio = {
       Skill.vercel,
       // ci/cd
       Skill.githubactions,
+      Skill.terraform,
     ],
   },
   lgtmGenerator: {
