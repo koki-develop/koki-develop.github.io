@@ -14,6 +14,7 @@ export const Portfolio = {
       Skill.react,
       Skill.nextjs,
       // cloud
+      Skill.aws,
       Skill.vercel,
       // ci/cd
       Skill.githubactions,
@@ -41,7 +42,6 @@ export const Portfolio = {
       // ci/cd
       Skill.circleci,
       // other
-      Skill.docker,
       Skill.serverless,
       Skill.terraform,
     ],
@@ -61,7 +61,6 @@ export const Portfolio = {
       // ci/cd
       Skill.circleci,
       // other
-      Skill.docker,
       Skill.serverless,
     ],
   },
