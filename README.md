@@ -56,11 +56,11 @@
 個人用ポートフォリオサイト。
 
 [View on GitHub](https://github.com/kou-pg-0131/kou-pg-0131)
-## [LGTM Generator](https://lgtm-generator.kou-pg.com)
+## [LGTM Generator](https://lgtmgen.org)
 
 シンプルな LGTM 画像生成サービス。
 
-[View on GitHub](https://github.com/kou-pg-0131/lgtm-generator-ui)
+[View on GitHub](https://github.com/kou-pg-0131/lgtm-generator)
 ## [Qiita LGTM Ranking](https://qiita.com/kou_pg_0131/items/b6cfc81906990b3a3e72)
 
 Qiita の LGTM ランキング記事を毎日自動更新するシステム。
