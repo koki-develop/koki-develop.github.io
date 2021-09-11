@@ -25,8 +25,8 @@ export const Portfolio = {
     title: 'LGTM Generator',
     description: 'シンプルな LGTM 画像生成サービス。',
     imgSrc: '/images/portfolios/lgtm-generator.png',
-    url: 'https://lgtm-generator.kou-pg.com',
-    githubUrl: 'https://github.com/kou-pg-0131/lgtm-generator-ui',
+    url: 'https://lgtmgen.org',
+    githubUrl: 'https://github.com/kou-pg-0131/lgtm-generator',
     skills: [
       // language
       Skill.typescript,
