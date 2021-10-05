@@ -41,7 +41,7 @@ export default class Document extends NextDocument {
           <meta property='og:type'        content='website'/>
           <meta property='og:locale'      content='ja_JP'/>
           <meta property='twitter:card'   content='summary'/>
-          <meta property='twitter:site'   content='@kou_pg_0131'/>
+          <meta property='twitter:site'   content='@koki_develop'/>
           <meta property='fb:app_id'      content='889570964422469'/>
         </Head>
         <body>

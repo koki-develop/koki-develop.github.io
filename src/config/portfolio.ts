@@ -50,7 +50,7 @@ export const Portfolio = {
     title: 'Qiita LGTM Ranking',
     description: 'Qiita の LGTM ランキング記事を毎日自動更新するシステム。',
     imgSrc: null,
-    url: 'https://qiita.com/kou_pg_0131/items/b6cfc81906990b3a3e72',
+    url: 'https://qiita.com/items/b6cfc81906990b3a3e72',
     githubUrl: 'https://github.com/kou-pg-0131/qiita-lgtm-ranking',
     skills: [
       // language
