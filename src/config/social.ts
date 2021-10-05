@@ -8,7 +8,7 @@ export const Social: { [name:string]: SocialType } = {
   },
   twitter: {
     name: 'Twitter',
-    href: 'https://twitter.com/kou_pg_0131',
+    href: 'https://twitter.com/koki_develop',
     imgSrc: '/images/socials/twitter.svg',
   },
   zenn: {
