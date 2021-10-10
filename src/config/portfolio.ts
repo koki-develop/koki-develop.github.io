@@ -66,21 +66,3 @@ export const Portfolio = {
 } as const;
 
 export type Portfolio = typeof Portfolio[keyof typeof Portfolio];
-
-export const PortfolioGroup = {
-  webService: {
-    name: 'Web Service',
-    portfolios: [
-      Portfolio.portfolio,
-      Portfolio.lgtmGenerator,
-    ],
-  },
-  tool: {
-    name: 'Tool',
-    portfolios: [
-      Portfolio.qiitaLgtmRanking,
-    ],
-  },
-} as const;
-
-export type PortfolioGroup = typeof PortfolioGroup[keyof typeof PortfolioGroup];
