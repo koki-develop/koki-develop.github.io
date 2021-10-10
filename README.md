@@ -3,11 +3,11 @@
 埼玉県在住の23歳。
 のんびり生きています。
 
-[<img src="https://github-readme-stats.vercel.app/api?username=kou-pg-0131&show_icons=true&theme=dark"/>](https://github.com/kou-pg-0131?tab=repositories&type=source)
+[<img src="https://github-readme-stats.vercel.app/api?username=koki-develop&show_icons=true&theme=dark"/>](https://github.com/koki-develop?tab=repositories&type=source)
 
 # Social
 
-[<img src="./public/images/socials/github.svg" alt="GitHub" width="40" height="40"/>](https://github.com/kou-pg-0131)
+[<img src="./public/images/socials/github.svg" alt="GitHub" width="40" height="40"/>](https://github.com/koki-develop)
 [<img src="./public/images/socials/twitter.svg" alt="Twitter" width="40" height="40"/>](https://twitter.com/koki_develop)
 [<img src="./public/images/socials/zenn.svg" alt="Zenn" width="40" height="40"/>](https://zenn.dev/kou_pg_0131)
 # Skill
@@ -55,17 +55,17 @@
 
 個人用ポートフォリオサイト。
 
-[View on GitHub](https://github.com/kou-pg-0131/kou-pg-0131)
+[View on GitHub](https://github.com/koki-develop/koki-develop)
 ## [LGTM Generator](https://lgtmgen.org)
 
 シンプルな LGTM 画像生成サービス。
 
-[View on GitHub](https://github.com/kou-pg-0131/lgtm-generator)
+[View on GitHub](https://github.com/koki-develop/lgtm-generator)
 ## [Qiita LGTM Ranking](https://qiita.com/items/b6cfc81906990b3a3e72)
 
 Qiita の LGTM ランキング記事を毎日自動更新するシステム。
 
-[View on GitHub](https://github.com/kou-pg-0131/qiita-lgtm-ranking)
+[View on GitHub](https://github.com/koki-develop/qiita-lgtm-ranking)
 # Contact
 
 [kou.pg.0131@gmail.com](mailto:kou.pg.0131@gmail.com)
