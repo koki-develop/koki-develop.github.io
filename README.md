@@ -22,6 +22,7 @@
 ## Framework/Library
 
 [<img src="./public/images/skills/gin.svg" alt="Gin" width="40" height="40"/>](https://gin-gonic.com/)
+[<img src="./public/images/skills/chi.svg" alt="chi" width="40" height="40"/>](https://go-chi.io/)
 [<img src="./public/images/skills/rails.svg" alt="Rails" width="40" height="40"/>](https://rubyonrails.org/)
 [<img src="./public/images/skills/react.svg" alt="React" width="40" height="40"/>](https://reactjs.org/)
 [<img src="./public/images/skills/nextjs.svg" alt="Next.js" width="40" height="40"/>](https://nextjs.org/)
@@ -36,6 +37,7 @@
 [<img src="./public/images/skills/aws.svg" alt="AWS" width="40" height="40"/>](https://aws.amazon.com)
 [<img src="./public/images/skills/gcp.svg" alt="GCP" width="40" height="40"/>](https://console.cloud.google.com)
 [<img src="./public/images/skills/vercel.svg" alt="Vercel" width="40" height="40"/>](https://vercel.com)
+[<img src="./public/images/skills/heroku.svg" alt="Heroku" width="40" height="40"/>](https://www.heroku.com/)
 ## CI/CD
 
 [<img src="./public/images/skills/circleci.svg" alt="CircleCI" width="40" height="40"/>](https://circleci.com/)
@@ -66,6 +68,11 @@
 Qiita の LGTM ランキング記事を毎日自動更新するシステム。
 
 [View on GitHub](https://github.com/koki-develop/qiita-lgtm-ranking)
+## [CheckIP](https://checkip.dev)
+
+クライアントの IP アドレスを返すシンプルな API 。
+
+[View on GitHub](https://github.com/koki-develop/checkip)
 # Contact
 
 [kou.pg.0131@gmail.com](mailto:kou.pg.0131@gmail.com)
