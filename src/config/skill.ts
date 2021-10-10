@@ -29,6 +29,11 @@ export const Skill = {
     imgSrc: '/images/skills/gin.svg',
     href: 'https://gin-gonic.com/',
   },
+  chi: {
+    name: 'chi',
+    imgSrc: '/images/skills/chi.svg',
+    href: 'https://go-chi.io/',
+  },
   rails: {
     name: 'Rails',
     imgSrc: '/images/skills/rails.svg',
@@ -148,6 +153,7 @@ export const SkillGroup = {
     name: 'Framework/Library',
     skills: [
       Skill.gin,
+      Skill.chi,
       Skill.rails,
       Skill.react,
       Skill.nextjs,
