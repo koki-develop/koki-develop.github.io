@@ -1,6 +1,6 @@
 {
   "name": "portfolio",
-  "author": "kou-pg-0131 <kou.pg.0131@gmail.com>",
+  "author": "koki-develop <kou.pg.0131@gmail.com>",
   "license": "UNLICENSED",
   "scripts": {
     "dev": "next dev",

@@ -12,7 +12,7 @@ import config from '../config';
   lines.push('');
   lines.push(description);
   lines.push('');
-  lines.push('[<img src="https://github-readme-stats.vercel.app/api?username=kou-pg-0131&show_icons=true&theme=dark"/>](https://github.com/kou-pg-0131?tab=repositories&type=source)');
+  lines.push('[<img src="https://github-readme-stats.vercel.app/api?username=koki-develop&show_icons=true&theme=dark"/>](https://github.com/koki-develop?tab=repositories&type=source)');
   lines.push('');
 
   /*

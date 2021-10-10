@@ -2,7 +2,7 @@ import { Social as SocialType } from '../types';
 
 export const Social: { [name:string]: SocialType } = {
   github: {
-    href: 'https://github.com/kou-pg-0131',
+    href: 'https://github.com/koki-develop',
     name: 'GitHub',
     imgSrc: '/images/socials/github.svg',
   },

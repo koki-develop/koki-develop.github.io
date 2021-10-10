@@ -30,7 +30,7 @@ const Footer: React.VFC = React.memo(() => {
   const items: { body: React.ReactNode }[] = [
     {
       body: (
-        <ExternalLink href='https://github.com/kou-pg-0131/kou-pg-0131'>View on GitHub</ExternalLink>
+        <ExternalLink href='https://github.com/koki-develop/koki-develop'>View on GitHub</ExternalLink>
       ),
     },
     {
