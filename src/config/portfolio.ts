@@ -63,6 +63,26 @@ export const Portfolio = {
       Skill.serverless,
     ],
   },
+  checkip: {
+    title: 'CheckIP',
+    description: 'クライアントの IP アドレスを返すシンプルな API 。',
+    imgSrc: null,
+    url: 'https://checkip.dev',
+    githubUrl: 'https://github.com/koki-develop/checkip',
+    skills: [
+      // language
+      Skill.go,
+      // framework/library
+      Skill.chi,
+      // cloud
+      Skill.aws,
+      Skill.heroku,
+      // ci/cd
+      Skill.githubactions,
+      // other
+      Skill.terraform,
+    ],
+  },
 } as const;
 
 export type Portfolio = typeof Portfolio[keyof typeof Portfolio];
