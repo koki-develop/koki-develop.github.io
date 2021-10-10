@@ -51,7 +51,7 @@
 [<img src="./public/images/skills/swagger.svg" alt="Swagger" width="40" height="40"/>](https://swagger.io/)
 # Portfolio
 
-## [Koki Sato](https://kou-pg.com)
+## [Koki Sato](https://koki.me)
 
 個人用ポートフォリオサイト。
 
