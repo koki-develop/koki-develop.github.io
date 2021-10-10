@@ -5,7 +5,7 @@ export const Portfolio = {
     title: 'Koki Sato',
     description: '個人用ポートフォリオサイト。',
     imgSrc: '/images/portfolios/portfolio.png',
-    url: 'https://kou-pg.com',
+    url: 'https://koki.me',
     githubUrl: 'https://github.com/koki-develop/koki-develop',
     skills: [
       // language
