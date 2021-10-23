@@ -7,7 +7,8 @@ import NextDocument, {
   NextScript,
 } from 'next/document';
 import { ServerStyleSheets } from '@material-ui/core/styles';
-import config from '../config';
+import urlJoin from 'url-join';
+import config from '@/config.json';
 
 export default class Document extends NextDocument {
   render(): JSX.Element {
@@ -33,16 +34,15 @@ export default class Document extends NextDocument {
             </>
           )}
 
-          <meta property='og:site_name'   content={config.name} />
-          <meta name='description'        content={config.description} />
-          <meta property='og:description' content={config.description} />
-          <meta property='og:url'         content='https://koki.me' />
-          <meta property='og:image'       content='https://koki.me/images/profile.jpg' />
+          <meta property='og:site_name'   content={config.profile.name} />
+          <meta name='description'        content={config.profile.description} />
+          <meta property='og:description' content={config.profile.description} />
+          <meta property='og:url'         content={config.url} />
+          <meta property='og:image'       content={urlJoin(config.url, 'images/profile.jpg')} />
           <meta property='og:type'        content='website' />
           <meta property='og:locale'      content='ja_JP' />
           <meta property='twitter:card'   content='summary' />
-          <meta property='twitter:site'   content='@koki_develop' />
-          <meta property='fb:app_id'      content='889570964422469' />
+          <meta property='twitter:site'   content={`@${config.socials.twitter.username}`} />
         </Head>
         <body>
           <Main />
@@ -59,7 +59,7 @@ Document.getInitialProps = async (ctx: DocumentContext) => {
 
   ctx.renderPage = () =>
     originalRenderPage({
-      enhanceApp: (App) => (props) => sheets.collect(<App {...props} />),
+      enhanceApp: App => props => sheets.collect(<App {...props} />),
     });
 
   const initialProps = await NextDocument.getInitialProps(ctx);

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
-import '../styles/global.scss';
 import { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
+import '@/styles/global.scss';
 
 const App: React.VFC<AppProps> = ({ Component, pageProps }: AppProps) => {
   const router = useRouter();
