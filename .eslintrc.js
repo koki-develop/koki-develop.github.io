@@ -24,6 +24,7 @@ module.exports = {
     'react',
   ],
   'rules': {
+    'react/prop-types': 'off',
     'semi': ['error', 'always'],
     'comma-dangle': ['error', 'always-multiline'],
     'quotes': ['error', 'single'],
