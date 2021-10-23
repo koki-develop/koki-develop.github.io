@@ -1,0 +1,227 @@
+{
+  "url": "https://koki.me",
+  "profile": {
+    "name": "Koki Sato",
+    "tag": "Developer",
+    "email": "kou.pg.0131@gmail.com",
+    "description": "埼玉県在住の23歳。\nのんびり生きています。"
+  },
+  "socials": {
+    "twitter": {
+      "username": "koki_develop"
+    },
+    "github": {
+      "username": "koki-develop"
+    },
+    "zenn": {
+      "username": "kou_pg_0131"
+    }
+  },
+  "skillGroups": [
+    {
+      "name": "Language",
+      "skills": [
+        {
+          "name": "Go",
+          "url": "https://golang.org/"
+        },
+        {
+          "name": "TypeScript",
+          "url": "https://www.typescriptlang.org/"
+        },
+        {
+          "name": "JavaScript",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+        },
+        {
+          "name": "Ruby",
+          "url": "https://www.ruby-lang.org/ja/"
+        },
+        {
+          "name": "Python",
+          "url": "https://www.python.org/"
+        }
+      ]
+    },
+    {
+      "name": "Framework/Library",
+      "skills": [
+        {
+          "name": "Gin",
+          "url": "https://gin-gonic.com/"
+        },
+        {
+          "name": "chi",
+          "url": "https://go-chi.io/"
+        },
+        {
+          "name": "Rails",
+          "url": "https://rubyonrails.org/"
+        },
+        {
+          "name": "React",
+          "url": "https://reactjs.org/"
+        },
+        {
+          "name": "Next.js",
+          "url": "https://nextjs.org/"
+        }
+      ]
+    },
+    {
+      "name": "RDB/NoSQL",
+      "skills": [
+        {
+          "name": "MySQL",
+          "url": "https://www.mysql.com/"
+        },
+        {
+          "name": "PostgreSQL",
+          "url": "https://www.postgresql.org/"
+        },
+        {
+          "name": "SQLite",
+          "url": "http://www.sqlite.org/"
+        },
+        {
+          "name": "Redis",
+          "url": "https://redis.io/"
+        }
+      ]
+    },
+    {
+      "name": "Cloud",
+      "skills": [
+        {
+          "name": "AWS",
+          "url": "https://aws.amazon.com/"
+        },
+        {
+          "name": "GCP",
+          "url": "https://console.cloud.google.com/"
+        },
+        {
+          "name": "Vercel",
+          "url": "https://vercel.com/"
+        },
+        {
+          "name": "Heroku",
+          "url": "https://www.heroku.com/"
+        }
+      ]
+    },
+    {
+      "name": "CI/CD",
+      "skills": [
+        {
+          "name": "CircleCI",
+          "url": "https://circleci.com/"
+        },
+        {
+          "name": "GitHub Actions",
+          "url": "https://github.co.jp/features/actions"
+        }
+      ]
+    },
+    {
+      "name": "Other",
+      "skills": [
+        {
+          "name": "Docker",
+          "url": "https://www.docker.com/"
+        },
+        {
+          "name": "Serverless",
+          "url": "https://www.serverless.com/"
+        },
+        {
+          "name": "Terraform",
+          "url": "https://www.terraform.io/"
+        },
+        {
+          "name": "GraphQL",
+          "url": "https://graphql.org/"
+        }
+      ]
+    }
+  ],
+  "works": [
+    {
+      "name": "Koki Sato",
+      "url": "https://koki.me",
+      "repository": "koki-develop",
+      "hasImage": true,
+      "description": "個人用ポートフォリオサイト",
+      "skills": [
+        "TypeScript",
+        "React",
+        "Next.js",
+        "AWS",
+        "Vercel",
+        "GitHub Actions"
+      ]
+    },
+    {
+      "name": "LGTM Generator",
+      "url": "https://lgtmgen.org",
+      "repository": "lgtm-generator",
+      "hasImage": true,
+      "description": "シンプルな LGTM 画像生成サービス。",
+      "skills": [
+        "TypeScript",
+        "Go",
+        "React",
+        "Next.js",
+        "Gin",
+        "Vercel",
+        "GCP",
+        "AWS",
+        "CircleCI",
+        "Serverless",
+        "Terraform"
+      ]
+    },
+    {
+      "name": "Qiita LGTM Ranking",
+      "url": "https://qiita.com/items/b6cfc81906990b3a3e72",
+      "repository": "qiita-lgtm-ranking",
+      "hasImage": false,
+      "description": "Qiita の LGTM ランキング記事を毎日自動更新するシステム。",
+      "skills": [
+        "Go",
+        "AWS",
+        "CircleCI",
+        "Serverless"
+      ]
+    },
+    {
+      "name": "CheckIP",
+      "url": "https://checkip.dev",
+      "repository": "checkip",
+      "hasImage": false,
+      "description": "クライアントの IP アドレスを返すシンプルな API 。",
+      "skills": [
+        "Go",
+        "chi",
+        "AWS",
+        "Heroku",
+        "GitHub Actions",
+        "Terraform"
+      ]
+    }
+  ],
+  "histories": [
+    {
+      "title": "デジタルマーケティング企業に入社",
+      "from": "2019-07",
+      "to": "now",
+      "description": "ジオターゲティング広告配信システムや MEO 対策支援ツール等の新規機能開発・保守を担当。"
+    },
+    {
+      "title": "未経験で SES 企業に入社",
+      "from": "2018-06",
+      "to": "2019-05",
+      "description": "自社にて 3 ヶ月の研修を受けたのち、都内の某信託銀行にて常駐勤務。従業員向けの顧客管理システムの新規開発を担当。"
+    }
+  ]
+}
