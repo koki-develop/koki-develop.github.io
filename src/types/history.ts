@@ -1,5 +1,6 @@
 export type History = {
-  period: string;
   title: string;
+  from: string;
+  to: string;
   description: string;
 };
