@@ -22,6 +22,8 @@ module.exports = {
     'semi': ['error', 'always'],
     'comma-dangle': ['error', 'always-multiline'],
     'quotes': ['error', 'single'],
+    'object-curly-spacing': ['error', 'always'],
+    'react/jsx-tag-spacing': 'error',
   },
   'overrides': [
     {
