@@ -1,5 +1,4 @@
 import React from 'react';
-import Layout from '../layout';
 import {
   Box,
   Typography,
@@ -7,10 +6,10 @@ import {
 import {
   createStyles,
   makeStyles,
-  Theme,
 } from '@material-ui/core/styles';
+import Layout from '@/layout';
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles(theme =>
   createStyles({
     messageContainer: {
       marginTop: theme.spacing(2),
@@ -35,7 +34,11 @@ const NotFound: React.VFC = () => {
       hideMenu
     >
       <Box className={classes.messageContainer}>
-        <Typography className={classes.message}>
+        <Typography
+          classes={{
+            root: classes.message,
+          }}
+        >
           {message}
         </Typography>
       </Box>
