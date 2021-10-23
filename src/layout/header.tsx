@@ -111,7 +111,7 @@ const Header: React.VFC<HeaderProps> = React.memo((props: HeaderProps) => {
 
               <Hidden smUp>
                 <Box>
-                  <IconButton onClick={handleClickHamburger}><MenuIcon/></IconButton>
+                  <IconButton onClick={handleClickHamburger}><MenuIcon /></IconButton>
                 </Box>
                 <Drawer
                   anchor='right'
@@ -133,7 +133,7 @@ const Header: React.VFC<HeaderProps> = React.memo((props: HeaderProps) => {
                             {item}
                           </ListItem>
                         </AnchorLink>
-                        <Divider/>
+                        <Divider />
                       </React.Fragment>
                     ))}
                   </List>

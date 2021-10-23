@@ -84,7 +84,7 @@ const HistorySection: React.VFC = React.memo(() => {
                 variant={i === 0 ? undefined : 'outlined'}
               />
               {i !== config.histories.length - 1 && (
-                <TimelineConnector/>
+                <TimelineConnector />
               )}
             </TimelineSeparator>
             <TimelineContent>

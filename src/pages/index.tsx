@@ -10,11 +10,11 @@ import ContactSection from '../sections/contact';
 const Home: NextPage = () => {
   return (
     <Layout>
-      <AboutSection/>
-      <SkillSection/>
-      <PortfolioSection/>
-      <HistorySection/>
-      <ContactSection/>
+      <AboutSection />
+      <SkillSection />
+      <PortfolioSection />
+      <HistorySection />
+      <ContactSection />
     </Layout>
   );
 };

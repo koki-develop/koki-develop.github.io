@@ -37,7 +37,7 @@ const Section: React.VFC<SectionProps> = React.memo((props: SectionProps) => {
 
   return (
     <Box>
-      {props.title && <Divider id={props.title}/>}
+      {props.title && <Divider id={props.title} />}
       <Box
         className={classes.section}
         component='section'

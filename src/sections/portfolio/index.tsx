@@ -94,7 +94,7 @@ const PortfolioSection: React.VFC = React.memo(() => {
                   titleTypographyProps={{ className: classes.portfolioCardTitle }}
                 />
                 <CardContent className={classes.portfolioCardContent}>
-                  <SkillAvatarGroup skills={portfolio.skills}/>
+                  <SkillAvatarGroup skills={portfolio.skills} />
                   <Typography className={classes.portfolioDescription}>{portfolio.description}</Typography>
                   <ExternalLink href={portfolio.githubUrl}>
                     View on GitHub

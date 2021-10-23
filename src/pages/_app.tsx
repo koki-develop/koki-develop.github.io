@@ -13,7 +13,7 @@ const App: React.VFC<AppProps> = ({ Component, pageProps }: AppProps) => {
   }, [router.pathname]);
 
   return (
-    <Component {...pageProps}/>
+    <Component {...pageProps} />
   );
 };
 

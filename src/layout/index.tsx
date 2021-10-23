@@ -43,7 +43,7 @@ type LayoutProps = {
 const Root: React.VFC<LayoutProps> = React.memo((props: LayoutProps) => {
   return (
     <ThemeProvider theme={theme}>
-      <Layout {...props}/>
+      <Layout {...props} />
     </ThemeProvider>
   );
 });
@@ -72,18 +72,18 @@ const Layout: React.VFC<LayoutProps> = (props: LayoutProps) => {
     <Box>
       <Head>
         <title>{title}</title>
-        <meta property='og:title' content={title}/>
+        <meta property='og:title' content={title} />
       </Head>
 
-      <CssBaseline/>
+      <CssBaseline />
 
-      <Header hideMenu={props.hideMenu}/>
+      <Header hideMenu={props.hideMenu} />
 
       <Box component='main' className={classes.main}>
         {props.children}
       </Box>
 
-      <Footer/>
+      <Footer />
 
       <Zoom in={trigger}>
         <Fab
@@ -91,7 +91,7 @@ const Layout: React.VFC<LayoutProps> = (props: LayoutProps) => {
           color='primary'
           onClick={handleClickBackToTop}
         >
-          <KeyboardArrowUpIcon/>
+          <KeyboardArrowUpIcon />
         </Fab>
       </Zoom>
     </Box>

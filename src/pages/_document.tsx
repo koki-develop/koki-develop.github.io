@@ -33,20 +33,20 @@ export default class Document extends NextDocument {
             </>
           )}
 
-          <meta property='og:site_name'   content={config.name}/>
-          <meta name='description'        content={config.description}/>
-          <meta property='og:description' content={config.description}/>
-          <meta property='og:url'         content='https://koki.me'/>
-          <meta property='og:image'       content='https://koki.me/images/profile.jpg'/>
-          <meta property='og:type'        content='website'/>
-          <meta property='og:locale'      content='ja_JP'/>
-          <meta property='twitter:card'   content='summary'/>
-          <meta property='twitter:site'   content='@koki_develop'/>
-          <meta property='fb:app_id'      content='889570964422469'/>
+          <meta property='og:site_name'   content={config.name} />
+          <meta name='description'        content={config.description} />
+          <meta property='og:description' content={config.description} />
+          <meta property='og:url'         content='https://koki.me' />
+          <meta property='og:image'       content='https://koki.me/images/profile.jpg' />
+          <meta property='og:type'        content='website' />
+          <meta property='og:locale'      content='ja_JP' />
+          <meta property='twitter:card'   content='summary' />
+          <meta property='twitter:site'   content='@koki_develop' />
+          <meta property='fb:app_id'      content='889570964422469' />
         </Head>
         <body>
-          <Main/>
-          <NextScript/>
+          <Main />
+          <NextScript />
         </body>
       </Html>
     );

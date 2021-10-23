@@ -73,7 +73,7 @@ const ContactSection: React.VFC = React.memo(() => {
         <Box>
           <Button
             className={classes.mailButton}
-            startIcon={<MailIcon/>}
+            startIcon={<MailIcon />}
             href={`mailto:${config.email}`}
           >
             {config.email}
@@ -87,7 +87,7 @@ const ContactSection: React.VFC = React.memo(() => {
             <Button
               className={classes.copyButton}
               variant='text'
-              startIcon={showCopied ? <DoneIcon className={classes.copiedIcon}/> : null}
+              startIcon={showCopied ? <DoneIcon className={classes.copiedIcon} /> : null}
             >
               {showCopied ? 'コピーしました' : 'クリップボードにコピー'}
             </Button>
