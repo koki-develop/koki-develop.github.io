@@ -1,5 +1,4 @@
 import React from 'react';
-import Box from '@material-ui/core/Box';
 import Container from '@material-ui/core/Container';
 import Divider from '@material-ui/core/Divider';
 import Typography from '@material-ui/core/Typography';
@@ -35,12 +34,9 @@ const Section: React.VFC<SectionProps> = React.memo(props => {
   const { children, title, hideTitle, disablePadding } = props;
 
   return (
-    <Box>
+    <div>
       {title && <Divider id={title} />}
-      <Box
-        className={classes.section}
-        component='section'
-      >
+      <section className={classes.section}>
         {title && !hideTitle && (
           <Typography className={classes.title}>
             {title}
@@ -52,8 +48,8 @@ const Section: React.VFC<SectionProps> = React.memo(props => {
         >
           {children}
         </Container>
-      </Box>
-    </Box>
+      </section>
+    </div>
   );
 });
 
