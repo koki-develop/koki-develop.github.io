@@ -1,10 +1,8 @@
 import React from 'react';
-import {
-  Box,
-  Container,
-  Divider,
-  Typography,
-} from '@material-ui/core';
+import Box from '@material-ui/core/Box';
+import Container from '@material-ui/core/Container';
+import Divider from '@material-ui/core/Divider';
+import Typography from '@material-ui/core/Typography';
 import {
   createStyles,
   makeStyles,
@@ -31,7 +29,7 @@ export type SectionProps = {
   disablePadding?: boolean;
 };
 
-const Section: React.VFC<SectionProps> = React.memo((props: SectionProps) => {
+const Section: React.VFC<SectionProps> = React.memo(props => {
   const classes = useStyles();
 
   const { children, title, hideTitle, disablePadding } = props;
