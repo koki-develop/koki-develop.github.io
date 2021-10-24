@@ -1,17 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import {
-  Box,
-  Button,
-} from '@material-ui/core';
+import Button from '@material-ui/core/Button';
 import {
   createStyles,
   makeStyles,
 } from '@material-ui/core/styles';
-import {
-  Done as DoneIcon,
-  Mail as MailIcon,
-} from '@material-ui/icons';
+import DoneIcon from '@material-ui/icons/Done';
+import MailIcon from '@material-ui/icons/Mail';
 import { Config } from '@/types/config';
 import Section from '@/components/Section';
 
@@ -25,10 +20,6 @@ const useStyles = makeStyles(theme =>
     mailButton: {
       fontWeight: 'bold',
       marginBottom: theme.spacing(0.8),
-      paddingTop: theme.spacing(1),
-      paddingRight: theme.spacing(2),
-      paddingBottom: theme.spacing(1),
-      paddingLeft: theme.spacing(2),
       '&:hover': {
         opacity: 1,
       },
@@ -54,10 +45,10 @@ const ContactSection: React.VFC<ContactSectionProps> = React.memo(props => {
 
   const [showCopiedMessage, setShowCopiedMessage] = useState<boolean>(false);
 
-  const handleCopyEmail = () => {
+  const handleCopyEmail = useCallback(() => {
     if (showCopiedMessage) return;
     setShowCopiedMessage(true);
-  };
+  }, [showCopiedMessage]);
 
   useEffect(() => {
     if (showCopiedMessage) {
@@ -72,8 +63,8 @@ const ContactSection: React.VFC<ContactSectionProps> = React.memo(props => {
 
   return (
     <Section title='Contact'>
-      <Box className={classes.buttonsContainer}>
-        <Box>
+      <div className={classes.buttonsContainer}>
+        <div>
           <Button
             className={classes.mailButton}
             startIcon={<MailIcon />}
@@ -81,8 +72,8 @@ const ContactSection: React.VFC<ContactSectionProps> = React.memo(props => {
           >
             {config.profile.email}
           </Button>
-        </Box>
-        <Box>
+        </div>
+        <div>
           <CopyToClipboard
             text={config.profile.email}
             onCopy={handleCopyEmail}
@@ -95,8 +86,8 @@ const ContactSection: React.VFC<ContactSectionProps> = React.memo(props => {
               {showCopiedMessage ? 'コピーしました' : 'クリップボードにコピー'}
             </Button>
           </CopyToClipboard>
-        </Box>
-      </Box>
+        </div>
+      </div>
     </Section>
   );
 });
