@@ -1,34 +1,30 @@
 import React from 'react';
-import {
-  Box,
-  Typography,
-} from '@material-ui/core';
+import Typography from '@material-ui/core/Typography';
 import {
   createStyles,
   makeStyles,
 } from '@material-ui/core/styles';
-import urlJoin from 'url-join';
 import { Config } from '@/types/config';
 import Section from '@/components/Section';
 import ExternalLink from '@/components/ExternalLink';
 
 const useStyles = makeStyles(theme =>
   createStyles({
-    user: {
+    profile: {
       alignItems: 'center',
       display: 'flex',
       flexDirection: 'column',
       marginBottom: theme.spacing(1),
     },
-    userAvatar: {
+    avatar: {
       height: 150,
       width: 150,
     },
-    userName: {
+    name: {
       fontSize: theme.typography.h5.fontSize,
     },
-    userTagline: {
-      color: '#999',
+    tag: {
+      color: theme.palette.text.secondary,
       fontSize: theme.typography.h6.fontSize,
     },
     socialList: {
@@ -38,7 +34,7 @@ const useStyles = makeStyles(theme =>
     socialListItem: {
       margin: theme.spacing(2),
     },
-    socialListItemImg: {
+    socialIcon: {
       height: 40,
       width: 40,
     },
@@ -67,28 +63,37 @@ const AboutSection: React.VFC<AboutSectionProps> = React.memo(props => {
       title='About'
       hideTitle
     >
-      <Box className={classes.user}>
-        <img
-          className={classes.userAvatar}
-          src='/images/profile.png'
-          alt={config.profile.name}
-        />
-        <Typography className={classes.userName}>{config.profile.name}</Typography>
-        <Typography className={classes.userTagline}>Developer</Typography>
-      </Box>
+      <div className={classes.profile}>
+        <div>
+          <img
+            className={classes.avatar}
+            src='/images/profile.png'
+            alt={config.profile.name}
+          />
+        </div>
+        <Typography className={classes.name}>
+          {config.profile.name}
+        </Typography>
+        <Typography className={classes.tag}>
+          Developer
+        </Typography>
+      </div>
 
-      <Box className={classes.descriptionContainer}>
+      <div className={classes.descriptionContainer}>
         <Typography className={classes.description}>
           {config.profile.description}
         </Typography>
-      </Box>
+      </div>
 
       <ul className={classes.socialList}>
         {Object.values(config.socials).map(social => (
-          <li key={social.name} className={classes.socialListItem}>
+          <li
+            key={social.name}
+            className={classes.socialListItem}
+          >
             <ExternalLink href={social.url}>
               <img
-                className={classes.socialListItemImg}
+                className={classes.socialIcon}
                 src={social.imageUrl}
                 alt={social.name}
               />
