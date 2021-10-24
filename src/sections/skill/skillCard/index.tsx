@@ -1,7 +1,4 @@
 import React from 'react';
-import { Skill } from '../../../types/skill';
-import ExternalLink from '../../../components/externalLink';
-import FadeSlideUp from '../../../components/fadeSlideUp';
 import {
   Card,
   CardActionArea,
@@ -12,10 +9,13 @@ import {
 import {
   createStyles,
   makeStyles,
-  Theme,
 } from '@material-ui/core/styles';
+import urlJoin from 'url-join';
+import { Skill } from '@/types/skill';
+import ExternalLink from '@/components/externalLink';
+import FadeSlideUp from '@/components/fadeSlideUp';
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles(theme =>
   createStyles({
     skillLink: {
       '&:hover': {
@@ -48,23 +48,25 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-type SkillCardProps = {
+export type SkillCardProps = {
   skill: Skill;
 };
 
-const SkillCard: React.VFC<SkillCardProps> = React.memo((props: SkillCardProps) => {
+const SkillCard: React.VFC<SkillCardProps> = React.memo(props => {
   const classes = useStyles();
+
+  const { skill } = props;
 
   return (
     <Grid
-      key={props.skill.name}
+      key={skill.name}
       item
       xs={6}
       sm={3}
     >
       <ExternalLink
         className={classes.skillLink}
-        href={props.skill.href}
+        href={skill.url}
       >
         <FadeSlideUp>
           <Card>
@@ -72,8 +74,8 @@ const SkillCard: React.VFC<SkillCardProps> = React.memo((props: SkillCardProps) 
               <CardContent className={classes.skillCardContent}>
                 <img
                   className={classes.skillCardImg}
-                  src={props.skill.imgSrc}
-                  alt={props.skill.name}
+                  src={urlJoin('/images/skills', `${skill.name}.svg`)}
+                  alt={skill.name}
                 />
                 <Typography className={classes.skillCardName}>{props.skill.name}</Typography>
               </CardContent>
