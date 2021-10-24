@@ -1,22 +1,24 @@
 import React from 'react';
 import { Link as ScrollLink } from 'react-scroll';
 
-type AnchorLinkProps = {
+export type AnchorLinkProps = {
   children: React.ReactNode;
   className?: string;
   to: string;
 };
 
-const AnchorLink: React.VFC<AnchorLinkProps> = React.memo((props: AnchorLinkProps) => {
+const AnchorLink: React.VFC<AnchorLinkProps> = React.memo(props => {
+  const { children, className, to } = props;
+
   return (
     <ScrollLink
-      className={props.className}
+      className={className}
       smooth
-      to={props.to}
+      to={to}
       offset={-80}
       duration={500}
     >
-      {props.children}
+      {children}
     </ScrollLink>
   );
 });
