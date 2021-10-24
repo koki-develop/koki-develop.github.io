@@ -11,7 +11,7 @@ import { ConfigLoader } from '@/lib/configLoader';
 import { Config } from '@/types/config';
 import Layout from '@/layout';
 import ExternalLink from '@/components/ExternalLink';
-import Section from '@/components/section';
+import Section from '@/components/Section';
 
 const useStyles = makeStyles(() =>
   createStyles({

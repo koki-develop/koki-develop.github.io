@@ -13,7 +13,7 @@ import {
   Mail as MailIcon,
 } from '@material-ui/icons';
 import { Config } from '@/types/config';
-import Section from '@/components/section';
+import Section from '@/components/Section';
 
 const useStyles = makeStyles(theme =>
   createStyles({

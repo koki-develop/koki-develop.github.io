@@ -8,10 +8,9 @@ import {
 import {
   createStyles,
   makeStyles,
-  Theme,
 } from '@material-ui/core/styles';
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles(theme =>
   createStyles({
     section: {
       margin: theme.spacing(3),
@@ -25,33 +24,35 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-type SectionProps = {
+export type SectionProps = {
+  children: React.ReactNode;
   title?: string;
   hideTitle?: boolean;
   disablePadding?: boolean;
-  children: React.ReactNode;
 };
 
 const Section: React.VFC<SectionProps> = React.memo((props: SectionProps) => {
   const classes = useStyles();
 
+  const { children, title, hideTitle, disablePadding } = props;
+
   return (
     <Box>
-      {props.title && <Divider id={props.title} />}
+      {title && <Divider id={title} />}
       <Box
         className={classes.section}
         component='section'
       >
-        {props.title && !props.hideTitle && (
+        {title && !hideTitle && (
           <Typography className={classes.title}>
-            {props.title}
+            {title}
           </Typography>
         )}
         <Container
-          disableGutters={props.disablePadding}
+          disableGutters={disablePadding}
           maxWidth='md'
         >
-          {props.children}
+          {children}
         </Container>
       </Box>
     </Box>

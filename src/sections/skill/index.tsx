@@ -9,7 +9,7 @@ import {
   makeStyles,
 } from '@material-ui/core/styles';
 import { Config } from '@/types/config';
-import Section from '@/components/section';
+import Section from '@/components/Section';
 import FadeSlideUp from '@/components/FadeSlideUp';
 import SkillCard from './skillCard';
 

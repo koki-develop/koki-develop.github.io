@@ -15,7 +15,7 @@ import {
 } from '@material-ui/core/styles';
 import urlJoin from 'url-join';
 import { Config } from '@/types/config';
-import Section from '@/components/section';
+import Section from '@/components/Section';
 import ExternalLink from '@/components/ExternalLink';
 import FadeSlideUp from '@/components/FadeSlideUp';
 import SkillAvatarGroup from './skillAvatarGroup';
