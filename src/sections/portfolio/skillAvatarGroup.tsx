@@ -7,7 +7,7 @@ import {
 import { AvatarGroup } from '@material-ui/lab';
 import urlJoin from 'url-join';
 import { Skill } from '@/types/skill';
-import ExternalLink from '@/components/externalLink';
+import ExternalLink from '@/components/ExternalLink';
 
 const useStyles = makeStyles(theme =>
   createStyles({

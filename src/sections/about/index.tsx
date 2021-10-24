@@ -10,7 +10,7 @@ import {
 import urlJoin from 'url-join';
 import { Config } from '@/types/config';
 import Section from '@/components/section';
-import ExternalLink from '@/components/externalLink';
+import ExternalLink from '@/components/ExternalLink';
 
 const useStyles = makeStyles(theme =>
   createStyles({

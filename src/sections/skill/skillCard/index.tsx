@@ -12,7 +12,7 @@ import {
 } from '@material-ui/core/styles';
 import urlJoin from 'url-join';
 import { Skill } from '@/types/skill';
-import ExternalLink from '@/components/externalLink';
+import ExternalLink from '@/components/ExternalLink';
 import FadeSlideUp from '@/components/fadeSlideUp';
 
 const useStyles = makeStyles(theme =>

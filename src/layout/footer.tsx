@@ -7,7 +7,7 @@ import {
 import urlJoin from 'url-join';
 import { Routes } from '@/routes';
 import { Config } from '@/types/config';
-import ExternalLink from '@/components/externalLink';
+import ExternalLink from '@/components/ExternalLink';
 
 const useStyles = makeStyles(theme =>
   createStyles({

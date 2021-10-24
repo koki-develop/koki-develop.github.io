@@ -10,7 +10,7 @@ import {
 import { ConfigLoader } from '@/lib/configLoader';
 import { Config } from '@/types/config';
 import Layout from '@/layout';
-import ExternalLink from '@/components/externalLink';
+import ExternalLink from '@/components/ExternalLink';
 import Section from '@/components/section';
 
 const useStyles = makeStyles(() =>
