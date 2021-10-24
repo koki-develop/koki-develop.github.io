@@ -11,16 +11,15 @@ import {
 import {
   createStyles,
   makeStyles,
-  Theme,
 } from '@material-ui/core/styles';
 import urlJoin from 'url-join';
 import { Config } from '@/types/config';
 import Section from '@/components/Section';
 import ExternalLink from '@/components/ExternalLink';
 import FadeSlideUp from '@/components/FadeSlideUp';
-import SkillAvatarGroup from './skillAvatarGroup';
+import SkillAvatarGroup from './SkillAvatarGroup';
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles(theme =>
   createStyles({
     portfolioCardHeader: {
       paddingBottom: 0,
