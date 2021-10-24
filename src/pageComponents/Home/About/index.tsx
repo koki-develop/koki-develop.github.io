@@ -61,11 +61,6 @@ const AboutSection: React.VFC<AboutSectionProps> = React.memo(props => {
   const classes = useStyles();
 
   const { config } = props;
-  const socials = [
-    { name: 'GitHub', url: urlJoin('https://github.com', config.socials.github.username) },
-    { name: 'Twitter', url: urlJoin('https://twitter.com', config.socials.twitter.username) },
-    { name: 'Zenn', url: urlJoin('https://zenn.dev', config.socials.zenn.username) },
-  ];
 
   return (
     <Section
@@ -89,12 +84,12 @@ const AboutSection: React.VFC<AboutSectionProps> = React.memo(props => {
       </Box>
 
       <ul className={classes.socialList}>
-        {socials.map(social => (
+        {Object.values(config.socials).map(social => (
           <li key={social.name} className={classes.socialListItem}>
             <ExternalLink href={social.url}>
               <img
                 className={classes.socialListItemImg}
-                src={urlJoin('/images/socials', `${social.name}.svg`)}
+                src={social.imageUrl}
                 alt={social.name}
               />
             </ExternalLink>
