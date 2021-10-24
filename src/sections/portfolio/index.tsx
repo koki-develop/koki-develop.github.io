@@ -83,7 +83,7 @@ const WorksSection: React.VFC<WorksSectionProps> = React.memo(props => {
                     <ExternalLink href={work.url}>
                       <CardMedia
                         className={classes.portfolioCardMedia}
-                        image={urlJoin('/images/works', work.name)}
+                        image={urlJoin('/images/works', `${work.name}.png`)}
                       />
                     </ExternalLink>
                   </CardActionArea>
