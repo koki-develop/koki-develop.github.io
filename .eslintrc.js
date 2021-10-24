@@ -22,6 +22,7 @@ module.exports = {
   },
   'plugins': [
     'react',
+    'react-hooks',
   ],
   'rules': {
     'react/prop-types': 'off',
@@ -30,6 +31,7 @@ module.exports = {
     'quotes': ['error', 'single'],
     'object-curly-spacing': ['error', 'always'],
     'react/jsx-tag-spacing': 'error',
+    'react-hooks/exhaustive-deps': ['error'],
   },
   'overrides': [
     {
