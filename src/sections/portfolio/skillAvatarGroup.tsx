@@ -64,7 +64,7 @@ const SkillAvatarGroup: React.VFC<SkillAvatarGroupProps> = React.memo(props => {
         >
           <Avatar
             className={classes.skillAvatar}
-            src={urlJoin('/images/skills', skill.name)}
+            src={urlJoin('/images/skills', `${skill.name}.svg`)}
             alt={skill.name}
             imgProps={{ className: classes.skillAvatarImg }}
           />
