@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import config from '../../config';
-import Section from '../../components/section';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import {
   Box,
@@ -9,14 +7,15 @@ import {
 import {
   createStyles,
   makeStyles,
-  Theme,
 } from '@material-ui/core/styles';
 import {
   Done as DoneIcon,
   Mail as MailIcon,
 } from '@material-ui/icons';
+import { Config } from '@/types/config';
+import Section from '@/components/section';
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles(theme =>
   createStyles({
     buttonsContainer: {
       alignItems: 'center',
@@ -44,28 +43,32 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-const ContactSection: React.VFC = React.memo(() => {
+export type ContactSectionProps = {
+  config: Config;
+};
+
+const ContactSection: React.VFC<ContactSectionProps> = React.memo(props => {
   const classes = useStyles();
 
-  const [showCopied, setShowCopied] = useState<boolean>(false);
+  const { config } = props;
+
+  const [showCopiedMessage, setShowCopiedMessage] = useState<boolean>(false);
 
   const handleCopyEmail = () => {
-    if (showCopied) return;
-    setShowCopied(true);
+    if (showCopiedMessage) return;
+    setShowCopiedMessage(true);
   };
 
   useEffect(() => {
-    let unmounted = false;
-    if (showCopied) {
-      setTimeout(() => {
-        if (!unmounted) {
-          setShowCopied(false);
-        }
+    if (showCopiedMessage) {
+      const timeoutId = setTimeout(() => {
+        setShowCopiedMessage(false);
       }, 1000);
+      return () => {
+        clearTimeout(timeoutId);
+      };
     }
-
-    return () => { unmounted = true; };
-  }, [showCopied]);
+  }, [showCopiedMessage]);
 
   return (
     <Section title='Contact'>
@@ -74,22 +77,22 @@ const ContactSection: React.VFC = React.memo(() => {
           <Button
             className={classes.mailButton}
             startIcon={<MailIcon />}
-            href={`mailto:${config.email}`}
+            href={`mailto:${config.profile.email}`}
           >
-            {config.email}
+            {config.profile.email}
           </Button>
         </Box>
         <Box>
           <CopyToClipboard
-            text={config.email}
+            text={config.profile.email}
             onCopy={handleCopyEmail}
           >
             <Button
               className={classes.copyButton}
               variant='text'
-              startIcon={showCopied ? <DoneIcon className={classes.copiedIcon} /> : null}
+              startIcon={showCopiedMessage ? <DoneIcon className={classes.copiedIcon} /> : null}
             >
-              {showCopied ? 'コピーしました' : 'クリップボードにコピー'}
+              {showCopiedMessage ? 'コピーしました' : 'クリップボードにコピー'}
             </Button>
           </CopyToClipboard>
         </Box>

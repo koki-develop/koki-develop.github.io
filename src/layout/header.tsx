@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { Routes } from '../routes';
 import {
   AppBar,
   Avatar,
@@ -18,13 +17,13 @@ import {
 import {
   createStyles,
   makeStyles,
-  Theme,
 } from '@material-ui/core/styles';
 import { Menu as MenuIcon } from '@material-ui/icons';
-import AnchorLink from '../components/anchorLink';
-import config from '../config';
+import { Config } from '@/types/config';
+import { Routes } from '@/routes';
+import AnchorLink from '@/components/anchorLink';
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles(theme =>
   createStyles({
     toolbar: {
       height: theme.spacing(10),
@@ -64,12 +63,15 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-type HeaderProps = {
+export type HeaderProps = {
+  config: Config;
   hideMenu: boolean;
 };
 
-const Header: React.VFC<HeaderProps> = React.memo((props: HeaderProps) => {
+const Header: React.VFC<HeaderProps> = React.memo(props => {
   const classes = useStyles();
+
+  const { config, hideMenu } = props;
 
   const [openSideMenu, setOpenSideMenu] = useState<boolean>(false);
 
@@ -91,13 +93,13 @@ const Header: React.VFC<HeaderProps> = React.memo((props: HeaderProps) => {
                   src='/images/profile.png'
                 />
                 <Typography className={classes.userName}>
-                  {config.name}
+                  {config.profile.name}
                 </Typography>
               </a>
             </Link>
           </Box>
 
-          {!props.hideMenu && (
+          {!hideMenu && (
             <Box>
               <Hidden xsDown>
                 <ul className={classes.menu}>

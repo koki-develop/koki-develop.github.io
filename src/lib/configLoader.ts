@@ -5,7 +5,7 @@ import config from '@/config.json';
 export class ConfigLoader {
   public static load(): Config {
     const skills: Skill[] = config.skillGroups.reduce((result, current) => {
-      return [...result, current.skills];
+      return [...result, ...current.skills];
     }, []);
     const works = config.works.map(work => {
       return {

@@ -1,22 +1,43 @@
 import React from 'react';
-import { NextPage } from 'next';
+import {
+  NextPage,
+  GetStaticProps,
+} from 'next';
 import Layout from '@/layout';
 import AboutSection from '@/sections/about';
-import SkillSection from '@/sections/skill';
-import PortfolioSection from '@/sections/portfolio';
+import SkillsSection from '@/sections/skill';
+import WorksSection from '@/sections/portfolio';
 import HistorySection from '@/sections/history';
 import ContactSection from '@/sections/contact';
+import { Config } from '@/types/config';
+import { ConfigLoader } from '@/lib/configLoader';
 
-const Home: NextPage = () => {
+export type HomeProps = {
+  config: Config;
+};
+
+const Home: NextPage<HomeProps> = props => {
+  const { config } = props;
+
   return (
-    <Layout>
-      <AboutSection />
-      <SkillSection />
-      <PortfolioSection />
-      <HistorySection />
-      <ContactSection />
+    <Layout config={config}>
+      <AboutSection config={config} />
+      <SkillsSection config={config} />
+      <WorksSection config={config} />
+      <HistorySection config={config} />
+      <ContactSection config={config} />
     </Layout>
   );
 };
 
 export default Home;
+
+export const getStaticProps: GetStaticProps<HomeProps> = async () => {
+  const config = ConfigLoader.load();
+
+  return {
+    props: {
+      config,
+    },
+  };
+};

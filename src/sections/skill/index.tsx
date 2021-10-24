@@ -1,8 +1,4 @@
 import React from 'react';
-import config from '../../config';
-import Section from '../../components/section';
-import FadeSlideUp from '../../components/fadeSlideUp';
-import SkillCard from './skillCard';
 import {
   Box,
   Grid,
@@ -11,10 +7,13 @@ import {
 import {
   createStyles,
   makeStyles,
-  Theme,
 } from '@material-ui/core/styles';
+import { Config } from '@/types/config';
+import Section from '@/components/section';
+import FadeSlideUp from '@/components/fadeSlideUp';
+import SkillCard from './skillCard';
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles(theme =>
   createStyles({
     groupName: {
       fontSize: theme.typography.body1.fontSize,
@@ -28,8 +27,14 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-const SkillSection: React.VFC = React.memo(() => {
+export type SkillsSectionProps = {
+  config: Config;
+};
+
+const SkillsSection: React.VFC<SkillsSectionProps> = React.memo(props => {
   const classes = useStyles();
+
+  const { config } = props;
 
   return (
     <Section title='Skill'>
@@ -56,6 +61,6 @@ const SkillSection: React.VFC = React.memo(() => {
   );
 });
 
-SkillSection.displayName = 'SkillSection';
+SkillsSection.displayName = 'SkillsSection';
 
-export default SkillSection;
+export default SkillsSection;

@@ -1,6 +1,4 @@
 import React from 'react';
-import config from '../../config';
-import Section from '../../components/section';
 import {
   Box,
   Typography,
@@ -8,11 +6,13 @@ import {
 import {
   createStyles,
   makeStyles,
-  Theme,
 } from '@material-ui/core/styles';
-import ExternalLink from '../../components/externalLink';
+import urlJoin from 'url-join';
+import { Config } from '@/types/config';
+import Section from '@/components/section';
+import ExternalLink from '@/components/externalLink';
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles(theme =>
   createStyles({
     user: {
       alignItems: 'center',
@@ -53,8 +53,19 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-const AboutSection: React.VFC = React.memo(() => {
+export type AboutSectionProps = {
+  config: Config;
+};
+
+const AboutSection: React.VFC<AboutSectionProps> = React.memo(props => {
   const classes = useStyles();
+
+  const { config } = props;
+  const socials = [
+    { name: 'GitHub', url: urlJoin('https://github.com', config.socials.github.username) },
+    { name: 'Twitter', url: urlJoin('https://twitter.com', config.socials.twitter.username) },
+    { name: 'Zenn', url: urlJoin('https://zenn.dev', config.socials.zenn.username) },
+  ];
 
   return (
     <Section
@@ -65,25 +76,25 @@ const AboutSection: React.VFC = React.memo(() => {
         <img
           className={classes.userAvatar}
           src='/images/profile.png'
-          alt={config.name}
+          alt={config.profile.name}
         />
-        <Typography className={classes.userName}>{config.name}</Typography>
+        <Typography className={classes.userName}>{config.profile.name}</Typography>
         <Typography className={classes.userTagline}>Developer</Typography>
       </Box>
 
       <Box className={classes.descriptionContainer}>
         <Typography className={classes.description}>
-          {config.description}
+          {config.profile.description}
         </Typography>
       </Box>
 
       <ul className={classes.socialList}>
-        {config.socials.map(social => (
+        {socials.map(social => (
           <li key={social.name} className={classes.socialListItem}>
-            <ExternalLink href={social.href}>
+            <ExternalLink href={social.url}>
               <img
                 className={classes.socialListItemImg}
-                src={social.imgSrc}
+                src={urlJoin('/images/socials', social.name)}
                 alt={social.name}
               />
             </ExternalLink>

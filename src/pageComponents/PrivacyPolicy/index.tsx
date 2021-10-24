@@ -1,9 +1,14 @@
 import React from 'react';
-import { NextPage } from 'next';
+import {
+  NextPage,
+  GetStaticProps,
+} from 'next';
 import {
   createStyles,
   makeStyles,
 } from '@material-ui/core/styles';
+import { ConfigLoader } from '@/lib/configLoader';
+import { Config } from '@/types/config';
 import Layout from '@/layout';
 import ExternalLink from '@/components/externalLink';
 import Section from '@/components/section';
@@ -16,8 +21,14 @@ const useStyles = makeStyles(() =>
   }),
 );
 
-const PrivacyPolicy: NextPage = () => {
+export type PrivacyPolicyProps = {
+  config: Config;
+};
+
+const PrivacyPolicy: NextPage<PrivacyPolicyProps> = props => {
   const classes = useStyles();
+
+  const { config } = props;
 
   const items = [
     {
@@ -47,7 +58,11 @@ const PrivacyPolicy: NextPage = () => {
   ];
 
   return (
-    <Layout hideMenu title='プライバシーポリシー'>
+    <Layout
+      config={config}
+      hideMenu
+      title='プライバシーポリシー'
+    >
       {items.map(item => (
         <Section
           key={item.title}
@@ -61,3 +76,13 @@ const PrivacyPolicy: NextPage = () => {
 };
 
 export default PrivacyPolicy;
+
+export const getStaticProps: GetStaticProps<PrivacyPolicyProps> = async () => {
+  const config = ConfigLoader.load();
+
+  return {
+    props: {
+      config,
+    },
+  };
+};

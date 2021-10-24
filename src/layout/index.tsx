@@ -16,10 +16,10 @@ import {
   createStyles,
   ThemeProvider,
 } from '@material-ui/core/styles';
+import { Config } from '@/types/config';
 import Header from './header';
 import Footer from './footer';
 import { theme } from './theme';
-import config from '../config';
 
 const useStyles = makeStyles(() =>
   createStyles({
@@ -36,22 +36,25 @@ const useStyles = makeStyles(() =>
 
 type LayoutProps = {
   children: React.ReactNode;
+  config: Config;
   title?: string;
   hideMenu?: boolean;
 };
 
-const Root: React.VFC<LayoutProps> = React.memo((props: LayoutProps) => {
+const Root: React.VFC<LayoutProps> = React.memo(props => {
   return (
     <ThemeProvider theme={theme}>
-      <Layout {...props} />
+      <Content {...props} />
     </ThemeProvider>
   );
 });
 
-Root.displayName = 'LayoutRoot';
+Root.displayName = 'Layout';
 
-const Layout: React.VFC<LayoutProps> = (props: LayoutProps) => {
+const Content: React.VFC<LayoutProps> = React.memo(props => {
   const classes = useStyles();
+
+  const { children, config, title, hideMenu } = props;
 
   const trigger = useScrollTrigger({
     disableHysteresis: true,
@@ -65,25 +68,30 @@ const Layout: React.VFC<LayoutProps> = (props: LayoutProps) => {
     });
   };
 
-  const subTitle = props.title ? `${props.title} | ` : '';
-  const title = `${subTitle}${config.name}`;
+  const subTitle = title ? `${title} | ` : '';
+  const titleText = `${subTitle}${config.profile.name}`;
 
   return (
     <Box>
       <Head>
-        <title>{title}</title>
-        <meta property='og:title' content={title} />
+        <title>{titleText}</title>
+        <meta property='og:title' content={titleText} />
       </Head>
 
       <CssBaseline />
 
-      <Header hideMenu={props.hideMenu} />
+      <Header
+        config={config}
+        hideMenu={hideMenu}
+      />
 
       <Box component='main' className={classes.main}>
-        {props.children}
+        {children}
       </Box>
 
-      <Footer />
+      <Footer
+        config={config}
+      />
 
       <Zoom in={trigger}>
         <Fab
@@ -96,6 +104,8 @@ const Layout: React.VFC<LayoutProps> = (props: LayoutProps) => {
       </Zoom>
     </Box>
   );
-};
+});
+
+Content.displayName = 'LayoutContent';
 
 export default Root;

@@ -1,7 +1,4 @@
 import React from 'react';
-import config from '../../config';
-import Section from '../../components/section';
-import FadeSlideUp from '../../components/fadeSlideUp';
 import {
   Card,
   CardContent,
@@ -18,10 +15,12 @@ import {
 import {
   createStyles,
   makeStyles,
-  Theme,
 } from '@material-ui/core/styles';
+import { Config } from '@/types/config';
+import Section from '@/components/section';
+import FadeSlideUp from '@/components/fadeSlideUp';
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles(theme =>
   createStyles({
     timeline: {
       padding: 0,
@@ -61,8 +60,14 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-const HistorySection: React.VFC = React.memo(() => {
+export type HistorySectionProps = {
+  config: Config;
+};
+
+const HistorySection: React.VFC<HistorySectionProps> = React.memo(props => {
   const classes = useStyles();
+
+  const { config } = props;
 
   return (
     <Section
@@ -91,7 +96,7 @@ const HistorySection: React.VFC = React.memo(() => {
               <FadeSlideUp>
                 <Card>
                   <CardContent>
-                    <Typography className={classes.period}>{history.period}</Typography>
+                    <Typography className={classes.period}>{history.from} - {history.to}</Typography>
                     <Typography className={classes.title}>{history.title}</Typography>
                     <Typography className={classes.description}>{history.description}</Typography>
                   </CardContent>

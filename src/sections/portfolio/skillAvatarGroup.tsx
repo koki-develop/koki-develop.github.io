@@ -1,15 +1,15 @@
 import React from 'react';
-import { Skill } from '../../types/skill';
-import ExternalLink from '../../components/externalLink';
 import { Avatar } from '@material-ui/core';
 import {
   createStyles,
   makeStyles,
-  Theme,
 } from '@material-ui/core/styles';
 import { AvatarGroup } from '@material-ui/lab';
+import urlJoin from 'url-join';
+import { Skill } from '@/types/skill';
+import ExternalLink from '@/components/externalLink';
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles(theme =>
   createStyles({
     skillAvatarGroup: {
       marginTop: theme.spacing(2),
@@ -44,11 +44,11 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-type SkillAvatarGroupProps = {
-  skills: Readonly<Skill[]>;
+export type SkillAvatarGroupProps = {
+  skills: Skill[];
 };
 
-const SkillAvatarGroup: React.VFC<SkillAvatarGroupProps> = React.memo((props: SkillAvatarGroupProps) => {
+const SkillAvatarGroup: React.VFC<SkillAvatarGroupProps> = React.memo(props => {
   const classes = useStyles();
 
   return (
@@ -60,11 +60,11 @@ const SkillAvatarGroup: React.VFC<SkillAvatarGroupProps> = React.memo((props: Sk
         <ExternalLink
           key={skill.name}
           className={classes.skillAvatarLink}
-          href={skill.href}
+          href={skill.url}
         >
           <Avatar
             className={classes.skillAvatar}
-            src={skill.imgSrc}
+            src={urlJoin('/images/skills', skill.name)}
             alt={skill.name}
             imgProps={{ className: classes.skillAvatarImg }}
           />

@@ -1,9 +1,4 @@
 import React from 'react';
-import config from '../../config';
-import Section from '../../components/section';
-import ExternalLink from '../../components/externalLink';
-import FadeSlideUp from '../../components/fadeSlideUp';
-import SkillAvatarGroup from './skillAvatarGroup';
 import {
   Card,
   CardActionArea,
@@ -18,6 +13,12 @@ import {
   makeStyles,
   Theme,
 } from '@material-ui/core/styles';
+import urlJoin from 'url-join';
+import { Config } from '@/types/config';
+import Section from '@/components/section';
+import ExternalLink from '@/components/externalLink';
+import FadeSlideUp from '@/components/fadeSlideUp';
+import SkillAvatarGroup from './skillAvatarGroup';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -54,29 +55,35 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-const PortfolioSection: React.VFC = React.memo(() => {
+export type WorksSectionProps = {
+  config: Config;
+};
+
+const WorksSection: React.VFC<WorksSectionProps> = React.memo(props => {
   const classes = useStyles();
 
+  const { config } = props;
+
   return (
-    <Section title='Portfolio'>
+    <Section title='Works'>
       <Grid
         container
         spacing={4}
       >
-        {config.portfolios.map(portfolio => (
+        {config.works.map(work => (
           <Grid
-            key={portfolio.title}
+            key={work.name}
             item
             xs={12}
           >
             <FadeSlideUp>
               <Card raised>
-                {portfolio.imgSrc && portfolio.url && (
+                {work.hasImage && (
                   <CardActionArea>
-                    <ExternalLink href={portfolio.url}>
+                    <ExternalLink href={work.url}>
                       <CardMedia
                         className={classes.portfolioCardMedia}
-                        image={portfolio.imgSrc}
+                        image={urlJoin('/images/works', work.name)}
                       />
                     </ExternalLink>
                   </CardActionArea>
@@ -86,17 +93,17 @@ const PortfolioSection: React.VFC = React.memo(() => {
                   title={(
                     <ExternalLink
                       className={classes.portfolioCardTitleLink}
-                      href={portfolio.url}
+                      href={work.url}
                     >
-                      {portfolio.title}
+                      {work.name}
                     </ExternalLink>
                   )}
                   titleTypographyProps={{ className: classes.portfolioCardTitle }}
                 />
                 <CardContent className={classes.portfolioCardContent}>
-                  <SkillAvatarGroup skills={portfolio.skills} />
-                  <Typography className={classes.portfolioDescription}>{portfolio.description}</Typography>
-                  <ExternalLink href={portfolio.githubUrl}>
+                  <SkillAvatarGroup skills={work.skills} />
+                  <Typography className={classes.portfolioDescription}>{work.description}</Typography>
+                  <ExternalLink href={urlJoin('https://github.com', config.socials.github.username, work.repository)}>
                     View on GitHub
                   </ExternalLink>
                 </CardContent>
@@ -109,6 +116,6 @@ const PortfolioSection: React.VFC = React.memo(() => {
   );
 });
 
-PortfolioSection.displayName = 'PortfolioSection';
+WorksSection.displayName = 'WorksSection';
 
-export default PortfolioSection;
+export default WorksSection;

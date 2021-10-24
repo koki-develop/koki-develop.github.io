@@ -1,14 +1,15 @@
 import React from 'react';
 import Link from 'next/link';
-import { Routes } from '../routes';
 import {
   createStyles,
   makeStyles,
-  Theme,
 } from '@material-ui/core/styles';
-import ExternalLink from '../components/externalLink';
+import urlJoin from 'url-join';
+import { Routes } from '@/routes';
+import { Config } from '@/types/config';
+import ExternalLink from '@/components/externalLink';
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles(theme =>
   createStyles({
     footer: {
       alignItems: 'center',
@@ -24,13 +25,19 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-const Footer: React.VFC = React.memo(() => {
+export type FooterProps = {
+  config: Config;
+};
+
+const Footer: React.VFC<FooterProps> = React.memo(props => {
   const classes = useStyles();
+
+  const { config } = props;
 
   const items: { body: React.ReactNode }[] = [
     {
       body: (
-        <ExternalLink href='https://github.com/koki-develop/koki-develop'>View on GitHub</ExternalLink>
+        <ExternalLink href={urlJoin('https://github.com/', config.socials.github.username, config.socials.github.username)}>View on GitHub</ExternalLink>
       ),
     },
     {
