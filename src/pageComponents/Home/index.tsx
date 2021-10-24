@@ -4,13 +4,13 @@ import {
   GetStaticProps,
 } from 'next';
 import Layout from '@/layout';
-import AboutSection from '@/sections/about';
-import SkillsSection from '@/sections/skill';
-import WorksSection from '@/sections/portfolio';
-import HistorySection from '@/sections/history';
-import ContactSection from '@/sections/contact';
 import { Config } from '@/types/config';
 import { ConfigLoader } from '@/lib/configLoader';
+import AboutSection from './About';
+import SkillsSection from './Skills';
+import WorksSection from './Works';
+import HistorySection from './History';
+import ContactSection from './Contact';
 
 export type HomeProps = {
   config: Config;
