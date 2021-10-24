@@ -5,7 +5,6 @@ import { ConfigLoader } from '@/lib/configLoader';
 
 (async () => {
   const config = ConfigLoader.load();
-  // const { description, email, socials, skillGroups, portfolios } = config;
   const lines = [];
 
   /*
@@ -50,7 +49,7 @@ import { ConfigLoader } from '@/lib/configLoader';
   }
 
   /*
-   * Portfolio
+   * Works
    */
   lines.push('# Works');
   lines.push('');

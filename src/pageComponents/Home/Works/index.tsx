@@ -21,10 +21,10 @@ import SkillAvatarGroup from './SkillAvatarGroup';
 
 const useStyles = makeStyles(theme =>
   createStyles({
-    portfolioCardHeader: {
+    workCardHeader: {
       paddingBottom: 0,
     },
-    portfolioCardMedia: {
+    workCardMedia: {
       height: 300,
       [theme.breakpoints.down('md')]: {
         height: 280,
@@ -36,18 +36,18 @@ const useStyles = makeStyles(theme =>
         height: 150,
       },
     },
-    portfolioCardTitle: {
+    workCardTitle: {
       fontWeight: 'bold',
     },
-    portfolioCardTitleLink: {
+    workCardTitleLink: {
       '&:hover': {
         opacity: 1,
       },
     },
-    portfolioCardContent: {
+    workCardContent: {
       paddingTop: 0,
     },
-    portfolioDescription: {
+    workDescription: {
       fontSize: theme.typography.body2.fontSize,
       marginBottom: theme.spacing(1),
     },
@@ -81,27 +81,27 @@ const WorksSection: React.VFC<WorksSectionProps> = React.memo(props => {
                   <CardActionArea>
                     <ExternalLink href={work.url}>
                       <CardMedia
-                        className={classes.portfolioCardMedia}
+                        className={classes.workCardMedia}
                         image={urlJoin('/images/works', `${work.name}.png`)}
                       />
                     </ExternalLink>
                   </CardActionArea>
                 )}
                 <CardHeader
-                  className={classes.portfolioCardHeader}
+                  className={classes.workCardHeader}
                   title={(
                     <ExternalLink
-                      className={classes.portfolioCardTitleLink}
+                      className={classes.workCardTitleLink}
                       href={work.url}
                     >
                       {work.name}
                     </ExternalLink>
                   )}
-                  titleTypographyProps={{ className: classes.portfolioCardTitle }}
+                  titleTypographyProps={{ className: classes.workCardTitle }}
                 />
-                <CardContent className={classes.portfolioCardContent}>
+                <CardContent className={classes.workCardContent}>
                   <SkillAvatarGroup skills={work.skills} />
-                  <Typography className={classes.portfolioDescription}>{work.description}</Typography>
+                  <Typography className={classes.workDescription}>{work.description}</Typography>
                   <ExternalLink href={urlJoin('https://github.com', config.socials.github.username, work.repository)}>
                     View on GitHub
                   </ExternalLink>
