@@ -1,9 +1,6 @@
 import React from 'react';
-import {
-  Box,
-  Grid,
-  Typography,
-} from '@material-ui/core';
+import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
 import {
   createStyles,
   makeStyles,
@@ -39,7 +36,7 @@ const SkillsSection: React.VFC<SkillsSectionProps> = React.memo(props => {
   return (
     <Section title='Skills'>
       {config.skillGroups.map(group => (
-        <Box key={group.name}>
+        <div key={group.name}>
           <FadeSlideUp>
             <Typography className={classes.groupName}>{group.name}</Typography>
           </FadeSlideUp>
@@ -55,7 +52,7 @@ const SkillsSection: React.VFC<SkillsSectionProps> = React.memo(props => {
               />
             ))}
           </Grid>
-        </Box>
+        </div>
       ))}
     </Section>
   );
