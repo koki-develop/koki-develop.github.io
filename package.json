@@ -8,7 +8,7 @@
     "build": "next build",
     "lint": "eslint --max-warnings 0 --ext .js,.ts,.tsx .",
     "test:compile": "tsc --noEmit",
-    "update:readme": "ts-node ./src/tasks/updateReadme.ts"
+    "update:readme": "ts-node -r tsconfig-paths/register ./src/tasks/updateReadme.ts"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.2",
