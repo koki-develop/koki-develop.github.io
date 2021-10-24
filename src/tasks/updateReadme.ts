@@ -20,14 +20,9 @@ import { ConfigLoader } from '@/lib/configLoader';
   /*
    * Social
    */
-  const socials = [
-    { name: 'GitHub', url: urlJoin('https://github.com', config.socials.github.username) },
-    { name: 'Twitter', url: urlJoin('https://twitter.com', config.socials.twitter.username) },
-    { name: 'Zenn', url: urlJoin('https://zenn.dev', config.socials.zenn.username) },
-  ];
   lines.push('# Social');
   lines.push('');
-  for (const social of socials) {
+  for (const social of Object.values(config.socials)) {
     lines.push(
       `[<img src="${path.join('./public/images/socials', `${social.name}.svg`)}" alt="${social.name}" width="40" height="40"/>](${social.url})`,
     );
@@ -58,7 +53,7 @@ import { ConfigLoader } from '@/lib/configLoader';
     lines.push('');
     lines.push(work.description);
     lines.push('');
-    lines.push(`[View on GitHub](${urlJoin('https://github.com/', config.socials.github.username, work.repository)})`);
+    lines.push(`[View on GitHub](${urlJoin(config.socials.github.url, work.repository)})`);
   }
 
   /*
