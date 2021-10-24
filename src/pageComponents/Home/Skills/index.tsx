@@ -37,7 +37,7 @@ const SkillsSection: React.VFC<SkillsSectionProps> = React.memo(props => {
   const { config } = props;
 
   return (
-    <Section title='Skill'>
+    <Section title='Skills'>
       {config.skillGroups.map(group => (
         <Box key={group.name}>
           <FadeSlideUp>

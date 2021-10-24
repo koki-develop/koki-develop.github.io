@@ -84,7 +84,7 @@ const Header: React.VFC<HeaderProps> = React.memo(props => {
 
   // TODO: 一箇所で管理したい
   const menuItems = useMemo(() => {
-    return ['About', 'Skill', 'Works', 'History', 'Contact'];
+    return ['About', 'Skills', 'Works', 'History', 'Contact'];
   }, []);
 
   return (
