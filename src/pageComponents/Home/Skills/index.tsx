@@ -11,7 +11,7 @@ import {
 import { Config } from '@/types/config';
 import Section from '@/components/Section';
 import FadeSlideUp from '@/components/FadeSlideUp';
-import SkillCard from './skillCard';
+import SkillCard from './SkillCard';
 
 const useStyles = makeStyles(theme =>
   createStyles({
