@@ -1,17 +1,13 @@
 import React from 'react';
-import {
-  Card,
-  CardContent,
-  Typography,
-} from '@material-ui/core';
-import {
-  Timeline,
-  TimelineContent,
-  TimelineConnector,
-  TimelineDot,
-  TimelineItem,
-  TimelineSeparator,
-} from '@material-ui/lab';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import Typography from '@material-ui/core/Typography';
+import Timeline from '@material-ui/lab/Timeline';
+import TimelineContent from '@material-ui/lab/TimelineContent';
+import TimelineConnector from '@material-ui/lab/TimelineConnector';
+import TimelineDot from '@material-ui/lab/TimelineDot';
+import TimelineItem from '@material-ui/lab/TimelineItem';
+import TimelineSeparator from '@material-ui/lab/TimelineSeparator';
 import {
   createStyles,
   makeStyles,
@@ -85,8 +81,8 @@ const HistorySection: React.VFC<HistorySectionProps> = React.memo(props => {
           >
             <TimelineSeparator>
               <TimelineDot
-                color={i === 0 ? 'secondary' : undefined}
-                variant={i === 0 ? undefined : 'outlined'}
+                color={history.isActive ? 'secondary' : undefined}
+                variant={history.isActive ? undefined : 'outlined'}
               />
               {i !== config.histories.length - 1 && (
                 <TimelineConnector />

@@ -3,6 +3,7 @@ import config from '@/config.json';
 import { Config } from '@/types/config';
 import { Skill } from '@/types/skill';
 import { Socials } from '@/types/socials';
+import { History } from '@/types/history';
 
 export class ConfigLoader {
   public static load(): Config {
@@ -44,10 +45,15 @@ export class ConfigLoader {
       };
     });
 
+    const histories: History[] = config.histories.map(history => {
+      return { ...history, isActive: history.to === 'now' };
+    });
+
     return {
       ...config,
       socials,
       works,
+      histories,
     };
   }
 }
