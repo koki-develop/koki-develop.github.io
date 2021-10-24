@@ -3,10 +3,7 @@ import {
   NextPage,
   GetStaticProps,
 } from 'next';
-import {
-  Box,
-  Typography,
-} from '@material-ui/core';
+import Typography from '@material-ui/core/Typography';
 import {
   createStyles,
   makeStyles,
@@ -46,15 +43,11 @@ const NotFound: NextPage<NotFoundProps> = props => {
       title={message}
       hideMenu
     >
-      <Box className={classes.messageContainer}>
-        <Typography
-          classes={{
-            root: classes.message,
-          }}
-        >
+      <div className={classes.messageContainer}>
+        <Typography className={classes.message}>
           {message}
         </Typography>
-      </Box>
+      </div>
     </Layout>
   );
 };
