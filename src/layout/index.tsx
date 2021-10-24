@@ -17,8 +17,8 @@ import {
   ThemeProvider,
 } from '@material-ui/core/styles';
 import { Config } from '@/types/config';
-import Header from './header';
-import Footer from './footer';
+import Header from './Header';
+import Footer from './Footer';
 import { theme } from './theme';
 
 const useStyles = makeStyles(() =>
