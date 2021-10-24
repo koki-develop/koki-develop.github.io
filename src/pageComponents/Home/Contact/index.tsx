@@ -69,6 +69,8 @@ const ContactSection: React.VFC<ContactSectionProps> = React.memo(props => {
             className={classes.mailButton}
             startIcon={<MailIcon />}
             href={`mailto:${config.profile.email}`}
+            target='_blank'
+            rel='noreferrer noopener'
           >
             {config.profile.email}
           </Button>
