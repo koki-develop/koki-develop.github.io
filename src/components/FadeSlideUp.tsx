@@ -22,12 +22,14 @@ const useStyles = makeStyles(() =>
   }),
 );
 
-type FadeSlideUpProps = {
+export type FadeSlideUpProps = {
   children: React.ReactNode;
 };
 
-const FadeSlideUp: React.VFC<FadeSlideUpProps> = React.memo((props: FadeSlideUpProps) => {
+const FadeSlideUp: React.VFC<FadeSlideUpProps> = React.memo(props => {
   const classes = useStyles();
+
+  const { children } = props;
 
   const { ref, inView } = useInView({
     rootMargin: '200px 0px 0px 0px',
@@ -43,7 +45,7 @@ const FadeSlideUp: React.VFC<FadeSlideUpProps> = React.memo((props: FadeSlideUpP
         [classes.hidden]: !inView,
       })}
     >
-      {props.children}
+      {children}
     </div>
   );
 });

@@ -17,7 +17,7 @@ import urlJoin from 'url-join';
 import { Config } from '@/types/config';
 import Section from '@/components/section';
 import ExternalLink from '@/components/ExternalLink';
-import FadeSlideUp from '@/components/fadeSlideUp';
+import FadeSlideUp from '@/components/FadeSlideUp';
 import SkillAvatarGroup from './skillAvatarGroup';
 
 const useStyles = makeStyles((theme: Theme) =>

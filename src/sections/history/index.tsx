@@ -18,7 +18,7 @@ import {
 } from '@material-ui/core/styles';
 import { Config } from '@/types/config';
 import Section from '@/components/section';
-import FadeSlideUp from '@/components/fadeSlideUp';
+import FadeSlideUp from '@/components/FadeSlideUp';
 
 const useStyles = makeStyles(theme =>
   createStyles({

@@ -13,7 +13,7 @@ import {
 import urlJoin from 'url-join';
 import { Skill } from '@/types/skill';
 import ExternalLink from '@/components/ExternalLink';
-import FadeSlideUp from '@/components/fadeSlideUp';
+import FadeSlideUp from '@/components/FadeSlideUp';
 
 const useStyles = makeStyles(theme =>
   createStyles({
