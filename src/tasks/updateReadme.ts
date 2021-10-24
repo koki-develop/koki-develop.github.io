@@ -38,7 +38,7 @@ import { ConfigLoader } from '@/lib/configLoader';
     lines.push('');
     for (const skill of skillGroup.skills) {
       lines.push(
-        `[<img src="${path.join('./public/images/skills', skill.name)}" alt="${skill.name}" width="40" height="40"/>](${skill.url})`,
+        `[<img src="${path.join('./public/images/skills', `${skill.name}.svg`)}" alt="${skill.name}" width="40" height="40"/>](${skill.url})`,
       );
     }
   }
