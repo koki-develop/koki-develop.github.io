@@ -94,7 +94,7 @@ const AboutSection: React.VFC<AboutSectionProps> = React.memo(props => {
             <ExternalLink href={social.url}>
               <img
                 className={classes.socialListItemImg}
-                src={urlJoin('/images/socials', social.name)}
+                src={urlJoin('/images/socials', `${social.name}.svg`)}
                 alt={social.name}
               />
             </ExternalLink>
