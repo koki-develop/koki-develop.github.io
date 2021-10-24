@@ -1,16 +1,11 @@
-import React from 'react';
-import * as Scroll from 'react-scroll';
+import React, { useCallback, useMemo } from 'react';
+import Scroll from 'react-scroll';
 import Head from 'next/head';
-import {
-  useScrollTrigger,
-  Box,
-  CssBaseline,
-  Fab,
-  Zoom,
-} from '@material-ui/core';
-import {
-  KeyboardArrowUp as KeyboardArrowUpIcon,
-} from '@material-ui/icons';
+import useScrollTrigger from '@material-ui/core/useScrollTrigger';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Fab from '@material-ui/core/Fab';
+import Zoom from '@material-ui/core/Zoom';
+import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 import {
   makeStyles,
   createStyles,
@@ -26,7 +21,7 @@ const useStyles = makeStyles(() =>
     main: {
       paddingTop: theme.spacing(10),
     },
-    backToTop: {
+    backToTopButton: {
       bottom: theme.spacing(2),
       position: 'fixed',
       right: theme.spacing(2),
@@ -34,7 +29,7 @@ const useStyles = makeStyles(() =>
   }),
 );
 
-type LayoutProps = {
+export type LayoutProps = {
   children: React.ReactNode;
   config: Config;
   title?: string;
@@ -61,18 +56,22 @@ const Content: React.VFC<LayoutProps> = React.memo(props => {
     threshold: 100,
   });
 
-  const handleClickBackToTop = () => {
+  const handleClickBackToTop = useCallback(() => {
     Scroll.animateScroll.scrollToTop({
       smooth: true,
       duration: 500,
     });
-  };
+  }, []);
 
-  const subTitle = title ? `${title} | ` : '';
-  const titleText = `${subTitle}${config.profile.name}`;
+  const titleText = useMemo(() => {
+    if (!title) {
+      return config.profile.name;
+    }
+    return `${title} | ${config.profile.name}`;
+  }, [config.profile.name, title]);
 
   return (
-    <Box>
+    <div>
       <Head>
         <title>{titleText}</title>
         <meta property='og:title' content={titleText} />
@@ -85,9 +84,9 @@ const Content: React.VFC<LayoutProps> = React.memo(props => {
         hideMenu={hideMenu}
       />
 
-      <Box component='main' className={classes.main}>
+      <main className={classes.main}>
         {children}
-      </Box>
+      </main>
 
       <Footer
         config={config}
@@ -95,14 +94,14 @@ const Content: React.VFC<LayoutProps> = React.memo(props => {
 
       <Zoom in={trigger}>
         <Fab
-          className={classes.backToTop}
+          className={classes.backToTopButton}
           color='primary'
           onClick={handleClickBackToTop}
         >
           <KeyboardArrowUpIcon />
         </Fab>
       </Zoom>
-    </Box>
+    </div>
   );
 });
 

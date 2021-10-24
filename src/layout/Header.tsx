@@ -1,24 +1,21 @@
-import React, { useState } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import Link from 'next/link';
-import {
-  AppBar,
-  Avatar,
-  Box,
-  Container,
-  Divider,
-  Drawer,
-  Hidden,
-  IconButton,
-  List,
-  ListItem,
-  Toolbar,
-  Typography,
-} from '@material-ui/core';
+import AppBar from '@material-ui/core/AppBar';
+import Avatar from '@material-ui/core/Avatar';
+import Container from '@material-ui/core/Container';
+import Divider from '@material-ui/core/Divider';
+import Drawer from '@material-ui/core/Drawer';
+import Hidden from '@material-ui/core/Hidden';
+import IconButton from '@material-ui/core/IconButton';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
 import {
   createStyles,
   makeStyles,
 } from '@material-ui/core/styles';
-import { Menu as MenuIcon } from '@material-ui/icons';
+import MenuIcon from '@material-ui/icons/Menu';
 import { Config } from '@/types/config';
 import { Routes } from '@/routes';
 import AnchorLink from '@/components/AnchorLink';
@@ -33,8 +30,8 @@ const useStyles = makeStyles(theme =>
       display: 'flex',
       flexGrow: 1,
     },
-    userAvatar: {
-      marginRight: theme.spacing(1),
+    avatar: {
+      marginRight: theme.spacing(0.5),
     },
     userLink: {
       alignItems: 'center',
@@ -75,21 +72,30 @@ const Header: React.VFC<HeaderProps> = React.memo(props => {
 
   const [openSideMenu, setOpenSideMenu] = useState<boolean>(false);
 
-  const handleClickSideMenuItem = () => setOpenSideMenu(false);
-  const handleClickHamburger = () => setOpenSideMenu(true);
-  const handleCloseSideMenu = () => setOpenSideMenu(false);
+  const handleClickSideMenuItem = useCallback(() => {
+    setOpenSideMenu(false);
+  }, []);
+  const handleClickHamburger = useCallback(() => {
+    setOpenSideMenu(true);
+  }, []);
+  const handleCloseSideMenu = useCallback(() => {
+    setOpenSideMenu(false);
+  }, []);
 
-  const menuItems = ['About', 'Skill', 'Works', 'History', 'Contact'];
+  // TODO: 一箇所で管理したい
+  const menuItems = useMemo(() => {
+    return ['About', 'Skill', 'Works', 'History', 'Contact'];
+  }, []);
 
   return (
     <AppBar>
       <Container maxWidth='md'>
         <Toolbar className={classes.toolbar}>
-          <Box className={classes.user}>
+          <div className={classes.user}>
             <Link href={Routes.home}>
               <a className={classes.userLink}>
                 <Avatar
-                  className={classes.userAvatar}
+                  className={classes.avatar}
                   src='/images/profile.png'
                 />
                 <Typography className={classes.userName}>
@@ -97,10 +103,10 @@ const Header: React.VFC<HeaderProps> = React.memo(props => {
                 </Typography>
               </a>
             </Link>
-          </Box>
+          </div>
 
           {!hideMenu && (
-            <Box>
+            <div>
               <Hidden xsDown>
                 <ul className={classes.menu}>
                   {menuItems.map(item => (
@@ -112,9 +118,9 @@ const Header: React.VFC<HeaderProps> = React.memo(props => {
               </Hidden>
 
               <Hidden smUp>
-                <Box>
+                <div>
                   <IconButton onClick={handleClickHamburger}><MenuIcon /></IconButton>
-                </Box>
+                </div>
                 <Drawer
                   anchor='right'
                   open={openSideMenu}
@@ -141,7 +147,7 @@ const Header: React.VFC<HeaderProps> = React.memo(props => {
                   </List>
                 </Drawer>
               </Hidden>
-            </Box>
+            </div>
           )}
         </Toolbar>
       </Container>

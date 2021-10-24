@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import Link from 'next/link';
 import {
   createStyles,
@@ -34,20 +34,24 @@ const Footer: React.VFC<FooterProps> = React.memo(props => {
 
   const { config } = props;
 
-  const items: { body: React.ReactNode }[] = [
-    {
-      body: (
-        <ExternalLink href={urlJoin('https://github.com/', config.socials.github.username, config.socials.github.username)}>View on GitHub</ExternalLink>
-      ),
-    },
-    {
-      body: (
-        <Link href={Routes.privacyPolicy}>
-          <a>プライバシーポリシー</a>
-        </Link>
-      ),
-    },
-  ];
+  const items: { body: React.ReactNode }[] = useMemo(() => {
+    return [
+      {
+        body: (
+          <ExternalLink href={urlJoin(config.socials.github.url, config.socials.github.username)}>
+            View on GitHub
+          </ExternalLink>
+        ),
+      },
+      {
+        body: (
+          <Link href={Routes.privacyPolicy}>
+            <a>プライバシーポリシー</a>
+          </Link>
+        ),
+      },
+    ];
+  }, [config.socials.github.url, config.socials.github.username]);
 
   return (
     <footer className={classes.footer}>
@@ -55,7 +59,10 @@ const Footer: React.VFC<FooterProps> = React.memo(props => {
 
       <ul>
         {items.map((item, i) => (
-          <li key={i} className={classes.listItem}>
+          <li
+            key={i}
+            className={classes.listItem}
+          >
             {item.body}
           </li>
         ))}
