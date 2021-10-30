@@ -1,10 +1,10 @@
 import React from 'react';
-import { Avatar } from '@material-ui/core';
+import Avatar from '@material-ui/core/Avatar';
 import {
   createStyles,
   makeStyles,
 } from '@material-ui/core/styles';
-import { AvatarGroup } from '@material-ui/lab';
+import AvatarGroup from '@material-ui/lab/AvatarGroup';
 import urlJoin from 'url-join';
 import { Skill } from '@/types/skill';
 import ExternalLink from '@/components/ExternalLink';
