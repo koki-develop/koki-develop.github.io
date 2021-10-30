@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
@@ -6,6 +7,7 @@ import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
+import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight';
 import {
   createStyles,
   makeStyles,
@@ -48,6 +50,15 @@ const useStyles = makeStyles(theme =>
     workDescription: {
       fontSize: theme.typography.body2.fontSize,
       marginBottom: theme.spacing(1),
+    },
+    moreButtonContainer: {
+      display: 'flex',
+      justifyContent: 'center',
+    },
+    moreButton: {
+      '&:hover': {
+        opacity: 1,
+      },
     },
   }),
 );
@@ -108,6 +119,24 @@ const WorksSection: React.VFC<WorksSectionProps> = React.memo(props => {
             </FadeSlideUp>
           </Grid>
         ))}
+        <Grid
+          className={classes.moreButtonContainer}
+          item
+          xs={12}
+        >
+          <FadeSlideUp>
+            <Button
+              className={classes.moreButton}
+              href={`${config.socials.github.url}?tab=repositories&type=source`}
+              target='_blank'
+              rel='noreferrer noopener'
+              size='large'
+              endIcon={<KeyboardArrowRightIcon />}
+            >
+              More
+            </Button>
+          </FadeSlideUp>
+        </Grid>
       </Grid>
     </Section>
   );
