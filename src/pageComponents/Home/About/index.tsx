@@ -1,9 +1,6 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
-import {
-  createStyles,
-  makeStyles,
-} from '@material-ui/core/styles';
+import { createStyles, makeStyles } from '@material-ui/core/styles';
 import { Config } from '@/types/config';
 import Section from '@/components/Section';
 import ExternalLink from '@/components/ExternalLink';
@@ -59,10 +56,7 @@ const AboutSection: React.VFC<AboutSectionProps> = React.memo(props => {
   const { config } = props;
 
   return (
-    <Section
-      title='About'
-      hideTitle
-    >
+    <Section title='About' hideTitle>
       <div className={classes.profile}>
         <div>
           <img
@@ -71,12 +65,8 @@ const AboutSection: React.VFC<AboutSectionProps> = React.memo(props => {
             alt={config.profile.name}
           />
         </div>
-        <Typography className={classes.name}>
-          {config.profile.name}
-        </Typography>
-        <Typography className={classes.tag}>
-          Developer
-        </Typography>
+        <Typography className={classes.name}>{config.profile.name}</Typography>
+        <Typography className={classes.tag}>Developer</Typography>
       </div>
 
       <div className={classes.descriptionContainer}>
@@ -87,10 +77,7 @@ const AboutSection: React.VFC<AboutSectionProps> = React.memo(props => {
 
       <ul className={classes.socialList}>
         {Object.values(config.socials).map(social => (
-          <li
-            key={social.name}
-            className={classes.socialListItem}
-          >
+          <li key={social.name} className={classes.socialListItem}>
             <ExternalLink href={social.url}>
               <img
                 className={classes.socialIcon}

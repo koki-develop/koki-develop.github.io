@@ -1,12 +1,6 @@
 import React from 'react';
-import {
-  NextPage,
-  GetStaticProps,
-} from 'next';
-import {
-  createStyles,
-  makeStyles,
-} from '@material-ui/core/styles';
+import { NextPage, GetStaticProps } from 'next';
+import { createStyles, makeStyles } from '@material-ui/core/styles';
 import { ConfigLoader } from '@/lib/configLoader';
 import { Config } from '@/types/config';
 import Layout from '@/layout';
@@ -43,7 +37,19 @@ const PrivacyPolicy: NextPage<PrivacyPolicyProps> = props => {
       title: 'アクセス解析ツールについて',
       content: (
         <p>
-          当サイトでは、 Google によるアクセス解析ツール「 Google アナリティクス」を利用しています。この Google アナリティクスはトラフィックデータの収集のために Cookie を使用しています。このトラフィックデータは匿名で収集されており、個人を特定するものではありません。この機能は Cookie を無効にすることで収集を拒否することが出来ますので、お使いのブラウザの設定をご確認ください。この規約に関して、詳しくは <ExternalLink className={classes.link} href='https://marketingplatform.google.com/about/analytics/terms/jp/'>Google アナリティクス利用規約</ExternalLink> を参照してください。
+          当サイトでは、 Google によるアクセス解析ツール「 Google
+          アナリティクス」を利用しています。この Google
+          アナリティクスはトラフィックデータの収集のために Cookie
+          を使用しています。このトラフィックデータは匿名で収集されており、個人を特定するものではありません。この機能は
+          Cookie
+          を無効にすることで収集を拒否することが出来ますので、お使いのブラウザの設定をご確認ください。この規約に関して、詳しくは{' '}
+          <ExternalLink
+            className={classes.link}
+            href='https://marketingplatform.google.com/about/analytics/terms/jp/'
+          >
+            Google アナリティクス利用規約
+          </ExternalLink>{' '}
+          を参照してください。
         </p>
       ),
     },
@@ -58,16 +64,9 @@ const PrivacyPolicy: NextPage<PrivacyPolicyProps> = props => {
   ];
 
   return (
-    <Layout
-      config={config}
-      hideMenu
-      title='プライバシーポリシー'
-    >
+    <Layout config={config} hideMenu title='プライバシーポリシー'>
       {items.map(item => (
-        <Section
-          key={item.title}
-          title={item.title}
-        >
+        <Section key={item.title} title={item.title}>
           {item.content}
         </Section>
       ))}

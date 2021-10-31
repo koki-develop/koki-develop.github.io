@@ -1,13 +1,7 @@
 import React from 'react';
-import {
-  NextPage,
-  GetStaticProps,
-} from 'next';
+import { NextPage, GetStaticProps } from 'next';
 import Typography from '@material-ui/core/Typography';
-import {
-  createStyles,
-  makeStyles,
-} from '@material-ui/core/styles';
+import { createStyles, makeStyles } from '@material-ui/core/styles';
 import { ConfigLoader } from '@/lib/configLoader';
 import { Config } from '@/types/config';
 import Layout from '@/layout';
@@ -38,15 +32,9 @@ const NotFound: NextPage<NotFoundProps> = props => {
   const message = 'お探しのページは見つかりませんでした';
 
   return (
-    <Layout
-      config={config}
-      title={message}
-      hideMenu
-    >
+    <Layout config={config} title={message} hideMenu>
       <div className={classes.messageContainer}>
-        <Typography className={classes.message}>
-          {message}
-        </Typography>
+        <Typography className={classes.message}>{message}</Typography>
       </div>
     </Layout>
   );

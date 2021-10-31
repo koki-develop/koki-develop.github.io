@@ -1,10 +1,7 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
-import {
-  createStyles,
-  makeStyles,
-} from '@material-ui/core/styles';
+import { createStyles, makeStyles } from '@material-ui/core/styles';
 import { Config } from '@/types/config';
 import Section from '@/components/Section';
 import FadeSlideUp from '@/components/FadeSlideUp';
@@ -40,16 +37,9 @@ const SkillsSection: React.VFC<SkillsSectionProps> = React.memo(props => {
           <FadeSlideUp>
             <Typography className={classes.groupName}>{group.name}</Typography>
           </FadeSlideUp>
-          <Grid
-            className={classes.skillsContainer}
-            container
-            spacing={2}
-          >
+          <Grid className={classes.skillsContainer} container spacing={2}>
             {group.skills.map(skill => (
-              <SkillCard
-                key={skill.name}
-                skill={skill}
-              />
+              <SkillCard key={skill.name} skill={skill} />
             ))}
           </Grid>
         </div>

@@ -1,9 +1,6 @@
 import React from 'react';
 import Avatar from '@material-ui/core/Avatar';
-import {
-  createStyles,
-  makeStyles,
-} from '@material-ui/core/styles';
+import { createStyles, makeStyles } from '@material-ui/core/styles';
 import AvatarGroup from '@material-ui/lab/AvatarGroup';
 import urlJoin from 'url-join';
 import { Skill } from '@/types/skill';
@@ -52,10 +49,7 @@ const SkillAvatarGroup: React.VFC<SkillAvatarGroupProps> = React.memo(props => {
   const classes = useStyles();
 
   return (
-    <AvatarGroup
-      className={classes.skillAvatarGroup}
-      max={100}
-    >
+    <AvatarGroup className={classes.skillAvatarGroup} max={100}>
       {props.skills.map(skill => (
         <ExternalLink
           key={skill.name}

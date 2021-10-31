@@ -8,10 +8,7 @@ import TimelineConnector from '@material-ui/lab/TimelineConnector';
 import TimelineDot from '@material-ui/lab/TimelineDot';
 import TimelineItem from '@material-ui/lab/TimelineItem';
 import TimelineSeparator from '@material-ui/lab/TimelineSeparator';
-import {
-  createStyles,
-  makeStyles,
-} from '@material-ui/core/styles';
+import { createStyles, makeStyles } from '@material-ui/core/styles';
 import { Config } from '@/types/config';
 import Section from '@/components/Section';
 import FadeSlideUp from '@/components/FadeSlideUp';
@@ -66,35 +63,30 @@ const HistorySection: React.VFC<HistorySectionProps> = React.memo(props => {
   const { config } = props;
 
   return (
-    <Section
-      title='History'
-      disablePadding
-    >
-      <Timeline
-        className={classes.timeline}
-        align='alternate'
-      >
+    <Section title='History' disablePadding>
+      <Timeline className={classes.timeline} align='alternate'>
         {config.histories.map((history, i) => (
-          <TimelineItem
-            className={classes.timelineItem}
-            key={history.title}
-          >
+          <TimelineItem className={classes.timelineItem} key={history.title}>
             <TimelineSeparator>
               <TimelineDot
                 color={history.isActive ? 'secondary' : undefined}
                 variant={history.isActive ? undefined : 'outlined'}
               />
-              {i !== config.histories.length - 1 && (
-                <TimelineConnector />
-              )}
+              {i !== config.histories.length - 1 && <TimelineConnector />}
             </TimelineSeparator>
             <TimelineContent>
               <FadeSlideUp>
                 <Card>
                   <CardContent>
-                    <Typography className={classes.period}>{history.from} - {history.to}</Typography>
-                    <Typography className={classes.title}>{history.title}</Typography>
-                    <Typography className={classes.description}>{history.description}</Typography>
+                    <Typography className={classes.period}>
+                      {history.from} - {history.to}
+                    </Typography>
+                    <Typography className={classes.title}>
+                      {history.title}
+                    </Typography>
+                    <Typography className={classes.description}>
+                      {history.description}
+                    </Typography>
                   </CardContent>
                 </Card>
               </FadeSlideUp>

@@ -1,10 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import Button from '@material-ui/core/Button';
-import {
-  createStyles,
-  makeStyles,
-} from '@material-ui/core/styles';
+import { createStyles, makeStyles } from '@material-ui/core/styles';
 import DoneIcon from '@material-ui/icons/Done';
 import MailIcon from '@material-ui/icons/Mail';
 import { Config } from '@/types/config';
@@ -76,14 +73,15 @@ const ContactSection: React.VFC<ContactSectionProps> = React.memo(props => {
           </Button>
         </div>
         <div>
-          <CopyToClipboard
-            text={config.profile.email}
-            onCopy={handleCopyEmail}
-          >
+          <CopyToClipboard text={config.profile.email} onCopy={handleCopyEmail}>
             <Button
               className={classes.copyButton}
               variant='text'
-              startIcon={showCopiedMessage ? <DoneIcon className={classes.copiedIcon} /> : null}
+              startIcon={
+                showCopiedMessage ? (
+                  <DoneIcon className={classes.copiedIcon} />
+                ) : null
+              }
             >
               {showCopiedMessage ? 'コピーしました' : 'クリップボードにコピー'}
             </Button>

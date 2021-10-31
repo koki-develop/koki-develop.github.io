@@ -14,7 +14,9 @@ import { ConfigLoader } from '@/lib/configLoader';
   lines.push('');
   lines.push(config.profile.description);
   lines.push('');
-  lines.push('[<img src="https://github-readme-stats.vercel.app/api?username=koki-develop&show_icons=true&theme=dark"/>](https://github.com/koki-develop?tab=repositories&type=source)');
+  lines.push(
+    '[<img src="https://github-readme-stats.vercel.app/api?username=koki-develop&show_icons=true&theme=dark"/>](https://github.com/koki-develop?tab=repositories&type=source)',
+  );
   lines.push('');
 
   /*
@@ -24,7 +26,10 @@ import { ConfigLoader } from '@/lib/configLoader';
   lines.push('');
   for (const social of Object.values(config.socials)) {
     lines.push(
-      `[<img src="${path.join('./public/images/socials', `${social.name}.svg`)}" alt="${social.name}" width="40" height="40"/>](${social.url})`,
+      `[<img src="${path.join(
+        './public/images/socials',
+        `${social.name}.svg`,
+      )}" alt="${social.name}" width="40" height="40"/>](${social.url})`,
     );
   }
 
@@ -38,7 +43,10 @@ import { ConfigLoader } from '@/lib/configLoader';
     lines.push('');
     for (const skill of skillGroup.skills) {
       lines.push(
-        `[<img src="${path.join('./public/images/skills', `${skill.name}.svg`)}" alt="${skill.name}" width="40" height="40"/>](${skill.url})`,
+        `[<img src="${path.join(
+          './public/images/skills',
+          `${skill.name}.svg`,
+        )}" alt="${skill.name}" width="40" height="40"/>](${skill.url})`,
       );
     }
   }
@@ -53,7 +61,12 @@ import { ConfigLoader } from '@/lib/configLoader';
     lines.push('');
     lines.push(work.description);
     lines.push('');
-    lines.push(`[View on GitHub](${urlJoin(config.socials.github.url, work.repository)})`);
+    lines.push(
+      `[View on GitHub](${urlJoin(
+        config.socials.github.url,
+        work.repository,
+      )})`,
+    );
   }
 
   /*

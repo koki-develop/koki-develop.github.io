@@ -187,12 +187,7 @@
       "repository": "qiita-lgtm-ranking",
       "hasImage": false,
       "description": "Qiita の LGTM ランキング記事を毎日自動更新するシステム。",
-      "skills": [
-        "Go",
-        "AWS",
-        "CircleCI",
-        "Serverless"
-      ]
+      "skills": ["Go", "AWS", "CircleCI", "Serverless"]
     },
     {
       "name": "CheckIP",
@@ -200,14 +195,7 @@
       "repository": "checkip",
       "hasImage": false,
       "description": "クライアントの IP アドレスを返すシンプルな API 。",
-      "skills": [
-        "Go",
-        "chi",
-        "AWS",
-        "Heroku",
-        "GitHub Actions",
-        "Terraform"
-      ]
+      "skills": ["Go", "chi", "AWS", "Heroku", "GitHub Actions", "Terraform"]
     }
   ],
   "histories": [

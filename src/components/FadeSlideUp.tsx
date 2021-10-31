@@ -1,10 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import { useInView } from 'react-intersection-observer';
-import {
-  createStyles,
-  makeStyles,
-} from '@material-ui/core/styles';
+import { createStyles, makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(() =>
   createStyles({

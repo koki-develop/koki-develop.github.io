@@ -11,10 +11,7 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import {
-  createStyles,
-  makeStyles,
-} from '@material-ui/core/styles';
+import { createStyles, makeStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import { Config } from '@/types/config';
 import { Routes } from '@/routes';
@@ -94,10 +91,7 @@ const Header: React.VFC<HeaderProps> = React.memo(props => {
           <div className={classes.user}>
             <Link href={Routes.home}>
               <a className={classes.userLink}>
-                <Avatar
-                  className={classes.avatar}
-                  src='/images/profile.png'
-                />
+                <Avatar className={classes.avatar} src='/images/profile.png' />
                 <Typography className={classes.userName}>
                   {config.profile.name}
                 </Typography>
@@ -119,17 +113,16 @@ const Header: React.VFC<HeaderProps> = React.memo(props => {
 
               <Hidden smUp>
                 <div>
-                  <IconButton onClick={handleClickHamburger}><MenuIcon /></IconButton>
+                  <IconButton onClick={handleClickHamburger}>
+                    <MenuIcon />
+                  </IconButton>
                 </div>
                 <Drawer
                   anchor='right'
                   open={openSideMenu}
                   onClose={handleCloseSideMenu}
                 >
-                  <List
-                    className={classes.sideMenu}
-                    disablePadding
-                  >
+                  <List className={classes.sideMenu} disablePadding>
                     {menuItems.map(item => (
                       <React.Fragment key={item}>
                         <AnchorLink to={item}>

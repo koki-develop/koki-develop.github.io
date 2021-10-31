@@ -18,7 +18,10 @@ export default class Document extends NextDocument {
           {/* Global site tag (gtag.js) - Google Analytics */}
           {process.env.NEXT_PUBLIC_ENV === 'production' && (
             <>
-              <script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`}></script>
+              <script
+                async
+                src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`}
+              ></script>
               <script
                 dangerouslySetInnerHTML={{
                   __html: `
@@ -29,20 +32,28 @@ export default class Document extends NextDocument {
                     gtag('config', '${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}');
                   `,
                 }}
-              >
-              </script>
+              ></script>
             </>
           )}
 
-          <meta property='og:site_name'   content={config.profile.name} />
-          <meta name='description'        content={config.profile.description} />
-          <meta property='og:description' content={config.profile.description} />
-          <meta property='og:url'         content={config.url} />
-          <meta property='og:image'       content={urlJoin(config.url, 'images/profile.jpg')} />
-          <meta property='og:type'        content='website' />
-          <meta property='og:locale'      content='ja_JP' />
-          <meta property='twitter:card'   content='summary' />
-          <meta property='twitter:site'   content={`@${config.socials.twitter.username}`} />
+          <meta property='og:site_name' content={config.profile.name} />
+          <meta name='description' content={config.profile.description} />
+          <meta
+            property='og:description'
+            content={config.profile.description}
+          />
+          <meta property='og:url' content={config.url} />
+          <meta
+            property='og:image'
+            content={urlJoin(config.url, 'images/profile.jpg')}
+          />
+          <meta property='og:type' content='website' />
+          <meta property='og:locale' content='ja_JP' />
+          <meta property='twitter:card' content='summary' />
+          <meta
+            property='twitter:site'
+            content={`@${config.socials.twitter.username}`}
+          />
         </Head>
         <body>
           <Main />
@@ -66,6 +77,9 @@ Document.getInitialProps = async (ctx: DocumentContext) => {
 
   return {
     ...initialProps,
-    styles: [...React.Children.toArray(initialProps.styles), sheets.getStyleElement()],
+    styles: [
+      ...React.Children.toArray(initialProps.styles),
+      sheets.getStyleElement(),
+    ],
   };
 };

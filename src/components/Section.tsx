@@ -2,10 +2,7 @@ import React from 'react';
 import Container from '@material-ui/core/Container';
 import Divider from '@material-ui/core/Divider';
 import Typography from '@material-ui/core/Typography';
-import {
-  createStyles,
-  makeStyles,
-} from '@material-ui/core/styles';
+import { createStyles, makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme =>
   createStyles({
@@ -15,7 +12,7 @@ const useStyles = makeStyles(theme =>
     title: {
       fontSize: 28,
       fontWeight: 'bold',
-      marginBottom :theme.spacing(2),
+      marginBottom: theme.spacing(2),
       textAlign: 'center',
     },
   }),
@@ -38,14 +35,9 @@ const Section: React.VFC<SectionProps> = React.memo(props => {
       {title && <Divider id={title} />}
       <section className={classes.section}>
         {title && !hideTitle && (
-          <Typography className={classes.title}>
-            {title}
-          </Typography>
+          <Typography className={classes.title}>{title}</Typography>
         )}
-        <Container
-          disableGutters={disablePadding}
-          maxWidth='md'
-        >
+        <Container disableGutters={disablePadding} maxWidth='md'>
           {children}
         </Container>
       </section>

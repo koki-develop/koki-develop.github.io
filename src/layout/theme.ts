@@ -1,7 +1,4 @@
-import {
-  createMuiTheme,
-  PaletteColorOptions,
-} from '@material-ui/core';
+import { createMuiTheme, PaletteColorOptions } from '@material-ui/core';
 
 const fontFamily = ['"Open Sans"', 'sans-serif'].join(',');
 
@@ -56,4 +53,3 @@ export const theme = createMuiTheme({
     primary,
   },
 });
-

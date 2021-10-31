@@ -1,9 +1,6 @@
 import React, { useMemo } from 'react';
 import Link from 'next/link';
-import {
-  createStyles,
-  makeStyles,
-} from '@material-ui/core/styles';
+import { createStyles, makeStyles } from '@material-ui/core/styles';
 import urlJoin from 'url-join';
 import { Routes } from '@/routes';
 import { Config } from '@/types/config';
@@ -38,7 +35,12 @@ const Footer: React.VFC<FooterProps> = React.memo(props => {
     return [
       {
         body: (
-          <ExternalLink href={urlJoin(config.socials.github.url, config.socials.github.username)}>
+          <ExternalLink
+            href={urlJoin(
+              config.socials.github.url,
+              config.socials.github.username,
+            )}
+          >
             View on GitHub
           </ExternalLink>
         ),
@@ -59,10 +61,7 @@ const Footer: React.VFC<FooterProps> = React.memo(props => {
 
       <ul>
         {items.map((item, i) => (
-          <li
-            key={i}
-            className={classes.listItem}
-          >
+          <li key={i} className={classes.listItem}>
             {item.body}
           </li>
         ))}

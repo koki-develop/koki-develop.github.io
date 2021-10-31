@@ -8,10 +8,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight';
-import {
-  createStyles,
-  makeStyles,
-} from '@material-ui/core/styles';
+import { createStyles, makeStyles } from '@material-ui/core/styles';
 import urlJoin from 'url-join';
 import { Config } from '@/types/config';
 import Section from '@/components/Section';
@@ -74,16 +71,9 @@ const WorksSection: React.VFC<WorksSectionProps> = React.memo(props => {
 
   return (
     <Section title='Works'>
-      <Grid
-        container
-        spacing={4}
-      >
+      <Grid container spacing={4}>
         {config.works.map(work => (
-          <Grid
-            key={work.name}
-            item
-            xs={12}
-          >
+          <Grid key={work.name} item xs={12}>
             <FadeSlideUp>
               <Card raised>
                 {work.hasImage && (
@@ -98,20 +88,28 @@ const WorksSection: React.VFC<WorksSectionProps> = React.memo(props => {
                 )}
                 <CardHeader
                   className={classes.workCardHeader}
-                  title={(
+                  title={
                     <ExternalLink
                       className={classes.workCardTitleLink}
                       href={work.url}
                     >
                       {work.name}
                     </ExternalLink>
-                  )}
+                  }
                   titleTypographyProps={{ className: classes.workCardTitle }}
                 />
                 <CardContent className={classes.workCardContent}>
                   <SkillAvatarGroup skills={work.skills} />
-                  <Typography className={classes.workDescription}>{work.description}</Typography>
-                  <ExternalLink href={urlJoin('https://github.com', config.socials.github.username, work.repository)}>
+                  <Typography className={classes.workDescription}>
+                    {work.description}
+                  </Typography>
+                  <ExternalLink
+                    href={urlJoin(
+                      'https://github.com',
+                      config.socials.github.username,
+                      work.repository,
+                    )}
+                  >
                     View on GitHub
                   </ExternalLink>
                 </CardContent>
@@ -119,11 +117,7 @@ const WorksSection: React.VFC<WorksSectionProps> = React.memo(props => {
             </FadeSlideUp>
           </Grid>
         ))}
-        <Grid
-          className={classes.moreButtonContainer}
-          item
-          xs={12}
-        >
+        <Grid className={classes.moreButtonContainer} item xs={12}>
           <FadeSlideUp>
             <Button
               className={classes.moreButton}

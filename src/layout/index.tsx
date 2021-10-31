@@ -79,18 +79,11 @@ const Content: React.VFC<LayoutProps> = React.memo(props => {
 
       <CssBaseline />
 
-      <Header
-        config={config}
-        hideMenu={hideMenu}
-      />
+      <Header config={config} hideMenu={hideMenu} />
 
-      <main className={classes.main}>
-        {children}
-      </main>
+      <main className={classes.main}>{children}</main>
 
-      <Footer
-        config={config}
-      />
+      <Footer config={config} />
 
       <Zoom in={trigger}>
         <Fab
