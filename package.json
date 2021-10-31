@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "format": "prettier --write .",
     "lint": "eslint --max-warnings 0 --ext .js,.ts,.tsx .",
     "test:compile": "tsc --noEmit",
     "update:readme": "ts-node -r tsconfig-paths/register ./src/tasks/updateReadme.ts"
