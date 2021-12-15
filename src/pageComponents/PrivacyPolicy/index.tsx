@@ -3,7 +3,7 @@ import { NextPage, GetStaticProps } from 'next';
 import { createStyles, makeStyles } from '@material-ui/core/styles';
 import { ConfigLoader } from '@/lib/configLoader';
 import { Config } from '@/types/config';
-import Layout from '@/layout';
+import Layout from '@/components/Layout';
 import ExternalLink from '@/components/utils/ExternalLink';
 import Section from '@/components/utils/Section';
 

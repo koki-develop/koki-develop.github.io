@@ -1,6 +1,6 @@
 import React from 'react';
 import { NextPage, GetStaticProps } from 'next';
-import Layout from '@/layout';
+import Layout from '@/components/Layout';
 import { Config } from '@/types/config';
 import { ConfigLoader } from '@/lib/configLoader';
 import AboutSection from './About';
