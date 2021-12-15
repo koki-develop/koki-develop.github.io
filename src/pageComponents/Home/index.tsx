@@ -3,7 +3,7 @@ import { NextPage, GetStaticProps } from 'next';
 import Layout from '@/components/Layout';
 import { Config } from '@/types/config';
 import { ConfigLoader } from '@/lib/configLoader';
-import AboutSection from './About';
+import ProfileSection from '../../components/model/profile/ProfileSection';
 import SkillsSection from './Skills';
 import WorksSection from './Works';
 import HistorySection from './History';
@@ -18,7 +18,7 @@ const Home: NextPage<HomeProps> = props => {
 
   return (
     <Layout config={config}>
-      <AboutSection config={config} />
+      <ProfileSection config={config} />
       <SkillsSection config={config} />
       <WorksSection config={config} />
       <HistorySection config={config} />
