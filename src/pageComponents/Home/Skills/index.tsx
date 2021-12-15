@@ -3,8 +3,8 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { createStyles, makeStyles } from '@material-ui/core/styles';
 import { Config } from '@/types/config';
-import Section from '@/components/Section';
-import FadeSlideUp from '@/components/FadeSlideUp';
+import Section from '@/components/utils/Section';
+import FadeSlideUp from '@/components/utils/FadeSlideUp';
 import SkillCard from './SkillCard';
 
 const useStyles = makeStyles(theme =>

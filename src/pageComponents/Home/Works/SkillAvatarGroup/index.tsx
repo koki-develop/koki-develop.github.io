@@ -4,7 +4,7 @@ import { createStyles, makeStyles } from '@material-ui/core/styles';
 import AvatarGroup from '@material-ui/lab/AvatarGroup';
 import urlJoin from 'url-join';
 import { Skill } from '@/types/skill';
-import ExternalLink from '@/components/ExternalLink';
+import ExternalLink from '@/components/utils/ExternalLink';
 
 const useStyles = makeStyles(theme =>
   createStyles({

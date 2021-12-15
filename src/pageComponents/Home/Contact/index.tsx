@@ -5,7 +5,7 @@ import { createStyles, makeStyles } from '@material-ui/core/styles';
 import DoneIcon from '@material-ui/icons/Done';
 import MailIcon from '@material-ui/icons/Mail';
 import { Config } from '@/types/config';
-import Section from '@/components/Section';
+import Section from '@/components/utils/Section';
 
 const useStyles = makeStyles(theme =>
   createStyles({

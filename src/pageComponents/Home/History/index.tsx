@@ -10,8 +10,8 @@ import TimelineItem from '@material-ui/lab/TimelineItem';
 import TimelineSeparator from '@material-ui/lab/TimelineSeparator';
 import { createStyles, makeStyles } from '@material-ui/core/styles';
 import { Config } from '@/types/config';
-import Section from '@/components/Section';
-import FadeSlideUp from '@/components/FadeSlideUp';
+import Section from '@/components/utils/Section';
+import FadeSlideUp from '@/components/utils/FadeSlideUp';
 
 const useStyles = makeStyles(theme =>
   createStyles({

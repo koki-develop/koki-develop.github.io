@@ -11,9 +11,9 @@ import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight';
 import { createStyles, makeStyles } from '@material-ui/core/styles';
 import urlJoin from 'url-join';
 import { Config } from '@/types/config';
-import Section from '@/components/Section';
-import ExternalLink from '@/components/ExternalLink';
-import FadeSlideUp from '@/components/FadeSlideUp';
+import Section from '@/components/utils/Section';
+import ExternalLink from '@/components/utils/ExternalLink';
+import FadeSlideUp from '@/components/utils/FadeSlideUp';
 import SkillAvatarGroup from './SkillAvatarGroup';
 
 const useStyles = makeStyles(theme =>

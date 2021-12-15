@@ -15,7 +15,7 @@ import { createStyles, makeStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import { Config } from '@/types/config';
 import { Routes } from '@/routes';
-import AnchorLink from '@/components/AnchorLink';
+import AnchorLink from '@/components/utils/AnchorLink';
 
 const useStyles = makeStyles(theme =>
   createStyles({

@@ -2,8 +2,8 @@ import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import { createStyles, makeStyles } from '@material-ui/core/styles';
 import { Config } from '@/types/config';
-import Section from '@/components/Section';
-import ExternalLink from '@/components/ExternalLink';
+import Section from '@/components/utils/Section';
+import ExternalLink from '@/components/utils/ExternalLink';
 
 const useStyles = makeStyles(theme =>
   createStyles({

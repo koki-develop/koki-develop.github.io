@@ -7,8 +7,8 @@ import Typography from '@material-ui/core/Typography';
 import { createStyles, makeStyles } from '@material-ui/core/styles';
 import urlJoin from 'url-join';
 import { Skill } from '@/types/skill';
-import ExternalLink from '@/components/ExternalLink';
-import FadeSlideUp from '@/components/FadeSlideUp';
+import ExternalLink from '@/components/utils/ExternalLink';
+import FadeSlideUp from '@/components/utils/FadeSlideUp';
 
 const useStyles = makeStyles(theme =>
   createStyles({

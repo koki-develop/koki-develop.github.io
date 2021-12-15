@@ -4,8 +4,8 @@ import { createStyles, makeStyles } from '@material-ui/core/styles';
 import { ConfigLoader } from '@/lib/configLoader';
 import { Config } from '@/types/config';
 import Layout from '@/layout';
-import ExternalLink from '@/components/ExternalLink';
-import Section from '@/components/Section';
+import ExternalLink from '@/components/utils/ExternalLink';
+import Section from '@/components/utils/Section';
 
 const useStyles = makeStyles(() =>
   createStyles({

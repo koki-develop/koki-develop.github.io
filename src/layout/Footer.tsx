@@ -4,7 +4,7 @@ import { createStyles, makeStyles } from '@material-ui/core/styles';
 import urlJoin from 'url-join';
 import { Routes } from '@/routes';
 import { Config } from '@/types/config';
-import ExternalLink from '@/components/ExternalLink';
+import ExternalLink from '@/components/utils/ExternalLink';
 
 const useStyles = makeStyles(theme =>
   createStyles({
