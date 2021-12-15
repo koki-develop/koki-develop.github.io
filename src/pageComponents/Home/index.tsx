@@ -3,11 +3,11 @@ import { NextPage, GetStaticProps } from 'next';
 import Layout from '@/components/Layout';
 import { Config } from '@/types/config';
 import { ConfigLoader } from '@/lib/configLoader';
-import ProfileSection from '../../components/model/profile/ProfileSection';
+import ProfileSection from '@/components/model/profile/ProfileSection';
 import SkillsSection from './Skills';
 import WorksSection from './Works';
 import HistorySection from './History';
-import ContactSection from './Contact';
+import ProfileContactSection from '@/components/model/profile/ProfileContactSection';
 
 export type HomeProps = {
   config: Config;
@@ -22,7 +22,7 @@ const Home: NextPage<HomeProps> = props => {
       <SkillsSection config={config} />
       <WorksSection config={config} />
       <HistorySection config={config} />
-      <ContactSection config={config} />
+      <ProfileContactSection config={config} />
     </Layout>
   );
 };
