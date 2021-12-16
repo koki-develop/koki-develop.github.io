@@ -6,6 +6,7 @@ import { ConfigLoader } from '@/lib/configLoader';
 import ProfileBlock from '@/components/model/profile/ProfileBlock';
 import ProfileEmail from '@/components/model/profile/ProfileEmail';
 import SocialList from '@/components/model/social/SocialList';
+import SkillCardList from '@/components/model/skill/SkillCardList';
 import SkillsSection from '@/components/model/skill/SkillsSection';
 import WorksSection from '@/components/model/work/WorksSection';
 import HistorySection from '@/components/model/history/HistorySection';
@@ -30,7 +31,10 @@ const Home: NextPage<HomeProps> = props => {
         <ProfileEmail config={config} />
       </Section>
 
-      <SkillsSection config={config} />
+      <Section title='Skills'>
+        <SkillCardList config={config} />
+      </Section>
+
       <WorksSection config={config} />
       <HistorySection config={config} />
       <ProfileContactSection config={config} />
