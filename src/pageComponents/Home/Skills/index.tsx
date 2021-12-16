@@ -5,7 +5,7 @@ import { createStyles, makeStyles } from '@material-ui/core/styles';
 import { Config } from '@/types/config';
 import Section from '@/components/utils/Section';
 import FadeSlideUp from '@/components/utils/FadeSlideUp';
-import SkillCard from './SkillCard';
+import SkillCard from '@/components/model/skill/SkillCard';
 
 const useStyles = makeStyles(theme =>
   createStyles({
