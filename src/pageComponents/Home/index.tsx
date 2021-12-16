@@ -5,7 +5,7 @@ import { Config } from '@/types/config';
 import { ConfigLoader } from '@/lib/configLoader';
 import ProfileSection from '@/components/model/profile/ProfileSection';
 import SkillsSection from '@/components/model/skill/SkillsSection';
-import WorksSection from './Works';
+import WorksSection from '@/components/model/work/WorksSection';
 import HistorySection from '@/components/model/history/HistorySection';
 import ProfileContactSection from '@/components/model/profile/ProfileContactSection';
 
