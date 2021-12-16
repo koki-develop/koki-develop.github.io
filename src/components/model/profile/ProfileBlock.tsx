@@ -2,6 +2,7 @@ import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import { createStyles, makeStyles } from '@material-ui/core/styles';
 import { Config } from '@/types/config';
+import { Profile } from '@/types/profile';
 
 const useStyles = makeStyles(theme =>
   createStyles({
@@ -34,13 +35,13 @@ const useStyles = makeStyles(theme =>
 );
 
 export type ProfileBlockProps = {
-  config: Config;
+  profile: Profile;
 };
 
 const ProfileBlock: React.VFC<ProfileBlockProps> = React.memo(props => {
   const classes = useStyles();
 
-  const { config } = props;
+  const { profile } = props;
 
   return (
     <div>
@@ -49,16 +50,16 @@ const ProfileBlock: React.VFC<ProfileBlockProps> = React.memo(props => {
           <img
             className={classes.avatar}
             src='/images/profile.png'
-            alt={config.profile.name}
+            alt={profile.name}
           />
         </div>
-        <Typography className={classes.name}>{config.profile.name}</Typography>
+        <Typography className={classes.name}>{profile.name}</Typography>
         <Typography className={classes.tag}>Developer</Typography>
       </div>
 
       <div className={classes.descriptionContainer}>
         <Typography className={classes.description}>
-          {config.profile.description}
+          {profile.description}
         </Typography>
       </div>
     </div>
