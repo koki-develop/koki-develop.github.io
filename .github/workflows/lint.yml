@@ -5,13 +5,16 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [14.x, 16.x]
     steps:
       - name: checkout
         uses: actions/checkout@v2
       - name: setup nodejs
         uses: actions/setup-node@v1
         with:
-          node-version: '14.x'
+          node-version: ${{ matrix.node }}
       - name: cache node modules
         uses: actions/cache@v2
         with:
