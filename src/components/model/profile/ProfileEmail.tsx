@@ -4,7 +4,6 @@ import Button from '@material-ui/core/Button';
 import { createStyles, makeStyles } from '@material-ui/core/styles';
 import DoneIcon from '@material-ui/icons/Done';
 import MailIcon from '@material-ui/icons/Mail';
-import { Config } from '@/types/config';
 
 const useStyles = makeStyles(theme =>
   createStyles({
@@ -31,13 +30,13 @@ const useStyles = makeStyles(theme =>
 );
 
 export type ProfileEmailProps = {
-  config: Config;
+  email: string;
 };
 
 const ProfileEmail: React.VFC<ProfileEmailProps> = React.memo(props => {
   const classes = useStyles();
 
-  const { config } = props;
+  const { email } = props;
 
   const [showCopiedMessage, setShowCopiedMessage] = useState<boolean>(false);
 
@@ -63,15 +62,15 @@ const ProfileEmail: React.VFC<ProfileEmailProps> = React.memo(props => {
         <Button
           className={classes.mailButton}
           startIcon={<MailIcon />}
-          href={`mailto:${config.profile.email}`}
+          href={`mailto:${email}`}
           target='_blank'
           rel='noreferrer noopener'
         >
-          {config.profile.email}
+          {email}
         </Button>
       </div>
       <div>
-        <CopyToClipboard text={config.profile.email} onCopy={handleCopyEmail}>
+        <CopyToClipboard text={email} onCopy={handleCopyEmail}>
           <Button
             className={classes.copyButton}
             variant='text'

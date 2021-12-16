@@ -9,7 +9,7 @@ import TimelineDot from '@material-ui/lab/TimelineDot';
 import TimelineItem from '@material-ui/lab/TimelineItem';
 import TimelineSeparator from '@material-ui/lab/TimelineSeparator';
 import { createStyles, makeStyles } from '@material-ui/core/styles';
-import { Config } from '@/types/config';
+import { History } from '@/types/history';
 import FadeSlideUp from '@/components/utils/FadeSlideUp';
 
 const useStyles = makeStyles(theme =>
@@ -53,24 +53,24 @@ const useStyles = makeStyles(theme =>
 );
 
 export type HistoryTimelineProps = {
-  config: Config;
+  histories: History[];
 };
 
 const HistoryTimeline: React.VFC<HistoryTimelineProps> = React.memo(props => {
   const classes = useStyles();
 
-  const { config } = props;
+  const { histories } = props;
 
   return (
     <Timeline className={classes.timeline} align='alternate'>
-      {config.histories.map((history, i) => (
+      {histories.map((history, i) => (
         <TimelineItem className={classes.timelineItem} key={history.title}>
           <TimelineSeparator>
             <TimelineDot
               color={history.isActive ? 'secondary' : undefined}
               variant={history.isActive ? undefined : 'outlined'}
             />
-            {i !== config.histories.length - 1 && <TimelineConnector />}
+            {i !== histories.length - 1 && <TimelineConnector />}
           </TimelineSeparator>
           <TimelineContent>
             <FadeSlideUp>

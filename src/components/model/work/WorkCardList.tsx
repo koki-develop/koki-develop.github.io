@@ -10,10 +10,11 @@ import Typography from '@material-ui/core/Typography';
 import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight';
 import { createStyles, makeStyles } from '@material-ui/core/styles';
 import urlJoin from 'url-join';
-import { Config } from '@/types/config';
+import { Social } from '@/types/socials';
 import ExternalLink from '@/components/utils/ExternalLink';
 import FadeSlideUp from '@/components/utils/FadeSlideUp';
 import SkillAvatarGroup from '@/components/model/skill/SkillAvatarGroup';
+import { Work } from '@/types/work';
 
 const useStyles = makeStyles(theme =>
   createStyles({
@@ -60,17 +61,18 @@ const useStyles = makeStyles(theme =>
 );
 
 export type WorkCardListProps = {
-  config: Config;
+  githubSocial: Social;
+  works: Work[];
 };
 
 const WorkCardList: React.VFC<WorkCardListProps> = React.memo(props => {
   const classes = useStyles();
 
-  const { config } = props;
+  const { works, githubSocial } = props;
 
   return (
     <Grid container spacing={4}>
-      {config.works.map(work => (
+      {works.map(work => (
         <Grid key={work.name} item xs={12}>
           <FadeSlideUp>
             <Card raised>
@@ -104,7 +106,7 @@ const WorkCardList: React.VFC<WorkCardListProps> = React.memo(props => {
                 <ExternalLink
                   href={urlJoin(
                     'https://github.com',
-                    config.socials.github.username,
+                    githubSocial.username,
                     work.repository,
                   )}
                 >
@@ -119,7 +121,7 @@ const WorkCardList: React.VFC<WorkCardListProps> = React.memo(props => {
         <FadeSlideUp>
           <Button
             className={classes.moreButton}
-            href={`${config.socials.github.url}?tab=repositories&type=source`}
+            href={`${githubSocial.url}?tab=repositories&type=source`}
             target='_blank'
             rel='noreferrer noopener'
             size='large'

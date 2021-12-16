@@ -26,19 +26,22 @@ const Home: NextPage<HomeProps> = props => {
       </Section>
 
       <Section title='Skills'>
-        <SkillCardList config={config} />
+        <SkillCardList skillGroups={config.skillGroups} />
       </Section>
 
       <Section title='Works'>
-        <WorkCardList config={config} />
+        <WorkCardList
+          works={config.works}
+          githubSocial={config.socials.github}
+        />
       </Section>
 
       <Section title='History' disablePadding>
-        <HistoryTimeline config={config} />
+        <HistoryTimeline histories={config.histories} />
       </Section>
 
       <Section title='Contact'>
-        <ProfileEmail config={config} />
+        <ProfileEmail email={config.profile.email} />
       </Section>
     </Layout>
   );

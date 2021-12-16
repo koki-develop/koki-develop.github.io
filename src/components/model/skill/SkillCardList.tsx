@@ -2,7 +2,7 @@ import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { createStyles, makeStyles } from '@material-ui/core/styles';
-import { Config } from '@/types/config';
+import { SkillGroup } from '@/types/skillGroup';
 import FadeSlideUp from '@/components/utils/FadeSlideUp';
 import SkillCard from '@/components/model/skill/SkillCard';
 
@@ -21,17 +21,17 @@ const useStyles = makeStyles(theme =>
 );
 
 export type SkillCardListProps = {
-  config: Config;
+  skillGroups: SkillGroup[];
 };
 
 const SkillCardList: React.VFC<SkillCardListProps> = React.memo(props => {
   const classes = useStyles();
 
-  const { config } = props;
+  const { skillGroups } = props;
 
   return (
     <div>
-      {config.skillGroups.map(group => (
+      {skillGroups.map(group => (
         <div key={group.name}>
           <FadeSlideUp>
             <Typography className={classes.groupName}>{group.name}</Typography>
