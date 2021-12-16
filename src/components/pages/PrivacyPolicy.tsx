@@ -1,6 +1,7 @@
 import React from 'react';
 import { NextPage, GetStaticProps } from 'next';
-import { createStyles, makeStyles } from '@material-ui/core/styles';
+import createStyles from '@mui/styles/createStyles';
+import makeStyles from '@mui/styles/makeStyles';
 import { ConfigLoader } from '@/lib/configLoader';
 import { Config } from '@/types/config';
 import Layout from '@/components/Layout';

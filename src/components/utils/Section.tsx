@@ -1,8 +1,9 @@
 import React from 'react';
-import Container from '@material-ui/core/Container';
-import Divider from '@material-ui/core/Divider';
-import Typography from '@material-ui/core/Typography';
-import { createStyles, makeStyles } from '@material-ui/core/styles';
+import Container from '@mui/material/Container';
+import Divider from '@mui/material/Divider';
+import Typography from '@mui/material/Typography';
+import createStyles from '@mui/styles/createStyles';
+import makeStyles from '@mui/styles/makeStyles';
 
 const useStyles = makeStyles(theme =>
   createStyles({

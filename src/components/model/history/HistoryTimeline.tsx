@@ -1,14 +1,15 @@
 import React from 'react';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import Typography from '@material-ui/core/Typography';
-import Timeline from '@material-ui/lab/Timeline';
-import TimelineContent from '@material-ui/lab/TimelineContent';
-import TimelineConnector from '@material-ui/lab/TimelineConnector';
-import TimelineDot from '@material-ui/lab/TimelineDot';
-import TimelineItem from '@material-ui/lab/TimelineItem';
-import TimelineSeparator from '@material-ui/lab/TimelineSeparator';
-import { createStyles, makeStyles } from '@material-ui/core/styles';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import Typography from '@mui/material/Typography';
+import Timeline from '@mui/lab/Timeline';
+import TimelineContent from '@mui/lab/TimelineContent';
+import TimelineConnector from '@mui/lab/TimelineConnector';
+import TimelineDot from '@mui/lab/TimelineDot';
+import TimelineItem from '@mui/lab/TimelineItem';
+import TimelineSeparator from '@mui/lab/TimelineSeparator';
+import createStyles from '@mui/styles/createStyles';
+import makeStyles from '@mui/styles/makeStyles';
 import { History } from '@/types/history';
 import FadeSlideUp from '@/components/utils/FadeSlideUp';
 
@@ -18,13 +19,13 @@ const useStyles = makeStyles(theme =>
       padding: 0,
     },
     timelineItem: {
-      [theme.breakpoints.down('sm')]: {
+      [theme.breakpoints.down('md')]: {
         flexDirection: 'row !important',
         '&::before': {
           flex: 0,
         },
       },
-      [theme.breakpoints.down('xs')]: {
+      [theme.breakpoints.down('sm')]: {
         '&::before': {
           padding: '6px 8px',
         },
@@ -32,7 +33,7 @@ const useStyles = makeStyles(theme =>
     },
     period: {
       fontSize: theme.typography.caption.fontSize,
-      [theme.breakpoints.down('sm')]: {
+      [theme.breakpoints.down('md')]: {
         textAlign: 'left !important' as 'left',
       },
     },
@@ -41,7 +42,7 @@ const useStyles = makeStyles(theme =>
       fontWeight: 'bold',
       marginTop: theme.spacing(1),
       marginBottom: theme.spacing(1),
-      [theme.breakpoints.down('sm')]: {
+      [theme.breakpoints.down('md')]: {
         textAlign: 'left !important' as 'left',
       },
     },

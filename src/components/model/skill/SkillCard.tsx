@@ -1,10 +1,11 @@
 import React from 'react';
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardContent from '@material-ui/core/CardContent';
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
-import { createStyles, makeStyles } from '@material-ui/core/styles';
+import Card from '@mui/material/Card';
+import CardActionArea from '@mui/material/CardActionArea';
+import CardContent from '@mui/material/CardContent';
+import Grid from '@mui/material/Grid';
+import Typography from '@mui/material/Typography';
+import createStyles from '@mui/styles/createStyles';
+import makeStyles from '@mui/styles/makeStyles';
 import urlJoin from 'url-join';
 import { Skill } from '@/types/skill';
 import ExternalLink from '@/components/utils/ExternalLink';
@@ -21,7 +22,7 @@ const useStyles = makeStyles(theme =>
       alignItems: 'center',
       display: 'flex',
       flexDirection: 'column',
-      [theme.breakpoints.down('xs')]: {
+      [theme.breakpoints.down('sm')]: {
         padding: theme.spacing(1.2),
       },
     },
@@ -29,7 +30,7 @@ const useStyles = makeStyles(theme =>
       marginBottom: theme.spacing(2),
       width: 60,
       height: 60,
-      [theme.breakpoints.down('xs')]: {
+      [theme.breakpoints.down('sm')]: {
         height: 40,
         marginBottom: theme.spacing(1),
         width: 40,

@@ -1,14 +1,15 @@
 import React from 'react';
-import Button from '@material-ui/core/Button';
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardContent from '@material-ui/core/CardContent';
-import CardHeader from '@material-ui/core/CardHeader';
-import CardMedia from '@material-ui/core/CardMedia';
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
-import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight';
-import { createStyles, makeStyles } from '@material-ui/core/styles';
+import Button from '@mui/material/Button';
+import Card from '@mui/material/Card';
+import CardActionArea from '@mui/material/CardActionArea';
+import CardContent from '@mui/material/CardContent';
+import CardHeader from '@mui/material/CardHeader';
+import CardMedia from '@mui/material/CardMedia';
+import Grid from '@mui/material/Grid';
+import Typography from '@mui/material/Typography';
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import createStyles from '@mui/styles/createStyles';
+import makeStyles from '@mui/styles/makeStyles';
 import urlJoin from 'url-join';
 import { Social } from '@/types/socials';
 import ExternalLink from '@/components/utils/ExternalLink';
@@ -23,13 +24,13 @@ const useStyles = makeStyles(theme =>
     },
     workCardMedia: {
       height: 300,
-      [theme.breakpoints.down('md')]: {
+      [theme.breakpoints.down('lg')]: {
         height: 280,
       },
-      [theme.breakpoints.down('sm')]: {
+      [theme.breakpoints.down('md')]: {
         height: 230,
       },
-      [theme.breakpoints.down('xs')]: {
+      [theme.breakpoints.down('sm')]: {
         height: 150,
       },
     },

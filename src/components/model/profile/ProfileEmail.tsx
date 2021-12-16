@@ -1,9 +1,10 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import Button from '@material-ui/core/Button';
-import { createStyles, makeStyles } from '@material-ui/core/styles';
-import DoneIcon from '@material-ui/icons/Done';
-import MailIcon from '@material-ui/icons/Mail';
+import Button from '@mui/material/Button';
+import createStyles from '@mui/styles/createStyles';
+import makeStyles from '@mui/styles/makeStyles';
+import DoneIcon from '@mui/icons-material/Done';
+import MailIcon from '@mui/icons-material/Mail';
 
 const useStyles = makeStyles(theme =>
   createStyles({

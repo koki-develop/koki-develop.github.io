@@ -1,20 +1,25 @@
 import React, { useCallback, useMemo } from 'react';
 import Scroll from 'react-scroll';
 import Head from 'next/head';
-import useScrollTrigger from '@material-ui/core/useScrollTrigger';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Fab from '@material-ui/core/Fab';
-import Zoom from '@material-ui/core/Zoom';
-import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
-import {
-  makeStyles,
-  createStyles,
-  ThemeProvider,
-} from '@material-ui/core/styles';
+import useScrollTrigger from '@mui/material/useScrollTrigger';
+import CssBaseline from '@mui/material/CssBaseline';
+import Fab from '@mui/material/Fab';
+import Zoom from '@mui/material/Zoom';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import { ThemeProvider, Theme, StyledEngineProvider } from '@mui/material/styles';
+import makeStyles from '@mui/styles/makeStyles';
+import createStyles from '@mui/styles/createStyles';
 import { Config } from '@/types/config';
 import Header from './Header';
 import Footer from './Footer';
 import { theme } from './theme';
+
+
+declare module '@mui/styles/defaultTheme' {
+  // eslint-disable-next-line @typescript-eslint/no-empty-interface
+  interface DefaultTheme extends Theme {}
+}
+
 
 const useStyles = makeStyles(() =>
   createStyles({
@@ -38,9 +43,11 @@ export type LayoutProps = {
 
 const Root: React.VFC<LayoutProps> = React.memo(props => {
   return (
-    <ThemeProvider theme={theme}>
-      <Content {...props} />
-    </ThemeProvider>
+    <StyledEngineProvider injectFirst>
+      <ThemeProvider theme={theme}>
+        <Content {...props} />
+      </ThemeProvider>
+    </StyledEngineProvider>
   );
 });
 

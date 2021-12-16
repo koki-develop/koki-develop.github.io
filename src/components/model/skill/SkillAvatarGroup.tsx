@@ -1,7 +1,8 @@
 import React from 'react';
-import Avatar from '@material-ui/core/Avatar';
-import { createStyles, makeStyles } from '@material-ui/core/styles';
-import AvatarGroup from '@material-ui/lab/AvatarGroup';
+import Avatar from '@mui/material/Avatar';
+import createStyles from '@mui/styles/createStyles';
+import makeStyles from '@mui/styles/makeStyles';
+import AvatarGroup from '@mui/material/AvatarGroup';
 import urlJoin from 'url-join';
 import { Skill } from '@/types/skill';
 import ExternalLink from '@/components/utils/ExternalLink';
@@ -11,7 +12,7 @@ const useStyles = makeStyles(theme =>
     skillAvatarGroup: {
       marginTop: theme.spacing(2),
       marginBottom: theme.spacing(2),
-      [theme.breakpoints.down('xs')]: {
+      [theme.breakpoints.down('sm')]: {
         marginTop: theme.spacing(1),
         marginBottom: theme.spacing(1),
       },
@@ -20,7 +21,7 @@ const useStyles = makeStyles(theme =>
       backgroundColor: theme.palette.common.white,
       height: 25,
       width: 25,
-      [theme.breakpoints.down('xs')]: {
+      [theme.breakpoints.down('sm')]: {
         height: 20,
         width: 20,
       },

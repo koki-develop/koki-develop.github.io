@@ -1,4 +1,4 @@
-import { createMuiTheme, PaletteColorOptions } from '@material-ui/core';
+import { createTheme, PaletteColorOptions, adaptV4Theme } from '@mui/material';
 
 const fontFamily = ['"Open Sans"', 'sans-serif'].join(',');
 
@@ -8,7 +8,7 @@ const primary: PaletteColorOptions = {
   contrastText: '#000000',
 };
 
-export const theme = createMuiTheme({
+export const theme = createTheme(adaptV4Theme({
   props: {
     MuiButtonBase: {
       disableRipple: true,
@@ -52,4 +52,4 @@ export const theme = createMuiTheme({
   palette: {
     primary,
   },
-});
+}));

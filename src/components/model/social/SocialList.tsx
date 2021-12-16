@@ -1,5 +1,6 @@
 import React from 'react';
-import { createStyles, makeStyles } from '@material-ui/core/styles';
+import createStyles from '@mui/styles/createStyles';
+import makeStyles from '@mui/styles/makeStyles';
 import { Socials } from '@/types/socials';
 import ExternalLink from '@/components/utils/ExternalLink';
 

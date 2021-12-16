@@ -1,18 +1,19 @@
 import React, { useCallback, useMemo, useState } from 'react';
 import Link from 'next/link';
-import AppBar from '@material-ui/core/AppBar';
-import Avatar from '@material-ui/core/Avatar';
-import Container from '@material-ui/core/Container';
-import Divider from '@material-ui/core/Divider';
-import Drawer from '@material-ui/core/Drawer';
-import Hidden from '@material-ui/core/Hidden';
-import IconButton from '@material-ui/core/IconButton';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import { createStyles, makeStyles } from '@material-ui/core/styles';
-import MenuIcon from '@material-ui/icons/Menu';
+import AppBar from '@mui/material/AppBar';
+import Avatar from '@mui/material/Avatar';
+import Container from '@mui/material/Container';
+import Divider from '@mui/material/Divider';
+import Drawer from '@mui/material/Drawer';
+import Hidden from '@mui/material/Hidden';
+import IconButton from '@mui/material/IconButton';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import createStyles from '@mui/styles/createStyles';
+import makeStyles from '@mui/styles/makeStyles';
+import MenuIcon from '@mui/icons-material/Menu';
 import { Config } from '@/types/config';
 import { Routes } from '@/routes';
 import AnchorLink from '@/components/utils/AnchorLink';
@@ -101,7 +102,7 @@ const Header: React.VFC<HeaderProps> = React.memo(props => {
 
           {!hideMenu && (
             <div>
-              <Hidden xsDown>
+              <Hidden smDown>
                 <ul className={classes.menu}>
                   {menuItems.map(item => (
                     <li key={item} className={classes.menuItem}>
@@ -113,7 +114,7 @@ const Header: React.VFC<HeaderProps> = React.memo(props => {
 
               <Hidden smUp>
                 <div>
-                  <IconButton onClick={handleClickHamburger}>
+                  <IconButton onClick={handleClickHamburger} size="large">
                     <MenuIcon />
                   </IconButton>
                 </div>

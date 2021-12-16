@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
 import Link from 'next/link';
-import { createStyles, makeStyles } from '@material-ui/core/styles';
+import createStyles from '@mui/styles/createStyles';
+import makeStyles from '@mui/styles/makeStyles';
 import urlJoin from 'url-join';
 import { Routes } from '@/routes';
 import { Config } from '@/types/config';
