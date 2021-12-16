@@ -1,68 +1,45 @@
 import React from 'react';
+import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import createStyles from '@mui/styles/createStyles';
-import makeStyles from '@mui/styles/makeStyles';
 import { Profile } from '@/types/profile';
-
-const useStyles = makeStyles(theme =>
-  createStyles({
-    profile: {
-      alignItems: 'center',
-      display: 'flex',
-      flexDirection: 'column',
-      marginBottom: theme.spacing(1),
-    },
-    avatar: {
-      height: 150,
-      width: 150,
-    },
-    name: {
-      fontSize: theme.typography.h5.fontSize,
-    },
-    tag: {
-      color: theme.palette.text.secondary,
-      fontSize: theme.typography.h6.fontSize,
-    },
-    descriptionContainer: {
-      display: 'flex',
-      justifyContent: 'center',
-    },
-    description: {
-      textAlign: 'center',
-      whiteSpace: 'pre',
-    },
-  }),
-);
 
 export type ProfileBlockProps = {
   profile: Profile;
 };
 
 const ProfileBlock: React.VFC<ProfileBlockProps> = React.memo(props => {
-  const classes = useStyles();
-
   const { profile } = props;
 
   return (
-    <div>
-      <div className={classes.profile}>
-        <div>
+    <Box>
+      <Box
+        sx={{
+          alignItems: 'center',
+          display: 'flex',
+          flexDirection: 'column',
+          marginBottom: 1,
+        }}
+      >
+        <Box>
           <img
-            className={classes.avatar}
+            height={150}
+            width={150}
             src='/images/profile.png'
             alt={profile.name}
           />
-        </div>
-        <Typography className={classes.name}>{profile.name}</Typography>
-        <Typography className={classes.tag}>Developer</Typography>
-      </div>
+        </Box>
+        <Typography variant='h5'>{profile.name}</Typography>
+        <Typography variant='h6' color='text.secondary'>
+          Developer
+        </Typography>
+      </Box>
 
-      <div className={classes.descriptionContainer}>
-        <Typography className={classes.description}>
+      <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+        <Typography sx={{ textAlign: 'center', whiteSpace: 'pre' }}>
           {profile.description}
         </Typography>
-      </div>
-    </div>
+      </Box>
+    </Box>
   );
 });
 
