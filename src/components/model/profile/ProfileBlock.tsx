@@ -1,7 +1,6 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import { createStyles, makeStyles } from '@material-ui/core/styles';
-import { Config } from '@/types/config';
 import { Profile } from '@/types/profile';
 
 const useStyles = makeStyles(theme =>
