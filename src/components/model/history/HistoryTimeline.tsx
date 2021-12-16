@@ -63,7 +63,7 @@ const HistoryTimeline: React.VFC<HistoryTimelineProps> = React.memo(props => {
   const { histories } = props;
 
   return (
-    <Timeline className={classes.timeline} align='alternate'>
+    <Timeline className={classes.timeline} position='alternate'>
       {histories.map((history, i) => (
         <TimelineItem className={classes.timelineItem} key={history.title}>
           <TimelineSeparator>
