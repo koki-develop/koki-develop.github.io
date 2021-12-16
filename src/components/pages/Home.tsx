@@ -22,7 +22,7 @@ const Home: NextPage<HomeProps> = props => {
     <Layout config={config}>
       <Section title='About' hideTitle>
         <ProfileBlock profile={config.profile} />
-        <SocialList config={config} />
+        <SocialList socials={config.socials} />
       </Section>
       <SkillsSection config={config} />
       <WorksSection config={config} />

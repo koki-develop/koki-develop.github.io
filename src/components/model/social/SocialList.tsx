@@ -1,6 +1,6 @@
 import React from 'react';
 import { createStyles, makeStyles } from '@material-ui/core/styles';
-import { Config } from '@/types/config';
+import { Socials } from '@/types/socials';
 import ExternalLink from '@/components/utils/ExternalLink';
 
 const useStyles = makeStyles(theme =>
@@ -20,17 +20,17 @@ const useStyles = makeStyles(theme =>
 );
 
 export type SocialListProps = {
-  config: Config;
+  socials: Socials;
 };
 
 const SocialList: React.VFC<SocialListProps> = React.memo(props => {
   const classes = useStyles();
 
-  const { config } = props;
+  const { socials } = props;
 
   return (
     <ul className={classes.socialList}>
-      {Object.values(config.socials).map(social => (
+      {Object.values(socials).map(social => (
         <li key={social.name} className={classes.socialListItem}>
           <ExternalLink href={social.url}>
             <img
