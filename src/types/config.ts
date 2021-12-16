@@ -1,4 +1,4 @@
-import { Profile } from '@/components/model/profile';
+import { Profile } from '@/types/profile';
 import { Socials } from '@/types/socials';
 import { SkillGroup } from '@/types/skillGroup';
 import { Work } from '@/types/work';
