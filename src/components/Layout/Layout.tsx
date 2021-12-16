@@ -2,37 +2,26 @@ import React, { useCallback, useMemo } from 'react';
 import Scroll from 'react-scroll';
 import Head from 'next/head';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
+import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
 import Fab from '@mui/material/Fab';
 import Zoom from '@mui/material/Zoom';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
-import { ThemeProvider, Theme, StyledEngineProvider } from '@mui/material/styles';
-import makeStyles from '@mui/styles/makeStyles';
-import createStyles from '@mui/styles/createStyles';
+import {
+  ThemeProvider,
+  Theme,
+  StyledEngineProvider,
+} from '@mui/material/styles';
 import { Config } from '@/types/config';
 import Header from './Header';
 import Footer from './Footer';
 import { theme } from './theme';
 
-
+// TODO: 消す
 declare module '@mui/styles/defaultTheme' {
   // eslint-disable-next-line @typescript-eslint/no-empty-interface
   interface DefaultTheme extends Theme {}
 }
-
-
-const useStyles = makeStyles(() =>
-  createStyles({
-    main: {
-      paddingTop: theme.spacing(10),
-    },
-    backToTopButton: {
-      bottom: theme.spacing(2),
-      position: 'fixed',
-      right: theme.spacing(2),
-    },
-  }),
-);
 
 export type LayoutProps = {
   children: React.ReactNode;
@@ -54,8 +43,6 @@ const Root: React.VFC<LayoutProps> = React.memo(props => {
 Root.displayName = 'Layout';
 
 const Content: React.VFC<LayoutProps> = React.memo(props => {
-  const classes = useStyles();
-
   const { children, config, title, hideMenu } = props;
 
   const trigger = useScrollTrigger({
@@ -88,15 +75,21 @@ const Content: React.VFC<LayoutProps> = React.memo(props => {
 
       <Header config={config} hideMenu={hideMenu} />
 
-      <main className={classes.main}>{children}</main>
+      <Box component='main' sx={{ pt: 10 }}>
+        {children}
+      </Box>
 
       <Footer config={config} />
 
       <Zoom in={trigger}>
         <Fab
-          className={classes.backToTopButton}
           color='primary'
           onClick={handleClickBackToTop}
+          sx={{
+            bottom: theme.spacing(2),
+            position: 'fixed',
+            right: theme.spacing(2),
+          }}
         >
           <KeyboardArrowUpIcon />
         </Fab>
