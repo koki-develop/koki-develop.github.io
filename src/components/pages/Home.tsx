@@ -4,11 +4,12 @@ import Layout from '@/components/Layout';
 import { Config } from '@/types/config';
 import { ConfigLoader } from '@/lib/configLoader';
 import ProfileBlock from '@/components/model/profile/ProfileBlock';
+import ProfileEmail from '@/components/model/profile/ProfileEmail';
 import SocialList from '@/components/model/social/SocialList';
 import SkillsSection from '@/components/model/skill/SkillsSection';
 import WorksSection from '@/components/model/work/WorksSection';
 import HistorySection from '@/components/model/history/HistorySection';
-import ProfileContactSection from '@/components/model/profile/ProfileContactSection';
+import ProfileContactSection from '@/components/model/profile/ProfileEmail';
 import Section from '@/components/utils/Section';
 
 export type HomeProps = {
@@ -24,6 +25,11 @@ const Home: NextPage<HomeProps> = props => {
         <ProfileBlock profile={config.profile} />
         <SocialList socials={config.socials} />
       </Section>
+
+      <Section title='Contact'>
+        <ProfileEmail config={config} />
+      </Section>
+
       <SkillsSection config={config} />
       <WorksSection config={config} />
       <HistorySection config={config} />

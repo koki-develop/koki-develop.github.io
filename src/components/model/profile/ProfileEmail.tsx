@@ -5,7 +5,6 @@ import { createStyles, makeStyles } from '@material-ui/core/styles';
 import DoneIcon from '@material-ui/icons/Done';
 import MailIcon from '@material-ui/icons/Mail';
 import { Config } from '@/types/config';
-import Section from '@/components/utils/Section';
 
 const useStyles = makeStyles(theme =>
   createStyles({
@@ -31,11 +30,11 @@ const useStyles = makeStyles(theme =>
   }),
 );
 
-export type ContactSectionProps = {
+export type ProfileEmailProps = {
   config: Config;
 };
 
-const ContactSection: React.VFC<ContactSectionProps> = React.memo(props => {
+const ProfileEmail: React.VFC<ProfileEmailProps> = React.memo(props => {
   const classes = useStyles();
 
   const { config } = props;
@@ -59,39 +58,37 @@ const ContactSection: React.VFC<ContactSectionProps> = React.memo(props => {
   }, [showCopiedMessage]);
 
   return (
-    <Section title='Contact'>
-      <div className={classes.buttonsContainer}>
-        <div>
-          <Button
-            className={classes.mailButton}
-            startIcon={<MailIcon />}
-            href={`mailto:${config.profile.email}`}
-            target='_blank'
-            rel='noreferrer noopener'
-          >
-            {config.profile.email}
-          </Button>
-        </div>
-        <div>
-          <CopyToClipboard text={config.profile.email} onCopy={handleCopyEmail}>
-            <Button
-              className={classes.copyButton}
-              variant='text'
-              startIcon={
-                showCopiedMessage ? (
-                  <DoneIcon className={classes.copiedIcon} />
-                ) : null
-              }
-            >
-              {showCopiedMessage ? 'コピーしました' : 'クリップボードにコピー'}
-            </Button>
-          </CopyToClipboard>
-        </div>
+    <div className={classes.buttonsContainer}>
+      <div>
+        <Button
+          className={classes.mailButton}
+          startIcon={<MailIcon />}
+          href={`mailto:${config.profile.email}`}
+          target='_blank'
+          rel='noreferrer noopener'
+        >
+          {config.profile.email}
+        </Button>
       </div>
-    </Section>
+      <div>
+        <CopyToClipboard text={config.profile.email} onCopy={handleCopyEmail}>
+          <Button
+            className={classes.copyButton}
+            variant='text'
+            startIcon={
+              showCopiedMessage ? (
+                <DoneIcon className={classes.copiedIcon} />
+              ) : null
+            }
+          >
+            {showCopiedMessage ? 'コピーしました' : 'クリップボードにコピー'}
+          </Button>
+        </CopyToClipboard>
+      </div>
+    </div>
   );
 });
 
-ContactSection.displayName = 'ContactSection';
+ProfileEmail.displayName = 'ProfileEmail';
 
-export default ContactSection;
+export default ProfileEmail;
