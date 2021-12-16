@@ -1,4 +1,4 @@
-import NotFound, { getStaticProps } from '@/pageComponents/NotFound';
+import NotFound, { getStaticProps } from '@/components/pages/NotFound';
 
 export default NotFound;
 

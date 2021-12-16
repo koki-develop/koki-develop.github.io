@@ -1,4 +1,6 @@
-import PrivacyPolicy, { getStaticProps } from '@/pageComponents/PrivacyPolicy';
+import PrivacyPolicy, {
+  getStaticProps,
+} from '@/components/pages/PrivacyPolicy';
 
 export default PrivacyPolicy;
 
