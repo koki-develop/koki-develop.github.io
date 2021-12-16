@@ -6,7 +6,7 @@ import { ConfigLoader } from '@/lib/configLoader';
 import ProfileSection from '@/components/model/profile/ProfileSection';
 import SkillsSection from './Skills';
 import WorksSection from './Works';
-import HistorySection from './History';
+import HistorySection from '@/components/model/history/HistorySection';
 import ProfileContactSection from '@/components/model/profile/ProfileContactSection';
 
 export type HomeProps = {
