@@ -19,6 +19,7 @@ export const theme = createTheme({
     MuiCssBaseline: {
       styleOverrides: {
         body: {
+          backgroundColor: primary.dark,
           fontFamily,
           letterSpacing: 1,
         },
