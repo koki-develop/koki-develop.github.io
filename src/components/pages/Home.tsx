@@ -7,7 +7,7 @@ import ProfileBlock from '@/components/model/profile/ProfileBlock';
 import ProfileEmail from '@/components/model/profile/ProfileEmail';
 import SocialList from '@/components/model/social/SocialList';
 import SkillCardList from '@/components/model/skill/SkillCardList';
-import WorksSection from '@/components/model/work/WorksSection';
+import WorkCardList from '@/components/model/work/WorkCardList';
 import HistoryTimeline from '@/components/model/history/HistoryTimeline';
 import Section from '@/components/utils/Section';
 
@@ -29,7 +29,9 @@ const Home: NextPage<HomeProps> = props => {
         <SkillCardList config={config} />
       </Section>
 
-      <WorksSection config={config} />
+      <Section title='Works'>
+        <WorkCardList config={config} />
+      </Section>
 
       <Section title='History' disablePadding>
         <HistoryTimeline config={config} />
