@@ -1,4 +1,4 @@
-import Home, { getStaticProps } from '@/pageComponents/Home';
+import Home, { getStaticProps } from '@/components/pages/Home';
 
 export default Home;
 
