@@ -14,7 +14,7 @@ import { Config } from '@/types/config';
 import Section from '@/components/utils/Section';
 import ExternalLink from '@/components/utils/ExternalLink';
 import FadeSlideUp from '@/components/utils/FadeSlideUp';
-import SkillAvatarGroup from './SkillAvatarGroup';
+import SkillAvatarGroup from '@/components/model/skill/SkillAvatarGroup';
 
 const useStyles = makeStyles(theme =>
   createStyles({
