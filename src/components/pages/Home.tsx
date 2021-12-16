@@ -8,7 +8,7 @@ import ProfileEmail from '@/components/model/profile/ProfileEmail';
 import SocialList from '@/components/model/social/SocialList';
 import SkillCardList from '@/components/model/skill/SkillCardList';
 import WorksSection from '@/components/model/work/WorksSection';
-import HistorySection from '@/components/model/history/HistorySection';
+import HistoryTimeline from '@/components/model/history/HistoryTimeline';
 import Section from '@/components/utils/Section';
 
 export type HomeProps = {
@@ -30,7 +30,10 @@ const Home: NextPage<HomeProps> = props => {
       </Section>
 
       <WorksSection config={config} />
-      <HistorySection config={config} />
+
+      <Section title='History' disablePadding>
+        <HistoryTimeline config={config} />
+      </Section>
 
       <Section title='Contact'>
         <ProfileEmail config={config} />
