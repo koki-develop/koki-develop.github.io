@@ -52,11 +52,11 @@ const useStyles = makeStyles(theme =>
   }),
 );
 
-export type HistorySectionProps = {
+export type HistoryTimelineProps = {
   config: Config;
 };
 
-const HistorySection: React.VFC<HistorySectionProps> = React.memo(props => {
+const HistoryTimeline: React.VFC<HistoryTimelineProps> = React.memo(props => {
   const classes = useStyles();
 
   const { config } = props;
@@ -95,6 +95,6 @@ const HistorySection: React.VFC<HistorySectionProps> = React.memo(props => {
   );
 });
 
-HistorySection.displayName = 'HistorySection';
+HistoryTimeline.displayName = 'HistoryTimeline';
 
-export default HistorySection;
+export default HistoryTimeline;
