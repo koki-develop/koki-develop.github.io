@@ -1,18 +1,11 @@
 import React from 'react';
-import { NextPage, GetStaticProps } from 'next';
-import { ConfigLoader } from '@/lib/configLoader';
-import { Config } from '@/types/config';
+import { NextPage } from 'next';
 import Layout from '@/components/Layout';
 import ExternalLink from '@/components/utils/ExternalLink';
 import Section from '@/components/utils/Section';
+import { config } from '@/config';
 
-export type PrivacyPolicyProps = {
-  config: Config;
-};
-
-const PrivacyPolicy: NextPage<PrivacyPolicyProps> = props => {
-  const { config } = props;
-
+const PrivacyPolicy: NextPage = () => {
   const items = [
     {
       title: '免責事項',
@@ -64,13 +57,3 @@ const PrivacyPolicy: NextPage<PrivacyPolicyProps> = props => {
 };
 
 export default PrivacyPolicy;
-
-export const getStaticProps: GetStaticProps<PrivacyPolicyProps> = async () => {
-  const config = ConfigLoader.load();
-
-  return {
-    props: {
-      config,
-    },
-  };
-};

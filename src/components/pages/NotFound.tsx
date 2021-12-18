@@ -1,18 +1,11 @@
 import React from 'react';
-import { NextPage, GetStaticProps } from 'next';
+import { NextPage } from 'next';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import { ConfigLoader } from '@/lib/configLoader';
-import { Config } from '@/types/config';
 import Layout from '@/components/Layout';
+import { config } from '@/config';
 
-export type NotFoundProps = {
-  config: Config;
-};
-
-const NotFound: NextPage<NotFoundProps> = props => {
-  const { config } = props;
-
+const NotFound: NextPage = () => {
   const message = 'お探しのページは見つかりませんでした';
 
   return (
@@ -33,13 +26,3 @@ const NotFound: NextPage<NotFoundProps> = props => {
 };
 
 export default NotFound;
-
-export const getStaticProps: GetStaticProps<NotFoundProps> = async () => {
-  const config = ConfigLoader.load();
-
-  return {
-    props: {
-      config,
-    },
-  };
-};
