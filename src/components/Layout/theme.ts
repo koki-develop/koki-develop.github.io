@@ -54,5 +54,10 @@ export const theme = createTheme({
         variant: 'contained',
       },
     },
+    MuiLink: {
+      defaultProps: {
+        underline: 'none',
+      },
+    },
   },
 });
