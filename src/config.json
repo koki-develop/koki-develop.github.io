@@ -55,6 +55,10 @@
           "url": "https://go-chi.io/"
         },
         {
+          "name": "Express",
+          "url": "https://expressjs.com/"
+        },
+        {
           "name": "Rails",
           "url": "https://rubyonrails.org/"
         },
