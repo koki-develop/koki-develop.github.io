@@ -74,7 +74,7 @@ const Header: React.VFC<HeaderProps> = React.memo(props => {
                       component='li'
                       sx={{
                         fontSize: theme => theme.typography.body2.fontSize,
-                        '&:not(:first-child)': {
+                        '&:not(:first-of-type)': {
                           marginLeft: 2,
                         },
                       }}
