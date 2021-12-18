@@ -55,6 +55,11 @@ export const theme = createTheme({
       },
     },
     MuiLink: {
+      styleOverrides: {
+        root: {
+          color: primary.contrastText,
+        },
+      },
       defaultProps: {
         underline: 'none',
       },
