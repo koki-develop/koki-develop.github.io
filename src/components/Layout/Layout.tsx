@@ -7,21 +7,11 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Fab from '@mui/material/Fab';
 import Zoom from '@mui/material/Zoom';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
-import {
-  ThemeProvider,
-  Theme,
-  StyledEngineProvider,
-} from '@mui/material/styles';
+import { ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
 import { Config } from '@/types/config';
 import Header from './Header';
 import Footer from './Footer';
 import { theme } from './theme';
-
-// TODO: 消す
-declare module '@mui/styles/defaultTheme' {
-  // eslint-disable-next-line @typescript-eslint/no-empty-interface
-  interface DefaultTheme extends Theme {}
-}
 
 export type LayoutProps = {
   children: React.ReactNode;
