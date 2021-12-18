@@ -8,8 +8,6 @@ import CardMedia from '@mui/material/CardMedia';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
-import createStyles from '@mui/styles/createStyles';
-import makeStyles from '@mui/styles/makeStyles';
 import urlJoin from 'url-join';
 import { Social } from '@/types/socials';
 import ExternalLink from '@/components/utils/ExternalLink';
@@ -17,58 +15,12 @@ import FadeSlideUp from '@/components/utils/FadeSlideUp';
 import SkillAvatarGroup from '@/components/model/skill/SkillAvatarGroup';
 import { Work } from '@/types/work';
 
-const useStyles = makeStyles(theme =>
-  createStyles({
-    workCardHeader: {
-      paddingBottom: 0,
-    },
-    workCardMedia: {
-      height: 300,
-      [theme.breakpoints.down('lg')]: {
-        height: 280,
-      },
-      [theme.breakpoints.down('md')]: {
-        height: 230,
-      },
-      [theme.breakpoints.down('sm')]: {
-        height: 150,
-      },
-    },
-    workCardTitle: {
-      fontWeight: 'bold',
-    },
-    workCardTitleLink: {
-      '&:hover': {
-        opacity: 1,
-      },
-    },
-    workCardContent: {
-      paddingTop: 0,
-    },
-    workDescription: {
-      fontSize: theme.typography.body2.fontSize,
-      marginBottom: theme.spacing(1),
-    },
-    moreButtonContainer: {
-      display: 'flex',
-      justifyContent: 'center',
-    },
-    moreButton: {
-      '&:hover': {
-        opacity: 1,
-      },
-    },
-  }),
-);
-
 export type WorkCardListProps = {
   githubSocial: Social;
   works: Work[];
 };
 
 const WorkCardList: React.VFC<WorkCardListProps> = React.memo(props => {
-  const classes = useStyles();
-
   const { works, githubSocial } = props;
 
   return (
@@ -81,27 +33,35 @@ const WorkCardList: React.VFC<WorkCardListProps> = React.memo(props => {
                 <CardActionArea>
                   <ExternalLink href={work.url}>
                     <CardMedia
-                      className={classes.workCardMedia}
                       image={urlJoin('/images/works', `${work.name}.png`)}
+                      sx={{ height: { xs: 150, sm: 230, md: 280, lg: 300 } }}
                     />
                   </ExternalLink>
                 </CardActionArea>
               )}
               <CardHeader
-                className={classes.workCardHeader}
                 title={
                   <ExternalLink
-                    className={classes.workCardTitleLink}
                     href={work.url}
+                    sx={{
+                      color: theme => theme.palette.primary.contrastText,
+                      fontWeight: 'bold',
+                      '&:hover': { opacity: 1 },
+                    }}
                   >
                     {work.name}
                   </ExternalLink>
                 }
-                titleTypographyProps={{ className: classes.workCardTitle }}
+                sx={{ pb: 0 }}
               />
-              <CardContent className={classes.workCardContent}>
+              <CardContent sx={{ pt: 0 }}>
                 <SkillAvatarGroup skills={work.skills} />
-                <Typography className={classes.workDescription}>
+                <Typography
+                  sx={{
+                    fontSize: theme => theme.typography.body2.fontSize,
+                    mb: 1,
+                  }}
+                >
                   {work.description}
                 </Typography>
                 <ExternalLink
@@ -110,6 +70,7 @@ const WorkCardList: React.VFC<WorkCardListProps> = React.memo(props => {
                     githubSocial.username,
                     work.repository,
                   )}
+                  sx={{ color: theme => theme.palette.primary.contrastText }}
                 >
                   View on GitHub
                 </ExternalLink>
@@ -118,15 +79,15 @@ const WorkCardList: React.VFC<WorkCardListProps> = React.memo(props => {
           </FadeSlideUp>
         </Grid>
       ))}
-      <Grid className={classes.moreButtonContainer} item xs={12}>
+      <Grid item xs={12} sx={{ display: 'flex', justifyContent: 'center' }}>
         <FadeSlideUp>
           <Button
-            className={classes.moreButton}
             href={`${githubSocial.url}?tab=repositories&type=source`}
             target='_blank'
             rel='noreferrer noopener'
             size='large'
             endIcon={<KeyboardArrowRightIcon />}
+            sx={{ '&:hover': { opacity: 1 } }}
           >
             More
           </Button>
