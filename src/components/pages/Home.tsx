@@ -12,7 +12,7 @@ import { config } from '@/config';
 
 const Home: NextPage = () => {
   return (
-    <Layout config={config}>
+    <Layout>
       <Section title='About' hideTitle>
         <ProfileBlock profile={config.profile} />
         <SocialList socials={config.socials} />

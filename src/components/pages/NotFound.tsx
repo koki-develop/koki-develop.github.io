@@ -3,13 +3,12 @@ import { NextPage } from 'next';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Layout from '@/components/Layout';
-import { config } from '@/config';
 
 const NotFound: NextPage = () => {
   const message = 'お探しのページは見つかりませんでした';
 
   return (
-    <Layout config={config} title={message} hideMenu>
+    <Layout title={message} hideMenu>
       <Box sx={{ my: 2 }}>
         <Typography
           sx={theme => ({

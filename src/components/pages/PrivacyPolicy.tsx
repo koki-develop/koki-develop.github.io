@@ -3,7 +3,6 @@ import { NextPage } from 'next';
 import Layout from '@/components/Layout';
 import ExternalLink from '@/components/utils/ExternalLink';
 import Section from '@/components/utils/Section';
-import { config } from '@/config';
 
 const PrivacyPolicy: NextPage = () => {
   const items = [
@@ -46,7 +45,7 @@ const PrivacyPolicy: NextPage = () => {
   ];
 
   return (
-    <Layout config={config} hideMenu title='プライバシーポリシー'>
+    <Layout hideMenu title='プライバシーポリシー'>
       {items.map(item => (
         <Section key={item.title} title={item.title}>
           {item.content}
