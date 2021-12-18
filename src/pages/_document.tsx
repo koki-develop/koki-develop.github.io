@@ -8,7 +8,7 @@ import NextDocument, {
 } from 'next/document';
 import ServerStyleSheets from '@mui/styles/ServerStyleSheets';
 import urlJoin from 'url-join';
-import config from '@/config.json';
+import { config } from '@/config';
 
 export default class Document extends NextDocument {
   render(): JSX.Element {

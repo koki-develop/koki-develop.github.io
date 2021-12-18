@@ -5,6 +5,7 @@ import { Work } from '@/types/work';
 import { History } from '@/types/history';
 
 export type Config = {
+  url: string;
   profile: Profile;
   socials: Socials;
   skillGroups: SkillGroup[];
