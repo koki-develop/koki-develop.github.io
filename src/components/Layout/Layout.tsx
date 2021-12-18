@@ -69,7 +69,7 @@ const Content: React.VFC<LayoutProps> = React.memo(props => {
         {children}
       </Box>
 
-      <Footer config={config} />
+      <Footer />
 
       <Zoom in={trigger}>
         <Fab

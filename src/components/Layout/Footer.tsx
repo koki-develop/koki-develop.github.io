@@ -1,42 +1,43 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import Box from '@mui/material/Box';
 import urlJoin from 'url-join';
 import { Routes } from '@/routes';
-import { Config } from '@/types/config';
 import ExternalLink from '@/components/utils/ExternalLink';
+import { config } from '@/config';
 
-export type FooterProps = {
-  config: Config;
+type LinkListItemProps = {
+  children: React.ReactNode;
+  href: string;
+  external?: boolean;
 };
 
-const Footer: React.VFC<FooterProps> = React.memo(props => {
-  const { config } = props;
+const LinkListItem: React.VFC<LinkListItemProps> = React.memo(props => {
+  const { children, href, external } = props;
 
-  const items: { body: React.ReactNode }[] = useMemo(() => {
-    return [
-      {
-        body: (
-          <ExternalLink
-            href={urlJoin(
-              config.socials.github.url,
-              config.socials.github.username,
-            )}
-          >
-            View on GitHub
-          </ExternalLink>
-        ),
-      },
-      {
-        body: (
-          <Link href={Routes.privacyPolicy}>
-            <a>プライバシーポリシー</a>
-          </Link>
-        ),
-      },
-    ];
-  }, [config.socials.github.url, config.socials.github.username]);
+  return (
+    <Box
+      component='li'
+      sx={{
+        fontSize: theme => theme.typography.caption.fontSize,
+        marginBottom: 1,
+        textAlign: 'center',
+      }}
+    >
+      {external ? (
+        <ExternalLink href={href}>{children}</ExternalLink>
+      ) : (
+        <Link href={href}>
+          <a>{children}</a>
+        </Link>
+      )}
+    </Box>
+  );
+});
 
+LinkListItem.displayName = 'LinkListItem';
+
+const Footer: React.VFC = React.memo(() => {
   return (
     <Box
       component='footer'
@@ -44,24 +45,23 @@ const Footer: React.VFC<FooterProps> = React.memo(props => {
         alignItems: 'center',
         display: 'flex',
         flexDirection: 'column',
-        padding: 2,
+        p: 2,
       }}
     >
       <small>&copy;2021</small>
       <ul>
-        {items.map((item, i) => (
-          <Box
-            key={i}
-            component='li'
-            sx={{
-              fontSize: theme => theme.typography.caption.fontSize,
-              marginBottom: 1,
-              textAlign: 'center',
-            }}
-          >
-            {item.body}
-          </Box>
-        ))}
+        <LinkListItem
+          external
+          href={urlJoin(
+            config.socials.github.url,
+            config.socials.github.username,
+          )}
+        >
+          View on GitHub
+        </LinkListItem>
+        <LinkListItem href={Routes.privacyPolicy}>
+          プライバシーポリシー
+        </LinkListItem>
       </ul>
     </Box>
   );
