@@ -23,6 +23,7 @@
 
 [<img src="public/images/skills/Gin.svg" alt="Gin" width="40" height="40"/>](https://gin-gonic.com/)
 [<img src="public/images/skills/chi.svg" alt="chi" width="40" height="40"/>](https://go-chi.io/)
+[<img src="public/images/skills/Express.svg" alt="Express" width="40" height="40"/>](https://expressjs.com/)
 [<img src="public/images/skills/Rails.svg" alt="Rails" width="40" height="40"/>](https://rubyonrails.org/)
 [<img src="public/images/skills/React.svg" alt="React" width="40" height="40"/>](https://reactjs.org/)
 [<img src="public/images/skills/Next.js.svg" alt="Next.js" width="40" height="40"/>](https://nextjs.org/)
