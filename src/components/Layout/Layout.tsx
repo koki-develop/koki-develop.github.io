@@ -44,7 +44,7 @@ const Content: React.VFC<LayoutProps> = React.memo(props => {
 
       <CssBaseline />
 
-      <Header config={config} hideMenu={hideMenu} />
+      <Header hideMenu={hideMenu} />
 
       <Box component='main' sx={{ pt: 10 }}>
         {children}
