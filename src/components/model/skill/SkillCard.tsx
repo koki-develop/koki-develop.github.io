@@ -1,70 +1,62 @@
 import React from 'react';
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardContent from '@material-ui/core/CardContent';
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
-import { createStyles, makeStyles } from '@material-ui/core/styles';
+import { styled } from '@mui/material/styles';
+import Card from '@mui/material/Card';
+import CardActionArea from '@mui/material/CardActionArea';
+import CardContent from '@mui/material/CardContent';
+import Grid from '@mui/material/Grid';
+import Typography from '@mui/material/Typography';
 import urlJoin from 'url-join';
 import { Skill } from '@/types/skill';
 import ExternalLink from '@/components/utils/ExternalLink';
 import FadeSlideUp from '@/components/utils/FadeSlideUp';
 
-const useStyles = makeStyles(theme =>
-  createStyles({
-    skillLink: {
-      '&:hover': {
-        opacity: 1,
-      },
-    },
-    skillCardContent: {
-      alignItems: 'center',
-      display: 'flex',
-      flexDirection: 'column',
-      [theme.breakpoints.down('xs')]: {
-        padding: theme.spacing(1.2),
-      },
-    },
-    skillCardImg: {
-      marginBottom: theme.spacing(2),
-      width: 60,
-      height: 60,
-      [theme.breakpoints.down('xs')]: {
-        height: 40,
-        marginBottom: theme.spacing(1),
-        width: 40,
-      },
-    },
-    skillCardName: {
-      fontSize: theme.typography.body2.fontSize,
-      fontWeight: 'bold',
-      whiteSpace: 'pre',
-    },
-  }),
-);
+const SkillImage = styled('img')(({ theme }) => ({
+  height: 60,
+  width: 60,
+  marginBottom: theme.spacing(1),
+  [theme.breakpoints.down('sm')]: {
+    height: 40,
+    marginBottom: theme.spacing(1),
+    width: 40,
+  },
+}));
 
 export type SkillCardProps = {
   skill: Skill;
 };
 
 const SkillCard: React.VFC<SkillCardProps> = React.memo(props => {
-  const classes = useStyles();
-
   const { skill } = props;
 
   return (
-    <Grid key={skill.name} item xs={6} sm={3}>
-      <ExternalLink className={classes.skillLink} href={skill.url}>
+    <Grid key={skill.name} item xs={6} sm={4} md={3}>
+      <ExternalLink href={skill.url}>
         <FadeSlideUp>
           <Card>
             <CardActionArea>
-              <CardContent className={classes.skillCardContent}>
-                <img
-                  className={classes.skillCardImg}
+              <CardContent
+                sx={{
+                  alignItems: 'center',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  p: {
+                    xs: 1.5,
+                    sm: 1.8,
+                    md: 2,
+                  },
+                }}
+              >
+                <SkillImage
                   src={urlJoin('/images/skills', `${skill.name}.svg`)}
                   alt={skill.name}
                 />
-                <Typography className={classes.skillCardName}>
+                <Typography
+                  sx={{
+                    fontSize: theme => theme.typography.body2.fontSize,
+                    fontWeight: 'bold',
+                    whiteSpace: 'pre',
+                  }}
+                >
                   {props.skill.name}
                 </Typography>
               </CardContent>

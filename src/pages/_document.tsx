@@ -6,7 +6,7 @@ import NextDocument, {
   Main,
   NextScript,
 } from 'next/document';
-import { ServerStyleSheets } from '@material-ui/core/styles';
+import ServerStyleSheets from '@mui/styles/ServerStyleSheets';
 import urlJoin from 'url-join';
 import config from '@/config.json';
 

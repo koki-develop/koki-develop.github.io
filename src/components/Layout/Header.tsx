@@ -1,61 +1,21 @@
 import React, { useCallback, useMemo, useState } from 'react';
 import Link from 'next/link';
-import AppBar from '@material-ui/core/AppBar';
-import Avatar from '@material-ui/core/Avatar';
-import Container from '@material-ui/core/Container';
-import Divider from '@material-ui/core/Divider';
-import Drawer from '@material-ui/core/Drawer';
-import Hidden from '@material-ui/core/Hidden';
-import IconButton from '@material-ui/core/IconButton';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import { createStyles, makeStyles } from '@material-ui/core/styles';
-import MenuIcon from '@material-ui/icons/Menu';
+import AppBar from '@mui/material/AppBar';
+import Avatar from '@mui/material/Avatar';
+import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
+import Divider from '@mui/material/Divider';
+import Drawer from '@mui/material/Drawer';
+import Hidden from '@mui/material/Hidden';
+import IconButton from '@mui/material/IconButton';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import MenuIcon from '@mui/icons-material/Menu';
 import { Config } from '@/types/config';
 import { Routes } from '@/routes';
 import AnchorLink from '@/components/utils/AnchorLink';
-
-const useStyles = makeStyles(theme =>
-  createStyles({
-    toolbar: {
-      height: theme.spacing(10),
-    },
-    user: {
-      alignItems: 'center',
-      display: 'flex',
-      flexGrow: 1,
-    },
-    avatar: {
-      marginRight: theme.spacing(0.5),
-    },
-    userLink: {
-      alignItems: 'center',
-      display: 'flex',
-      '&:hover': {
-        opacity: 1,
-      },
-    },
-    userName: {
-      fontSize: theme.typography.h6.fontSize,
-    },
-    menu: {
-      display: 'flex',
-    },
-    menuItem: {
-      '&:not(:first-child)': {
-        marginLeft: theme.spacing(2),
-      },
-    },
-    sideMenu: {
-      width: 200,
-    },
-    sideMenuItem: {
-      padding: 20,
-    },
-  }),
-);
 
 export type HeaderProps = {
   config: Config;
@@ -63,8 +23,6 @@ export type HeaderProps = {
 };
 
 const Header: React.VFC<HeaderProps> = React.memo(props => {
-  const classes = useStyles();
-
   const { config, hideMenu } = props;
 
   const [openSideMenu, setOpenSideMenu] = useState<boolean>(false);
@@ -87,47 +45,63 @@ const Header: React.VFC<HeaderProps> = React.memo(props => {
   return (
     <AppBar>
       <Container maxWidth='md'>
-        <Toolbar className={classes.toolbar}>
-          <div className={classes.user}>
-            <Link href={Routes.home}>
-              <a className={classes.userLink}>
-                <Avatar className={classes.avatar} src='/images/profile.png' />
-                <Typography className={classes.userName}>
-                  {config.profile.name}
-                </Typography>
-              </a>
+        <Toolbar sx={{ height: theme => theme.spacing(10) }}>
+          <Box sx={{ alignItems: 'center', display: 'flex', flexGrow: 1 }}>
+            <Link href={Routes.home} passHref>
+              <Box
+                component='a'
+                sx={{
+                  alignItems: 'center',
+                  display: 'flex',
+                  '&:hover': {
+                    opacity: 1,
+                  },
+                }}
+              >
+                <Avatar src='/images/profile.png' sx={{ marginRight: 0.5 }} />
+                <Typography variant='h6'>{config.profile.name}</Typography>
+              </Box>
             </Link>
-          </div>
+          </Box>
 
           {!hideMenu && (
-            <div>
-              <Hidden xsDown>
-                <ul className={classes.menu}>
+            <Box>
+              <Hidden smDown>
+                <Box component='ul' display='flex'>
                   {menuItems.map(item => (
-                    <li key={item} className={classes.menuItem}>
+                    <Box
+                      key={item}
+                      component='li'
+                      sx={{
+                        fontSize: theme => theme.typography.body2.fontSize,
+                        '&:not(:first-of-type)': {
+                          marginLeft: 2,
+                        },
+                      }}
+                    >
                       <AnchorLink to={item}>{item}</AnchorLink>
-                    </li>
+                    </Box>
                   ))}
-                </ul>
+                </Box>
               </Hidden>
 
               <Hidden smUp>
-                <div>
-                  <IconButton onClick={handleClickHamburger}>
+                <Box>
+                  <IconButton onClick={handleClickHamburger} size='large'>
                     <MenuIcon />
                   </IconButton>
-                </div>
+                </Box>
                 <Drawer
                   anchor='right'
                   open={openSideMenu}
                   onClose={handleCloseSideMenu}
                 >
-                  <List className={classes.sideMenu} disablePadding>
+                  <List sx={{ width: 200 }} disablePadding>
                     {menuItems.map(item => (
                       <React.Fragment key={item}>
                         <AnchorLink to={item}>
                           <ListItem
-                            className={classes.sideMenuItem}
+                            sx={{ padding: 2 }}
                             button
                             onClick={handleClickSideMenuItem}
                           >
@@ -140,7 +114,7 @@ const Header: React.VFC<HeaderProps> = React.memo(props => {
                   </List>
                 </Drawer>
               </Hidden>
-            </div>
+            </Box>
           )}
         </Toolbar>
       </Container>

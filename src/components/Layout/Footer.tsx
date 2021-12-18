@@ -1,34 +1,16 @@
 import React, { useMemo } from 'react';
 import Link from 'next/link';
-import { createStyles, makeStyles } from '@material-ui/core/styles';
+import Box from '@mui/material/Box';
 import urlJoin from 'url-join';
 import { Routes } from '@/routes';
 import { Config } from '@/types/config';
 import ExternalLink from '@/components/utils/ExternalLink';
-
-const useStyles = makeStyles(theme =>
-  createStyles({
-    footer: {
-      alignItems: 'center',
-      display: 'flex',
-      flexDirection: 'column',
-      padding: theme.spacing(2),
-    },
-    listItem: {
-      fontSize: theme.typography.caption.fontSize,
-      marginBottom: theme.spacing(1),
-      textAlign: 'center',
-    },
-  }),
-);
 
 export type FooterProps = {
   config: Config;
 };
 
 const Footer: React.VFC<FooterProps> = React.memo(props => {
-  const classes = useStyles();
-
   const { config } = props;
 
   const items: { body: React.ReactNode }[] = useMemo(() => {
@@ -56,17 +38,32 @@ const Footer: React.VFC<FooterProps> = React.memo(props => {
   }, [config.socials.github.url, config.socials.github.username]);
 
   return (
-    <footer className={classes.footer}>
+    <Box
+      component='footer'
+      sx={{
+        alignItems: 'center',
+        display: 'flex',
+        flexDirection: 'column',
+        padding: 2,
+      }}
+    >
       <small>&copy;2021</small>
-
       <ul>
         {items.map((item, i) => (
-          <li key={i} className={classes.listItem}>
+          <Box
+            key={i}
+            component='li'
+            sx={{
+              fontSize: theme => theme.typography.caption.fontSize,
+              marginBottom: 1,
+              textAlign: 'center',
+            }}
+          >
             {item.body}
-          </li>
+          </Box>
         ))}
       </ul>
-    </footer>
+    </Box>
   );
 });
 

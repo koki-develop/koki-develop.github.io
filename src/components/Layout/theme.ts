@@ -1,4 +1,4 @@
-import { createMuiTheme, PaletteColorOptions } from '@material-ui/core';
+import { createTheme, PaletteColorOptions } from '@mui/material/styles';
 
 const fontFamily = ['"Open Sans"', 'sans-serif'].join(',');
 
@@ -8,28 +8,18 @@ const primary: PaletteColorOptions = {
   contrastText: '#000000',
 };
 
-export const theme = createMuiTheme({
-  props: {
-    MuiButtonBase: {
-      disableRipple: true,
-    },
-    MuiButton: {
-      color: 'primary',
-      variant: 'contained',
-    },
+export const theme = createTheme({
+  palette: {
+    primary,
   },
   typography: {
     fontFamily,
   },
-  overrides: {
-    MuiButton: {
-      root: {
-        textTransform: 'none',
-      },
-    },
+  components: {
     MuiCssBaseline: {
-      '@global': {
+      styleOverrides: {
         body: {
+          backgroundColor: primary.dark,
           fontFamily,
           letterSpacing: 1,
         },
@@ -48,8 +38,31 @@ export const theme = createMuiTheme({
         },
       },
     },
-  },
-  palette: {
-    primary,
+    MuiButtonBase: {
+      defaultProps: {
+        disableRipple: true,
+      },
+    },
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          textTransform: 'none',
+        },
+      },
+      defaultProps: {
+        color: 'primary',
+        variant: 'contained',
+      },
+    },
+    MuiLink: {
+      styleOverrides: {
+        root: {
+          color: primary.contrastText,
+        },
+      },
+      defaultProps: {
+        underline: 'none',
+      },
+    },
   },
 });

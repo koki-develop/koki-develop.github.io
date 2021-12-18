@@ -1,33 +1,17 @@
 import React, { useCallback, useMemo } from 'react';
 import Scroll from 'react-scroll';
 import Head from 'next/head';
-import useScrollTrigger from '@material-ui/core/useScrollTrigger';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Fab from '@material-ui/core/Fab';
-import Zoom from '@material-ui/core/Zoom';
-import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
-import {
-  makeStyles,
-  createStyles,
-  ThemeProvider,
-} from '@material-ui/core/styles';
+import useScrollTrigger from '@mui/material/useScrollTrigger';
+import Box from '@mui/material/Box';
+import CssBaseline from '@mui/material/CssBaseline';
+import Fab from '@mui/material/Fab';
+import Zoom from '@mui/material/Zoom';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import { ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
 import { Config } from '@/types/config';
 import Header from './Header';
 import Footer from './Footer';
 import { theme } from './theme';
-
-const useStyles = makeStyles(() =>
-  createStyles({
-    main: {
-      paddingTop: theme.spacing(10),
-    },
-    backToTopButton: {
-      bottom: theme.spacing(2),
-      position: 'fixed',
-      right: theme.spacing(2),
-    },
-  }),
-);
 
 export type LayoutProps = {
   children: React.ReactNode;
@@ -38,17 +22,17 @@ export type LayoutProps = {
 
 const Root: React.VFC<LayoutProps> = React.memo(props => {
   return (
-    <ThemeProvider theme={theme}>
-      <Content {...props} />
-    </ThemeProvider>
+    <StyledEngineProvider injectFirst>
+      <ThemeProvider theme={theme}>
+        <Content {...props} />
+      </ThemeProvider>
+    </StyledEngineProvider>
   );
 });
 
 Root.displayName = 'Layout';
 
 const Content: React.VFC<LayoutProps> = React.memo(props => {
-  const classes = useStyles();
-
   const { children, config, title, hideMenu } = props;
 
   const trigger = useScrollTrigger({
@@ -81,15 +65,21 @@ const Content: React.VFC<LayoutProps> = React.memo(props => {
 
       <Header config={config} hideMenu={hideMenu} />
 
-      <main className={classes.main}>{children}</main>
+      <Box component='main' sx={{ pt: 10 }}>
+        {children}
+      </Box>
 
       <Footer config={config} />
 
       <Zoom in={trigger}>
         <Fab
-          className={classes.backToTopButton}
           color='primary'
           onClick={handleClickBackToTop}
+          sx={{
+            bottom: theme.spacing(2),
+            position: 'fixed',
+            right: theme.spacing(2),
+          }}
         >
           <KeyboardArrowUpIcon />
         </Fab>

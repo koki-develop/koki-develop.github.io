@@ -1,27 +1,16 @@
 import React from 'react';
 import { NextPage, GetStaticProps } from 'next';
-import { createStyles, makeStyles } from '@material-ui/core/styles';
 import { ConfigLoader } from '@/lib/configLoader';
 import { Config } from '@/types/config';
 import Layout from '@/components/Layout';
 import ExternalLink from '@/components/utils/ExternalLink';
 import Section from '@/components/utils/Section';
 
-const useStyles = makeStyles(() =>
-  createStyles({
-    link: {
-      textDecoration: 'underline',
-    },
-  }),
-);
-
 export type PrivacyPolicyProps = {
   config: Config;
 };
 
 const PrivacyPolicy: NextPage<PrivacyPolicyProps> = props => {
-  const classes = useStyles();
-
   const { config } = props;
 
   const items = [
@@ -44,8 +33,8 @@ const PrivacyPolicy: NextPage<PrivacyPolicyProps> = props => {
           Cookie
           を無効にすることで収集を拒否することが出来ますので、お使いのブラウザの設定をご確認ください。この規約に関して、詳しくは{' '}
           <ExternalLink
-            className={classes.link}
             href='https://marketingplatform.google.com/about/analytics/terms/jp/'
+            sx={{ textDecoration: 'underline' }}
           >
             Google アナリティクス利用規約
           </ExternalLink>{' '}

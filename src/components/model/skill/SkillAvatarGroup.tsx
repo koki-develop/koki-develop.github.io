@@ -1,70 +1,52 @@
 import React from 'react';
-import Avatar from '@material-ui/core/Avatar';
-import { createStyles, makeStyles } from '@material-ui/core/styles';
-import AvatarGroup from '@material-ui/lab/AvatarGroup';
+import Avatar from '@mui/material/Avatar';
+import Box from '@mui/material/Box';
 import urlJoin from 'url-join';
 import { Skill } from '@/types/skill';
 import ExternalLink from '@/components/utils/ExternalLink';
-
-const useStyles = makeStyles(theme =>
-  createStyles({
-    skillAvatarGroup: {
-      marginTop: theme.spacing(2),
-      marginBottom: theme.spacing(2),
-      [theme.breakpoints.down('xs')]: {
-        marginTop: theme.spacing(1),
-        marginBottom: theme.spacing(1),
-      },
-    },
-    skillAvatar: {
-      backgroundColor: theme.palette.common.white,
-      height: 25,
-      width: 25,
-      [theme.breakpoints.down('xs')]: {
-        height: 20,
-        width: 20,
-      },
-    },
-    skillAvatarImg: {
-      height: '100%',
-      objectFit: 'contain',
-      width: '100%',
-    },
-    skillAvatarLink: {
-      border: '1px solid #999',
-      borderRadius: '50%',
-      '&:hover': {
-        opacity: 1,
-        transform: 'translateY(-4px)',
-      },
-    },
-  }),
-);
 
 export type SkillAvatarGroupProps = {
   skills: Skill[];
 };
 
 const SkillAvatarGroup: React.VFC<SkillAvatarGroupProps> = React.memo(props => {
-  const classes = useStyles();
+  const { skills } = props;
 
   return (
-    <AvatarGroup className={classes.skillAvatarGroup} max={100}>
-      {props.skills.map(skill => (
+    <Box sx={{ my: { xs: 1, sm: 2 }, display: 'flex' }}>
+      {skills.map((skill, i) => (
         <ExternalLink
           key={skill.name}
-          className={classes.skillAvatarLink}
           href={skill.url}
+          sx={{
+            border: '1px solid #999',
+            borderRadius: '50%',
+            zIndex: skills.length - i,
+            '&:hover': { opacity: 1, transform: 'translateY(-4px)' },
+            '&:not(:first-of-type)': { ml: -1 },
+          }}
         >
           <Avatar
-            className={classes.skillAvatar}
             src={urlJoin('/images/skills', `${skill.name}.svg`)}
             alt={skill.name}
-            imgProps={{ className: classes.skillAvatarImg }}
+            sx={{
+              backgroundColor: theme => theme.palette.common.white,
+              height: {
+                xs: 20,
+                sm: 25,
+              },
+              width: {
+                xs: 20,
+                sm: 25,
+              },
+            }}
+            imgProps={{
+              style: { height: '100%', objectFit: 'contain', width: '100%' },
+            }}
           />
         </ExternalLink>
       ))}
-    </AvatarGroup>
+    </Box>
   );
 });
 
