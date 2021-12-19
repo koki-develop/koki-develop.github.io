@@ -17,7 +17,7 @@ const ProfileBlock: React.VFC<ProfileBlockProps> = React.memo(props => {
           alignItems: 'center',
           display: 'flex',
           flexDirection: 'column',
-          marginBottom: 1,
+          mb: 1,
         }}
       >
         <Box>
@@ -29,7 +29,10 @@ const ProfileBlock: React.VFC<ProfileBlockProps> = React.memo(props => {
           />
         </Box>
         <Typography variant='h5'>{profile.name}</Typography>
-        <Typography variant='h6' color='text.secondary'>
+        <Typography
+          variant='h6'
+          sx={{ color: theme => theme.palette.text.secondary }}
+        >
           Developer
         </Typography>
       </Box>
