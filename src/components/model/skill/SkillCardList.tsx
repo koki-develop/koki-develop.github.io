@@ -1,4 +1,5 @@
 import React from 'react';
+import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import { SkillGroup } from '@/types/skillGroup';
@@ -13,9 +14,9 @@ const SkillCardList: React.VFC<SkillCardListProps> = React.memo(props => {
   const { skillGroups } = props;
 
   return (
-    <div>
+    <Box>
       {skillGroups.map(group => (
-        <div key={group.name}>
+        <Box key={group.name}>
           <FadeSlideUp>
             <Typography sx={{ fontWeight: 'bold', mb: 1, textAlign: 'center' }}>
               {group.name}
@@ -26,9 +27,9 @@ const SkillCardList: React.VFC<SkillCardListProps> = React.memo(props => {
               <SkillCard key={skill.name} skill={skill} />
             ))}
           </Grid>
-        </div>
+        </Box>
       ))}
-    </div>
+    </Box>
   );
 });
 

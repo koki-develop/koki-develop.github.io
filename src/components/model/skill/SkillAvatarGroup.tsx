@@ -41,7 +41,7 @@ const SkillAvatarGroup: React.VFC<SkillAvatarGroupProps> = React.memo(props => {
               },
             }}
             imgProps={{
-              style: { height: '100%', objectFit: 'contain', width: '100%' },
+              style: { objectFit: 'contain' },
             }}
           />
         </ExternalLink>
