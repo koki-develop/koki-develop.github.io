@@ -4,7 +4,7 @@ import { injectHtml } from 'vite-plugin-html';
 import * as path from 'path';
 
 export default defineConfig(env => {
-  var loadedEnv = loadEnv(env.mode, 'env');
+  const loadedEnv = loadEnv(env.mode, 'env');
 
   return {
     resolve: {
