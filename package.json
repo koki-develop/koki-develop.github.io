@@ -4,8 +4,9 @@
   "license": "UNLICENSED",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
     "format": "prettier --write . && yarn run lint --fix",
     "lint": "eslint --max-warnings 0 --ext .js,.ts,.tsx .",
     "test:compile": "tsc --noEmit",
