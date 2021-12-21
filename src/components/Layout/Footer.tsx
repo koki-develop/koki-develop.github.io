@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import urlJoin from 'url-join';
 import { Routes } from '@/routes';
@@ -27,9 +27,7 @@ const LinkListItem: React.VFC<LinkListItemProps> = React.memo(props => {
       {external ? (
         <ExternalLink href={href}>{children}</ExternalLink>
       ) : (
-        <Link href={href}>
-          <a>{children}</a>
-        </Link>
+        <Link to={href}>{children}</Link>
       )}
     </Box>
   );

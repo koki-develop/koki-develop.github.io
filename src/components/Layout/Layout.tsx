@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import Head from 'next/head';
+import { Helmet } from 'react-helmet';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider } from '@mui/material/styles';
@@ -37,10 +37,10 @@ const Content: React.VFC<LayoutProps> = React.memo(props => {
 
   return (
     <Box>
-      <Head>
+      <Helmet>
         <title>{titleText}</title>
         <meta property='og:title' content={titleText} />
-      </Head>
+      </Helmet>
 
       <CssBaseline />
 

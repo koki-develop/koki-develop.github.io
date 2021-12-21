@@ -1,5 +1,4 @@
 import React from 'react';
-import { NextPage } from 'next';
 import Layout from '@/components/Layout';
 import ProfileBlock from '@/components/model/profile/ProfileBlock';
 import ProfileEmail from '@/components/model/profile/ProfileEmail';
@@ -10,7 +9,7 @@ import HistoryTimeline from '@/components/model/history/HistoryTimeline';
 import Section from '@/components/utils/Section';
 import { config } from '@/config';
 
-const Home: NextPage = () => {
+const Home: React.VFC = React.memo(() => {
   return (
     <Layout>
       <Section title='About' hideTitle>
@@ -38,6 +37,8 @@ const Home: NextPage = () => {
       </Section>
     </Layout>
   );
-};
+});
+
+Home.displayName = 'Home';
 
 export default Home;

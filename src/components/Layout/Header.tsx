@@ -1,5 +1,6 @@
 import React, { useCallback, useMemo, useState } from 'react';
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
+import { styled } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
@@ -18,23 +19,20 @@ import { Routes } from '@/routes';
 import AnchorLink from '@/components/utils/AnchorLink';
 import { config } from '@/config';
 
+const StyledLink = styled(Link)({
+  alignItems: 'center',
+  display: 'flex',
+  '&:hover': {
+    opacity: 1,
+  },
+});
+
 const Logo: React.VFC = React.memo(() => {
   return (
-    <Link href={Routes.home} passHref>
-      <Box
-        component='a'
-        sx={{
-          alignItems: 'center',
-          display: 'flex',
-          '&:hover': {
-            opacity: 1,
-          },
-        }}
-      >
-        <Avatar src='/images/profile.png' sx={{ mr: 0.5 }} />
-        <Typography variant='h6'>{config.profile.name}</Typography>
-      </Box>
-    </Link>
+    <StyledLink to={Routes.home}>
+      <Avatar src='/images/profile.png' sx={{ mr: 0.5 }} />
+      <Typography variant='h6'>{config.profile.name}</Typography>
+    </StyledLink>
   );
 });
 

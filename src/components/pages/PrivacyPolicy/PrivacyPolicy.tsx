@@ -1,10 +1,9 @@
 import React from 'react';
-import { NextPage } from 'next';
 import Layout from '@/components/Layout';
 import ExternalLink from '@/components/utils/ExternalLink';
 import PrivacyPolicyItem from '@/components/pages/PrivacyPolicy/PrivacyPolicyItem';
 
-const PrivacyPolicy: NextPage = () => {
+const PrivacyPolicy: React.VFC = React.memo(() => {
   return (
     <Layout hideMenu title='プライバシーポリシー'>
       <PrivacyPolicyItem title='免責事項'>
@@ -32,6 +31,8 @@ const PrivacyPolicy: NextPage = () => {
       </PrivacyPolicyItem>
     </Layout>
   );
-};
+});
+
+PrivacyPolicy.displayName = 'PrivacyPolicy';
 
 export default PrivacyPolicy;

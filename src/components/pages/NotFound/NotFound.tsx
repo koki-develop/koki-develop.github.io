@@ -1,10 +1,9 @@
 import React from 'react';
-import { NextPage } from 'next';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Layout from '@/components/Layout';
 
-const NotFound: NextPage = () => {
+const NotFound: React.VFC = React.memo(() => {
   const message = 'お探しのページは見つかりませんでした';
 
   return (
@@ -22,6 +21,8 @@ const NotFound: NextPage = () => {
       </Box>
     </Layout>
   );
-};
+});
+
+NotFound.displayName = 'NotFound';
 
 export default NotFound;
