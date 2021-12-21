@@ -11,8 +11,5 @@ export default defineConfig({
   server: {
     open: true,
   },
-  build: {
-    outDir: 'build',
-  },
   plugins: [react()],
 });
