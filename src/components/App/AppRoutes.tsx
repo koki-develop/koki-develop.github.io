@@ -10,11 +10,9 @@ const AppRoutes: React.VFC = React.memo(() => {
   const location = useLocation();
 
   useEffect(() => {
-    if (import.meta.env.VITE_ENV === 'production') {
-      window.gtag('config', import.meta.env.VITE_GA_MEASUREMENT_ID, {
-        page_path: location.pathname + location.search,
-      });
-    }
+    window.gtag('config', import.meta.env.VITE_GA_MEASUREMENT_ID, {
+      page_path: location.pathname + location.search,
+    });
   }, [location.pathname, location.search]);
 
   return (

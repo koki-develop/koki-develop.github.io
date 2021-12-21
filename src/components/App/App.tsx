@@ -9,27 +9,6 @@ const App: React.VFC = React.memo(() => {
   return (
     <BrowserRouter>
       <Helmet>
-        {import.meta.env.VITE_ENV === 'production' && (
-          <>
-            <script
-              async
-              src={`https://www.googletagmanager.com/gtag/js?id=${
-                import.meta.env.VITE_GA_MEASUREMENT_ID
-              }`}
-            ></script>
-            <script
-              dangerouslySetInnerHTML={{
-                __html: `
-                  window.dataLayer = window.dataLayer || [];
-                  function gtag(){dataLayer.push(arguments);}
-                  gtag('js', new Date());
-
-                  gtag('config', '${import.meta.env.VITE_GA_MEASUREMENT_ID}');
-                `,
-              }}
-            ></script>
-          </>
-        )}
         <meta property='og:site_name' content={config.profile.name} />
         <meta name='description' content={config.profile.description} />
         <meta property='og:description' content={config.profile.description} />
