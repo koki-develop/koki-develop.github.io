@@ -33,6 +33,7 @@
     "@types/gtag.js": "^0.0.4",
     "@types/react": "^17.0.0",
     "@types/react-copy-to-clipboard": "^5.0.1",
+    "@types/react-helmet": "^6.1.4",
     "@types/react-router-dom": "^5.3.2",
     "@types/react-scroll": "^1.8.3",
     "@types/url-join": "^4.0.1",
