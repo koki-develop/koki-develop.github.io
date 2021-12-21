@@ -15,6 +15,6 @@ export default defineConfig(env => {
     server: {
       open: true,
     },
-    plugins: [react(), injectHtml({ data: loadedEnv })],
+    plugins: [react(), injectHtml({ data: { env: loadedEnv } })],
   };
 });

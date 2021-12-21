@@ -12,7 +12,7 @@
 
     <script
       async
-      src="https://www.googletagmanager.com/gtag/js?id=<%- VITE_GA_MEASUREMENT_ID %>"
+      src="https://www.googletagmanager.com/gtag/js?id=<%- env.VITE_GA_MEASUREMENT_ID %>"
     ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -21,8 +21,8 @@
       }
       gtag('js', new Date());
 
-      gtag('config', '<%- VITE_GA_MEASUREMENT_ID %>', {
-        debug_mode: '<%- VITE_ENV %>' !== 'production',
+      gtag('config', '<%- env.VITE_GA_MEASUREMENT_ID %>', {
+        debug_mode: '<%- env.VITE_ENV %>' !== 'production',
       });
     </script>
   </head>
