@@ -1,8 +1,5 @@
-# npm
-/node_modules
-
-# next.js
-/.next
+/node_modules/
+/build/
 
 # terraform
 **/.terraform/*
