@@ -160,13 +160,7 @@
       "repository": "koki-develop",
       "hasImage": true,
       "description": "個人用ポートフォリオサイト",
-      "skills": [
-        "TypeScript",
-        "React",
-        "AWS",
-        "Vercel",
-        "GitHub Actions"
-      ]
+      "skills": ["TypeScript", "React", "AWS", "Vercel", "GitHub Actions"]
     },
     {
       "name": "LGTM Generator",
