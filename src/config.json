@@ -22,6 +22,10 @@
       "name": "Language",
       "skills": [
         {
+          "name": "Rust",
+          "url": "https://www.rust-lang.org/"
+        },
+        {
           "name": "Go",
           "url": "https://golang.org/"
         },
