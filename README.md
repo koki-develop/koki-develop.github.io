@@ -14,6 +14,7 @@
 
 ## Language
 
+[<img src="public/images/skills/Rust.svg" alt="Rust" width="40" height="40"/>](https://www.rust-lang.org/)
 [<img src="public/images/skills/Go.svg" alt="Go" width="40" height="40"/>](https://golang.org/)
 [<img src="public/images/skills/TypeScript.svg" alt="TypeScript" width="40" height="40"/>](https://www.typescriptlang.org/)
 [<img src="public/images/skills/JavaScript.svg" alt="JavaScript" width="40" height="40"/>](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
