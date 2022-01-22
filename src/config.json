@@ -191,6 +191,14 @@
       "skills": ["Go", "AWS", "CircleCI", "Serverless"]
     },
     {
+      "name": "Awesome Notes",
+      "url": "https://chrome.google.com/webstore/detail/awesome-notes/oahbimjdpmgidnloajppdlhlpkepmipo",
+      "repository": "awesome-notes",
+      "hasImage": true,
+      "description": "マークダウンショートカット機能つきのシンプルなメモを提供する Chrome Extension 。",
+      "skills": ["TypeScript", "React"]
+    },
+    {
       "name": "CheckIP",
       "url": "https://checkip.dev",
       "repository": "checkip",
