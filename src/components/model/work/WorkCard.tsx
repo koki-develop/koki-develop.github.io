@@ -26,7 +26,10 @@ const WorkCard: React.VFC<WorkCardProps> = React.memo(props => {
           <ExternalLink href={work.url}>
             <CardMedia
               image={urlJoin('/images/works', `${work.name}.png`)}
-              sx={{ height: { xs: 150, sm: 230, md: 280, lg: 300 } }}
+              sx={{
+                backgroundPosition: 'top',
+                height: { xs: 150, sm: 230, md: 280, lg: 300 },
+              }}
             />
           </ExternalLink>
         </CardActionArea>
