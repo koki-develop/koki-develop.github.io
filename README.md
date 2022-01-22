@@ -67,6 +67,11 @@
 Qiita の LGTM ランキング記事を毎日自動更新するシステム。
 
 [View on GitHub](https://github.com/koki-develop/qiita-lgtm-ranking)
+## [Awesome Notes](https://chrome.google.com/webstore/detail/awesome-notes/oahbimjdpmgidnloajppdlhlpkepmipo)
+
+マークダウンショートカット機能つきのシンプルなメモを提供する Chrome Extension 。
+
+[View on GitHub](https://github.com/koki-develop/awesome-notes)
 ## [CheckIP](https://checkip.dev)
 
 クライアントの IP アドレスを返すシンプルな API 。
