@@ -3,7 +3,6 @@ import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import { Social } from '@/types/socials';
-import FadeSlideUp from '@/components/utils/FadeSlideUp';
 import WorkCard from '@/components/model/work/WorkCard';
 import { Work } from '@/types/work';
 
@@ -19,24 +18,20 @@ const WorkCardList: React.VFC<WorkCardListProps> = React.memo(props => {
     <Grid container spacing={4}>
       {works.map(work => (
         <Grid key={work.name} item xs={12}>
-          <FadeSlideUp>
-            <WorkCard work={work} githubSocial={githubSocial} />
-          </FadeSlideUp>
+          <WorkCard work={work} githubSocial={githubSocial} />
         </Grid>
       ))}
       <Grid item xs={12} sx={{ display: 'flex', justifyContent: 'center' }}>
-        <FadeSlideUp>
-          <Button
-            href={`${githubSocial.url}?tab=repositories&type=source`}
-            target='_blank'
-            rel='noreferrer noopener'
-            size='large'
-            endIcon={<KeyboardArrowRightIcon />}
-            sx={{ '&:hover': { opacity: 1 } }}
-          >
-            More
-          </Button>
-        </FadeSlideUp>
+        <Button
+          href={`${githubSocial.url}?tab=repositories&type=source`}
+          target='_blank'
+          rel='noreferrer noopener'
+          size='large'
+          endIcon={<KeyboardArrowRightIcon />}
+          sx={{ '&:hover': { opacity: 1 } }}
+        >
+          More
+        </Button>
       </Grid>
     </Grid>
   );

@@ -6,7 +6,6 @@ import TimelineItem from '@mui/lab/TimelineItem';
 import TimelineSeparator from '@mui/lab/TimelineSeparator';
 import { History } from '@/types/history';
 import HistoryCard from '@/components/model/history/HistoryCard';
-import FadeSlideUp from '@/components/utils/FadeSlideUp';
 
 export type HistoryTimelineItemProps = {
   history: History;
@@ -41,9 +40,7 @@ const HistoryTimelineItem: React.VFC<HistoryTimelineItemProps> = React.memo(
           {connector && <TimelineConnector />}
         </TimelineSeparator>
         <TimelineContent>
-          <FadeSlideUp>
-            <HistoryCard history={history} />
-          </FadeSlideUp>
+          <HistoryCard history={history} />
         </TimelineContent>
       </TimelineItem>
     );

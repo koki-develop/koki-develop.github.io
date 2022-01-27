@@ -3,7 +3,6 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import { SkillGroup } from '@/types/skillGroup';
-import FadeSlideUp from '@/components/utils/FadeSlideUp';
 import SkillCard from '@/components/model/skill/SkillCard';
 
 export type SkillCardListProps = {
@@ -17,11 +16,9 @@ const SkillCardList: React.VFC<SkillCardListProps> = React.memo(props => {
     <Box>
       {skillGroups.map(group => (
         <Box key={group.name}>
-          <FadeSlideUp>
-            <Typography sx={{ fontWeight: 'bold', mb: 1, textAlign: 'center' }}>
-              {group.name}
-            </Typography>
-          </FadeSlideUp>
+          <Typography sx={{ fontWeight: 'bold', mb: 1, textAlign: 'center' }}>
+            {group.name}
+          </Typography>
           <Grid container spacing={2} sx={{ mb: 2 }}>
             {group.skills.map(skill => (
               <SkillCard key={skill.name} skill={skill} />
