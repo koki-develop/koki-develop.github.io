@@ -21,7 +21,11 @@ const WorkCardList: React.VFC<WorkCardListProps> = React.memo(props => {
           <WorkCard work={work} githubSocial={githubSocial} />
         </Grid>
       ))}
-      <Grid item xs={12} sx={{ display: 'flex', justifyContent: 'center' }}>
+      <Grid
+        item
+        xs={12}
+        sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}
+      >
         <Button
           href={`${githubSocial.url}?tab=repositories&type=source`}
           target='_blank'
