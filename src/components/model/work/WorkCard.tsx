@@ -45,7 +45,7 @@ const WorkCard: React.VFC<WorkCardProps> = React.memo(props => {
             {work.name}
           </ExternalLink>
         }
-        sx={{ pb: 0 }}
+        sx={{ pb: 1 }}
       />
       <CardContent sx={{ pt: 0 }}>
         <Typography
