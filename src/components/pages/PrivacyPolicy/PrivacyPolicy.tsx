@@ -5,7 +5,7 @@ import PrivacyPolicyItem from '@/components/pages/PrivacyPolicy/PrivacyPolicyIte
 
 const PrivacyPolicy: React.VFC = React.memo(() => {
   return (
-    <Layout hideMenu title='プライバシーポリシー'>
+    <Layout title='プライバシーポリシー'>
       <PrivacyPolicyItem title='免責事項'>
         当サイトのコンテンツ・情報につきまして、可能な限り正確な情報を掲載するよう努めておりますが、誤情報が入り込んだり、情報が古くなっていることもございます。当サイトに掲載された内容によって生じた損害等の一切の責任を負いかねますのでご了承ください。
       </PrivacyPolicyItem>

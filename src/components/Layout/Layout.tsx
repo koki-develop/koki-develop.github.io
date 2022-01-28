@@ -12,7 +12,6 @@ import { config } from '@/config';
 export type LayoutProps = {
   children: React.ReactNode;
   title?: string;
-  hideMenu?: boolean;
 };
 
 const Root: React.VFC<LayoutProps> = React.memo(props => {
@@ -26,7 +25,7 @@ const Root: React.VFC<LayoutProps> = React.memo(props => {
 Root.displayName = 'Layout';
 
 const Content: React.VFC<LayoutProps> = React.memo(props => {
-  const { children, title, hideMenu } = props;
+  const { children, title } = props;
 
   const titleText = useMemo(() => {
     if (!title) {
@@ -44,7 +43,7 @@ const Content: React.VFC<LayoutProps> = React.memo(props => {
 
       <CssBaseline />
 
-      <Header hideMenu={hideMenu} />
+      <Header />
 
       <Box component='main' sx={{ pt: 10 }}>
         {children}
