@@ -75,9 +75,11 @@ const Home: React.VFC = React.memo(() => {
         </Section>
       </Box>
 
-      <Section title='Contact'>
-        <ProfileEmail email={config.profile.email} />
-      </Section>
+      <Box>
+        <Section title='Contact'>
+          <ProfileEmail email={config.profile.email} />
+        </Section>
+      </Box>
     </Layout>
   );
 });
