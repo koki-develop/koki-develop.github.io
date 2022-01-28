@@ -6,6 +6,7 @@
   "scripts": {
     "start": "next dev",
     "build": "next build",
+    "postbuild": "next-sitemap",
     "format": "prettier --write . && yarn run lint --fix",
     "lint": "eslint --max-warnings 0 --ext .js,.ts,.tsx .",
     "test:compile": "tsc --noEmit",
