@@ -8,7 +8,6 @@ import Typography from '@mui/material/Typography';
 import urlJoin from 'url-join';
 import { Social } from '@/types/socials';
 import ExternalLink from '@/components/utils/ExternalLink';
-import SkillAvatarGroup from '@/components/model/skill/SkillAvatarGroup';
 import { Work } from '@/types/work';
 
 export type WorkCardProps = {
@@ -27,8 +26,8 @@ const WorkCard: React.VFC<WorkCardProps> = React.memo(props => {
             <CardMedia
               image={urlJoin('/images/works', `${work.name}.png`)}
               sx={{
-                backgroundPosition: 'top',
-                height: { xs: 150, sm: 230, md: 280, lg: 300 },
+                backgroundPosition: 'center',
+                height: { xs: 140 },
               }}
             />
           </ExternalLink>
@@ -49,7 +48,6 @@ const WorkCard: React.VFC<WorkCardProps> = React.memo(props => {
         sx={{ pb: 0 }}
       />
       <CardContent sx={{ pt: 0 }}>
-        <SkillAvatarGroup skills={work.skills} />
         <Typography
           sx={{
             fontSize: theme => theme.typography.body2.fontSize,

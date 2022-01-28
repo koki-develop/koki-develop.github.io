@@ -15,9 +15,9 @@ const WorkCardList: React.VFC<WorkCardListProps> = React.memo(props => {
   const { works, githubSocial } = props;
 
   return (
-    <Grid container spacing={4}>
+    <Grid container spacing={2}>
       {works.map(work => (
-        <Grid key={work.name} item xs={12}>
+        <Grid key={work.name} item xs={12} sm={6}>
           <WorkCard work={work} githubSocial={githubSocial} />
         </Grid>
       ))}
