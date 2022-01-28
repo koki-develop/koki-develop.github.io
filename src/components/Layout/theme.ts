@@ -3,9 +3,9 @@ import { createTheme, PaletteColorOptions } from '@mui/material/styles';
 const fontFamily = ['"Open Sans"', 'sans-serif'].join(',');
 
 const primary: PaletteColorOptions = {
-  main: '#FAFAFA',
+  main: '#FFFFFF',
   light: '#FFFFFF',
-  dark: '#E0E0E0',
+  dark: '#FAFAFA',
   contrastText: '#000000',
 };
 
@@ -28,7 +28,7 @@ export const theme = createTheme({
     MuiCssBaseline: {
       styleOverrides: {
         body: {
-          backgroundColor: primary.main,
+          backgroundColor: primary.dark,
           fontFamily,
           letterSpacing: 1,
         },
