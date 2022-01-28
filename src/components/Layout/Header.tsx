@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { styled } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Avatar from '@mui/material/Avatar';
@@ -20,9 +20,11 @@ const StyledLink = styled(Link)({
 
 const Logo: React.VFC = React.memo(() => {
   return (
-    <StyledLink to={Routes.home}>
-      <Avatar src='/images/profile.png' sx={{ mr: 0.5 }} />
-      <Typography variant='h6'>{config.profile.name}</Typography>
+    <StyledLink href={Routes.home}>
+      <a>
+        <Avatar src='/images/profile.png' sx={{ mr: 0.5 }} />
+        <Typography variant='h6'>{config.profile.name}</Typography>
+      </a>
     </StyledLink>
   );
 });
