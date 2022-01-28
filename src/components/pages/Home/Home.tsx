@@ -1,4 +1,7 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
+import Box from '@mui/material/Box';
+import Tab from '@mui/material/Tab';
+import Tabs from '@mui/material/Tabs';
 import Layout from '@/components/Layout';
 import ProfileBlock from '@/components/model/profile/ProfileBlock';
 import ProfileEmail from '@/components/model/profile/ProfileEmail';
@@ -9,28 +12,68 @@ import HistoryTimeline from '@/components/model/history/HistoryTimeline';
 import Section from '@/components/utils/Section';
 import { config } from '@/config';
 
+export const TabValue = {
+  about: 'about',
+  works: 'works',
+  notes: 'notes',
+} as const;
+
+export type TabValue = typeof TabValue[keyof typeof TabValue];
+
 const Home: React.VFC = React.memo(() => {
+  const [selectedTab, setSelectedTab] = useState<TabValue>(TabValue.about);
+
+  const handleChangeTab = useCallback(
+    (_event: React.SyntheticEvent, tab: TabValue) => {
+      setSelectedTab(tab);
+    },
+    [],
+  );
+
   return (
     <Layout>
-      <Section title='About' hideTitle>
-        <ProfileBlock profile={config.profile} />
-        <SocialList socials={config.socials} />
-      </Section>
+      <ProfileBlock profile={config.profile} />
+      <SocialList socials={config.socials} />
 
-      <Section title='Skills'>
-        <SkillCardList skillGroups={config.skillGroups} />
-      </Section>
-
-      <Section title='Works'>
-        <WorkCardList
-          works={config.works}
-          githubSocial={config.socials.github}
+      <Tabs
+        textColor='secondary'
+        indicatorColor='secondary'
+        value={selectedTab}
+        onChange={handleChangeTab}
+        centered
+      >
+        <Tab value={TabValue.about} label='About' />
+        <Tab value={TabValue.works} label='Works' />
+        <Tab
+          disabled
+          value={TabValue.notes}
+          label={
+            <span>
+              Notes
+              <br />
+              (準備中)
+            </span>
+          }
         />
-      </Section>
+      </Tabs>
 
-      <Section title='History' disablePadding>
-        <HistoryTimeline histories={config.histories} />
-      </Section>
+      <Box hidden={selectedTab !== TabValue.about}>
+        <Section title='Skills'>
+          <SkillCardList skillGroups={config.skillGroups} />
+        </Section>
+        <Section title='History' disablePadding>
+          <HistoryTimeline histories={config.histories} />
+        </Section>
+      </Box>
+
+      <Box hidden={selectedTab !== TabValue.works}>
+        <Section title='Works'>
+          <WorkCardList
+            works={config.works}
+            githubSocial={config.socials.github}
+          />
+        </Section>
+      </Box>
 
       <Section title='Contact'>
         <ProfileEmail email={config.profile.email} />

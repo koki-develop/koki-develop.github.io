@@ -16,7 +16,7 @@ const Section: React.VFC<SectionProps> = React.memo(props => {
 
   return (
     <div>
-      {title && <Divider id={title} />}
+      {title && <Divider />}
       <Box component='section' sx={{ m: 3 }}>
         {title && !hideTitle && (
           <Typography
