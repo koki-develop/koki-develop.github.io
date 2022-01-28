@@ -159,7 +159,7 @@
       "url": "https://koki.me",
       "repository": "koki-develop",
       "hasImage": true,
-      "description": "個人用ポートフォリオサイト",
+      "description": "個人用ポートフォリオサイト。",
       "skills": ["TypeScript", "React", "AWS", "Vercel", "GitHub Actions"]
     },
     {
