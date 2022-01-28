@@ -10,7 +10,7 @@ const AppRoutes: React.VFC = React.memo(() => {
   const location = useLocation();
 
   useEffect(() => {
-    window.gtag('config', import.meta.env.VITE_GA_MEASUREMENT_ID, {
+    window.gtag('config', process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID, {
       page_path: location.pathname + location.search,
     });
   }, [location.pathname, location.search]);
