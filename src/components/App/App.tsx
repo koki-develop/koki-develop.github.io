@@ -1,33 +1,19 @@
-import React from 'react';
-import { Helmet } from 'react-helmet';
-import { BrowserRouter } from 'react-router-dom';
-import urlJoin from 'url-join';
-import AppRoutes from '@/components/App/AppRoutes';
-import { config } from '@/config';
+import React, { useEffect } from 'react';
+import { AppProps } from 'next/app';
+import { useRouter } from 'next/router';
 
-const App: React.VFC = React.memo(() => {
-  return (
-    <BrowserRouter>
-      <Helmet>
-        <meta property='og:site_name' content={config.profile.name} />
-        <meta name='description' content={config.profile.description} />
-        <meta property='og:description' content={config.profile.description} />
-        <meta property='og:url' content={config.url} />
-        <meta
-          property='og:image'
-          content={urlJoin(config.url, 'images/profile.jpg')}
-        />
-        <meta property='og:type' content='website' />
-        <meta property='og:locale' content='ja_JP' />
-        <meta property='twitter:card' content='summary' />
-        <meta
-          property='twitter:site'
-          content={`@${config.socials.twitter.username}`}
-        />
-      </Helmet>
-      <AppRoutes />
-    </BrowserRouter>
-  );
+const App: React.VFC<AppProps> = React.memo(({ Component, pageProps }) => {
+  const router = useRouter();
+
+  useEffect(() => {
+    if (process.env.NEXT_PUBLIC_ENV === 'production') {
+      window.gtag('config', process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID, {
+        page_path: router.pathname,
+      });
+    }
+  }, [router.pathname]);
+
+  return <Component {...pageProps} />;
 });
 
 App.displayName = 'App';
