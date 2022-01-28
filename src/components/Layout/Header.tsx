@@ -10,7 +10,7 @@ import Typography from '@mui/material/Typography';
 import { Routes } from '@/routes';
 import { config } from '@/config';
 
-const StyledLink = styled(Link)({
+const StyledLink = styled('a')({
   alignItems: 'center',
   display: 'flex',
   '&:hover': {
@@ -20,12 +20,12 @@ const StyledLink = styled(Link)({
 
 const Logo: React.VFC = React.memo(() => {
   return (
-    <StyledLink href={Routes.home}>
-      <a>
+    <Link href={Routes.home}>
+      <StyledLink>
         <Avatar src='/images/profile.png' sx={{ mr: 0.5 }} />
         <Typography variant='h6'>{config.profile.name}</Typography>
-      </a>
-    </StyledLink>
+      </StyledLink>
+    </Link>
   );
 });
 
