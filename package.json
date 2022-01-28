@@ -26,7 +26,8 @@
     "react-dom": "^17.0.1",
     "react-scroll": "^1.8.1",
     "sass": "^1.32.4",
-    "url-join": "^4.0.1"
+    "url-join": "^4.0.1",
+    "zenn-markdown-html": "^0.1.106"
   },
   "devDependencies": {
     "@types/gtag.js": "^0.0.4",
