@@ -13,7 +13,7 @@ const SocialList: React.VFC<SocialListProps> = React.memo(props => {
   return (
     <Box component='ul' sx={{ display: 'flex', justifyContent: 'center' }}>
       {Object.values(socials).map(social => (
-        <Box key={social.name} component='li' sx={{ m: 2 }}>
+        <Box key={social.name} component='li' sx={{ mx: 2 }}>
           <ExternalLink href={social.url}>
             <img
               src={social.imageUrl}
