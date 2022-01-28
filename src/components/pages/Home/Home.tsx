@@ -33,7 +33,7 @@ const HomePage: React.VFC = React.memo(() => {
 
   const handleChangeTab = useCallback(
     (_event: React.SyntheticEvent, tab: TabValue) => {
-      router.replace({ search: `tab=${tab}` });
+      router.replace({ search: `tab=${tab}` }, undefined, { scroll: false });
     },
     [router],
   );
