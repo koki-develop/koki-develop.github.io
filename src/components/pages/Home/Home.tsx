@@ -1,4 +1,5 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
+import { useRouter } from 'next/router';
 import Box from '@mui/material/Box';
 import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
@@ -21,13 +22,20 @@ export const TabValue = {
 export type TabValue = typeof TabValue[keyof typeof TabValue];
 
 const Home: React.VFC = React.memo(() => {
-  const [selectedTab, setSelectedTab] = useState<TabValue>(TabValue.about);
+  const router = useRouter();
+
+  const selectedTab = useMemo(() => {
+    return (
+      Object.values(TabValue).find(v => v === router.query.tab) ||
+      TabValue.about
+    );
+  }, [router.query.tab]);
 
   const handleChangeTab = useCallback(
     (_event: React.SyntheticEvent, tab: TabValue) => {
-      setSelectedTab(tab);
+      router.replace({ search: `tab=${tab}` });
     },
-    [],
+    [router],
   );
 
   return (
