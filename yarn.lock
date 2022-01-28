@@ -2529,6 +2529,11 @@ yn@3.1.1:
   resolved "https://registry.yarnpkg.com/yn/-/yn-3.1.1.tgz#1e87401a09d767c1d5eab26a6e4c185182d2eb50"
   integrity sha512-Ux4ygGWsu2c7isFWe8Yu1YluJmqVhxqK2cLXNQA5AcC3QfbGNpM7fu0Y8b/z16pXLnFxZYvWhd3fhBY9DLmC6Q==
 
+zenn-content-css@^0.1.106:
+  version "0.1.106"
+  resolved "https://registry.yarnpkg.com/zenn-content-css/-/zenn-content-css-0.1.106.tgz#ace3fe2d629064c5d197b20479ab6acaaa3ef204"
+  integrity sha512-nzr53leHlPiLnhApqeJzOVQ326ogVKA+1+OV4BXNURDeTmIULDytn8TtWu3wxJy1bb3JpFxHnihBuxGtiCCSQA==
+
 zenn-markdown-html@^0.1.106:
   version "0.1.106"
   resolved "https://registry.yarnpkg.com/zenn-markdown-html/-/zenn-markdown-html-0.1.106.tgz#7b8fe5140d45f93550f07925d32fbdc816858acd"
