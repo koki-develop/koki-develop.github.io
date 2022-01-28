@@ -21,7 +21,7 @@ export const TabValue = {
 
 export type TabValue = typeof TabValue[keyof typeof TabValue];
 
-const Home: React.VFC = React.memo(() => {
+const HomePage: React.VFC = React.memo(() => {
   const router = useRouter();
 
   const selectedTab = useMemo(() => {
@@ -92,6 +92,6 @@ const Home: React.VFC = React.memo(() => {
   );
 });
 
-Home.displayName = 'Home';
+HomePage.displayName = 'HomePage';
 
-export default Home;
+export default HomePage;
