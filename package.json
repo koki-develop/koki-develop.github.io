@@ -38,6 +38,7 @@
     "eslint": "^7.18.0",
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "next-sitemap": "^2.0.7",
     "prettier": "^2.4.1",
     "ts-node": "^10.1.0",
     "tsconfig-paths": "^3.11.0",
