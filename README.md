@@ -54,7 +54,7 @@
 
 ## [Koki Sato](https://koki.me)
 
-個人用ポートフォリオサイト
+個人用ポートフォリオサイト。
 
 [View on GitHub](https://github.com/koki-develop/koki-develop)
 ## [LGTM Generator](https://lgtmgen.org)
@@ -62,16 +62,16 @@
 シンプルな LGTM 画像生成サービス。
 
 [View on GitHub](https://github.com/koki-develop/lgtm-generator)
-## [Qiita LGTM Ranking](https://qiita.com/items/b6cfc81906990b3a3e72)
-
-Qiita の LGTM ランキング記事を毎日自動更新するシステム。
-
-[View on GitHub](https://github.com/koki-develop/qiita-lgtm-ranking)
 ## [Awesome Notes](https://chrome.google.com/webstore/detail/awesome-notes/oahbimjdpmgidnloajppdlhlpkepmipo)
 
 マークダウンショートカット機能つきのシンプルなメモを提供する Chrome Extension 。
 
 [View on GitHub](https://github.com/koki-develop/awesome-notes)
+## [Qiita LGTM Ranking](https://qiita.com/items/b6cfc81906990b3a3e72)
+
+Qiita の LGTM ランキング記事を毎日自動更新するシステム。
+
+[View on GitHub](https://github.com/koki-develop/qiita-lgtm-ranking)
 ## [CheckIP](https://checkip.dev)
 
 クライアントの IP アドレスを返すシンプルな API 。
