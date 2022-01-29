@@ -20,22 +20,17 @@ const HistoryTimelineItem: React.VFC<HistoryTimelineItemProps> = React.memo(
       <TimelineItem
         sx={theme => ({
           [theme.breakpoints.down('md')]: {
-            flexDirection: 'row !important',
-            '&::before': {
+            '::before': {
               flex: 0,
-            },
-          },
-          [theme.breakpoints.down('sm')]: {
-            '&::before': {
-              padding: '6px 8px',
+              p: theme.spacing(1),
             },
           },
         })}
       >
         <TimelineSeparator>
           <TimelineDot
-            variant={history.isActive ? undefined : 'outlined'}
-            sx={{ backgroundColor: history.isActive ? 'red' : 'white' }}
+            variant={history.isActive ? 'filled' : 'outlined'}
+            sx={{ backgroundColor: history.isActive ? 'red' : 'transparent' }}
           />
           {connector && <TimelineConnector />}
         </TimelineSeparator>
