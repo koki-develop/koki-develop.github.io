@@ -23,11 +23,12 @@ const BackToTop: React.VFC = React.memo(() => {
       <Fab
         color='primary'
         onClick={handleClickBackToTop}
-        sx={theme => ({
-          bottom: theme.spacing(2),
+        sx={{
+          bottom: theme => theme.spacing(2),
           position: 'fixed',
-          right: theme.spacing(2),
-        })}
+          right: theme => theme.spacing(2),
+          zIndex: theme => theme.zIndex.modal,
+        }}
       >
         <KeyboardArrowUpIcon />
       </Fab>
