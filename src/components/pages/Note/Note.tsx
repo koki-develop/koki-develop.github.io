@@ -20,7 +20,12 @@ const NotePage: React.VFC<NotePageProps> = React.memo(props => {
 
   return (
     <Layout>
-      <Meta title={note.title} hideSiteName />
+      <Meta
+        title={note.title}
+        hideSiteName
+        description={note.description}
+        path={`/notes/${note.slug}`}
+      />
       <Container maxWidth='md' disableGutters sx={{ pt: 4 }}>
         <Paper square elevation={2} sx={{ px: { xs: 2, md: 5 }, py: 2 }}>
           <Box sx={{ mb: 5 }}>

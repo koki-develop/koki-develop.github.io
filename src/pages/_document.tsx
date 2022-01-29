@@ -7,8 +7,6 @@ import NextDocument, {
   NextScript,
 } from 'next/document';
 import ServerStyleSheets from '@mui/styles/ServerStyleSheets';
-import urlJoin from 'url-join';
-import { config } from '@/config';
 
 export default class Document extends NextDocument {
   render(): JSX.Element {
@@ -35,25 +33,6 @@ export default class Document extends NextDocument {
               ></script>
             </>
           )}
-
-          <meta property='og:site_name' content={config.profile.name} />
-          <meta name='description' content={config.profile.description} />
-          <meta
-            property='og:description'
-            content={config.profile.description}
-          />
-          <meta property='og:url' content={config.url} />
-          <meta
-            property='og:image'
-            content={urlJoin(config.url, 'images/profile.jpg')}
-          />
-          <meta property='og:type' content='website' />
-          <meta property='og:locale' content='ja_JP' />
-          <meta property='twitter:card' content='summary' />
-          <meta
-            property='twitter:site'
-            content={`@${config.socials.twitter.username}`}
-          />
         </Head>
         <body>
           <Main />
