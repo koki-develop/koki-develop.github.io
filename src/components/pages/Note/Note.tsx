@@ -1,10 +1,13 @@
 import React from 'react';
+import Link from 'next/link';
 import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
 import Chip from '@mui/material/Chip';
 import Container from '@mui/material/Container';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
+import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import urlJoin from 'url-join';
 import Layout from '@/components/Layout';
 import Meta from '@/components/utils/Meta';
@@ -22,6 +25,18 @@ const NotePage: React.VFC<NotePageProps> = React.memo(props => {
     <Layout>
       <Meta title={note.title} hideSiteName description={note.description} />
       <Container maxWidth='md' disableGutters sx={{ pt: 4 }}>
+        <Box sx={{ mb: 2 }}>
+          <Link passHref href='/notes'>
+            <Button
+              size='large'
+              startIcon={<KeyboardArrowLeftIcon />}
+              sx={{ '&:hover': { opacity: 1 } }}
+            >
+              Notes
+            </Button>
+          </Link>
+        </Box>
+
         <Paper square sx={{ px: { xs: 2, md: 5 }, py: 2 }}>
           <Box sx={{ mb: 5 }}>
             <Typography variant='h4' sx={{ fontWeight: 'bold', mb: 2 }}>
