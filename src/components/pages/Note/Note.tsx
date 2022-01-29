@@ -29,7 +29,7 @@ const NotePage: React.VFC<NotePageProps> = React.memo(props => {
             <Button
               size='large'
               startIcon={<KeyboardArrowLeftIcon />}
-              sx={{ '&:hover': { opacity: 1 }, mx: { xs: 1, md: 0 } }}
+              sx={{ mx: { xs: 1, md: 0 } }}
             >
               Notes
             </Button>

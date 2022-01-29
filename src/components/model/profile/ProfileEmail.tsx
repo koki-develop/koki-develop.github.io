@@ -42,14 +42,12 @@ const ProfileEmail: React.VFC<ProfileEmailProps> = React.memo(props => {
           sx={{
             fontWeight: 'bold',
             marginBottom: 0.8,
-            '&:hover': {
-              opacity: 1,
-            },
           }}
         >
           {email}
         </Button>
       </Box>
+
       <Box>
         <CopyToClipboard text={email} onCopy={handleCopyEmail}>
           <Button

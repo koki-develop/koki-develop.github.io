@@ -31,7 +31,6 @@ const WorkCardList: React.VFC<WorkCardListProps> = React.memo(props => {
           rel='noreferrer noopener'
           size='large'
           endIcon={<KeyboardArrowRightIcon />}
-          sx={{ '&:hover': { opacity: 1 } }}
         >
           More
         </Button>
