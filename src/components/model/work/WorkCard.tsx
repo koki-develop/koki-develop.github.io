@@ -6,17 +6,16 @@ import CardHeader from '@mui/material/CardHeader';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import urlJoin from 'url-join';
-import { Social } from '@/types/socials';
 import ExternalLink from '@/components/utils/ExternalLink';
 import { Work } from '@/types/work';
+import { Routes } from '@/routes';
 
 export type WorkCardProps = {
-  githubSocial: Social;
   work: Work;
 };
 
 const WorkCard: React.VFC<WorkCardProps> = React.memo(props => {
-  const { work, githubSocial } = props;
+  const { work } = props;
 
   return (
     <Card raised>
@@ -57,11 +56,7 @@ const WorkCard: React.VFC<WorkCardProps> = React.memo(props => {
           {work.description}
         </Typography>
         <ExternalLink
-          href={urlJoin(
-            'https://github.com',
-            githubSocial.username,
-            work.repository,
-          )}
+          href={Routes.repository(work.repository)}
           sx={{ color: theme => theme.palette.primary.contrastText }}
         >
           View on GitHub

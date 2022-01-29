@@ -76,10 +76,7 @@ const HomePage: React.VFC<HomePageProps> = React.memo(props => {
 
       <Box hidden={selectedTab !== TabValue.works}>
         <Section title='Works'>
-          <WorkCardList
-            works={config.works}
-            githubSocial={config.socials.github}
-          />
+          <WorkCardList works={config.works} />
         </Section>
       </Box>
 
