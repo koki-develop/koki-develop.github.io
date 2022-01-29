@@ -1,12 +1,5 @@
 import React from 'react';
-import NextDocument, {
-  DocumentContext,
-  Head,
-  Html,
-  Main,
-  NextScript,
-} from 'next/document';
-import ServerStyleSheets from '@mui/styles/ServerStyleSheets';
+import NextDocument, { Head, Html, Main, NextScript } from 'next/document';
 
 export default class Document extends NextDocument {
   render(): JSX.Element {
