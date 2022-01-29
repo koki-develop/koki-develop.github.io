@@ -1,6 +1,9 @@
 import React from 'react';
+import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
 import Layout from '@/components/Layout';
 import { Note } from '@/types/note';
+import 'zenn-content-css';
 
 export type NotePageProps = {
   note: Note;
@@ -8,8 +11,17 @@ export type NotePageProps = {
 
 const NotePage: React.VFC<NotePageProps> = React.memo(props => {
   const { note } = props;
-  console.log('note:', note);
-  return <Layout>notes</Layout>;
+
+  return (
+    <Layout title={note.title}>
+      <Container maxWidth='md'>
+        <Box
+          className='znc'
+          dangerouslySetInnerHTML={{ __html: note.content }}
+        />
+      </Container>
+    </Layout>
+  );
 });
 
 NotePage.displayName = 'NotePage';

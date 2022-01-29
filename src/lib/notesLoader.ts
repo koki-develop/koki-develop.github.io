@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
+import markdownToHtml from 'zenn-markdown-html';
 import { Note } from '@/types/note';
 
 export class NotesLoader {
@@ -9,10 +10,11 @@ export class NotesLoader {
       path.join(this._getNotesDirectoryPath(), `${slug}.md`),
     );
     const mattered = matter(content);
+    const html = markdownToHtml(mattered.content);
 
     return {
       slug,
-      content: mattered.content,
+      content: html,
       ...mattered.data,
     } as Note;
   }
