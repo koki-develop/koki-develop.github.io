@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useMemo } from 'react';
 import { useRouter } from 'next/router';
 import Box from '@mui/material/Box';
 import HomeTabs, { HomeTabValue } from '@/components/pages/Home/HomeTabs';
@@ -12,7 +12,6 @@ import WorkCardList from '@/components/model/work/WorkCardList';
 import HistoryTimeline from '@/components/model/history/HistoryTimeline';
 import Section from '@/components/utils/Section';
 import Meta from '@/components/utils/Meta';
-import * as qs from 'query-string';
 import { config } from '@/config';
 import { Note } from '@/types/note';
 
@@ -25,27 +24,16 @@ const HomePage: React.VFC<HomePageProps> = React.memo(props => {
 
   const router = useRouter();
 
-  const [selectedTab, setSelectedTab] = useState<HomeTabValue>(() => {
-    const querystring = router.asPath.replace(router.pathname, '');
-    const query = qs.parse(querystring);
-
-    switch (query.tab) {
-      case HomeTabValue.works:
-      case HomeTabValue.notes:
-        return query.tab;
-      default:
-        return HomeTabValue.about;
-    }
-  });
+  const selectedTab = useMemo(() => {
+    return (
+      Object.values(HomeTabValue).find(v => v === router.query.tab) ||
+      HomeTabValue.about
+    );
+  }, [router.query.tab]);
 
   const handleChangeTab = useCallback(
     (tab: HomeTabValue) => {
-      router.replace(
-        { search: tab === HomeTabValue.about ? '' : `tab=${tab}` },
-        undefined,
-        { scroll: false },
-      );
-      setSelectedTab(tab);
+      router.replace({ search: `tab=${tab}` }, undefined, { scroll: false });
     },
     [router],
   );
