@@ -13,6 +13,7 @@ import HistoryTimeline from '@/components/model/history/HistoryTimeline';
 import Section from '@/components/utils/Section';
 import Meta from '@/components/utils/Meta';
 import { config } from '@/config';
+import { Note } from '@/types/note';
 
 export const TabValue = {
   about: 'about',
@@ -22,7 +23,13 @@ export const TabValue = {
 
 export type TabValue = typeof TabValue[keyof typeof TabValue];
 
-const HomePage: React.VFC = React.memo(() => {
+export type HomePageProps = {
+  latestNotes: Note[];
+};
+
+const HomePage: React.VFC<HomePageProps> = React.memo(props => {
+  const { latestNotes } = props;
+
   const router = useRouter();
 
   const selectedTab = useMemo(() => {
@@ -54,17 +61,7 @@ const HomePage: React.VFC = React.memo(() => {
       >
         <Tab value={TabValue.about} label='About' />
         <Tab value={TabValue.works} label='Works' />
-        <Tab
-          disabled
-          value={TabValue.notes}
-          label={
-            <span>
-              Notes
-              <br />
-              (準備中)
-            </span>
-          }
-        />
+        <Tab value={TabValue.notes} label='Notes' />
       </Tabs>
 
       <Box hidden={selectedTab !== TabValue.about}>
@@ -82,6 +79,14 @@ const HomePage: React.VFC = React.memo(() => {
             works={config.works}
             githubSocial={config.socials.github}
           />
+        </Section>
+      </Box>
+
+      <Box hidden={selectedTab !== TabValue.notes}>
+        <Section title='Notes'>
+          {latestNotes.map(note => (
+            <div key={note.slug}>{note.title}</div>
+          ))}
         </Section>
       </Box>
 
