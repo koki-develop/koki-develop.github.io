@@ -60,9 +60,21 @@ const HomePage: React.VFC<HomePageProps> = React.memo(props => {
         onChange={handleChangeTab}
         centered
       >
-        <Tab value={TabValue.about} label='About' />
-        <Tab value={TabValue.works} label='Works' />
-        <Tab value={TabValue.notes} label='Notes' />
+        <Tab
+          value={TabValue.about}
+          label='About'
+          sx={{ fontWeight: selectedTab === TabValue.about ? 'bold' : null }}
+        />
+        <Tab
+          value={TabValue.works}
+          label='Works'
+          sx={{ fontWeight: selectedTab === TabValue.works ? 'bold' : null }}
+        />
+        <Tab
+          value={TabValue.notes}
+          label='Notes'
+          sx={{ fontWeight: selectedTab === TabValue.notes ? 'bold' : null }}
+        />
       </Tabs>
 
       <Box hidden={selectedTab !== TabValue.about}>
