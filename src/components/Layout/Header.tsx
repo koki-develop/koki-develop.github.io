@@ -17,7 +17,9 @@ const Header: React.VFC = React.memo(() => {
           <Link href={Routes.home()} passHref>
             <MuiLink sx={{ alignItems: 'center', display: 'flex' }}>
               <Avatar src='/images/profile.png' sx={{ mr: 1 }} />
-              <Typography variant='h6'>{config.profile.name}</Typography>
+              <Typography component='h1' variant='h6'>
+                {config.profile.name}
+              </Typography>
             </MuiLink>
           </Link>
         </Toolbar>

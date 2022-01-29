@@ -25,7 +25,11 @@ const HistoryCard: React.VFC<HistoryCardProps> = React.memo(props => {
           <Typography variant='caption'>
             {history.from} - {history.to}
           </Typography>
-          <Typography variant='body1' sx={{ fontWeight: 'bold', my: 1 }}>
+          <Typography
+            component='h2'
+            variant='body1'
+            sx={{ fontWeight: 'bold', my: 1 }}
+          >
             {history.title}
           </Typography>
         </Box>

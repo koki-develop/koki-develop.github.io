@@ -38,7 +38,11 @@ const NotePage: React.VFC<NotePageProps> = React.memo(props => {
 
         <Paper square sx={{ px: { xs: 2, md: 5 }, py: 2 }}>
           <Box sx={{ mb: 5 }}>
-            <Typography variant='h4' sx={{ fontWeight: 'bold', mb: 2 }}>
+            <Typography
+              component='h1'
+              variant='h4'
+              sx={{ fontWeight: 'bold', mb: 2 }}
+            >
               {note.title}
             </Typography>
             <Box sx={{ mb: 2 }}>

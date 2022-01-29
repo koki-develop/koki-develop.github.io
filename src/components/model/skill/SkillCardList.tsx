@@ -16,7 +16,11 @@ const SkillCardList: React.VFC<SkillCardListProps> = React.memo(props => {
     <Box>
       {skillGroups.map(group => (
         <Box key={group.name}>
-          <Typography sx={{ fontWeight: 'bold', mb: 1, textAlign: 'center' }}>
+          <Typography
+            variant='body1'
+            component='h2'
+            sx={{ fontWeight: 'bold', mb: 1, textAlign: 'center' }}
+          >
             {group.name}
           </Typography>
           <Grid container spacing={2} sx={{ mb: 2 }}>

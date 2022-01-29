@@ -22,7 +22,7 @@ const NoteCard: React.VFC<NoteCardProps> = React.memo(props => {
         <ClickableCard>
           <CardContent>
             <Box>
-              <Typography variant='h6' sx={{ mb: 1 }}>
+              <Typography component='h2' variant='h6' sx={{ mb: 1 }}>
                 {note.title}
               </Typography>
 

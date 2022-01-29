@@ -17,6 +17,7 @@ const Section: React.VFC<SectionProps> = React.memo(props => {
       <Divider />
       <Container maxWidth='md' component='section' sx={{ my: 2 }}>
         <Typography
+          component='h1'
           variant='h4'
           sx={{
             fontWeight: 'bold',

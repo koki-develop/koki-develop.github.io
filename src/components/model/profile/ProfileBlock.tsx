@@ -1,4 +1,5 @@
 import React from 'react';
+import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import { Profile } from '@/types/profile';
@@ -21,15 +22,21 @@ const ProfileBlock: React.VFC<ProfileBlockProps> = React.memo(props => {
         }}
       >
         <Box>
-          <img
-            height={150}
-            width={150}
+          <Avatar
             src='/images/profile.png'
+            sx={{
+              height: 150,
+              width: 150,
+            }}
             alt={profile.name}
           />
         </Box>
-        <Typography variant='h5'>{profile.name}</Typography>
+
+        <Typography component='h1' variant='h5'>
+          {profile.name}
+        </Typography>
         <Typography
+          component='p'
           variant='h6'
           sx={{ color: theme => theme.palette.text.secondary }}
         >
