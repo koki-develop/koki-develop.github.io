@@ -3,9 +3,8 @@ import Link from 'next/link';
 import Box from '@mui/material/Box';
 import CardContent from '@mui/material/CardContent';
 import MuiLink from '@mui/material/Link';
-import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import NoteTagChip from '@/components/model/note/NoteTagChip';
+import NoteTagChipList from '@/components/model/note/NoteTagChipList';
 import ClickableCard from '@/components/utils/ClickableCard';
 import { Note } from '@/types/note';
 import { Routes } from '@/routes';
@@ -26,11 +25,8 @@ const NoteCard: React.VFC<NoteCardProps> = React.memo(props => {
               <Typography variant='h6' sx={{ mb: 1 }}>
                 {note.title}
               </Typography>
-              <Stack direction='row' spacing={1}>
-                {note.tags.map(tag => (
-                  <NoteTagChip key={tag} tag={tag} sx={{ cursor: 'pointer' }} />
-                ))}
-              </Stack>
+
+              <NoteTagChipList tags={note.tags} />
             </Box>
           </CardContent>
         </ClickableCard>

@@ -4,11 +4,10 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import Paper from '@mui/material/Paper';
-import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import Layout from '@/components/Layout';
-import NoteTagChip from '@/components/model/note/NoteTagChip';
+import NoteTagChipList from '@/components/model/note/NoteTagChipList';
 import Meta from '@/components/utils/Meta';
 import { Note } from '@/types/note';
 import 'zenn-content-css';
@@ -42,11 +41,9 @@ const NotePage: React.VFC<NotePageProps> = React.memo(props => {
             <Typography variant='h4' sx={{ fontWeight: 'bold', mb: 2 }}>
               {note.title}
             </Typography>
-            <Stack direction='row' spacing={1} sx={{ mb: 2 }}>
-              {note.tags.map(tag => (
-                <NoteTagChip key={tag} tag={tag} />
-              ))}
-            </Stack>
+            <Box sx={{ mb: 2 }}>
+              <NoteTagChipList tags={note.tags} />
+            </Box>
             <Typography>{note.description}</Typography>
           </Box>
 
