@@ -27,7 +27,7 @@ import { ConfigLoader } from '@/lib/configLoader';
   for (const social of Object.values(config.socials)) {
     lines.push(
       `[<img src="${path.join(
-        './public/images/socials',
+        './public/images/icons',
         `${social.name}.svg`,
       )}" alt="${social.name}" width="40" height="40"/>](${social.url})`,
     );
@@ -44,7 +44,7 @@ import { ConfigLoader } from '@/lib/configLoader';
     for (const skill of skillGroup.skills) {
       lines.push(
         `[<img src="${path.join(
-          './public/images/skills',
+          './public/images/icons',
           `${skill.name}.svg`,
         )}" alt="${skill.name}" width="40" height="40"/>](${skill.url})`,
       );

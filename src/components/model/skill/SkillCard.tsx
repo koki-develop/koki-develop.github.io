@@ -45,7 +45,7 @@ const SkillCard: React.VFC<SkillCardProps> = React.memo(props => {
               }}
             >
               <SkillImage
-                src={urlJoin('/images/skills', `${skill.name}.svg`)}
+                src={urlJoin('/images/icons', `${skill.name}.svg`)}
                 alt={skill.name}
               />
               <Typography

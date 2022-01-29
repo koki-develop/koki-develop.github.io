@@ -12,19 +12,19 @@ export class ConfigLoader {
         name: 'GitHub',
         username: config.socials.github.username,
         url: urlJoin('https://github.com', config.socials.github.username),
-        imageUrl: '/images/socials/GitHub.svg',
+        imageUrl: '/images/icons/GitHub.svg',
       },
       twitter: {
         name: 'Twitter',
         username: config.socials.twitter.username,
         url: urlJoin('https://twitter.com', config.socials.twitter.username),
-        imageUrl: '/images/socials/Twitter.svg',
+        imageUrl: '/images/icons/Twitter.svg',
       },
       zenn: {
         name: 'Zenn',
         username: config.socials.zenn.username,
         url: urlJoin('https://zenn.dev', config.socials.zenn.username),
-        imageUrl: '/images/socials/Zenn.svg',
+        imageUrl: '/images/icons/Zenn.svg',
       },
     };
 
