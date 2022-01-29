@@ -1,4 +1,5 @@
 import React from 'react';
+import Grid from '@mui/material/Grid';
 import { Note } from '@/types/note';
 import NoteCard from '@/components/model/note/NoteCard';
 
@@ -10,11 +11,13 @@ const NoteCardList: React.VFC<NoteCardListProps> = React.memo(props => {
   const { notes } = props;
 
   return (
-    <div>
+    <Grid container spacing={2}>
       {notes.map(note => (
-        <NoteCard key={note.slug} note={note} />
+        <Grid key={note.slug} item xs={12} sm={6}>
+          <NoteCard note={note} />
+        </Grid>
       ))}
-    </div>
+    </Grid>
   );
 });
 
