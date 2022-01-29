@@ -6,11 +6,10 @@ const App: React.VFC<AppProps> = React.memo(({ Component, pageProps }) => {
   const router = useRouter();
 
   useEffect(() => {
-    if (process.env.NEXT_PUBLIC_ENV === 'production') {
-      window.gtag('config', process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID, {
-        page_path: router.pathname,
-      });
-    }
+    if (process.env.NEXT_PUBLIC_ENV !== 'production') return;
+    window.gtag('config', process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID, {
+      page_path: router.pathname,
+    });
   }, [router.pathname]);
 
   return <Component {...pageProps} />;
