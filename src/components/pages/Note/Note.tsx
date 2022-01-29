@@ -13,7 +13,7 @@ const NotePage: React.VFC<NotePageProps> = React.memo(props => {
   const { note } = props;
 
   return (
-    <Layout title={note.title}>
+    <Layout title={note.title} hideSiteName>
       <Container maxWidth='md'>
         <Box
           className='znc'

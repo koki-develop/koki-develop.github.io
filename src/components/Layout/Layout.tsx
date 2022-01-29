@@ -12,6 +12,7 @@ import { config } from '@/config';
 export type LayoutProps = {
   children: React.ReactNode;
   title?: string;
+  hideSiteName?: boolean;
 };
 
 const Root: React.VFC<LayoutProps> = React.memo(props => {
@@ -25,14 +26,17 @@ const Root: React.VFC<LayoutProps> = React.memo(props => {
 Root.displayName = 'Layout';
 
 const Content: React.VFC<LayoutProps> = React.memo(props => {
-  const { children, title } = props;
+  const { children, title, hideSiteName } = props;
 
   const titleText = useMemo(() => {
     if (!title) {
       return config.profile.name;
     }
+    if (hideSiteName) {
+      return title;
+    }
     return `${title} | ${config.profile.name}`;
-  }, [title]);
+  }, [hideSiteName, title]);
 
   return (
     <Box>
