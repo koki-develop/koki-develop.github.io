@@ -16,7 +16,7 @@ const Meta: React.VFC<MetaProps> = React.memo(props => {
   const {
     hideSiteName,
 
-    title = config.profile.name,
+    title,
     description = config.profile.description,
     image = urlJoin(config.url, 'images/profile.jpg'),
   } = props;
