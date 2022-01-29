@@ -1,5 +1,4 @@
-import React, { useMemo } from 'react';
-import Head from 'next/head';
+import React from 'react';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider } from '@mui/material/styles';
@@ -7,12 +6,9 @@ import BackToTop from '@/components/utils/BackToTop';
 import Header from '@/components/Layout/Header';
 import Footer from '@/components/Layout/Footer';
 import { theme } from '@/components/Layout/theme';
-import { config } from '@/config';
 
 export type LayoutProps = {
   children: React.ReactNode;
-  title?: string;
-  hideSiteName?: boolean;
 };
 
 const Root: React.VFC<LayoutProps> = React.memo(props => {
@@ -26,25 +22,10 @@ const Root: React.VFC<LayoutProps> = React.memo(props => {
 Root.displayName = 'Layout';
 
 const Content: React.VFC<LayoutProps> = React.memo(props => {
-  const { children, title, hideSiteName } = props;
-
-  const titleText = useMemo(() => {
-    if (!title) {
-      return config.profile.name;
-    }
-    if (hideSiteName) {
-      return title;
-    }
-    return `${title} | ${config.profile.name}`;
-  }, [hideSiteName, title]);
+  const { children } = props;
 
   return (
     <Box>
-      <Head>
-        <title>{titleText}</title>
-        <meta property='og:title' content={titleText} />
-      </Head>
-
       <CssBaseline />
 
       <Header />

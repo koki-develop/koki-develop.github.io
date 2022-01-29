@@ -2,10 +2,13 @@ import React from 'react';
 import Layout from '@/components/Layout';
 import ExternalLink from '@/components/utils/ExternalLink';
 import PrivacyPolicyItem from '@/components/pages/PrivacyPolicy/PrivacyPolicyItem';
+import Meta from '@/components/utils/Meta';
 
 const PrivacyPolicy: React.VFC = React.memo(() => {
   return (
-    <Layout title='プライバシーポリシー'>
+    <Layout>
+      <Meta title='プライバシーポリシー' />
+
       <PrivacyPolicyItem title='免責事項'>
         当サイトのコンテンツ・情報につきまして、可能な限り正確な情報を掲載するよう努めておりますが、誤情報が入り込んだり、情報が古くなっていることもございます。当サイトに掲載された内容によって生じた損害等の一切の責任を負いかねますのでご了承ください。
       </PrivacyPolicyItem>

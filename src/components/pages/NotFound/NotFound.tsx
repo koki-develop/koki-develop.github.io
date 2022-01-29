@@ -2,12 +2,14 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Layout from '@/components/Layout';
+import Meta from '@/components/utils/Meta';
 
 const NotFound: React.VFC = React.memo(() => {
   const message = 'お探しのページは見つかりませんでした';
 
   return (
-    <Layout title={message}>
+    <Layout>
+      <Meta title={message} />
       <Box sx={{ my: 2 }}>
         <Typography
           sx={theme => ({

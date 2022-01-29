@@ -7,6 +7,7 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import urlJoin from 'url-join';
 import Layout from '@/components/Layout';
+import Meta from '@/components/utils/Meta';
 import { Note } from '@/types/note';
 import 'zenn-content-css';
 
@@ -18,7 +19,8 @@ const NotePage: React.VFC<NotePageProps> = React.memo(props => {
   const { note } = props;
 
   return (
-    <Layout title={note.title} hideSiteName>
+    <Layout>
+      <Meta title={note.title} hideSiteName />
       <Container maxWidth='md' disableGutters sx={{ pt: 4 }}>
         <Paper square elevation={2} sx={{ px: { xs: 2, md: 5 }, py: 2 }}>
           <Box sx={{ mb: 5 }}>

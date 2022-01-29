@@ -11,6 +11,7 @@ import SkillCardList from '@/components/model/skill/SkillCardList';
 import WorkCardList from '@/components/model/work/WorkCardList';
 import HistoryTimeline from '@/components/model/history/HistoryTimeline';
 import Section from '@/components/utils/Section';
+import Meta from '@/components/utils/Meta';
 import { config } from '@/config';
 
 export const TabValue = {
@@ -40,6 +41,7 @@ const HomePage: React.VFC = React.memo(() => {
 
   return (
     <Layout>
+      <Meta />
       <ProfileBlock profile={config.profile} />
       <SocialList socials={config.socials} />
 
