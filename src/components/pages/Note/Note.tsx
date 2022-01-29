@@ -13,6 +13,7 @@ import Layout from '@/components/Layout';
 import Meta from '@/components/utils/Meta';
 import { Note } from '@/types/note';
 import 'zenn-content-css';
+import { Routes } from '@/routes';
 
 export type NotePageProps = {
   note: Note;
@@ -26,7 +27,7 @@ const NotePage: React.VFC<NotePageProps> = React.memo(props => {
       <Meta title={note.title} hideSiteName description={note.description} />
       <Container maxWidth='md' disableGutters sx={{ pt: 4 }}>
         <Box sx={{ mb: 2 }}>
-          <Link passHref href='/notes'>
+          <Link passHref href={Routes.notes()}>
             <Button
               size='large'
               startIcon={<KeyboardArrowLeftIcon />}

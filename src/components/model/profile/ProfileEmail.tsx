@@ -4,6 +4,7 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import DoneIcon from '@mui/icons-material/Done';
 import MailIcon from '@mui/icons-material/Mail';
+import { Routes } from '@/routes';
 
 export type ProfileEmailProps = {
   email: string;
@@ -35,7 +36,7 @@ const ProfileEmail: React.VFC<ProfileEmailProps> = React.memo(props => {
       <Box>
         <Button
           startIcon={<MailIcon />}
-          href={`mailto:${email}`}
+          href={Routes.mailto(email)}
           target='_blank'
           rel='noreferrer noopener'
           sx={{

@@ -1,6 +1,21 @@
-export const Routes = {
-  home: '/',
-  privacyPolicy: '/privacy-policy',
-} as const;
+export class Routes {
+  public static home(): string {
+    return '/';
+  }
 
-export type Routes = typeof Routes[keyof typeof Routes];
+  public static notes(): string {
+    return '/?tab=notes';
+  }
+
+  public static note(slug: string): string {
+    return `/notes/${slug}`;
+  }
+
+  public static privacyPolicy(): string {
+    return '/privacy-policy';
+  }
+
+  public static mailto(email: string): string {
+    return `mailto:${email}`;
+  }
+}

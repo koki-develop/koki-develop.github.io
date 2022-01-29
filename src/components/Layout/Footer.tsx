@@ -59,7 +59,7 @@ const Footer: React.VFC = React.memo(() => {
         >
           View on GitHub
         </LinkListItem>
-        <LinkListItem href={Routes.privacyPolicy}>
+        <LinkListItem href={Routes.privacyPolicy()}>
           プライバシーポリシー
         </LinkListItem>
       </ul>

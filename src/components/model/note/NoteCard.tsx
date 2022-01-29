@@ -8,6 +8,7 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import urlJoin from 'url-join';
 import { Note } from '@/types/note';
+import { Routes } from '@/routes';
 
 export type NoteCardProps = {
   note: Note;
@@ -15,8 +16,9 @@ export type NoteCardProps = {
 
 const NoteCard: React.VFC<NoteCardProps> = React.memo(props => {
   const { note } = props;
+
   return (
-    <Link href={`/notes/${note.slug}`}>
+    <Link href={Routes.note(note.slug)}>
       <a>
         <Card>
           <CardContent>

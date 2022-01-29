@@ -20,7 +20,7 @@ const StyledLink = styled('a')({
 
 const Logo: React.VFC = React.memo(() => {
   return (
-    <Link href={Routes.home}>
+    <Link href={Routes.home()}>
       <StyledLink>
         <Avatar src='/images/profile.png' sx={{ mr: 0.5 }} />
         <Typography variant='h6'>{config.profile.name}</Typography>
