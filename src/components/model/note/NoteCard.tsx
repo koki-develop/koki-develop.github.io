@@ -2,11 +2,10 @@ import React from 'react';
 import Link from 'next/link';
 import Box from '@mui/material/Box';
 import CardContent from '@mui/material/CardContent';
-import Chip from '@mui/material/Chip';
 import MuiLink from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import urlJoin from 'url-join';
+import NoteTagChip from '@/components/model/note/NoteTagChip';
 import ClickableCard from '@/components/utils/ClickableCard';
 import { Note } from '@/types/note';
 import { Routes } from '@/routes';
@@ -29,23 +28,7 @@ const NoteCard: React.VFC<NoteCardProps> = React.memo(props => {
               </Typography>
               <Stack direction='row' spacing={1}>
                 {note.tags.map(tag => (
-                  <Chip
-                    key={tag}
-                    sx={{
-                      backgroundColor: theme => theme.palette.primary.main,
-                      border: '1px solid',
-                      borderColor: 'divider',
-                      cursor: 'pointer',
-                    }}
-                    avatar={
-                      <img
-                        src={urlJoin('/images/icons', `${tag}.svg`)}
-                        style={{ maxHeight: '50%', maxWidth: '50%' }}
-                        alt={tag}
-                      />
-                    }
-                    label={tag}
-                  />
+                  <NoteTagChip key={tag} tag={tag} sx={{ cursor: 'pointer' }} />
                 ))}
               </Stack>
             </Box>

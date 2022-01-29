@@ -1,7 +1,7 @@
 import React from 'react';
 import Grid from '@mui/material/Grid';
-import { Note } from '@/types/note';
 import NoteCard from '@/components/model/note/NoteCard';
+import { Note } from '@/types/note';
 
 export type NoteCardListProps = {
   notes: Note[];

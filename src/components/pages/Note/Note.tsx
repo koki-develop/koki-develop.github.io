@@ -2,14 +2,13 @@ import React from 'react';
 import Link from 'next/link';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import Chip from '@mui/material/Chip';
 import Container from '@mui/material/Container';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
-import urlJoin from 'url-join';
 import Layout from '@/components/Layout';
+import NoteTagChip from '@/components/model/note/NoteTagChip';
 import Meta from '@/components/utils/Meta';
 import { Note } from '@/types/note';
 import 'zenn-content-css';
@@ -45,22 +44,7 @@ const NotePage: React.VFC<NotePageProps> = React.memo(props => {
             </Typography>
             <Stack direction='row' spacing={1} sx={{ mb: 2 }}>
               {note.tags.map(tag => (
-                <Chip
-                  key={tag}
-                  sx={{
-                    backgroundColor: theme => theme.palette.primary.main,
-                    border: '1px solid',
-                    borderColor: 'divider',
-                  }}
-                  avatar={
-                    <img
-                      src={urlJoin('/images/icons', `${tag}.svg`)}
-                      style={{ maxHeight: '50%', maxWidth: '50%' }}
-                      alt={tag}
-                    />
-                  }
-                  label={tag}
-                />
+                <NoteTagChip key={tag} tag={tag} />
               ))}
             </Stack>
             <Typography>{note.description}</Typography>
