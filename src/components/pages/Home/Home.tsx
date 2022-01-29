@@ -4,6 +4,7 @@ import Box from '@mui/material/Box';
 import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
 import Layout from '@/components/Layout';
+import NoteCardList from '@/components/model/note/NoteCardList';
 import ProfileBlock from '@/components/model/profile/ProfileBlock';
 import ProfileEmail from '@/components/model/profile/ProfileEmail';
 import SocialList from '@/components/model/social/SocialList';
@@ -84,9 +85,7 @@ const HomePage: React.VFC<HomePageProps> = React.memo(props => {
 
       <Box hidden={selectedTab !== TabValue.notes}>
         <Section title='Notes'>
-          {latestNotes.map(note => (
-            <div key={note.slug}>{note.title}</div>
-          ))}
+          <NoteCardList notes={latestNotes} />
         </Section>
       </Box>
 
