@@ -1,13 +1,12 @@
 import React from 'react';
 import { styled } from '@mui/material/styles';
-import Card from '@mui/material/Card';
-import CardActionArea from '@mui/material/CardActionArea';
 import CardContent from '@mui/material/CardContent';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import urlJoin from 'url-join';
-import { Skill } from '@/types/skill';
+import ClickableCard from '@/components/utils/ClickableCard';
 import ExternalLink from '@/components/utils/ExternalLink';
+import { Skill } from '@/types/skill';
 
 const SkillImage = styled('img')(({ theme }) => ({
   height: 60,
@@ -30,36 +29,34 @@ const SkillCard: React.VFC<SkillCardProps> = React.memo(props => {
   return (
     <Grid key={skill.name} item xs={6} sm={4} md={3}>
       <ExternalLink href={skill.url}>
-        <Card>
-          <CardActionArea>
-            <CardContent
+        <ClickableCard>
+          <CardContent
+            sx={{
+              alignItems: 'center',
+              display: 'flex',
+              flexDirection: 'column',
+              p: {
+                xs: 1.5,
+                sm: 1.8,
+                md: 2,
+              },
+            }}
+          >
+            <SkillImage
+              src={urlJoin('/images/icons', `${skill.name}.svg`)}
+              alt={skill.name}
+            />
+            <Typography
               sx={{
-                alignItems: 'center',
-                display: 'flex',
-                flexDirection: 'column',
-                p: {
-                  xs: 1.5,
-                  sm: 1.8,
-                  md: 2,
-                },
+                fontSize: theme => theme.typography.body2.fontSize,
+                fontWeight: 'bold',
+                whiteSpace: 'pre',
               }}
             >
-              <SkillImage
-                src={urlJoin('/images/icons', `${skill.name}.svg`)}
-                alt={skill.name}
-              />
-              <Typography
-                sx={{
-                  fontSize: theme => theme.typography.body2.fontSize,
-                  fontWeight: 'bold',
-                  whiteSpace: 'pre',
-                }}
-              >
-                {props.skill.name}
-              </Typography>
-            </CardContent>
-          </CardActionArea>
-        </Card>
+              {props.skill.name}
+            </Typography>
+          </CardContent>
+        </ClickableCard>
       </ExternalLink>
     </Grid>
   );
