@@ -4,7 +4,7 @@ import Typography from '@mui/material/Typography';
 import Layout from '@/components/Layout';
 import Meta from '@/components/utils/Meta';
 
-const NotFound: React.VFC = React.memo(() => {
+const NotFoundPage: React.VFC = React.memo(() => {
   const message = 'お探しのページは見つかりませんでした';
 
   return (
@@ -25,6 +25,6 @@ const NotFound: React.VFC = React.memo(() => {
   );
 });
 
-NotFound.displayName = 'NotFound';
+NotFoundPage.displayName = 'NotFoundPage';
 
-export default NotFound;
+export default NotFoundPage;

@@ -4,7 +4,7 @@ import Link from '@/components/utils/Link';
 import PrivacyPolicyItem from '@/components/pages/PrivacyPolicy/PrivacyPolicyItem';
 import Meta from '@/components/utils/Meta';
 
-const PrivacyPolicy: React.VFC = React.memo(() => {
+const PrivacyPolicyPage: React.VFC = React.memo(() => {
   return (
     <Layout>
       <Meta title='プライバシーポリシー' />
@@ -37,6 +37,6 @@ const PrivacyPolicy: React.VFC = React.memo(() => {
   );
 });
 
-PrivacyPolicy.displayName = 'PrivacyPolicy';
+PrivacyPolicyPage.displayName = 'PrivacyPolicyPage';
 
-export default PrivacyPolicy;
+export default PrivacyPolicyPage;

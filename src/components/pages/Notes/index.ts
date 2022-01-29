@@ -1,3 +1,3 @@
-import NotesPage from './Notes';
+import NotesPage from './NotesPage';
 
 export default NotesPage;
