@@ -49,9 +49,7 @@ const Content: React.VFC<LayoutProps> = React.memo(props => {
 
       <Header />
 
-      <Box component='main' sx={{ pt: 10 }}>
-        {children}
-      </Box>
+      <Box component='main'>{children}</Box>
 
       <Footer />
 

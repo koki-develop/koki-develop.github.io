@@ -33,7 +33,7 @@ Logo.displayName = 'Logo';
 
 const Header: React.VFC = React.memo(() => {
   return (
-    <AppBar>
+    <AppBar position='static'>
       <Container maxWidth='md'>
         <Toolbar sx={{ height: theme => theme.spacing(10) }}>
           <Box sx={{ alignItems: 'center', display: 'flex', flexGrow: 1 }}>
