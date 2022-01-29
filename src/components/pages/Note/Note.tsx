@@ -47,9 +47,7 @@ const NotePage: React.VFC<NotePageProps> = React.memo(props => {
                 />
               ))}
             </Stack>
-            <Typography sx={{ whiteSpace: 'pre' }}>
-              {note.description}
-            </Typography>
+            <Typography>{note.description}</Typography>
           </Box>
 
           <Box
