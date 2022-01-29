@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from '@/components/Layout';
-import ExternalLink from '@/components/utils/ExternalLink';
+import Link from '@/components/utils/Link';
 import PrivacyPolicyItem from '@/components/pages/PrivacyPolicy/PrivacyPolicyItem';
 import Meta from '@/components/utils/Meta';
 
@@ -20,12 +20,13 @@ const PrivacyPolicy: React.VFC = React.memo(() => {
         を使用しています。このトラフィックデータは匿名で収集されており、個人を特定するものではありません。この機能は
         Cookie
         を無効にすることで収集を拒否することが出来ますので、お使いのブラウザの設定をご確認ください。この規約に関して、詳しくは{' '}
-        <ExternalLink
+        <Link
+          external
           href='https://marketingplatform.google.com/about/analytics/terms/jp/'
           sx={{ textDecoration: 'underline' }}
         >
           Google アナリティクス利用規約
-        </ExternalLink>{' '}
+        </Link>{' '}
         を参照してください。
       </PrivacyPolicyItem>
 

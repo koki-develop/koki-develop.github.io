@@ -6,7 +6,7 @@ import CardHeader from '@mui/material/CardHeader';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import urlJoin from 'url-join';
-import ExternalLink from '@/components/utils/ExternalLink';
+import Link from '@/components/utils/Link';
 import { Work } from '@/types/work';
 import { Routes } from '@/routes';
 
@@ -21,7 +21,7 @@ const WorkCard: React.VFC<WorkCardProps> = React.memo(props => {
     <Card raised>
       {work.hasImage && (
         <CardActionArea>
-          <ExternalLink href={work.url}>
+          <Link external href={work.url}>
             <CardMedia
               image={urlJoin('/images/works', `${work.name}.png`)}
               sx={{
@@ -29,12 +29,13 @@ const WorkCard: React.VFC<WorkCardProps> = React.memo(props => {
                 height: { xs: 140 },
               }}
             />
-          </ExternalLink>
+          </Link>
         </CardActionArea>
       )}
       <CardHeader
         title={
-          <ExternalLink
+          <Link
+            external
             href={work.url}
             sx={{
               color: theme => theme.palette.primary.contrastText,
@@ -42,7 +43,7 @@ const WorkCard: React.VFC<WorkCardProps> = React.memo(props => {
             }}
           >
             {work.name}
-          </ExternalLink>
+          </Link>
         }
         titleTypographyProps={{
           component: 'h2',
@@ -58,12 +59,13 @@ const WorkCard: React.VFC<WorkCardProps> = React.memo(props => {
         >
           {work.description}
         </Typography>
-        <ExternalLink
+        <Link
+          external
           href={Routes.repository(work.repository)}
           sx={{ color: theme => theme.palette.primary.contrastText }}
         >
           View on GitHub
-        </ExternalLink>
+        </Link>
       </CardContent>
     </Card>
   );

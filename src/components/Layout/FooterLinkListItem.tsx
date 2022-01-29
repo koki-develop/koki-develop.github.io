@@ -1,8 +1,6 @@
 import React from 'react';
-import Link from 'next/link';
 import Box from '@mui/material/Box';
-import MuiLink from '@mui/material/Link';
-import ExternalLink from '@/components/utils/ExternalLink';
+import Link from '@/components/utils/Link';
 
 export type LinkListItemProps = {
   children: React.ReactNode;
@@ -23,13 +21,9 @@ const FooterLinkListItem: React.VFC<LinkListItemProps> = React.memo(props => {
         textAlign: 'center',
       }}
     >
-      {external ? (
-        <ExternalLink href={href}>{children}</ExternalLink>
-      ) : (
-        <Link href={href} passHref>
-          <MuiLink>{children}</MuiLink>
-        </Link>
-      )}
+      <Link href={href} external={external}>
+        {children}
+      </Link>
     </Box>
   );
 });

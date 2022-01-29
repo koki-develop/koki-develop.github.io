@@ -5,7 +5,7 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import urlJoin from 'url-join';
 import ClickableCard from '@/components/utils/ClickableCard';
-import ExternalLink from '@/components/utils/ExternalLink';
+import Link from '@/components/utils/Link';
 import { Skill } from '@/types/skill';
 
 const SkillImage = styled('img')(({ theme }) => ({
@@ -28,7 +28,7 @@ const SkillCard: React.VFC<SkillCardProps> = React.memo(props => {
 
   return (
     <Grid key={skill.name} item xs={6} sm={4} md={3}>
-      <ExternalLink href={skill.url}>
+      <Link external href={skill.url}>
         <ClickableCard>
           <CardContent
             sx={{
@@ -57,7 +57,7 @@ const SkillCard: React.VFC<SkillCardProps> = React.memo(props => {
             </Typography>
           </CardContent>
         </ClickableCard>
-      </ExternalLink>
+      </Link>
     </Grid>
   );
 });
