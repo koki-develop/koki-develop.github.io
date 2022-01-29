@@ -1,4 +1,5 @@
 import React from 'react';
+import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
@@ -14,36 +15,23 @@ const HistoryCard: React.VFC<HistoryCardProps> = React.memo(props => {
   return (
     <Card>
       <CardContent>
-        <Typography
+        <Box
           sx={theme => ({
-            fontSize: theme => theme.typography.caption.fontSize,
             [theme.breakpoints.down('md')]: {
-              textAlign: 'left !important' as 'left',
+              textAlign: 'left',
             },
           })}
         >
-          {history.from} - {history.to}
-        </Typography>
-        <Typography
-          sx={theme => ({
-            fontSize: theme => theme.typography.body1.fontSize,
-            fontWeight: 'bold',
-            my: 1,
-            [theme.breakpoints.down('md')]: {
-              textAlign: 'left !important' as 'left',
-            },
-          })}
-        >
-          {history.title}
-        </Typography>
-        <Typography
-          sx={{
-            fontSize: theme => theme.typography.body2.fontSize,
-            textAlign: 'left !important' as 'left',
-          }}
-        >
-          {history.description}
-        </Typography>
+          <Typography variant='caption'>
+            {history.from} - {history.to}
+          </Typography>
+          <Typography variant='body1' sx={{ fontWeight: 'bold', my: 1 }}>
+            {history.title}
+          </Typography>
+        </Box>
+        <Box sx={{ textAlign: 'left' }}>
+          <Typography variant='body2'>{history.description}</Typography>
+        </Box>
       </CardContent>
     </Card>
   );
