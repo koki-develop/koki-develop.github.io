@@ -1,5 +1,6 @@
 ---
-title: "【Ruby】AES 暗号化・復号"
+title: '【Ruby】AES 暗号化・復号'
+tags: ['Ruby']
 ---
 
 Ruby の標準ライブラリで AES 暗号化処理を実装する際のメモ。
@@ -98,6 +99,7 @@ decrypted_text = aes_decrypt(encrypted_text, password, salt, 128)
 puts decrypted_text
 # => Michael jackson
 ```
+
 # 参考
 
 https://docs.ruby-lang.org/ja/2.7.0/class/OpenSSL=3a=3aCipher.html
