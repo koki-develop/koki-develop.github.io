@@ -21,11 +21,11 @@ const NotePage: React.VFC<NotePageProps> = React.memo(props => {
     <Layout title={note.title} hideSiteName>
       <Container maxWidth='md' disableGutters sx={{ pt: 4 }}>
         <Paper square elevation={2} sx={{ px: { xs: 2, md: 5 }, py: 2 }}>
-          <Box sx={{ mb: 3 }}>
+          <Box sx={{ mb: 5 }}>
             <Typography variant='h4' sx={{ fontWeight: 'bold', mb: 2 }}>
               {note.title}
             </Typography>
-            <Stack direction='row' spacing={1}>
+            <Stack direction='row' spacing={1} sx={{ mb: 2 }}>
               {note.tags.map(tag => (
                 <Chip
                   key={tag}
@@ -45,6 +45,9 @@ const NotePage: React.VFC<NotePageProps> = React.memo(props => {
                 />
               ))}
             </Stack>
+            <Typography sx={{ whiteSpace: 'pre' }}>
+              {note.description}
+            </Typography>
           </Box>
 
           <Box
