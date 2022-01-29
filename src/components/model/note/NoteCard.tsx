@@ -4,6 +4,7 @@ import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Chip from '@mui/material/Chip';
+import MuiLink from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import urlJoin from 'url-join';
@@ -18,8 +19,8 @@ const NoteCard: React.VFC<NoteCardProps> = React.memo(props => {
   const { note } = props;
 
   return (
-    <Link href={Routes.note(note.slug)}>
-      <a>
+    <Link href={Routes.note(note.slug)} passHref>
+      <MuiLink>
         <Card>
           <CardContent>
             <Box>
@@ -50,7 +51,7 @@ const NoteCard: React.VFC<NoteCardProps> = React.memo(props => {
             </Box>
           </CardContent>
         </Card>
-      </a>
+      </MuiLink>
     </Link>
   );
 });
