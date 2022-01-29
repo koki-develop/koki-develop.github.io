@@ -1,7 +1,5 @@
 import React from 'react';
-import Link from 'next/link';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
@@ -9,6 +7,7 @@ import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import Layout from '@/components/Layout';
 import NoteTagChipList from '@/components/model/note/NoteTagChipList';
 import Meta from '@/components/utils/Meta';
+import LinkButton from '@/components/utils/LinkButton';
 import { Note } from '@/types/note';
 import 'zenn-content-css';
 import { Routes } from '@/routes';
@@ -25,15 +24,14 @@ const NotePage: React.VFC<NotePageProps> = React.memo(props => {
       <Meta title={note.title} hideSiteName description={note.description} />
       <Container maxWidth='md' disableGutters sx={{ pt: 4 }}>
         <Box sx={{ mb: 2 }}>
-          <Link passHref href={Routes.notes()}>
-            <Button
-              size='large'
-              startIcon={<KeyboardArrowLeftIcon />}
-              sx={{ mx: { xs: 1, md: 0 } }}
-            >
-              Notes
-            </Button>
-          </Link>
+          <LinkButton
+            href={Routes.notes()}
+            size='large'
+            startIcon={<KeyboardArrowLeftIcon />}
+            sx={{ mx: { xs: 1, md: 0 } }}
+          >
+            Notes
+          </LinkButton>
         </Box>
 
         <Paper square sx={{ px: { xs: 2, md: 5 }, py: 2 }}>

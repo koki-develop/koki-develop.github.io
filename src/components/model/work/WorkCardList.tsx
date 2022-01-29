@@ -1,8 +1,8 @@
 import React from 'react';
-import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import WorkCard from '@/components/model/work/WorkCard';
+import LinkButton from '@/components/utils/LinkButton';
 import { Work } from '@/types/work';
 import { Routes } from '@/routes';
 
@@ -25,15 +25,14 @@ const WorkCardList: React.VFC<WorkCardListProps> = React.memo(props => {
         xs={12}
         sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}
       >
-        <Button
+        <LinkButton
           href={Routes.repositories()}
-          target='_blank'
-          rel='noreferrer noopener'
+          external
           size='large'
           endIcon={<KeyboardArrowRightIcon />}
         >
           More
-        </Button>
+        </LinkButton>
       </Grid>
     </Grid>
   );

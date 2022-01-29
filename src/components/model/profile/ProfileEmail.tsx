@@ -4,6 +4,7 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import DoneIcon from '@mui/icons-material/Done';
 import MailIcon from '@mui/icons-material/Mail';
+import LinkButton from '@/components/utils/LinkButton';
 import { Routes } from '@/routes';
 
 export type ProfileEmailProps = {
@@ -34,18 +35,17 @@ const ProfileEmail: React.VFC<ProfileEmailProps> = React.memo(props => {
   return (
     <Box sx={{ alignItems: 'center', display: 'flex', flexFlow: 'column' }}>
       <Box>
-        <Button
+        <LinkButton
           startIcon={<MailIcon />}
           href={Routes.mailto(email)}
-          target='_blank'
-          rel='noreferrer noopener'
+          external
           sx={{
             fontWeight: 'bold',
             marginBottom: 0.8,
           }}
         >
           {email}
-        </Button>
+        </LinkButton>
       </Box>
 
       <Box>
