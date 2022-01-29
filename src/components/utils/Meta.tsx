@@ -1,4 +1,5 @@
 import React, { useMemo } from 'react';
+import { useRouter } from 'next/router';
 import Head from 'next/head';
 import { config } from '@/config';
 import urlJoin from 'url-join';
@@ -8,7 +9,6 @@ export type MetaProps = {
 
   title?: string;
   description?: string;
-  path?: string;
   image?: string;
 };
 
@@ -18,9 +18,10 @@ const Meta: React.VFC<MetaProps> = React.memo(props => {
 
     title = config.profile.name,
     description = config.profile.description,
-    path = '/',
     image = urlJoin(config.url, 'images/profile.jpg'),
   } = props;
+
+  const router = useRouter();
 
   const titleText = useMemo(() => {
     if (!title) {
@@ -44,7 +45,7 @@ const Meta: React.VFC<MetaProps> = React.memo(props => {
 
       {/* ogp */}
       <meta property='og:site_name' content={config.profile.name} />
-      <meta property='og:url' content={urlJoin(config.url, path)} />
+      <meta property='og:url' content={urlJoin(config.url, router.asPath)} />
       <meta property='og:type' content='website' />
       <meta property='og:locale' content='ja_JP' />
       <meta property='og:image' content={image} />
