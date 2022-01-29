@@ -47,6 +47,21 @@ export const theme = createTheme({
         },
       },
     },
+    MuiAppBar: {
+      defaultProps: {
+        elevation: 2,
+      },
+    },
+    MuiPaper: {
+      defaultProps: {
+        elevation: 2,
+      },
+    },
+    MuiCard: {
+      defaultProps: {
+        elevation: 2,
+      },
+    },
     MuiTab: {
       styleOverrides: {
         root: {

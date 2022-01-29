@@ -22,7 +22,7 @@ const NotePage: React.VFC<NotePageProps> = React.memo(props => {
     <Layout>
       <Meta title={note.title} hideSiteName description={note.description} />
       <Container maxWidth='md' disableGutters sx={{ pt: 4 }}>
-        <Paper square elevation={2} sx={{ px: { xs: 2, md: 5 }, py: 2 }}>
+        <Paper square sx={{ px: { xs: 2, md: 5 }, py: 2 }}>
           <Box sx={{ mb: 5 }}>
             <Typography variant='h4' sx={{ fontWeight: 'bold', mb: 2 }}>
               {note.title}
