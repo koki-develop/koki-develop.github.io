@@ -1,8 +1,7 @@
 import React, { useCallback, useMemo } from 'react';
 import { useRouter } from 'next/router';
 import Box from '@mui/material/Box';
-import Tab from '@mui/material/Tab';
-import Tabs from '@mui/material/Tabs';
+import HomeTabs, { HomeTabValue } from '@/components/pages/Home/HomeTabs';
 import Layout from '@/components/Layout';
 import NoteCardList from '@/components/model/note/NoteCardList';
 import ProfileBlock from '@/components/model/profile/ProfileBlock';
@@ -16,14 +15,6 @@ import Meta from '@/components/utils/Meta';
 import { config } from '@/config';
 import { Note } from '@/types/note';
 
-export const TabValue = {
-  about: 'about',
-  works: 'works',
-  notes: 'notes',
-} as const;
-
-export type TabValue = typeof TabValue[keyof typeof TabValue];
-
 export type HomePageProps = {
   latestNotes: Note[];
 };
@@ -35,13 +26,13 @@ const HomePage: React.VFC<HomePageProps> = React.memo(props => {
 
   const selectedTab = useMemo(() => {
     return (
-      Object.values(TabValue).find(v => v === router.query.tab) ||
-      TabValue.about
+      Object.values(HomeTabValue).find(v => v === router.query.tab) ||
+      HomeTabValue.about
     );
   }, [router.query.tab]);
 
   const handleChangeTab = useCallback(
-    (_event: React.SyntheticEvent, tab: TabValue) => {
+    (tab: HomeTabValue) => {
       router.replace({ search: `tab=${tab}` }, undefined, { scroll: false });
     },
     [router],
@@ -53,31 +44,9 @@ const HomePage: React.VFC<HomePageProps> = React.memo(props => {
       <ProfileBlock profile={config.profile} />
       <SocialList socials={config.socials} />
 
-      <Tabs
-        textColor='secondary'
-        indicatorColor='secondary'
-        value={selectedTab}
-        onChange={handleChangeTab}
-        centered
-      >
-        <Tab
-          value={TabValue.about}
-          label='About'
-          sx={{ fontWeight: selectedTab === TabValue.about ? 'bold' : null }}
-        />
-        <Tab
-          value={TabValue.works}
-          label='Works'
-          sx={{ fontWeight: selectedTab === TabValue.works ? 'bold' : null }}
-        />
-        <Tab
-          value={TabValue.notes}
-          label='Notes'
-          sx={{ fontWeight: selectedTab === TabValue.notes ? 'bold' : null }}
-        />
-      </Tabs>
+      <HomeTabs value={selectedTab} onChange={handleChangeTab} />
 
-      <Box hidden={selectedTab !== TabValue.about}>
+      <Box hidden={selectedTab !== HomeTabValue.about}>
         <Section title='Skills'>
           <SkillCardList skillGroups={config.skillGroups} />
         </Section>
@@ -86,13 +55,13 @@ const HomePage: React.VFC<HomePageProps> = React.memo(props => {
         </Section>
       </Box>
 
-      <Box hidden={selectedTab !== TabValue.works}>
+      <Box hidden={selectedTab !== HomeTabValue.works}>
         <Section title='Works'>
           <WorkCardList works={config.works} />
         </Section>
       </Box>
 
-      <Box hidden={selectedTab !== TabValue.notes}>
+      <Box hidden={selectedTab !== HomeTabValue.notes}>
         <Section title='Notes'>
           <NoteCardList notes={latestNotes} />
         </Section>
