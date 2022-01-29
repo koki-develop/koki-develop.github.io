@@ -6,35 +6,29 @@ import Typography from '@mui/material/Typography';
 
 export type SectionProps = {
   children: React.ReactNode;
-  title?: string;
-  hideTitle?: boolean;
-  disablePadding?: boolean;
+  title: string;
 };
 
 const Section: React.VFC<SectionProps> = React.memo(props => {
-  const { children, title, hideTitle, disablePadding } = props;
+  const { children, title } = props;
 
   return (
-    <div>
-      {title && <Divider />}
-      <Box component='section' sx={{ m: 3 }}>
-        {title && !hideTitle && (
-          <Typography
-            sx={{
-              fontSize: 28,
-              fontWeight: 'bold',
-              mb: 2,
-              textAlign: 'center',
-            }}
-          >
-            {title}
-          </Typography>
-        )}
-        <Container disableGutters={disablePadding} maxWidth='md'>
-          {children}
-        </Container>
-      </Box>
-    </div>
+    <Box>
+      <Divider />
+      <Container maxWidth='md' component='section' sx={{ my: 2 }}>
+        <Typography
+          variant='h4'
+          sx={{
+            fontWeight: 'bold',
+            mb: 2,
+            textAlign: 'center',
+          }}
+        >
+          {title}
+        </Typography>
+        <Box>{children}</Box>
+      </Container>
+    </Box>
   );
 });
 

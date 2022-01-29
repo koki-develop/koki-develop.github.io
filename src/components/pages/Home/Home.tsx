@@ -69,7 +69,7 @@ const HomePage: React.VFC<HomePageProps> = React.memo(props => {
         <Section title='Skills'>
           <SkillCardList skillGroups={config.skillGroups} />
         </Section>
-        <Section title='History' disablePadding>
+        <Section title='History'>
           <HistoryTimeline histories={config.histories} />
         </Section>
       </Box>
