@@ -11,34 +11,31 @@ export type LayoutProps = {
   children: React.ReactNode;
 };
 
-const Root: React.VFC<LayoutProps> = React.memo(props => {
+const Layout: React.VFC<LayoutProps> = React.memo(props => {
   return (
     <ThemeProvider theme={theme}>
-      <Content {...props} />
+      <LayoutContent {...props} />
     </ThemeProvider>
   );
 });
 
-Root.displayName = 'Layout';
+Layout.displayName = 'Layout';
 
-const Content: React.VFC<LayoutProps> = React.memo(props => {
+const LayoutContent: React.VFC<LayoutProps> = React.memo(props => {
   const { children } = props;
 
   return (
     <Box>
       <CssBaseline />
+      <BackToTop />
 
       <Header />
-
       <Box component='main'>{children}</Box>
-
       <Footer />
-
-      <BackToTop />
     </Box>
   );
 });
 
-Content.displayName = 'LayoutContent';
+LayoutContent.displayName = 'LayoutContent';
 
-export default Root;
+export default Layout;
