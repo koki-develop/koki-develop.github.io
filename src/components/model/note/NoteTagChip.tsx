@@ -16,6 +16,7 @@ const NoteTagChip: React.VFC<NoteTagChipProps> = React.memo(props => {
         backgroundColor: theme => theme.palette.primary.main,
         border: '1px solid',
         borderColor: 'divider',
+        cursor: 'inherit',
         ...chipProps.sx,
       }}
       avatar={
