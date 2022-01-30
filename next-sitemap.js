@@ -12,11 +12,12 @@ module.exports = {
       const slug = matches[1];
       const filepath = path.join(process.cwd(), 'src/notes', `${slug}.md`);
       const content = fs.readFileSync(filepath);
-      const mattered = matter(content);
+      const { data } = matter(content);
+      const lastmod = data.updatedAt?.toISOString() ?? data.createdAt.toISOString();
 
       return {
         loc: pathname,
-        lastmod: mattered.data.updatedAt.toISOString(),
+        lastmod,
       };
     }
 
