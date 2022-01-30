@@ -10,7 +10,7 @@ const Time: React.VFC<TimeProps> = React.memo(props => {
   const date = new Date(datetime);
 
   return (
-    <time dateTime={date.toISOString()}>{format(date, 'yyyy.MM.dd')}</time>
+    <time dateTime={date.toISOString()}>{format(date, 'yyyy/MM/dd')}</time>
   );
 });
 
