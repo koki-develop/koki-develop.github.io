@@ -2,6 +2,7 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
+import { format } from 'date-fns';
 import NoteTagChipList from '@/components/model/note/NoteTagChipList';
 import ClickableCard from '@/components/utils/ClickableCard';
 import Link from '@/components/utils/Link';
@@ -20,6 +21,11 @@ const NoteCard: React.VFC<NoteCardProps> = React.memo(props => {
       <ClickableCard>
         <CardContent>
           <Box>
+            <Typography variant='body2' sx={{ mb: 1 }}>
+              <time dateTime={note.createdAt}>
+                {format(new Date(note.createdAt), 'yyyy.MM.dd')}{' '}
+              </time>
+            </Typography>
             <Typography component='h2' variant='h6' sx={{ mb: 1 }}>
               {note.title}
             </Typography>
