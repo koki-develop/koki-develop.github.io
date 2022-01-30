@@ -17,7 +17,7 @@ const Header: React.VFC = React.memo(() => {
             href={Routes.home()}
             sx={{ alignItems: 'center', display: 'flex' }}
           >
-            <Avatar src='/images/profile.png' sx={{ mr: 1 }} />
+            <Avatar src='/images/profile.png' sx={{ mr: 1 }} alt='Logo' />
             <Typography component='h1' variant='h6'>
               {config.profile.name}
             </Typography>
