@@ -22,15 +22,17 @@ export class NotesLoader {
     } as Note;
   }
 
-  public static loadAll(): Promise<Note[]> {
+  public static async loadAll(): Promise<Note[]> {
     const filenames = fs.readdirSync(this._getNotesDirectoryPath());
 
-    return Promise.all(
+    const notes = await Promise.all(
       filenames.map(filename => {
         const slug = path.parse(filename).name;
         return this.load(slug);
       }),
     );
+
+    return notes.sort((a, b) => (a.createdAt < b.createdAt ? 1 : -1));
   }
 
   private static _getNotesDirectoryPath(): string {
