@@ -13,7 +13,8 @@ module.exports = {
       const filepath = path.join(process.cwd(), 'src/notes', `${slug}.md`);
       const content = fs.readFileSync(filepath);
       const { data } = matter(content);
-      const lastmod = data.updatedAt?.toISOString() ?? data.createdAt.toISOString();
+      const lastmod =
+        data.updatedAt?.toISOString() ?? data.createdAt.toISOString();
 
       return {
         loc: pathname,
