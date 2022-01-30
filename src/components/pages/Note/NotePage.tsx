@@ -10,6 +10,7 @@ import Layout from '@/components/Layout';
 import NoteTagChipList from '@/components/model/note/NoteTagChipList';
 import Meta from '@/components/utils/Meta';
 import LinkButton from '@/components/utils/LinkButton';
+import Time from '@/components/utils/Time';
 import { Note } from '@/types/note';
 import { Routes } from '@/routes';
 
@@ -38,10 +39,7 @@ const NotePage: React.VFC<NotePageProps> = React.memo(props => {
         <Paper square sx={{ px: { xs: 2, md: 5 }, py: 2 }}>
           <Box sx={{ mb: 5 }}>
             <Typography variant='body2' sx={{ mb: 1 }}>
-              <time dateTime={note.updatedAt}>
-                {format(new Date(note.updatedAt), 'yyyy.MM.dd')}{' '}
-              </time>{' '}
-              に更新
+              <Time datetime={note.updatedAt} /> に更新
             </Typography>
             <Typography
               component='h1'

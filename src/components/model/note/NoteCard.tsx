@@ -6,6 +6,7 @@ import { format } from 'date-fns';
 import NoteTagChipList from '@/components/model/note/NoteTagChipList';
 import ClickableCard from '@/components/utils/ClickableCard';
 import Link from '@/components/utils/Link';
+import Time from '@/components/utils/Time';
 import { Note } from '@/types/note';
 import { Routes } from '@/routes';
 
@@ -22,9 +23,7 @@ const NoteCard: React.VFC<NoteCardProps> = React.memo(props => {
         <CardContent>
           <Box>
             <Typography variant='body2' sx={{ mb: 1 }}>
-              <time dateTime={note.createdAt}>
-                {format(new Date(note.createdAt), 'yyyy.MM.dd')}{' '}
-              </time>
+              <Time datetime={note.createdAt} />
             </Typography>
             <Typography component='h2' variant='h6' sx={{ mb: 1 }}>
               {note.title}
