@@ -63,16 +63,20 @@
           "url": "https://expressjs.com/"
         },
         {
-          "name": "Rails",
-          "url": "https://rubyonrails.org/"
-        },
-        {
           "name": "React",
           "url": "https://reactjs.org/"
         },
         {
           "name": "Next.js",
           "url": "https://nextjs.org/"
+        },
+        {
+          "name": "Rails",
+          "url": "https://rubyonrails.org/"
+        },
+        {
+          "name": "Django",
+          "url": "https://docs.djangoproject.com/"
         }
       ]
     },
