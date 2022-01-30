@@ -25,9 +25,10 @@
 [<img src="public/images/icons/Gin.svg" alt="Gin" width="40" height="40"/>](https://gin-gonic.com/)
 [<img src="public/images/icons/chi.svg" alt="chi" width="40" height="40"/>](https://go-chi.io/)
 [<img src="public/images/icons/Express.svg" alt="Express" width="40" height="40"/>](https://expressjs.com/)
-[<img src="public/images/icons/Rails.svg" alt="Rails" width="40" height="40"/>](https://rubyonrails.org/)
 [<img src="public/images/icons/React.svg" alt="React" width="40" height="40"/>](https://reactjs.org/)
 [<img src="public/images/icons/Next.js.svg" alt="Next.js" width="40" height="40"/>](https://nextjs.org/)
+[<img src="public/images/icons/Rails.svg" alt="Rails" width="40" height="40"/>](https://rubyonrails.org/)
+[<img src="public/images/icons/Django.svg" alt="Django" width="40" height="40"/>](https://docs.djangoproject.com/)
 ## RDB/NoSQL
 
 [<img src="public/images/icons/MySQL.svg" alt="MySQL" width="40" height="40"/>](https://www.mysql.com/)
