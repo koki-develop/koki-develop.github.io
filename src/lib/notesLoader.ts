@@ -10,12 +10,15 @@ export class NotesLoader {
     const content = fs.readFileSync(filepath);
     const mattered = matter(content);
     const html = markdownToHtml(mattered.content);
+    const createdAt = mattered.data.createdAt.toISOString();
+    const updatedAt = mattered.data.updatedAt?.toISOString() ?? createdAt;
 
     return {
       ...mattered.data,
       slug,
       content: html,
-      updatedAt: mattered.data.updatedAt.toISOString(),
+      createdAt,
+      updatedAt,
     } as Note;
   }
 

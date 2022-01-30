@@ -5,5 +5,6 @@ export type Note = {
   content: string;
   tags: string[];
 
-  updatedAt: string;
+  createdAt: string;
+  updatedAt?: string;
 };
