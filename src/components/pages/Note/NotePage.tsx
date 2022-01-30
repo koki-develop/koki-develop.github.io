@@ -4,12 +4,13 @@ import Container from '@mui/material/Container';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
+import { format } from 'date-fns';
+import 'zenn-content-css';
 import Layout from '@/components/Layout';
 import NoteTagChipList from '@/components/model/note/NoteTagChipList';
 import Meta from '@/components/utils/Meta';
 import LinkButton from '@/components/utils/LinkButton';
 import { Note } from '@/types/note';
-import 'zenn-content-css';
 import { Routes } from '@/routes';
 
 export type NotePageProps = {
@@ -36,6 +37,12 @@ const NotePage: React.VFC<NotePageProps> = React.memo(props => {
 
         <Paper square sx={{ px: { xs: 2, md: 5 }, py: 2 }}>
           <Box sx={{ mb: 5 }}>
+            <Typography variant='body2' sx={{ mb: 1 }}>
+              <time dateTime={note.updatedAt}>
+                {format(new Date(note.updatedAt), 'yyyy.MM.dd')}{' '}
+              </time>{' '}
+              に更新
+            </Typography>
             <Typography
               component='h1'
               variant='h4'
