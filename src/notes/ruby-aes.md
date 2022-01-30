@@ -3,6 +3,7 @@ title: '【Ruby】AES 暗号化・復号'
 description: |
   Ruby の標準ライブラリで AES 暗号化処理を実装する際のメモ。
 tags: ['Ruby']
+createdAt: 2021-08-23
 ---
 
 # 検証環境

@@ -4,4 +4,7 @@ export type Note = {
   description: string;
   content: string;
   tags: string[];
+
+  createdAt: string;
+  updatedAt?: string;
 };

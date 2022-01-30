@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography';
 import NoteTagChipList from '@/components/model/note/NoteTagChipList';
 import ClickableCard from '@/components/utils/ClickableCard';
 import Link from '@/components/utils/Link';
+import Time from '@/components/utils/Time';
 import { Note } from '@/types/note';
 import { Routes } from '@/routes';
 
@@ -20,6 +21,12 @@ const NoteCard: React.VFC<NoteCardProps> = React.memo(props => {
       <ClickableCard>
         <CardContent>
           <Box>
+            <Typography
+              variant='body2'
+              sx={{ color: theme => theme.palette.text.secondary, mb: 1 }}
+            >
+              <Time datetime={note.createdAt} />
+            </Typography>
             <Typography component='h2' variant='h6' sx={{ mb: 1 }}>
               {note.title}
             </Typography>
