@@ -5,27 +5,29 @@ import markdownToHtml from 'zenn-markdown-html';
 import { Note } from '@/types/note';
 
 export class NotesLoader {
-  public static load(slug: string): Note {
-    const content = fs.readFileSync(
-      path.join(this._getNotesDirectoryPath(), `${slug}.md`),
-    );
+  public static async load(slug: string): Promise<Note> {
+    const filepath = path.join(this._getNotesDirectoryPath(), `${slug}.md`);
+    const content = fs.readFileSync(filepath);
     const mattered = matter(content);
     const html = markdownToHtml(mattered.content);
 
     return {
+      ...mattered.data,
       slug,
       content: html,
-      ...mattered.data,
+      updatedAt: mattered.data.updatedAt.toISOString(),
     } as Note;
   }
 
-  public static loadAll(): Note[] {
+  public static loadAll(): Promise<Note[]> {
     const filenames = fs.readdirSync(this._getNotesDirectoryPath());
 
-    return filenames.map(filename => {
-      const slug = path.parse(filename).name;
-      return this.load(slug);
-    });
+    return Promise.all(
+      filenames.map(filename => {
+        const slug = path.parse(filename).name;
+        return this.load(slug);
+      }),
+    );
   }
 
   private static _getNotesDirectoryPath(): string {

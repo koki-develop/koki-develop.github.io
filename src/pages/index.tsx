@@ -4,8 +4,9 @@ import HomePage, { HomePageProps } from '@/components/pages/Home';
 
 export default HomePage;
 
-export const getStaticProps: GetStaticProps<HomePageProps> = () => {
-  const latestNotes = NotesLoader.loadAll().slice(0, 10);
+export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
+  const notes = await NotesLoader.loadAll();
+  const latestNotes = notes.slice(0, 10);
 
   return {
     props: {
