@@ -37,7 +37,10 @@ const NotePage: React.VFC<NotePageProps> = React.memo(props => {
 
         <Paper square sx={{ px: { xs: 2, md: 5 }, py: 2 }}>
           <Box sx={{ mb: 5 }}>
-            <Typography variant='body2' sx={{ mb: 1 }}>
+            <Typography
+              variant='body2'
+              sx={{ color: theme => theme.palette.text.secondary, mb: 1 }}
+            >
               <Time datetime={note.updatedAt} /> に更新
             </Typography>
             <Typography
