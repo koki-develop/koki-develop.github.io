@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import markdownToHtml from 'zenn-markdown-html';
+import { HtmlParser } from '@/lib/htmlParser';
 import { Note } from '@/types/note';
 
 export class NotesLoader {
@@ -13,10 +14,27 @@ export class NotesLoader {
     const createdAt = mattered.data.createdAt.toISOString();
     const updatedAt = mattered.data.updatedAt?.toISOString() ?? createdAt;
 
+    const document = HtmlParser.parse(html);
+    const nodes = document.querySelectorAll('h1, h2, h3, h4');
+    const tableOfContents = Array.from(nodes).map(node => {
+      const level = new Map([
+        ['h1', 1],
+        ['h2', 2],
+        ['h3', 3],
+        ['h4', 4],
+      ]).get(node.tagName.toLowerCase());
+      return {
+        level,
+        text: node.textContent,
+        href: node.querySelector('a').getAttribute('href'),
+      };
+    });
+
     return {
       ...mattered.data,
       slug,
       content: html,
+      tableOfContents,
       createdAt,
       updatedAt,
     } as Note;
