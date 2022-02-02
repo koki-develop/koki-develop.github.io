@@ -3,12 +3,15 @@
 
 // markdown
 .znc {
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     position: relative;
 
     @media (min-width: 900px) {
       a::before {
-        content: "";
+        content: '';
         position: absolute;
         top: 0.5em;
         left: -25px;
