@@ -1,6 +1,7 @@
 import React from 'react';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
+import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
@@ -10,6 +11,7 @@ import 'zenn-content-css';
 import Layout from '@/components/Layout';
 import NoteTagChipList from '@/components/model/note/NoteTagChipList';
 import Meta from '@/components/utils/Meta';
+import Link from '@/components/utils/Link';
 import LinkButton from '@/components/utils/LinkButton';
 import Time from '@/components/utils/Time';
 import { Note } from '@/types/note';
@@ -25,7 +27,8 @@ const NotePage: React.VFC<NotePageProps> = React.memo(props => {
   return (
     <Layout>
       <Meta title={note.title} hideSiteName description={note.description} />
-      <Container maxWidth='md' disableGutters sx={{ pt: 4 }}>
+
+      <Container maxWidth='lg' sx={{ pt: 4 }}>
         <Box sx={{ mb: 2 }}>
           <LinkButton
             href={Routes.notes()}
@@ -37,59 +40,86 @@ const NotePage: React.VFC<NotePageProps> = React.memo(props => {
           </LinkButton>
         </Box>
 
-        <Paper square sx={{ px: { xs: 2, md: 5 }, py: 2 }}>
-          <Box sx={{ mb: 5 }}>
-            <Box sx={{ display: 'flex' }}>
-              <Typography
-                component='span'
-                variant='body2'
-                sx={{
-                  color: theme => theme.palette.text.secondary,
-                  display: 'flex',
-                  mb: 1,
-                }}
-              >
-                <CreateIcon fontSize='small' sx={{ mr: 0.5 }} />
-                <Time datetime={note.createdAt} /> に作成
-              </Typography>
-              {note.createdAt !== note.updatedAt && (
+        <Grid container spacing={2}>
+          <Grid item xs={12} md={8}>
+            <Paper square sx={{ px: { xs: 2, md: 5 }, py: 2 }}>
+              <Box sx={{ mb: 5 }}>
+                <Box sx={{ display: 'flex' }}>
+                  <Typography
+                    component='span'
+                    variant='body2'
+                    sx={{
+                      color: theme => theme.palette.text.secondary,
+                      display: 'flex',
+                      mb: 1,
+                    }}
+                  >
+                    <CreateIcon fontSize='small' sx={{ mr: 0.5 }} />
+                    <Time datetime={note.createdAt} /> に作成
+                  </Typography>
+                  {note.createdAt !== note.updatedAt && (
+                    <Typography
+                      component='span'
+                      variant='body2'
+                      sx={{
+                        color: theme => theme.palette.text.secondary,
+                        display: {
+                          xs: 'none',
+                          sm: 'flex',
+                        },
+                        ml: 2,
+                        mb: 1,
+                      }}
+                    >
+                      <UpdateIcon fontSize='small' sx={{ mr: 0.5 }} />
+                      <Time datetime={note.updatedAt} /> に更新
+                    </Typography>
+                  )}
+                </Box>
+
                 <Typography
-                  component='span'
-                  variant='body2'
-                  sx={{
-                    color: theme => theme.palette.text.secondary,
-                    display: {
-                      xs: 'none',
-                      sm: 'flex',
-                    },
-                    ml: 2,
-                    mb: 1,
-                  }}
+                  component='h1'
+                  variant='h4'
+                  sx={{ fontWeight: 'bold', mb: 2 }}
                 >
-                  <UpdateIcon fontSize='small' sx={{ mr: 0.5 }} />
-                  <Time datetime={note.updatedAt} /> に更新
+                  {note.title}
                 </Typography>
-              )}
-            </Box>
+                <Box sx={{ mb: 2 }}>
+                  <NoteTagChipList tags={note.tags} />
+                </Box>
+                <Typography>{note.description}</Typography>
+              </Box>
 
-            <Typography
-              component='h1'
-              variant='h4'
-              sx={{ fontWeight: 'bold', mb: 2 }}
+              <Box
+                className='znc'
+                dangerouslySetInnerHTML={{ __html: note.content }}
+              />
+            </Paper>
+          </Grid>
+          <Grid
+            item
+            xs={0}
+            md={4}
+            sx={{
+              display: { xs: 'none', md: 'block' },
+            }}
+          >
+            <Paper
+              sx={{
+                position: 'sticky',
+                top: theme => theme.spacing(2),
+              }}
             >
-              {note.title}
-            </Typography>
-            <Box sx={{ mb: 2 }}>
-              <NoteTagChipList tags={note.tags} />
-            </Box>
-            <Typography>{note.description}</Typography>
-          </Box>
-
-          <Box
-            className='znc'
-            dangerouslySetInnerHTML={{ __html: note.content }}
-          />
-        </Paper>
+              {note.tableOfContents.map(tableOfContentItem => (
+                <Box key={tableOfContentItem.href}>
+                  <Link href={tableOfContentItem.href}>
+                    {tableOfContentItem.text}
+                  </Link>
+                </Box>
+              ))}
+            </Paper>
+          </Grid>
+        </Grid>
       </Container>
     </Layout>
   );
