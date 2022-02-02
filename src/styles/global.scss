@@ -1,1 +1,28 @@
+// font
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+// markdown
+.znc {
+  h1, h2, h3, h4 {
+    position: relative;
+
+    @media (min-width: 900px) {
+      a::before {
+        content: "";
+        position: absolute;
+        top: 0.5em;
+        left: -25px;
+        background: url(/images/icons/link.svg) no-repeat 50%;
+        background-size: 15px 15px;
+        height: 1em;
+        width: 24px;
+        opacity: 0;
+      }
+      &:hover {
+        a::before {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
