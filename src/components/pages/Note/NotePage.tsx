@@ -10,8 +10,8 @@ import UpdateIcon from '@mui/icons-material/Update';
 import 'zenn-content-css';
 import Layout from '@/components/Layout';
 import NoteTagChipList from '@/components/model/note/NoteTagChipList';
+import NoteTableOfContents from '@/components/model/note/NoteTableOfContents';
 import Meta from '@/components/utils/Meta';
-import Link from '@/components/utils/Link';
 import LinkButton from '@/components/utils/LinkButton';
 import Time from '@/components/utils/Time';
 import { Note } from '@/types/note';
@@ -41,7 +41,7 @@ const NotePage: React.VFC<NotePageProps> = React.memo(props => {
         </Box>
 
         <Grid container spacing={2}>
-          <Grid item xs={12} md={8}>
+          <Grid item xs={12} md={9}>
             <Paper square sx={{ px: { xs: 2, md: 5 }, py: 2 }}>
               <Box sx={{ mb: 5 }}>
                 <Box sx={{ display: 'flex' }}>
@@ -99,7 +99,7 @@ const NotePage: React.VFC<NotePageProps> = React.memo(props => {
           <Grid
             item
             xs={0}
-            md={4}
+            md={3}
             sx={{
               display: { xs: 'none', md: 'block' },
             }}
@@ -110,13 +110,7 @@ const NotePage: React.VFC<NotePageProps> = React.memo(props => {
                 top: theme => theme.spacing(2),
               }}
             >
-              {note.tableOfContents.map(tableOfContentItem => (
-                <Box key={tableOfContentItem.id}>
-                  <Link href={`#${tableOfContentItem.id}`}>
-                    {tableOfContentItem.text}
-                  </Link>
-                </Box>
-              ))}
+              <NoteTableOfContents items={note.tableOfContents} />
             </Paper>
           </Grid>
         </Grid>
