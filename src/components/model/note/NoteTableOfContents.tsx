@@ -1,5 +1,5 @@
 import React, { useCallback, useMemo, useState } from 'react';
-import Box from '@mui/material/Box';
+import List from '@mui/material/List';
 import { TableOfContentsItem } from '@/types/note';
 import NoteTableOfContentsItem from '@/components/model/note/NoteTableOfContentsItem';
 
@@ -26,7 +26,7 @@ const NoteTableOfContents: React.VFC<NoteTableOfContentsProps> = React.memo(
     }, []);
 
     return (
-      <Box>
+      <List dense>
         {items.map(item => (
           <NoteTableOfContentsItem
             key={item.id}
@@ -36,7 +36,7 @@ const NoteTableOfContents: React.VFC<NoteTableOfContentsProps> = React.memo(
             onInactive={handleInactiveItem}
           />
         ))}
-      </Box>
+      </List>
     );
   },
 );

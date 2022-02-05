@@ -1,5 +1,6 @@
 import React from 'react';
 import Box from '@mui/material/Box';
+import Divider from '@mui/material/Divider';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
@@ -110,6 +111,10 @@ const NotePage: React.VFC<NotePageProps> = React.memo(props => {
                 top: theme => theme.spacing(2),
               }}
             >
+              <Box sx={{ px: 2, py: 1 }}>
+                <Typography>目次</Typography>
+              </Box>
+              <Divider />
               <NoteTableOfContents items={note.tableOfContents} />
             </Paper>
           </Grid>

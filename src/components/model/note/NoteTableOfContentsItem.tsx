@@ -1,6 +1,9 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 import Box from '@mui/material/Box';
+import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemText from '@mui/material/ListItemText';
 import Link from '@/components/utils/Link';
 import { TableOfContentsItem } from '@/types/note';
 
@@ -45,11 +48,25 @@ const NoteTableOfContentsItem: React.VFC<NoteTableOfContentsItemProps> =
     }, [item.id]);
 
     return (
-      <Box>
-        <Link style={{ color: active ? 'red' : null }} href={`#${item.id}`}>
-          {item.text}
-        </Link>
-      </Box>
+      <ListItem disablePadding>
+        <ListItemButton
+          component='a'
+          href={`#${item.id}`}
+          sx={{
+            backgroundColor: active ? '#eee' : null,
+          }}
+        >
+          <ListItemText
+            secondary={item.text}
+            secondaryTypographyProps={{
+              sx: {
+                pl: (item.level - 1) * 2,
+                wordBreak: 'break-all',
+              },
+            }}
+          />
+        </ListItemButton>
+      </ListItem>
     );
   });
 
