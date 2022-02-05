@@ -43,7 +43,10 @@ const NotePage: React.VFC<NotePageProps> = React.memo(props => {
 
         <Grid container spacing={2}>
           <Grid item xs={12} md={9}>
-            <Paper square sx={{ px: { xs: 2, md: 5 }, py: 2 }}>
+            <Paper
+              square
+              sx={{ px: { xs: 2, md: 5 }, py: 2, wordBreak: 'break-all' }}
+            >
               <Box sx={{ mb: 5 }}>
                 <Box sx={{ display: 'flex' }}>
                   <Typography
