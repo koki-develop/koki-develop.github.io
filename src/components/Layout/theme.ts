@@ -32,6 +32,10 @@ export const theme = responsiveFontSizes(
     components: {
       MuiCssBaseline: {
         styleOverrides: {
+          a: {
+            color: primary.contrastText,
+            textDecoration: 'none',
+          },
           body: {
             backgroundColor: primary.dark,
             fontFamily,
