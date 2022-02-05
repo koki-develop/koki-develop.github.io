@@ -8,6 +8,8 @@ import Typography from '@mui/material/Typography';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import CreateIcon from '@mui/icons-material/Create';
 import UpdateIcon from '@mui/icons-material/Update';
+import { useTheme } from '@mui/material/styles';
+import { useMediaQuery } from '@mui/material';
 import 'zenn-content-css';
 import Layout from '@/components/Layout';
 import NoteTagChipList from '@/components/model/note/NoteTagChipList';
@@ -24,12 +26,14 @@ export type NotePageProps = {
 
 const NotePage: React.VFC<NotePageProps> = React.memo(props => {
   const { note } = props;
+  const theme = useTheme();
+  const isMdDown = useMediaQuery(theme.breakpoints.down('md'));
 
   return (
     <Layout>
       <Meta title={note.title} hideSiteName description={note.description} />
 
-      <Container maxWidth='lg' sx={{ pt: 4 }}>
+      <Container maxWidth='lg' disableGutters={isMdDown} sx={{ pt: 4 }}>
         <Box sx={{ mb: 2 }}>
           <LinkButton
             href={Routes.notes()}
@@ -44,7 +48,7 @@ const NotePage: React.VFC<NotePageProps> = React.memo(props => {
         <Grid container spacing={2}>
           <Grid item xs={12} md={9}>
             <Paper
-              square
+              square={isMdDown}
               sx={{ px: { xs: 2, md: 5 }, py: 2, wordBreak: 'break-all' }}
             >
               <Box sx={{ mb: 5 }}>
