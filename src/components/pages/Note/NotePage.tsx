@@ -122,7 +122,9 @@ const NotePage: React.VFC<NotePageProps> = React.memo(props => {
                 <Typography>目次</Typography>
               </Box>
               <Divider />
-              <NoteTableOfContents items={note.tableOfContents} />
+              <Box sx={{ maxHeight: '80vh', overflowY: 'auto' }}>
+                <NoteTableOfContents items={note.tableOfContents} />
+              </Box>
             </Paper>
           </Grid>
         </Grid>
