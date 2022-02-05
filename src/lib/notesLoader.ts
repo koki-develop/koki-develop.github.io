@@ -26,7 +26,7 @@ export class NotesLoader {
       return {
         level,
         text: node.textContent,
-        href: node.querySelector('a').getAttribute('href'),
+        id: node.id,
       };
     });
 

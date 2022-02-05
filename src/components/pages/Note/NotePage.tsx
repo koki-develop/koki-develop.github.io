@@ -111,8 +111,8 @@ const NotePage: React.VFC<NotePageProps> = React.memo(props => {
               }}
             >
               {note.tableOfContents.map(tableOfContentItem => (
-                <Box key={tableOfContentItem.href}>
-                  <Link href={tableOfContentItem.href}>
+                <Box key={tableOfContentItem.id}>
+                  <Link href={`#${tableOfContentItem.id}`}>
                     {tableOfContentItem.text}
                   </Link>
                 </Box>
