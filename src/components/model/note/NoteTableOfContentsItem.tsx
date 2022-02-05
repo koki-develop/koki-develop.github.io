@@ -1,7 +1,7 @@
-import React, { useEffect, useMemo } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 import Box from '@mui/material/Box';
-import { Link } from 'react-scroll';
+import Link from '@/components/utils/Link';
 import { TableOfContentsItem } from '@/types/note';
 
 export type NoteTableOfContentsItemProps = {
@@ -15,13 +15,16 @@ const NoteTableOfContentsItem: React.VFC<NoteTableOfContentsItemProps> =
   React.memo(props => {
     const { item, active, onActive, onInactive } = props;
 
+    const [headingElm, setHeadingElm] = useState<HTMLElement | null>(null);
+
     const offset = useMemo(() => {
-      if (typeof window === 'undefined') return 0;
-      const elm = document.getElementById(item.id);
+      if (!headingElm) return 0;
       return (
-        window.scrollY + elm.getBoundingClientRect().top - elm.clientHeight
+        window.scrollY +
+        headingElm.getBoundingClientRect().top -
+        headingElm.clientHeight
       );
-    }, [item.id]);
+    }, [headingElm]);
 
     const inView = useScrollTrigger({
       disableHysteresis: true,
@@ -36,16 +39,14 @@ const NoteTableOfContentsItem: React.VFC<NoteTableOfContentsItemProps> =
       }
     }, [inView, item, onActive, onInactive]);
 
+    useEffect(() => {
+      const elm = document.getElementById(item.id);
+      setHeadingElm(elm);
+    }, [item.id]);
+
     return (
-      <Box key={item.id}>
-        <Link
-          style={{ color: active ? 'red' : null }}
-          href={`#${item.id}`}
-          to={item.id}
-          smooth
-          duration={300}
-          onSetActive={() => console.log(item.text)}
-        >
+      <Box>
+        <Link style={{ color: active ? 'red' : null }} href={`#${item.id}`}>
           {item.text}
         </Link>
       </Box>
