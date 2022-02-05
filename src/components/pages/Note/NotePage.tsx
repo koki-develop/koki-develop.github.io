@@ -79,7 +79,10 @@ const NotePage: React.VFC<NotePageProps> = React.memo(props => {
               style={{ zIndex: 1101 }}
               placement='bottom-start'
             >
-              <ClickAwayListener onClickAway={handleClickAwayTocPopper}>
+              <ClickAwayListener
+                touchEvent={false}
+                onClickAway={handleClickAwayTocPopper}
+              >
                 <Paper elevation={4}>
                   <Box sx={{ maxHeight: '50vh', overflowY: 'auto' }}>
                     <NoteTableOfContents
