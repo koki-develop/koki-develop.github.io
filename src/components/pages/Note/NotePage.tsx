@@ -171,7 +171,7 @@ const NotePage: React.VFC<NotePageProps> = React.memo(props => {
               </Box>
 
               <Box
-                className='znc'
+                className='znc note'
                 dangerouslySetInnerHTML={{ __html: note.content }}
               />
             </Paper>
