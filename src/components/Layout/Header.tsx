@@ -11,7 +11,7 @@ import { config } from '@/config';
 const Header: React.VFC = React.memo(() => {
   return (
     <AppBar position='static'>
-      <Container maxWidth='md' disableGutters>
+      <Container maxWidth='lg'>
         <Toolbar>
           <Link
             href={Routes.home()}
