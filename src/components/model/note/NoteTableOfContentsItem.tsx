@@ -1,10 +1,8 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
-import Box from '@mui/material/Box';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
-import Link from '@/components/utils/Link';
 import { TableOfContentsItem } from '@/types/note';
 
 export type NoteTableOfContentsItemProps = {
