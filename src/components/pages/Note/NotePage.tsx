@@ -1,15 +1,20 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
+import ClickAwayListener from '@mui/material/ClickAwayListener';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
+import Popper from '@mui/material/Popper';
 import Typography from '@mui/material/Typography';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import CreateIcon from '@mui/icons-material/Create';
 import UpdateIcon from '@mui/icons-material/Update';
 import { useTheme } from '@mui/material/styles';
 import { useMediaQuery } from '@mui/material';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import 'zenn-content-css';
 import Layout from '@/components/Layout';
 import NoteTagChipList from '@/components/model/note/NoteTagChipList';
@@ -26,11 +31,75 @@ export type NotePageProps = {
 
 const NotePage: React.VFC<NotePageProps> = React.memo(props => {
   const { note } = props;
+
+  const [tocButtonEl, setTocButtonEl] = useState<HTMLButtonElement | null>(
+    null,
+  );
+
   const theme = useTheme();
   const isMdDown = useMediaQuery(theme.breakpoints.down('md'));
 
+  const handleClickTocItem = useCallback(() => {
+    setTocButtonEl(null);
+  }, []);
+
+  const handleClickToggleOpenToc = useCallback(
+    (e: React.MouseEvent<HTMLButtonElement>) => {
+      setTocButtonEl(tocButtonEl ? null : e.currentTarget);
+    },
+    [tocButtonEl],
+  );
+
+  const handleClickAwayTocPopper = useCallback(() => {
+    setTocButtonEl(null);
+  }, []);
+
   return (
-    <Layout>
+    <Layout
+      headerContent={
+        !isMdDown ? null : (
+          <Box>
+            <Button
+              onClick={handleClickToggleOpenToc}
+              variant='text'
+              color='secondary'
+              startIcon={
+                tocButtonEl ? (
+                  <KeyboardArrowUpIcon />
+                ) : (
+                  <KeyboardArrowDownIcon />
+                )
+              }
+            >
+              目次
+            </Button>
+            <Popper
+              open={Boolean(tocButtonEl)}
+              anchorEl={tocButtonEl}
+              style={{ zIndex: 1101 }}
+              placement='bottom-start'
+            >
+              <ClickAwayListener onClickAway={handleClickAwayTocPopper}>
+                <Paper elevation={4}>
+                  <Box sx={{ maxHeight: '50vh', overflowY: 'auto' }}>
+                    <NoteTableOfContents
+                      items={note.tableOfContents}
+                      onClick={handleClickTocItem}
+                      sx={{
+                        minWidth: {
+                          xs: '80vw',
+                          sm: 400,
+                        },
+                      }}
+                    />
+                  </Box>
+                </Paper>
+              </ClickAwayListener>
+            </Popper>
+          </Box>
+        )
+      }
+    >
       <Meta title={note.title} hideSiteName description={note.description} />
 
       <Container maxWidth='lg' disableGutters={isMdDown} sx={{ pt: 4 }}>

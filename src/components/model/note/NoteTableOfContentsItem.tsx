@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
@@ -10,11 +10,12 @@ export type NoteTableOfContentsItemProps = {
   active: boolean;
   onActive: (item: TableOfContentsItem) => void;
   onInactive: (item: TableOfContentsItem) => void;
+  onClick?: (item: TableOfContentsItem) => void;
 };
 
 const NoteTableOfContentsItem: React.VFC<NoteTableOfContentsItemProps> =
   React.memo(props => {
-    const { item, active, onActive, onInactive } = props;
+    const { item, active, onActive, onInactive, onClick } = props;
 
     const [headingElm, setHeadingElm] = useState<HTMLElement | null>(null);
 
@@ -31,6 +32,10 @@ const NoteTableOfContentsItem: React.VFC<NoteTableOfContentsItemProps> =
       disableHysteresis: true,
       threshold: offset,
     });
+
+    const handleClick = useCallback(() => {
+      onClick?.(item);
+    }, [item, onClick]);
 
     useEffect(() => {
       if (inView) {
@@ -50,6 +55,7 @@ const NoteTableOfContentsItem: React.VFC<NoteTableOfContentsItemProps> =
         <ListItemButton
           component='a'
           href={`#${item.id}`}
+          onClick={handleClick}
           sx={{
             backgroundColor: active ? '#eee' : null,
           }}

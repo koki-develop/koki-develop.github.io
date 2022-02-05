@@ -9,6 +9,7 @@ import { theme } from '@/components/Layout/theme';
 
 export type LayoutProps = {
   children: React.ReactNode;
+  headerContent?: React.ReactNode;
 };
 
 const Layout: React.VFC<LayoutProps> = React.memo(props => {
@@ -22,14 +23,14 @@ const Layout: React.VFC<LayoutProps> = React.memo(props => {
 Layout.displayName = 'Layout';
 
 const LayoutContent: React.VFC<LayoutProps> = React.memo(props => {
-  const { children } = props;
+  const { children, headerContent } = props;
 
   return (
     <Box>
       <CssBaseline />
       <BackToTop />
 
-      <Header />
+      <Header content={headerContent} />
       <Box component='main'>{children}</Box>
       <Footer />
     </Box>

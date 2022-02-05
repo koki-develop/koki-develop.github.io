@@ -1,6 +1,7 @@
 import React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Avatar from '@mui/material/Avatar';
+import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -10,7 +11,13 @@ import Link from '@/components/utils/Link';
 import { Routes } from '@/routes';
 import { config } from '@/config';
 
-const Header: React.VFC = React.memo(() => {
+export type HeaderProps = {
+  content?: React.ReactNode;
+};
+
+const Header: React.VFC<HeaderProps> = React.memo(props => {
+  const { content } = props;
+
   const theme = useTheme();
   const isMdDown = useMediaQuery(theme.breakpoints.down('md'));
 
@@ -27,6 +34,8 @@ const Header: React.VFC = React.memo(() => {
               {config.profile.name}
             </Typography>
           </Link>
+          <Box sx={{ flexGrow: 1 }} />
+          {content && <Box>{content}</Box>}
         </Toolbar>
       </Container>
     </AppBar>

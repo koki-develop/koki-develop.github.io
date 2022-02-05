@@ -1,15 +1,16 @@
 import React, { useCallback, useMemo, useState } from 'react';
-import List from '@mui/material/List';
+import List, { ListProps } from '@mui/material/List';
 import { TableOfContentsItem } from '@/types/note';
 import NoteTableOfContentsItem from '@/components/model/note/NoteTableOfContentsItem';
 
-export type NoteTableOfContentsProps = {
+export type NoteTableOfContentsProps = ListProps & {
   items: TableOfContentsItem[];
+  onClick?: (item: TableOfContentsItem) => void;
 };
 
 const NoteTableOfContents: React.VFC<NoteTableOfContentsProps> = React.memo(
   props => {
-    const { items } = props;
+    const { items, onClick, ...listProps } = props;
 
     const [activeItemIds, setActiveItemIds] = useState<string[]>([]);
     const activeItemId = useMemo(() => {
@@ -26,7 +27,7 @@ const NoteTableOfContents: React.VFC<NoteTableOfContentsProps> = React.memo(
     }, []);
 
     return (
-      <List dense>
+      <List dense {...listProps}>
         {items.map(item => (
           <NoteTableOfContentsItem
             key={item.id}
@@ -34,6 +35,7 @@ const NoteTableOfContents: React.VFC<NoteTableOfContentsProps> = React.memo(
             active={item.id === activeItemId}
             onActive={handleActiveItem}
             onInactive={handleInactiveItem}
+            onClick={onClick}
           />
         ))}
       </List>
