@@ -113,6 +113,7 @@ const NotePage: React.VFC<NotePageProps> = React.memo(props => {
             size='large'
             variant='text'
             startIcon={<KeyboardDoubleArrowLeftIcon />}
+            sx={{ mx: { xs: 1, md: 0 } }}
           >
             Notes
           </LinkButton>
