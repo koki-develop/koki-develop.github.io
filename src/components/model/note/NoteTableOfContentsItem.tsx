@@ -64,6 +64,7 @@ const NoteTableOfContentsItem: React.VFC<NoteTableOfContentsItemProps> =
             secondary={item.text}
             secondaryTypographyProps={{
               sx: {
+                fontWeight: active ? 'bold' : null,
                 pl: (item.level - 1) * 2,
                 wordBreak: 'break-all',
               },
