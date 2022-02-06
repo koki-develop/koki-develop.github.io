@@ -10,6 +10,7 @@ export type MetaProps = {
   title?: string;
   description?: string;
   image?: string;
+  twitterCard?: string;
 };
 
 const Meta: React.VFC<MetaProps> = React.memo(props => {
@@ -18,7 +19,8 @@ const Meta: React.VFC<MetaProps> = React.memo(props => {
 
     title,
     description = config.profile.description,
-    image = urlJoin(config.url, 'images/profile.jpg'),
+    image = 'images/profile.jpg',
+    twitterCard = 'summary',
   } = props;
 
   const router = useRouter();
@@ -48,10 +50,10 @@ const Meta: React.VFC<MetaProps> = React.memo(props => {
       <meta property='og:url' content={urlJoin(config.url, router.asPath)} />
       <meta property='og:type' content='website' />
       <meta property='og:locale' content='ja_JP' />
-      <meta property='og:image' content={image} />
+      <meta property='og:image' content={urlJoin(config.url, image)} />
 
       {/* twitter */}
-      <meta property='twitter:card' content='summary' />
+      <meta property='twitter:card' content={twitterCard} />
       <meta
         property='twitter:site'
         content={`@${config.socials.twitter.username}`}
