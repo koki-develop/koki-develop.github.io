@@ -1,9 +1,11 @@
 /node_modules/
 /.next/
 /.env.local
+/.envrc
 
 /public/robots.txt
 /public/sitemap*.xml
+/public/notes/
 
 # terraform
 **/.terraform/*

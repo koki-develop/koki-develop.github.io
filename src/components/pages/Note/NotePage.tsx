@@ -103,7 +103,13 @@ const NotePage: React.VFC<NotePageProps> = React.memo(props => {
         )
       }
     >
-      <Meta title={note.title} hideSiteName description={note.description} />
+      <Meta
+        title={note.title}
+        hideSiteName
+        description={note.description}
+        twitterCard='summary_large_image'
+        image={`notes/${note.slug}/ogp.png`}
+      />
 
       <Container maxWidth='lg' disableGutters={isMdDown} sx={{ pt: 4 }}>
         <Box sx={{ mb: 2 }}>
