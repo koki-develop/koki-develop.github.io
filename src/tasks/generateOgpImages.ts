@@ -26,7 +26,7 @@ cloudinary.config({
     'src/images/note_ogp_template.png',
   );
   console.info(`"${noteTemplatePath}" をアップロードします`);
-  await cloudinary.uploader.upload(noteTemplatePath, {
+  const uploadResponse = await cloudinary.uploader.upload(noteTemplatePath, {
     public_id: noteOgpTemplateId,
     type: 'authenticated',
   });
@@ -36,6 +36,7 @@ cloudinary.config({
     console.info(`${note.slug} の OGP 画像 URL を生成します`);
     const url = cloudinary.url(noteOgpTemplateId, {
       sign_url: true,
+      version: uploadResponse.version,
       type: 'authenticated',
       secure: true,
       transformation: [
