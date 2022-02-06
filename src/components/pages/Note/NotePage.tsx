@@ -169,10 +169,12 @@ const NotePage: React.VFC<NotePageProps> = React.memo(props => {
                 >
                   {note.title}
                 </Typography>
-                <Box sx={{ mb: 2 }}>
+                <Box>
                   <NoteTagChipList tags={note.tags} />
                 </Box>
-                <Typography>{note.description}</Typography>
+                {note.description && (
+                  <Typography sx={{ mt: 2 }}>{note.description}</Typography>
+                )}
               </Box>
 
               <Box
