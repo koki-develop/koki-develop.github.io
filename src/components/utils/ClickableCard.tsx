@@ -10,8 +10,8 @@ const ClickableCard: React.VFC<ClickableCardProps> = React.memo(props => {
   const { children } = props;
 
   return (
-    <Card>
-      <CardActionArea>{children}</CardActionArea>
+    <Card sx={{ height: '100%' }}>
+      <CardActionArea sx={{ height: '100%' }}>{children}</CardActionArea>
     </Card>
   );
 });

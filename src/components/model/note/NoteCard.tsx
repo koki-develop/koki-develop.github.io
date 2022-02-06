@@ -19,20 +19,20 @@ const NoteCard: React.VFC<NoteCardProps> = React.memo(props => {
   return (
     <Link href={Routes.note(note.slug)}>
       <ClickableCard>
-        <CardContent>
-          <Box>
-            <Typography
-              variant='body2'
-              sx={{ color: theme => theme.palette.text.secondary, mb: 1 }}
-            >
-              <Time datetime={note.createdAt} />
-            </Typography>
-            <Typography component='h2' variant='h6' sx={{ mb: 1 }}>
-              {note.title}
-            </Typography>
+        <CardContent
+          sx={{ display: 'flex', flexDirection: 'column', height: '100%' }}
+        >
+          <Typography
+            variant='body2'
+            sx={{ color: theme => theme.palette.text.secondary, mb: 1 }}
+          >
+            <Time datetime={note.createdAt} />
+          </Typography>
+          <Typography component='h2' variant='h6' sx={{ mb: 1, flexGrow: 1 }}>
+            {note.title}
+          </Typography>
 
-            <NoteTagChipList tags={note.tags} />
-          </Box>
+          <NoteTagChipList tags={note.tags} />
         </CardContent>
       </ClickableCard>
     </Link>
