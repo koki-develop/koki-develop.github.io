@@ -8,7 +8,7 @@ import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Popper from '@mui/material/Popper';
 import Typography from '@mui/material/Typography';
-import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
+import KeyboardDoubleArrowLeftIcon from '@mui/icons-material/KeyboardDoubleArrowLeft';
 import CreateIcon from '@mui/icons-material/Create';
 import UpdateIcon from '@mui/icons-material/Update';
 import { useTheme } from '@mui/material/styles';
@@ -109,9 +109,10 @@ const NotePage: React.VFC<NotePageProps> = React.memo(props => {
         <Box sx={{ mb: 2 }}>
           <LinkButton
             href={Routes.notes()}
+            color='secondary'
             size='large'
-            startIcon={<KeyboardArrowLeftIcon />}
-            sx={{ mx: { xs: 1, md: 0 } }}
+            variant='text'
+            startIcon={<KeyboardDoubleArrowLeftIcon />}
           >
             Notes
           </LinkButton>
