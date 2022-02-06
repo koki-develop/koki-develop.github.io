@@ -4,6 +4,7 @@
 
 /public/robots.txt
 /public/sitemap*.xml
+/public/notes/
 
 # terraform
 **/.terraform/*
