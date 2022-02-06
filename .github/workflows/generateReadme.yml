@@ -1,4 +1,4 @@
-name: update readme
+name: Generate README
 
 on:
   push:
@@ -25,8 +25,8 @@ jobs:
           key: v1-node-${{ runner.os }}-${{ github.ref }}-${{ hashFiles('yarn.lock') }}
       - name: install dependencies
         run: yarn install
-      - name: update README.md
-        run: yarn run update:readme
+      - name: Generate README.md
+        run: yarn run readme:gen
       - name: commit and push
         run: |
           git add README.md

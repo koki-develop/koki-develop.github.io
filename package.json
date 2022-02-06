@@ -10,7 +10,8 @@
     "format": "prettier --write . && yarn run lint --fix",
     "lint": "eslint --max-warnings 0 --ext .js,.ts,.tsx .",
     "test:compile": "tsc --noEmit",
-    "update:readme": "ts-node -r tsconfig-paths/register ./src/tasks/updateReadme.ts"
+    "readme:gen": "ts-node -r tsconfig-paths/register ./src/tasks/updateReadme.ts",
+    "ogp:gen": "ts-node -r tsconfig-paths/register ./src/tasks/generateOgpImages.ts"
   },
   "dependencies": {
     "@emotion/react": "^11.7.1",
