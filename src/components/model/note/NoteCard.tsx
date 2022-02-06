@@ -1,5 +1,4 @@
 import React from 'react';
-import Box from '@mui/material/Box';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import NoteTagChipList from '@/components/model/note/NoteTagChipList';
