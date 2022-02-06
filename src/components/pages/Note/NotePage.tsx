@@ -109,9 +109,6 @@ const NotePage: React.VFC<NotePageProps> = React.memo(props => {
         <Box sx={{ mb: 2 }}>
           <LinkButton
             href={Routes.notes()}
-            color='secondary'
-            size='large'
-            variant='text'
             startIcon={<KeyboardDoubleArrowLeftIcon />}
             sx={{ mx: { xs: 1, md: 0 } }}
           >
