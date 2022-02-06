@@ -11,12 +11,7 @@ const NoteTagChip: React.VFC<NoteTagChipProps> = React.memo(props => {
 
   return (
     <Chip
-      sx={{
-        backgroundColor: theme => theme.palette.primary.main,
-        border: '1px solid',
-        borderColor: 'divider',
-        cursor: 'inherit',
-      }}
+      label={tag}
       avatar={
         <img
           src={urlJoin('/images/icons', `${tag}.svg`)}
@@ -24,7 +19,12 @@ const NoteTagChip: React.VFC<NoteTagChipProps> = React.memo(props => {
           alt={tag}
         />
       }
-      label={tag}
+      sx={{
+        backgroundColor: theme => theme.palette.primary.main,
+        border: '1px solid',
+        borderColor: 'divider',
+        cursor: 'inherit',
+      }}
     />
   );
 });

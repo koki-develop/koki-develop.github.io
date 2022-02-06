@@ -85,6 +85,13 @@ export const theme = responsiveFontSizes(
           variant: 'contained',
         },
       },
+      MuiChip: {
+        styleOverrides: {
+          label: {
+            paddingLeft: 8,
+          },
+        },
+      },
       MuiLink: {
         styleOverrides: {
           root: {
