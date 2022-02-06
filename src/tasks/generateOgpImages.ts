@@ -46,7 +46,7 @@ cloudinary.config({
           overlay: {
             text: encodeURIComponent(note.title),
             font_family: encodeURIComponent(noteOgpFontId),
-            font_size: 48,
+            font_size: 56,
           },
         },
       ],
