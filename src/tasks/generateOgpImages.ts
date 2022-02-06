@@ -20,7 +20,16 @@ cloudinary.config({
   const notes = await NotesLoader.loadAll();
 
   for (const note of notes) {
-    const url = await cloudinary.url(noteOgpTemplateId, {
+    const templatePath = path.join(
+      process.cwd(),
+      'src/images/note_ogp_template.png',
+    );
+    await cloudinary.uploader.upload(templatePath, {
+      public_id: noteOgpTemplateId,
+      type: 'authenticated',
+    });
+
+    const url = cloudinary.url(noteOgpTemplateId, {
       sign_url: true,
       type: 'authenticated',
       secure: true,
@@ -37,10 +46,10 @@ cloudinary.config({
       ],
     });
 
-    const resp = await axios.get(url, { responseType: 'arraybuffer' });
+    const { data: buf } = await axios.get(url, { responseType: 'arraybuffer' });
     const outputDir = path.join(process.cwd(), 'public/notes', note.slug);
     const filename = path.join(outputDir, 'ogp.png');
     fs.mkdirSync(outputDir, { recursive: true });
-    fs.writeFileSync(filename, resp.data);
+    fs.writeFileSync(filename, buf);
   }
 })();
