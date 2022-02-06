@@ -1,6 +1,6 @@
 ---
 title: '【JavaScript】元の配列を変更せずに並び替えした配列を作る'
-tags: ['Ruby']
+tags: ['JavaScript', 'Node.js']
 createdAt: 2021-08-23
 ---
 
