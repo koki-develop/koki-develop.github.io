@@ -17,18 +17,23 @@ cloudinary.config({
 });
 
 (async () => {
+  console.info('OGP 画像を生成します');
+
   const notes = await NotesLoader.loadAll();
 
-  for (const note of notes) {
-    const templatePath = path.join(
-      process.cwd(),
-      'src/images/note_ogp_template.png',
-    );
-    await cloudinary.uploader.upload(templatePath, {
-      public_id: noteOgpTemplateId,
-      type: 'authenticated',
-    });
+  const noteTemplatePath = path.join(
+    process.cwd(),
+    'src/images/note_ogp_template.png',
+  );
+  console.info(`"${noteTemplatePath}" をアップロードします`);
+  await cloudinary.uploader.upload(noteTemplatePath, {
+    public_id: noteOgpTemplateId,
+    type: 'authenticated',
+  });
+  console.info('アップロードしました');
 
+  for (const note of notes) {
+    console.info(`${note.slug} の OGP 画像 URL を生成します`);
     const url = cloudinary.url(noteOgpTemplateId, {
       sign_url: true,
       type: 'authenticated',
@@ -45,11 +50,17 @@ cloudinary.config({
         },
       ],
     });
+    console.info('生成しました:', url);
 
+    console.info('OGP 画像をダウンロードします');
     const { data: buf } = await axios.get(url, { responseType: 'arraybuffer' });
+    console.info('ダウンロードしました');
+
     const outputDir = path.join(process.cwd(), 'public/notes', note.slug);
-    const filename = path.join(outputDir, 'ogp.png');
+    const filepath = path.join(outputDir, 'ogp.png');
+    console.info(`"${filepath}" に OGP 画像を保存します`);
     fs.mkdirSync(outputDir, { recursive: true });
-    fs.writeFileSync(filename, buf);
+    fs.writeFileSync(filepath, buf);
+    console.info('保存しました');
   }
 })();
