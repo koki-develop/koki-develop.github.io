@@ -1,4 +1,4 @@
-name: lint
+name: Build
 
 on: [push]
 
@@ -25,4 +25,4 @@ jobs:
       - name: eslint
         run: yarn run lint
       - name: build
-        run: yarn run build
+        run: yarn run next build
