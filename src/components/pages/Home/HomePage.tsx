@@ -40,7 +40,7 @@ const HomePage: React.VFC<HomePageProps> = React.memo(props => {
 
   return (
     <Layout>
-      <Meta />
+      <Meta description={config.profile.description} />
       <ProfileBlock profile={config.profile} />
       <SocialList socials={config.socials} />
 

@@ -18,7 +18,7 @@ const Meta: React.VFC<MetaProps> = React.memo(props => {
     hideSiteName,
 
     title,
-    description = config.profile.description,
+    description,
     image = 'images/profile.jpg',
     twitterCard = 'summary',
   } = props;
@@ -42,8 +42,12 @@ const Meta: React.VFC<MetaProps> = React.memo(props => {
       <meta property='og:title' content={titleText} />
 
       {/* description */}
-      <meta name='description' content={description} />
-      <meta property='og:description' content={description} />
+      {description && (
+        <>
+          <meta name='description' content={description} />
+          <meta property='og:description' content={description} />
+        </>
+      )}
 
       {/* ogp */}
       <meta property='og:site_name' content={config.profile.name} />
