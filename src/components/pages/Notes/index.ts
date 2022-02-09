@@ -1,3 +1,4 @@
-import NotesPage from './NotesPage';
+import NotesPage, { NotesPageProps } from './NotesPage';
 
 export default NotesPage;
+export type { NotesPageProps };
