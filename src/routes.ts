@@ -7,7 +7,7 @@ export class Routes {
   }
 
   public static notes(): string {
-    return '/?tab=notes';
+    return '/notes';
   }
 
   public static note(slug: string): string {
