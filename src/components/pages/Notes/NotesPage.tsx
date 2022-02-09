@@ -19,7 +19,7 @@ const NotesPage: React.VFC<NotesPageProps> = React.memo(props => {
       <Meta title='Notes' />
 
       <Container sx={{ mt: 2 }}>
-        <NoteCardList notes={notes} />
+        <NoteCardList stacked notes={notes} />
       </Container>
     </Layout>
   );

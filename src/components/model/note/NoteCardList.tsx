@@ -5,15 +5,16 @@ import { Note } from '@/types/note';
 
 export type NoteCardListProps = {
   notes: Note[];
+  stacked?: boolean;
 };
 
 const NoteCardList: React.VFC<NoteCardListProps> = React.memo(props => {
-  const { notes } = props;
+  const { notes, stacked } = props;
 
   return (
     <Grid container spacing={2}>
       {notes.map(note => (
-        <Grid key={note.slug} item xs={12} sm={6}>
+        <Grid key={note.slug} item xs={12} sm={stacked ? 12 : 6}>
           <NoteCard note={note} />
         </Grid>
       ))}
