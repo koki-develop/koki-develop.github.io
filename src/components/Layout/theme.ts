@@ -14,9 +14,9 @@ const primary: PaletteColorOptions = {
 };
 
 const secondary: PaletteColorOptions = {
-  main: '#191919',
-  light: '#303030',
-  dark: '#000000',
+  main: '#606060',
+  light: '#777777',
+  dark: '#444444',
   contrastText: '#FFFFFF',
 };
 
@@ -100,6 +100,16 @@ export const theme = responsiveFontSizes(
         },
         defaultProps: {
           underline: 'none',
+        },
+      },
+      MuiOutlinedInput: {
+        styleOverrides: {
+          root: {
+            '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+              borderColor: 'rgba(0, 0, 0, 0.87)',
+              borderWidth: 1,
+            },
+          },
         },
       },
     },

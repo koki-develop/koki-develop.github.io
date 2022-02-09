@@ -39,7 +39,9 @@ const NotesPage: React.VFC<NotesPageProps> = React.memo(props => {
               <Box>
                 <TextField
                   fullWidth
+                  color='secondary'
                   label='キーワード'
+                  variant='outlined'
                   InputProps={{
                     sx: { pr: 1 },
                     endAdornment: (
