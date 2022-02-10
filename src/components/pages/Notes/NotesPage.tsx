@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import IconButton from '@mui/material/IconButton';
@@ -19,7 +19,22 @@ export type NotesPageProps = {
 const NotesPage: React.VFC<NotesPageProps> = React.memo(props => {
   const { notes } = props;
 
-  console.log(notes);
+  const [keyword, setKeyword] = useState<string>('');
+
+  const filteredNotes = useMemo(() => {
+    return notes.filter(note => {
+      const trimmedKeyword = keyword.trim();
+      if (trimmedKeyword === '') return note;
+      return note.title.toLowerCase().includes(trimmedKeyword.toLowerCase());
+    });
+  }, [keyword, notes]);
+
+  const handleChangeKeyword = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      setKeyword(e.currentTarget.value);
+    },
+    [],
+  );
 
   return (
     <Layout>
@@ -42,6 +57,8 @@ const NotesPage: React.VFC<NotesPageProps> = React.memo(props => {
                   color='secondary'
                   label='キーワード'
                   variant='outlined'
+                  onChange={handleChangeKeyword}
+                  value={keyword}
                   InputProps={{
                     sx: { pr: 1 },
                     endAdornment: (
@@ -57,7 +74,7 @@ const NotesPage: React.VFC<NotesPageProps> = React.memo(props => {
             </Paper>
           </Grid>
           <Grid item xs={12} md={9}>
-            <NoteCardList stacked notes={notes} />
+            <NoteCardList stacked notes={filteredNotes} />
           </Grid>
         </Grid>
       </Container>
