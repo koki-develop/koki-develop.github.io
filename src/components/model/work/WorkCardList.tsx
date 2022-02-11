@@ -20,20 +20,6 @@ const WorkCardList: React.VFC<WorkCardListProps> = React.memo(props => {
           <WorkCard work={work} />
         </Grid>
       ))}
-      <Grid
-        item
-        xs={12}
-        sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}
-      >
-        <LinkButton
-          href={Routes.repositories()}
-          external
-          size='large'
-          endIcon={<KeyboardArrowRightIcon />}
-        >
-          More
-        </LinkButton>
-      </Grid>
     </Grid>
   );
 });
