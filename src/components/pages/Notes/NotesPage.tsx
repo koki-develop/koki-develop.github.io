@@ -1,6 +1,5 @@
 import SearchIcon from '@mui/icons-material/Search';
 import Box from '@mui/material/Box';
-import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import InputAdornment from '@mui/material/InputAdornment';
@@ -40,17 +39,19 @@ const NotesPage: React.VFC<NotesPageProps> = React.memo(props => {
   );
 
   return (
-    <Layout>
+    <Layout
+      breadCrumbs={[
+        <Link key='1' href={Routes.home()}>
+          Home
+        </Link>,
+        <Typography key='2' color='text.primary'>
+          Notes
+        </Typography>,
+      ]}
+    >
       <Meta title='Notes' />
 
       <Container maxWidth='lg' sx={{ mt: 2 }}>
-        <Box sx={{ mb: 2 }}>
-          <Breadcrumbs separator='›'>
-            <Link href={Routes.home()}>Home</Link>
-            <Typography color='text.primary'>Notes</Typography>
-          </Breadcrumbs>
-        </Box>
-
         <Grid container spacing={2}>
           <Grid item xs={12}>
             <Paper sx={{ p: 2 }}>

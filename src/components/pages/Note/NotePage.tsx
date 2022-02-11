@@ -4,7 +4,6 @@ import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import UpdateIcon from '@mui/icons-material/Update';
 import { useMediaQuery } from '@mui/material';
 import Box from '@mui/material/Box';
-import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Button from '@mui/material/Button';
 import ClickAwayListener from '@mui/material/ClickAwayListener';
 import Container from '@mui/material/Container';
@@ -56,6 +55,17 @@ const NotePage: React.VFC<NotePageProps> = React.memo(props => {
 
   return (
     <Layout
+      breadCrumbs={[
+        <Link key='1' href={Routes.home()}>
+          Home
+        </Link>,
+        <Link key='2' href={Routes.notes()}>
+          Notes
+        </Link>,
+        <Typography key='3' color='text.primary'>
+          {note.title}
+        </Typography>,
+      ]}
       headerContent={
         !isMdDown ? null : (
           <Box>
@@ -111,13 +121,6 @@ const NotePage: React.VFC<NotePageProps> = React.memo(props => {
         image={`notes/${note.slug}/ogp.png`}
       />
 
-      <Container maxWidth='lg' sx={{ pt: 2 }}>
-        <Breadcrumbs separator='›'>
-          <Link href={Routes.home()}>Home</Link>
-          <Link href={Routes.notes()}>Notes</Link>
-          <Typography color='text.primary'>{note.title}</Typography>
-        </Breadcrumbs>
-      </Container>
       <Container maxWidth='lg' disableGutters={isMdDown} sx={{ pt: 2 }}>
         <Grid container spacing={2}>
           <Grid item xs={12} md={9}>
