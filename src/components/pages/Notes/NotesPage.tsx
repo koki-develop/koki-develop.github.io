@@ -42,14 +42,7 @@ const NotesPage: React.VFC<NotesPageProps> = React.memo(props => {
 
       <Container maxWidth='lg' sx={{ mt: 2 }}>
         <Grid container spacing={2}>
-          <Grid
-            item
-            xs={0}
-            md={3}
-            sx={{
-              display: { xs: 'none', md: 'block' },
-            }}
-          >
+          <Grid item xs={12}>
             <Paper sx={{ p: 2 }}>
               <Box>
                 <TextField
@@ -71,9 +64,10 @@ const NotesPage: React.VFC<NotesPageProps> = React.memo(props => {
                   }}
                 />
               </Box>
+              <Box></Box>
             </Paper>
           </Grid>
-          <Grid item xs={12} md={9}>
+          <Grid item xs={12}>
             <NoteCardList stacked notes={filteredNotes} />
           </Grid>
         </Grid>
