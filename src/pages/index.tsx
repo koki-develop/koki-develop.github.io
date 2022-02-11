@@ -10,7 +10,11 @@ export const getStaticProps: GetStaticProps<HomePageProps> = () => {
 
   return {
     props: {
-      latestNotes,
+      latestNotes: latestNotes.map(note => {
+        delete note.content;
+        delete note.tableOfContents;
+        return note;
+      }),
     },
   };
 };

@@ -9,7 +9,11 @@ export const getStaticProps: GetStaticProps<NotesPageProps> = () => {
 
   return {
     props: {
-      notes,
+      notes: notes.map(note => {
+        delete note.content;
+        delete note.tableOfContents;
+        return note;
+      }),
     },
   };
 };
