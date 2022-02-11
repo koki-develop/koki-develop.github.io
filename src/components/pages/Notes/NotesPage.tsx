@@ -53,12 +53,9 @@ const NotesPage: React.VFC<NotesPageProps> = React.memo(props => {
                   onChange={handleChangeKeyword}
                   value={keyword}
                   InputProps={{
-                    sx: { pr: 1 },
                     endAdornment: (
                       <InputAdornment position='end'>
-                        <IconButton>
-                          <SearchIcon />
-                        </IconButton>
+                        <SearchIcon />
                       </InputAdornment>
                     ),
                   }}
