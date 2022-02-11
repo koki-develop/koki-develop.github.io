@@ -13,11 +13,12 @@ export type NoteTableOfContentsPaperProps = PaperProps & {
 };
 
 const NoteTableOfContentsPaper: React.VFC<NoteTableOfContentsPaperProps> =
-  React.memo(props => {
+  React.forwardRef((props, ref) => {
     const { items, onClickItem, ...paperProps } = props;
 
     return (
       <Paper
+        ref={ref}
         {...paperProps}
         sx={theme => ({
           ...paperProps.sx,
