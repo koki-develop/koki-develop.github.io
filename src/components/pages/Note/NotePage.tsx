@@ -1,6 +1,7 @@
 import React, { useCallback, useState } from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
+import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Divider from '@mui/material/Divider';
 import ClickAwayListener from '@mui/material/ClickAwayListener';
 import Container from '@mui/material/Container';
@@ -8,7 +9,6 @@ import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Popper from '@mui/material/Popper';
 import Typography from '@mui/material/Typography';
-import KeyboardDoubleArrowLeftIcon from '@mui/icons-material/KeyboardDoubleArrowLeft';
 import CreateIcon from '@mui/icons-material/Create';
 import UpdateIcon from '@mui/icons-material/Update';
 import { useTheme } from '@mui/material/styles';
@@ -20,7 +20,7 @@ import Layout from '@/components/Layout';
 import NoteTagChipList from '@/components/model/note/NoteTagChipList';
 import NoteTableOfContents from '@/components/model/note/NoteTableOfContents';
 import Meta from '@/components/utils/Meta';
-import LinkButton from '@/components/utils/LinkButton';
+import Link from '@/components/utils/Link';
 import Time from '@/components/utils/Time';
 import { Note } from '@/types/note';
 import { Routes } from '@/routes';
@@ -111,15 +111,13 @@ const NotePage: React.VFC<NotePageProps> = React.memo(props => {
         image={`notes/${note.slug}/ogp.png`}
       />
 
-      <Container maxWidth='lg' disableGutters={isMdDown} sx={{ pt: 4 }}>
+      <Container maxWidth='lg' disableGutters={isMdDown} sx={{ pt: 2 }}>
         <Box sx={{ mb: 2 }}>
-          <LinkButton
-            href={Routes.notes()}
-            startIcon={<KeyboardDoubleArrowLeftIcon />}
-            sx={{ mx: { xs: 1, md: 0 } }}
-          >
-            Notes
-          </LinkButton>
+          <Breadcrumbs separator='›'>
+            <Link href={Routes.home()}>Home</Link>
+            <Link href={Routes.notes()}>Notes</Link>
+            <Typography color='text.primary'>{note.title}</Typography>
+          </Breadcrumbs>
         </Box>
 
         <Grid container spacing={2}>
