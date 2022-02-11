@@ -22,7 +22,7 @@ const NoteTableOfContentsPaper: React.VFC<NoteTableOfContentsPaperProps> =
         sx={theme => ({
           ...paperProps.sx,
           [theme.breakpoints.down('md')]: {
-            maxWidth: 300,
+            width: 300,
           },
         })}
       >
