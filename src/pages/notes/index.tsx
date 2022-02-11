@@ -4,8 +4,8 @@ import NotesPage, { NotesPageProps } from '@/components/pages/Notes';
 
 export default NotesPage;
 
-export const getStaticProps: GetStaticProps<NotesPageProps> = async () => {
-  const notes = await NotesLoader.loadAll();
+export const getStaticProps: GetStaticProps<NotesPageProps> = () => {
+  const notes = NotesLoader.loadAll();
 
   return {
     props: {

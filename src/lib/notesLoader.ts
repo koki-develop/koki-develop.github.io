@@ -6,7 +6,7 @@ import { HtmlParser } from '@/lib/htmlParser';
 import { Note } from '@/types/note';
 
 export class NotesLoader {
-  public static async load(slug: string): Promise<Note> {
+  public static load(slug: string): Note {
     const filepath = path.join(this._getNotesDirectoryPath(), `${slug}.md`);
     const content = fs.readFileSync(filepath);
     const mattered = matter(content);
@@ -40,15 +40,13 @@ export class NotesLoader {
     } as Note;
   }
 
-  public static async loadAll(): Promise<Note[]> {
+  public static loadAll(): Note[] {
     const filenames = fs.readdirSync(this._getNotesDirectoryPath());
 
-    const notes = await Promise.all(
-      filenames.map(filename => {
-        const slug = path.parse(filename).name;
-        return this.load(slug);
-      }),
-    );
+    const notes = filenames.map(filename => {
+      const slug = path.parse(filename).name;
+      return this.load(slug);
+    });
 
     return notes.sort((a, b) => (a.createdAt < b.createdAt ? 1 : -1));
   }

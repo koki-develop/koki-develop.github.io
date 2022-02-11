@@ -4,8 +4,8 @@ import { NotesLoader } from '@/lib/notesLoader';
 
 export default NotePage;
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const notes = await NotesLoader.loadAll();
+export const getStaticPaths: GetStaticPaths = () => {
+  const notes = NotesLoader.loadAll();
   const paths = notes.map(note => `/notes/${note.slug}`);
 
   return {
@@ -17,8 +17,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps<
   NotePageProps,
   { slug: string }
-> = async ({ params }) => {
-  const note = await NotesLoader.load(params.slug);
+> = ({ params }) => {
+  const note = NotesLoader.load(params.slug);
 
   return {
     props: {
