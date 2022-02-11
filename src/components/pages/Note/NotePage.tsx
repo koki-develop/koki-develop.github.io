@@ -111,15 +111,14 @@ const NotePage: React.VFC<NotePageProps> = React.memo(props => {
         image={`notes/${note.slug}/ogp.png`}
       />
 
+      <Container maxWidth='lg' sx={{ pt: 2 }}>
+        <Breadcrumbs separator='›'>
+          <Link href={Routes.home()}>Home</Link>
+          <Link href={Routes.notes()}>Notes</Link>
+          <Typography color='text.primary'>{note.title}</Typography>
+        </Breadcrumbs>
+      </Container>
       <Container maxWidth='lg' disableGutters={isMdDown} sx={{ pt: 2 }}>
-        <Box sx={{ mb: 2 }}>
-          <Breadcrumbs separator='›'>
-            <Link href={Routes.home()}>Home</Link>
-            <Link href={Routes.notes()}>Notes</Link>
-            <Typography color='text.primary'>{note.title}</Typography>
-          </Breadcrumbs>
-        </Box>
-
         <Grid container spacing={2}>
           <Grid item xs={12} md={9}>
             <Paper
