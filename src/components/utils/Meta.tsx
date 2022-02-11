@@ -58,10 +58,7 @@ const Meta: React.VFC<MetaProps> = React.memo(props => {
 
       {/* twitter */}
       <meta property='twitter:card' content={twitterCard} />
-      <meta
-        property='twitter:site'
-        content={`@${config.socials.twitter.username}`}
-      />
+      <meta property='twitter:site' content='@koki_develop' />
     </Head>
   );
 });

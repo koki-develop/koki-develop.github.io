@@ -1,18 +1,13 @@
 import React from 'react';
-import urlJoin from 'url-join';
 import FooterLinkListItem from '@/components/Layout/FooterLinkListItem';
 import { Routes } from '@/routes';
-import { config } from '@/config';
 
 const FooterLinkList: React.VFC = React.memo(() => {
   return (
     <ul>
       <FooterLinkListItem
         external
-        href={urlJoin(
-          config.socials.github.url,
-          config.socials.github.username,
-        )}
+        href='https://github.com/koki-develop/koki-develop'
       >
         View on GitHub
       </FooterLinkListItem>

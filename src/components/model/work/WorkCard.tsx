@@ -8,7 +8,6 @@ import React from 'react';
 import urlJoin from 'url-join';
 import Link from '@/components/utils/Link';
 import { Work } from '@/types/work';
-import { Routes } from '@/routes';
 
 export type WorkCardProps = {
   work: Work;
@@ -61,7 +60,7 @@ const WorkCard: React.VFC<WorkCardProps> = React.memo(props => {
         </Typography>
         <Link
           external
-          href={Routes.repository(work.repository)}
+          href={work.repositoryUrl}
           sx={{ color: theme => theme.palette.primary.contrastText }}
         >
           View on GitHub

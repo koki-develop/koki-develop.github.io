@@ -4,7 +4,7 @@ export type Work = {
   name: string;
   url: string;
   hasImage: boolean;
-  repository: string;
+  repositoryUrl: string;
   description: string;
   skills: Skill[];
 };
