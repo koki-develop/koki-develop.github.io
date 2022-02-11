@@ -17,22 +17,21 @@ const NoteTableOfContentsPaper: React.VFC<NoteTableOfContentsPaperProps> =
     const { items, onClickItem, ...paperProps } = props;
 
     return (
-      <Paper {...paperProps}>
+      <Paper
+        {...paperProps}
+        sx={theme => ({
+          ...paperProps.sx,
+          [theme.breakpoints.down('md')]: {
+            maxWidth: 300,
+          },
+        })}
+      >
         <Box sx={{ px: 2, py: 1 }}>
           <Typography>目次</Typography>
         </Box>
         <Divider />
         <Box sx={{ maxHeight: { xs: '50vh', md: '80vh' }, overflowY: 'auto' }}>
-          <NoteTableOfContents
-            items={items}
-            onClick={onClickItem}
-            sx={{
-              minWidth: {
-                xs: '80vw',
-                sm: 400,
-              },
-            }}
-          />
+          <NoteTableOfContents items={items} onClick={onClickItem} />
         </Box>
       </Paper>
     );

@@ -27,7 +27,14 @@ const NoteTableOfContents: React.VFC<NoteTableOfContentsProps> = React.memo(
     }, []);
 
     return (
-      <List dense {...listProps}>
+      <List
+        dense
+        {...listProps}
+        sx={{
+          wordBreak: 'break-all',
+          ...listProps.sx,
+        }}
+      >
         {items.map(item => (
           <NoteTableOfContentsItem
             key={item.id}
