@@ -1,7 +1,7 @@
-import React from 'react';
 import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
+import React from 'react';
 import { Profile } from '@/types/profile';
 
 export type ProfileBlockProps = {

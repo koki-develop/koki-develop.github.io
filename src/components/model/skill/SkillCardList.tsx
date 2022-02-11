@@ -1,9 +1,9 @@
-import React from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-import { SkillGroup } from '@/types/skillGroup';
+import React from 'react';
 import SkillCard from '@/components/model/skill/SkillCard';
+import { SkillGroup } from '@/types/skillGroup';
 
 export type SkillCardListProps = {
   skillGroups: SkillGroup[];

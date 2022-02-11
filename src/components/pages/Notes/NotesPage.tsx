@@ -1,19 +1,19 @@
-import React, { useCallback, useMemo, useState } from 'react';
+import SearchIcon from '@mui/icons-material/Search';
 import Box from '@mui/material/Box';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Container from '@mui/material/Container';
-import InputAdornment from '@mui/material/InputAdornment';
 import Grid from '@mui/material/Grid';
+import InputAdornment from '@mui/material/InputAdornment';
 import Paper from '@mui/material/Paper';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
-import SearchIcon from '@mui/icons-material/Search';
-import Layout from '@/components/Layout';
-import Meta from '@/components/utils/Meta';
-import Link from '@/components/utils/Link';
+import React, { useCallback, useMemo, useState } from 'react';
 import NoteCardList from '@/components/model/note/NoteCardList';
+import Link from '@/components/utils/Link';
+import Meta from '@/components/utils/Meta';
 import { Note } from '@/types/note';
 import { Routes } from '@/routes';
+import Layout from '@/components/Layout';
 
 export type NotesPageProps = {
   notes: Note[];

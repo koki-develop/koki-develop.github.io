@@ -1,6 +1,6 @@
 import { GetStaticProps } from 'next';
-import { NotesLoader } from '@/lib/notesLoader';
 import HomePage, { HomePageProps } from '@/components/pages/Home';
+import { NotesLoader } from '@/lib/notesLoader';
 
 export default HomePage;
 

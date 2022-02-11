@@ -1,6 +1,6 @@
-import React from 'react';
-import Link from 'next/link';
 import Button, { ButtonProps } from '@mui/material/Button';
+import Link from 'next/link';
+import React from 'react';
 
 export type LinkButtonProps = ButtonProps<'a'> & {
   external?: boolean;

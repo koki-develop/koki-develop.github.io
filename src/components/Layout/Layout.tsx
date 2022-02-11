@@ -1,11 +1,11 @@
-import React from 'react';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider } from '@mui/material/styles';
-import BackToTop from '@/components/utils/BackToTop';
-import Header from '@/components/Layout/Header';
+import React from 'react';
 import Footer from '@/components/Layout/Footer';
+import Header from '@/components/Layout/Header';
 import { theme } from '@/components/Layout/theme';
+import BackToTop from '@/components/utils/BackToTop';
 
 export type LayoutProps = {
   children: React.ReactNode;

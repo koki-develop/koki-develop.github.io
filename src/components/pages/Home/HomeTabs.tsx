@@ -1,6 +1,6 @@
-import React, { useCallback } from 'react';
 import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
+import React, { useCallback } from 'react';
 
 export const HomeTabValue = {
   about: 'about',

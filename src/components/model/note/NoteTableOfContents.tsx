@@ -1,7 +1,7 @@
-import React, { useCallback, useMemo, useState } from 'react';
 import List, { ListProps } from '@mui/material/List';
-import { TableOfContentsItem } from '@/types/note';
+import React, { useCallback, useMemo, useState } from 'react';
 import NoteTableOfContentsItem from '@/components/model/note/NoteTableOfContentsItem';
+import { TableOfContentsItem } from '@/types/note';
 
 export type NoteTableOfContentsProps = ListProps & {
   items: TableOfContentsItem[];

@@ -1,6 +1,6 @@
 import { GetStaticProps } from 'next';
-import { NotesLoader } from '@/lib/notesLoader';
 import NotesPage, { NotesPageProps } from '@/components/pages/Notes';
+import { NotesLoader } from '@/lib/notesLoader';
 
 export default NotesPage;
 

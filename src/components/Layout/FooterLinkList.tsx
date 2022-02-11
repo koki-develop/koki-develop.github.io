@@ -1,8 +1,8 @@
 import React from 'react';
 import urlJoin from 'url-join';
 import FooterLinkListItem from '@/components/Layout/FooterLinkListItem';
-import { config } from '@/config';
 import { Routes } from '@/routes';
+import { config } from '@/config';
 
 const FooterLinkList: React.VFC = React.memo(() => {
   return (

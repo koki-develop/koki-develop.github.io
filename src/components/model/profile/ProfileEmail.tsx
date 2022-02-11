@@ -1,9 +1,9 @@
-import React, { useCallback, useEffect, useState } from 'react';
-import { CopyToClipboard } from 'react-copy-to-clipboard';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import DoneIcon from '@mui/icons-material/Done';
 import MailIcon from '@mui/icons-material/Mail';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import React, { useCallback, useEffect, useState } from 'react';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 import LinkButton from '@/components/utils/LinkButton';
 import { Routes } from '@/routes';
 

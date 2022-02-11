@@ -1,5 +1,5 @@
-import React from 'react';
 import Stack from '@mui/material/Stack';
+import React from 'react';
 import NoteTagChip from '@/components/model/note/NoteTagChip';
 
 export type NoteTagChipListProps = {

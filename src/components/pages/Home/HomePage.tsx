@@ -1,22 +1,22 @@
-import React, { useCallback, useMemo } from 'react';
-import { useRouter } from 'next/router';
-import Box from '@mui/material/Box';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import Box from '@mui/material/Box';
+import { useRouter } from 'next/router';
+import React, { useCallback, useMemo } from 'react';
 import HomeTabs, { HomeTabValue } from '@/components/pages/Home/HomeTabs';
-import Layout from '@/components/Layout';
+import HistoryTimeline from '@/components/model/history/HistoryTimeline';
 import NoteCardList from '@/components/model/note/NoteCardList';
 import ProfileBlock from '@/components/model/profile/ProfileBlock';
 import ProfileEmail from '@/components/model/profile/ProfileEmail';
-import SocialList from '@/components/model/social/SocialList';
 import SkillCardList from '@/components/model/skill/SkillCardList';
+import SocialList from '@/components/model/social/SocialList';
 import WorkCardList from '@/components/model/work/WorkCardList';
-import HistoryTimeline from '@/components/model/history/HistoryTimeline';
-import Section from '@/components/utils/Section';
-import Meta from '@/components/utils/Meta';
-import { Routes } from '@/routes';
 import LinkButton from '@/components/utils/LinkButton';
-import { config } from '@/config';
+import Meta from '@/components/utils/Meta';
+import Section from '@/components/utils/Section';
 import { Note } from '@/types/note';
+import { Routes } from '@/routes';
+import { config } from '@/config';
+import Layout from '@/components/Layout';
 
 export type HomePageProps = {
   latestNotes: Note[];

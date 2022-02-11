@@ -1,8 +1,8 @@
-import { Profile } from '@/types/profile';
-import { Socials } from '@/types/socials';
-import { SkillGroup } from '@/types/skillGroup';
-import { Work } from '@/types/work';
 import { History } from '@/types/history';
+import { Profile } from '@/types/profile';
+import { SkillGroup } from '@/types/skillGroup';
+import { Socials } from '@/types/socials';
+import { Work } from '@/types/work';
 
 export type Config = {
   url: string;

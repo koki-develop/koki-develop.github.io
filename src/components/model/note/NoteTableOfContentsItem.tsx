@@ -1,8 +1,8 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import useScrollTrigger from '@mui/material/useScrollTrigger';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
+import useScrollTrigger from '@mui/material/useScrollTrigger';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { TableOfContentsItem } from '@/types/note';
 
 export type NoteTableOfContentsItemProps = {

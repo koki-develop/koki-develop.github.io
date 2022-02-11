@@ -1,5 +1,5 @@
-import React from 'react';
 import Box from '@mui/material/Box';
+import React from 'react';
 import FooterLinkList from '@/components/Layout/FooterLinkList';
 
 const Footer: React.VFC = React.memo(() => {

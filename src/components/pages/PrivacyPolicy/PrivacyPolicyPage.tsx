@@ -1,8 +1,8 @@
 import React from 'react';
-import Layout from '@/components/Layout';
-import Link from '@/components/utils/Link';
 import PrivacyPolicyItem from '@/components/pages/PrivacyPolicy/PrivacyPolicyItem';
+import Link from '@/components/utils/Link';
 import Meta from '@/components/utils/Meta';
+import Layout from '@/components/Layout';
 
 const PrivacyPolicyPage: React.VFC = React.memo(() => {
   return (

@@ -1,5 +1,5 @@
-import React from 'react';
 import Grid from '@mui/material/Grid';
+import React from 'react';
 import NoteCard from '@/components/model/note/NoteCard';
 import { Note } from '@/types/note';
 

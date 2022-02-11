@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
-import { v2 as cloudinary } from 'cloudinary';
 import axios from 'axios';
+import { v2 as cloudinary } from 'cloudinary';
 import { NotesLoader } from '@/lib/notesLoader';
 
 const cloudName = process.env.CLOUDINARY_CLOUD_NAME;

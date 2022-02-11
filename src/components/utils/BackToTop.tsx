@@ -1,9 +1,9 @@
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import Fab from '@mui/material/Fab';
+import useScrollTrigger from '@mui/material/useScrollTrigger';
+import Zoom from '@mui/material/Zoom';
 import React, { useCallback } from 'react';
 import Scroll from 'react-scroll';
-import useScrollTrigger from '@mui/material/useScrollTrigger';
-import Fab from '@mui/material/Fab';
-import Zoom from '@mui/material/Zoom';
-import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 
 const BackToTop: React.VFC = React.memo(() => {
   const trigger = useScrollTrigger({

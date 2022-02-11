@@ -1,6 +1,6 @@
-import React from 'react';
-import NextLink from 'next/link';
 import MuiLink, { LinkProps as MuiLinkProps } from '@mui/material/Link';
+import NextLink from 'next/link';
+import React from 'react';
 
 type LinkProps = MuiLinkProps & {
   external?: boolean;

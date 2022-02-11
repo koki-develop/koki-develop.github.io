@@ -1,8 +1,8 @@
-import React, { useMemo } from 'react';
-import { useRouter } from 'next/router';
 import Head from 'next/head';
-import { config } from '@/config';
+import { useRouter } from 'next/router';
+import React, { useMemo } from 'react';
 import urlJoin from 'url-join';
+import { config } from '@/config';
 
 export type MetaProps = {
   hideSiteName?: boolean;

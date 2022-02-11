@@ -1,12 +1,12 @@
-import React from 'react';
+import { useMediaQuery } from '@mui/material';
 import AppBar from '@mui/material/AppBar';
 import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
+import { useTheme } from '@mui/material/styles';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import { useTheme } from '@mui/material/styles';
-import { useMediaQuery } from '@mui/material';
+import React from 'react';
 import Link from '@/components/utils/Link';
 import { Routes } from '@/routes';
 import { config } from '@/config';

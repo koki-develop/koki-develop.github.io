@@ -1,11 +1,11 @@
-import React from 'react';
-import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineConnector from '@mui/lab/TimelineConnector';
+import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 import TimelineItem from '@mui/lab/TimelineItem';
 import TimelineSeparator from '@mui/lab/TimelineSeparator';
-import { History } from '@/types/history';
+import React from 'react';
 import HistoryCard from '@/components/model/history/HistoryCard';
+import { History } from '@/types/history';
 
 export type HistoryTimelineItemProps = {
   history: History;

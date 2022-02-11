@@ -1,7 +1,7 @@
-import React from 'react';
 import Timeline from '@mui/lab/Timeline';
 import { useMediaQuery } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
+import React from 'react';
 import HistoryTimelineItem from '@/components/model/history/HistoryTimelineItem';
 import { History } from '@/types/history';
 

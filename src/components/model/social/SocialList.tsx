@@ -1,7 +1,7 @@
-import React from 'react';
 import Box from '@mui/material/Box';
-import { Socials } from '@/types/socials';
+import React from 'react';
 import Link from '@/components/utils/Link';
+import { Socials } from '@/types/socials';
 
 export type SocialListProps = {
   socials: Socials;

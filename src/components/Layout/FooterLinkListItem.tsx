@@ -1,5 +1,5 @@
-import React from 'react';
 import Box from '@mui/material/Box';
+import React from 'react';
 import Link from '@/components/utils/Link';
 
 export type LinkListItemProps = {

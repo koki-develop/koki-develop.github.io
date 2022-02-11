@@ -1,6 +1,6 @@
-import React from 'react';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
+import React from 'react';
 import NoteTagChipList from '@/components/model/note/NoteTagChipList';
 import ClickableCard from '@/components/utils/ClickableCard';
 import Link from '@/components/utils/Link';
