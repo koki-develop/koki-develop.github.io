@@ -9,20 +9,20 @@ jobs:
       matrix:
         node: [14.x, 16.x]
     steps:
-      - name: checkout
+      - name: Checkout
         uses: actions/checkout@v2
-      - name: setup nodejs
-        uses: actions/setup-node@v1
+
+      - name: Setup nodejs
+        uses: actions/setup-node@v2
         with:
+          cache: yarn
+          cache-dependency-path: yarn.lock
           node-version: ${{ matrix.node }}
-      - name: cache node modules
-        uses: actions/cache@v2
-        with:
-          path: node_modules
-          key: v1-node-${{ runner.os }}-${{ github.ref }}-${{ hashFiles('yarn.lock') }}
-      - name: install dependencies
+
+      - name: Install dependencies
         run: yarn install
-      - name: eslint
+
+      - name: Eslint
         run: yarn run lint
-      - name: build
+      - name: Build
         run: yarn run next build

@@ -8,25 +8,27 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout
+      - name: Checkout
         uses: actions/checkout@v2
-      - name: setup git
+
+      - name: Setup git
         run: |
-          git config user.name kou-pg-0131
+          git config user.name koki-develop
           git config user.email kou.pg.0131@gmail.com
-      - name: setup nodejs
-        uses: actions/setup-node@v1
+
+      - name: Setup nodejs
+        uses: actions/setup-node@v2
         with:
+          cache: yarn
+          cache-dependency-path: yarn.lock
           node-version: '14.x'
-      - name: cache node modules
-        uses: actions/cache@v2
-        with:
-          path: node_modules
-          key: v1-node-${{ runner.os }}-${{ github.ref }}-${{ hashFiles('yarn.lock') }}
+
       - name: install dependencies
         run: yarn install
+
       - name: Generate README.md
         run: yarn run readme:gen
+
       - name: commit and push
         run: |
           git add README.md
