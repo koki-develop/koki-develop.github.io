@@ -7,7 +7,7 @@
     "start": "next dev",
     "build": "next build",
     "postbuild": "next-sitemap && yarn ogp:gen",
-    "format": "prettier --write . && yarn run lint --fix",
+    "fmt": "prettier --write . && yarn run lint --fix",
     "lint": "eslint --max-warnings 0 --ext .js,.ts,.tsx .",
     "test:compile": "tsc --noEmit",
     "readme:gen": "ts-node -r tsconfig-paths/register ./src/tasks/updateReadme.ts",
