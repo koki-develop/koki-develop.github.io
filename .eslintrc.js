@@ -27,7 +27,7 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: 'module',
   },
-  plugins: ['react', 'react-hooks', 'import'],
+  plugins: ['react', 'react-hooks', 'import', 'unused-imports'],
   rules: {
     'react/prop-types': 'off',
     semi: ['error', 'always'],
@@ -36,6 +36,7 @@ module.exports = {
     'object-curly-spacing': ['error', 'always'],
     'react/jsx-tag-spacing': 'error',
     'react-hooks/exhaustive-deps': ['error'],
+    'unused-imports/no-unused-imports': 'error',
     'import/order': [
       'error',
       {
