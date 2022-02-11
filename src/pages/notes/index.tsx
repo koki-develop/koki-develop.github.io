@@ -5,15 +5,11 @@ import { NotesLoader } from '@/lib/notesLoader';
 export default NotesPage;
 
 export const getStaticProps: GetStaticProps<NotesPageProps> = () => {
-  const notes = NotesLoader.loadAll();
+  const notes = NotesLoader.loadAll({ withoutContent: true });
 
   return {
     props: {
-      notes: notes.map(note => {
-        delete note.content;
-        delete note.tableOfContents;
-        return note;
-      }),
+      notes,
     },
   };
 };

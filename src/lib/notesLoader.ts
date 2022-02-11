@@ -5,8 +5,12 @@ import markdownToHtml from 'zenn-markdown-html';
 import { HtmlParser } from '@/lib/htmlParser';
 import { Note } from '@/types/note';
 
+export type LoadOptions = {
+  withoutContent?: boolean;
+};
+
 export class NotesLoader {
-  public static load(slug: string): Note {
+  public static load(slug: string, options?: LoadOptions): Note {
     const filepath = path.join(this._getNotesDirectoryPath(), `${slug}.md`);
     const content = fs.readFileSync(filepath);
     const mattered = matter(content);
@@ -30,7 +34,7 @@ export class NotesLoader {
       };
     });
 
-    return {
+    const note = {
       ...mattered.data,
       slug,
       content: html,
@@ -38,14 +42,20 @@ export class NotesLoader {
       createdAt,
       updatedAt,
     } as Note;
+    if (options?.withoutContent) {
+      delete note.content;
+      delete note.tableOfContents;
+    }
+
+    return note;
   }
 
-  public static loadAll(): Note[] {
+  public static loadAll(options?: LoadOptions): Note[] {
     const filenames = fs.readdirSync(this._getNotesDirectoryPath());
 
     const notes = filenames.map(filename => {
       const slug = path.parse(filename).name;
-      return this.load(slug);
+      return this.load(slug, options);
     });
 
     return notes.sort((a, b) => (a.createdAt < b.createdAt ? 1 : -1));
