@@ -1,7 +1,5 @@
-import CreateIcon from '@mui/icons-material/Create';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
-import UpdateIcon from '@mui/icons-material/Update';
 import { useMediaQuery } from '@mui/material';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -15,11 +13,10 @@ import { useTheme } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import React, { useCallback, useState } from 'react';
 import 'zenn-content-css';
+import NotePaper from '@/components/model/note/NotePaper';
 import NoteTableOfContents from '@/components/model/note/NoteTableOfContents';
-import NoteTagChipList from '@/components/model/note/NoteTagChipList';
 import Link from '@/components/utils/Link';
 import Meta from '@/components/utils/Meta';
-import Time from '@/components/utils/Time';
 import { Note } from '@/types/note';
 import { Routes } from '@/routes';
 import Layout from '@/components/Layout';
@@ -124,64 +121,7 @@ const NotePage: React.VFC<NotePageProps> = React.memo(props => {
       <Container maxWidth='lg' disableGutters={isMdDown} sx={{ pt: 2 }}>
         <Grid container spacing={2}>
           <Grid item xs={12} md={9}>
-            <Paper
-              square={isMdDown}
-              sx={{ px: { xs: 2, md: 5 }, py: 2, wordBreak: 'break-all' }}
-            >
-              <Box sx={{ mb: 5 }}>
-                <Box sx={{ display: 'flex' }}>
-                  <Typography
-                    component='span'
-                    variant='body2'
-                    sx={{
-                      color: theme => theme.palette.text.secondary,
-                      display: 'flex',
-                      mb: 1,
-                    }}
-                  >
-                    <CreateIcon fontSize='small' sx={{ mr: 0.5 }} />
-                    <Time datetime={note.createdAt} /> に作成
-                  </Typography>
-                  {note.createdAt !== note.updatedAt && (
-                    <Typography
-                      component='span'
-                      variant='body2'
-                      sx={{
-                        color: theme => theme.palette.text.secondary,
-                        display: {
-                          xs: 'none',
-                          sm: 'flex',
-                        },
-                        ml: 2,
-                        mb: 1,
-                      }}
-                    >
-                      <UpdateIcon fontSize='small' sx={{ mr: 0.5 }} />
-                      <Time datetime={note.updatedAt} /> に更新
-                    </Typography>
-                  )}
-                </Box>
-
-                <Typography
-                  component='h1'
-                  variant='h4'
-                  sx={{ fontWeight: 'bold', mb: 2 }}
-                >
-                  {note.title}
-                </Typography>
-                <Box>
-                  <NoteTagChipList tags={note.tags} />
-                </Box>
-                {note.description && (
-                  <Typography sx={{ mt: 2 }}>{note.description}</Typography>
-                )}
-              </Box>
-
-              <Box
-                className='znc note'
-                dangerouslySetInnerHTML={{ __html: note.content }}
-              />
-            </Paper>
+            <NotePaper note={note} />
           </Grid>
           <Grid
             item
