@@ -5,16 +5,14 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import ClickAwayListener from '@mui/material/ClickAwayListener';
 import Container from '@mui/material/Container';
-import Divider from '@mui/material/Divider';
 import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
 import Popper from '@mui/material/Popper';
 import { useTheme } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import React, { useCallback, useState } from 'react';
 import 'zenn-content-css';
 import NotePaper from '@/components/model/note/NotePaper';
-import NoteTableOfContents from '@/components/model/note/NoteTableOfContents';
+import NoteTableOfContentsPaper from '@/components/model/note/NoteTableOfContentsPaper';
 import Link from '@/components/utils/Link';
 import Meta from '@/components/utils/Meta';
 import { Note } from '@/types/note';
@@ -90,20 +88,10 @@ const NotePage: React.VFC<NotePageProps> = React.memo(props => {
                 touchEvent={false}
                 onClickAway={handleClickAwayTocPopper}
               >
-                <Paper elevation={4}>
-                  <Box sx={{ maxHeight: '50vh', overflowY: 'auto' }}>
-                    <NoteTableOfContents
-                      items={note.tableOfContents}
-                      onClick={handleClickTocItem}
-                      sx={{
-                        minWidth: {
-                          xs: '80vw',
-                          sm: 400,
-                        },
-                      }}
-                    />
-                  </Box>
-                </Paper>
+                <NoteTableOfContentsPaper
+                  items={note.tableOfContents}
+                  onClickItem={handleClickTocItem}
+                />
               </ClickAwayListener>
             </Popper>
           </Box>
@@ -131,20 +119,14 @@ const NotePage: React.VFC<NotePageProps> = React.memo(props => {
               display: { xs: 'none', md: 'block' },
             }}
           >
-            <Paper
+            <NoteTableOfContentsPaper
               sx={{
                 position: 'sticky',
                 top: theme => theme.spacing(2),
               }}
-            >
-              <Box sx={{ px: 2, py: 1 }}>
-                <Typography>目次</Typography>
-              </Box>
-              <Divider />
-              <Box sx={{ maxHeight: '80vh', overflowY: 'auto' }}>
-                <NoteTableOfContents items={note.tableOfContents} />
-              </Box>
-            </Paper>
+              items={note.tableOfContents}
+              onClickItem={handleClickTocItem}
+            />
           </Grid>
         </Grid>
       </Container>
