@@ -1,16 +1,19 @@
 import React, { useCallback, useMemo, useState } from 'react';
 import Box from '@mui/material/Box';
+import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Container from '@mui/material/Container';
-import IconButton from '@mui/material/IconButton';
 import InputAdornment from '@mui/material/InputAdornment';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import TextField from '@mui/material/TextField';
+import Typography from '@mui/material/Typography';
 import SearchIcon from '@mui/icons-material/Search';
 import Layout from '@/components/Layout';
 import Meta from '@/components/utils/Meta';
+import Link from '@/components/utils/Link';
 import NoteCardList from '@/components/model/note/NoteCardList';
 import { Note } from '@/types/note';
+import { Routes } from '@/routes';
 
 export type NotesPageProps = {
   notes: Note[];
@@ -41,6 +44,13 @@ const NotesPage: React.VFC<NotesPageProps> = React.memo(props => {
       <Meta title='Notes' />
 
       <Container maxWidth='lg' sx={{ mt: 2 }}>
+        <Box sx={{ mb: 2 }}>
+          <Breadcrumbs separator='›'>
+            <Link href={Routes.home()}>Home</Link>
+            <Typography color='text.primary'>Notes</Typography>
+          </Breadcrumbs>
+        </Box>
+
         <Grid container spacing={2}>
           <Grid item xs={12}>
             <Paper sx={{ p: 2 }}>
