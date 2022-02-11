@@ -3,13 +3,23 @@ module.exports = {
     react: {
       version: 'detect',
     },
+    'import/resolver': {
+      typescript: {
+        alwaysTryTypes: true,
+        project: './',
+      },
+    },
   },
   env: {
     browser: true,
     es2021: true,
     node: true,
   },
-  extends: ['eslint:recommended', 'plugin:react/recommended'],
+  extends: [
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:import/recommended',
+  ],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -17,7 +27,7 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: 'module',
   },
-  plugins: ['react', 'react-hooks'],
+  plugins: ['react', 'react-hooks', 'import'],
   rules: {
     'react/prop-types': 'off',
     semi: ['error', 'always'],
@@ -26,6 +36,54 @@ module.exports = {
     'object-curly-spacing': ['error', 'always'],
     'react/jsx-tag-spacing': 'error',
     'react-hooks/exhaustive-deps': ['error'],
+    'import/order': [
+      'error',
+      {
+        groups: [
+          'builtin',
+          'external',
+          'internal',
+          ['parent', 'sibling'],
+          'object',
+          'type',
+          'index',
+        ],
+        pathGroupsExcludedImportTypes: ['builtin'],
+        alphabetize: { order: 'asc', caseInsensitive: true },
+        pathGroups: [
+          {
+            pattern: '@/components/App/**',
+            group: 'internal',
+            position: 'before',
+          },
+          {
+            pattern: '@/components/Layout/**',
+            group: 'internal',
+            position: 'before',
+          },
+          {
+            pattern: '@/components/pages/**',
+            group: 'internal',
+            position: 'before',
+          },
+          {
+            pattern: '@/components/model/**',
+            group: 'internal',
+            position: 'before',
+          },
+          {
+            pattern: '@/components/utils/**',
+            group: 'internal',
+            position: 'before',
+          },
+          { pattern: '@/lib/**', group: 'internal', position: 'before' },
+          { pattern: '@/types/**', group: 'internal', position: 'before' },
+          { pattern: '@/routes', group: 'internal', position: 'before' },
+          { pattern: '@/config', group: 'internal', position: 'before' },
+          { pattern: '@/styles/**', group: 'internal', position: 'before' },
+        ],
+      },
+    ],
   },
   overrides: [
     {
