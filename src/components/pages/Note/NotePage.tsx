@@ -1,17 +1,12 @@
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import { useMediaQuery } from '@mui/material';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import ClickAwayListener from '@mui/material/ClickAwayListener';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
-import Popper from '@mui/material/Popper';
 import { useTheme } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
-import React, { useCallback, useState } from 'react';
+import React from 'react';
 import 'zenn-content-css';
 import NotePaper from '@/components/model/note/NotePaper';
+import NoteTableOfContentsDropdown from '@/components/model/note/NoteTableOfContentsDropdown';
 import NoteTableOfContentsPaper from '@/components/model/note/NoteTableOfContentsPaper';
 import Link from '@/components/utils/Link';
 import Meta from '@/components/utils/Meta';
@@ -26,27 +21,8 @@ export type NotePageProps = {
 const NotePage: React.VFC<NotePageProps> = React.memo(props => {
   const { note } = props;
 
-  const [tocButtonEl, setTocButtonEl] = useState<HTMLButtonElement | null>(
-    null,
-  );
-
   const theme = useTheme();
   const isMdDown = useMediaQuery(theme.breakpoints.down('md'));
-
-  const handleClickTocItem = useCallback(() => {
-    setTocButtonEl(null);
-  }, []);
-
-  const handleClickToggleOpenToc = useCallback(
-    (e: React.MouseEvent<HTMLButtonElement>) => {
-      setTocButtonEl(tocButtonEl ? null : e.currentTarget);
-    },
-    [tocButtonEl],
-  );
-
-  const handleClickAwayTocPopper = useCallback(() => {
-    setTocButtonEl(null);
-  }, []);
 
   return (
     <Layout
@@ -63,38 +39,7 @@ const NotePage: React.VFC<NotePageProps> = React.memo(props => {
       ]}
       headerContent={
         !isMdDown ? null : (
-          <Box>
-            <Button
-              onClick={handleClickToggleOpenToc}
-              variant='text'
-              color='secondary'
-              startIcon={
-                tocButtonEl ? (
-                  <KeyboardArrowUpIcon />
-                ) : (
-                  <KeyboardArrowDownIcon />
-                )
-              }
-            >
-              目次
-            </Button>
-            <Popper
-              open={Boolean(tocButtonEl)}
-              anchorEl={tocButtonEl}
-              style={{ zIndex: 1101 }}
-              placement='bottom-start'
-            >
-              <ClickAwayListener
-                touchEvent={false}
-                onClickAway={handleClickAwayTocPopper}
-              >
-                <NoteTableOfContentsPaper
-                  items={note.tableOfContents}
-                  onClickItem={handleClickTocItem}
-                />
-              </ClickAwayListener>
-            </Popper>
-          </Box>
+          <NoteTableOfContentsDropdown items={note.tableOfContents} />
         )
       }
     >
@@ -125,7 +70,6 @@ const NotePage: React.VFC<NotePageProps> = React.memo(props => {
                 top: theme => theme.spacing(2),
               }}
               items={note.tableOfContents}
-              onClickItem={handleClickTocItem}
             />
           </Grid>
         </Grid>

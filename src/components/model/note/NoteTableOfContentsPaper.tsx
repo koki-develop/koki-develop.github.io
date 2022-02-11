@@ -9,7 +9,7 @@ import { TableOfContentsItem } from '@/types/note';
 
 export type NoteTableOfContentsPaperProps = PaperProps & {
   items: TableOfContentsItem[];
-  onClickItem: () => void;
+  onClickItem?: () => void;
 };
 
 const NoteTableOfContentsPaper: React.VFC<NoteTableOfContentsPaperProps> =
