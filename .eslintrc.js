@@ -77,6 +77,11 @@ module.exports = {
             group: 'internal',
             position: 'before',
           },
+          {
+            pattern: '@/components/hooks/**',
+            group: 'internal',
+            position: 'before',
+          },
           { pattern: '@/lib/**', group: 'internal', position: 'before' },
           { pattern: '@/types/**', group: 'internal', position: 'before' },
           { pattern: '@/routes', group: 'internal', position: 'before' },

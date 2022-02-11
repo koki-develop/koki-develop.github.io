@@ -1,15 +1,14 @@
 import CreateIcon from '@mui/icons-material/Create';
 import UpdateIcon from '@mui/icons-material/Update';
-import { useMediaQuery } from '@mui/material';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
-import { useTheme } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import React from 'react';
 import 'zenn-content-css';
 import NoteTagChipList from '@/components/model/note/NoteTagChipList';
 import Time from '@/components/utils/Time';
 import { Note } from '@/types/note';
+import { isDown } from '@/hooks/breakpointsHooks';
 
 export type NotePaperProps = {
   note: Note;
@@ -18,8 +17,7 @@ export type NotePaperProps = {
 const NotePaper: React.VFC<NotePaperProps> = React.memo(props => {
   const { note } = props;
 
-  const theme = useTheme();
-  const isMdDown = useMediaQuery(theme.breakpoints.down('md'));
+  const isMdDown = isDown('md');
 
   return (
     <Paper

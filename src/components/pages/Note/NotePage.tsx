@@ -1,7 +1,5 @@
-import { useMediaQuery } from '@mui/material';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
-import { useTheme } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import React from 'react';
 import 'zenn-content-css';
@@ -13,6 +11,7 @@ import Meta from '@/components/utils/Meta';
 import { Note } from '@/types/note';
 import { Routes } from '@/routes';
 import Layout from '@/components/Layout';
+import { isDown } from '@/hooks/breakpointsHooks';
 
 export type NotePageProps = {
   note: Note;
@@ -21,8 +20,7 @@ export type NotePageProps = {
 const NotePage: React.VFC<NotePageProps> = React.memo(props => {
   const { note } = props;
 
-  const theme = useTheme();
-  const isMdDown = useMediaQuery(theme.breakpoints.down('md'));
+  const isMdDown = isDown('md');
 
   return (
     <Layout

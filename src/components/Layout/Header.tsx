@@ -1,15 +1,14 @@
-import { useMediaQuery } from '@mui/material';
 import AppBar from '@mui/material/AppBar';
 import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
-import { useTheme } from '@mui/material/styles';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import React from 'react';
 import Link from '@/components/utils/Link';
 import { Routes } from '@/routes';
 import { config } from '@/config';
+import { isDown } from '@/hooks/breakpointsHooks';
 
 export type HeaderProps = {
   content?: React.ReactNode;
@@ -18,8 +17,7 @@ export type HeaderProps = {
 const Header: React.VFC<HeaderProps> = React.memo(props => {
   const { content } = props;
 
-  const theme = useTheme();
-  const isMdDown = useMediaQuery(theme.breakpoints.down('md'));
+  const isMdDown = isDown('md');
 
   return (
     <AppBar position={isMdDown ? 'sticky' : 'static'}>
