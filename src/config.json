@@ -72,7 +72,8 @@
         { "name": "Docker", "url": "https://www.docker.com/" },
         { "name": "Serverless", "url": "https://www.serverless.com/" },
         { "name": "Terraform", "url": "https://www.terraform.io/" },
-        { "name": "GraphQL", "url": "https://graphql.org/" }
+        { "name": "GraphQL", "url": "https://graphql.org/" },
+        { "name": "Cypress", "url": "https://www.cypress.io/" }
       ]
     }
   ],
