@@ -7,7 +7,7 @@ export type Note = {
   tableOfContents: TableOfContentsItem[];
 
   createdAt: string;
-  updatedAt?: string;
+  updatedAt: string;
 };
 
 export type TableOfContentsItem = {
