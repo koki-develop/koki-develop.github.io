@@ -3,12 +3,6 @@ module.exports = {
     react: {
       version: 'detect',
     },
-    'import/resolver': {
-      typescript: {
-        alwaysTryTypes: true,
-        project: './',
-      },
-    },
   },
   env: {
     browser: true,
@@ -94,6 +88,14 @@ module.exports = {
   overrides: [
     {
       files: ['*.ts', '*.tsx'],
+      settings: {
+        'import/resolver': {
+          typescript: {
+            alwaysTryTypes: true,
+            project: './',
+          },
+        },
+      },
       extends: ['plugin:@typescript-eslint/recommended'],
       plugins: ['@typescript-eslint'],
       parser: '@typescript-eslint/parser',
