@@ -10,7 +10,7 @@
     "fmt": "prettier --write . && yarn run lint --fix",
     "lint": "eslint --max-warnings 0 --ext .js,.ts,.tsx .",
     "test:compile": "tsc --noEmit",
-    "readme:gen": "ts-node -r tsconfig-paths/register ./src/tasks/updateReadme.ts",
+    "readme:gen": "ts-node -r tsconfig-paths/register ./src/tasks/generateReadme.ts",
     "ogp:gen": "ts-node -r tsconfig-paths/register ./src/tasks/generateOgpImages.ts"
   },
   "dependencies": {

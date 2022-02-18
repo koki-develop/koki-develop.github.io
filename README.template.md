@@ -2,13 +2,12 @@
 
 <%= config.profile.description %>
 
-[<img src="https://github-readme-stats.vercel.app/api?username=<%= config.socials.github.username %>&show_icons=true&theme=dark"/>](<%= config.socials.github.url %>?tab=repositories&type=source)
+[<img src="https://github-readme-stats.vercel.app/api?username=koki-develop&show_icons=true&theme=dark"/>](https://github.com/koki-develop?tab=repositories&type=source)
 
 # Social
 
-[<img src="public/images/icons/GitHub.svg" alt="GitHub" width="40" height="40"/>](<%= config.socials.github.url %>)
-[<img src="public/images/icons/Twitter.svg" alt="Twitter" width="40" height="40"/>](<%= config.socials.twitter.url %>)
-[<img src="public/images/icons/Zenn.svg" alt="Zenn" width="40" height="40"/>](<%= config.socials.zenn.url %>)
+<% config.socials.forEach(function(social) { %>[<img src="public/images/icons/<%= social.name %>.svg" alt="<%= social.name %>" width="40" height="40"/>](<%= social.url %>)
+<% }); %>
 
 # Skill
 <% config.skillGroups.forEach(function(skillGroup) { %>
@@ -22,7 +21,7 @@
 
 <%= work.description %>
 
-[View on GitHub](<%= config.socials.github.url %>/<%= work.repository %>)
+[View on GitHub](<%= work.repositoryUrl %>)
 <% }); %>
 # Contact
 
