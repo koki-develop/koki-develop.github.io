@@ -62,6 +62,6 @@ export class NotesLoader {
   }
 
   private static _getNotesDirectoryPath(): string {
-    return path.join(process.cwd(), 'src/notes');
+    return path.join(process.cwd(), 'notes');
   }
 }
