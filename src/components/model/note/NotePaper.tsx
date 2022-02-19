@@ -42,18 +42,19 @@ const NotePaper: React.VFC<NotePaperProps> = React.memo(props => {
       )}
 
       <Box sx={{ mb: 4 }}>
-        <Box sx={{ display: 'flex' }}>
+        <Box sx={{ display: 'flex', mb: 2 }}>
           <Typography
             component='span'
             variant='body2'
             sx={{
               color: theme => theme.palette.text.secondary,
               display: 'flex',
-              mb: 1,
             }}
           >
             <CreateIcon fontSize='small' sx={{ mr: 0.5 }} />
-            <Time datetime={note.createdAt} /> に作成
+            <Box>
+              <Time datetime={note.createdAt} /> に作成
+            </Box>
           </Typography>
           {note.createdAt !== note.updatedAt && (
             <Typography
@@ -61,16 +62,14 @@ const NotePaper: React.VFC<NotePaperProps> = React.memo(props => {
               variant='body2'
               sx={{
                 color: theme => theme.palette.text.secondary,
-                display: {
-                  xs: 'none',
-                  sm: 'flex',
-                },
-                ml: 2,
-                mb: 1,
+                display: 'flex',
+                ml: 1,
               }}
             >
               <UpdateIcon fontSize='small' sx={{ mr: 0.5 }} />
-              <Time datetime={note.updatedAt} /> に更新
+              <Box>
+                <Time datetime={note.updatedAt} /> に更新
+              </Box>
             </Typography>
           )}
         </Box>
