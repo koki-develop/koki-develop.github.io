@@ -12,6 +12,7 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
     'plugin:import/recommended',
   ],
   parserOptions: {
@@ -29,7 +30,6 @@ module.exports = {
     quotes: ['error', 'single'],
     'object-curly-spacing': ['error', 'always'],
     'react/jsx-tag-spacing': 'error',
-    'react-hooks/exhaustive-deps': ['error'],
     'unused-imports/no-unused-imports': 'error',
     'import/order': [
       'error',
