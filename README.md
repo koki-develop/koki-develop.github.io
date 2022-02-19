@@ -11,6 +11,7 @@
 [<img src="public/images/icons/Twitter.svg" alt="Twitter" width="40" height="40"/>](https://twitter.com/koki_develop)
 [<img src="public/images/icons/Zenn.svg" alt="Zenn" width="40" height="40"/>](https://zenn.dev/kou_pg_0131)
 
+
 # Skill
 
 ## Language
@@ -57,6 +58,7 @@
 [<img src="public/images/icons/Serverless.svg" alt="Serverless" width="40" height="40"/>](https://www.serverless.com/)
 [<img src="public/images/icons/Terraform.svg" alt="Terraform" width="40" height="40"/>](https://www.terraform.io/)
 [<img src="public/images/icons/GraphQL.svg" alt="GraphQL" width="40" height="40"/>](https://graphql.org/)
+[<img src="public/images/icons/Cypress.svg" alt="Cypress" width="40" height="40"/>](https://www.cypress.io/)
 
 # Works
 
