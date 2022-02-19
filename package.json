@@ -4,7 +4,7 @@
   "license": "UNLICENSED",
   "private": true,
   "scripts": {
-    "start": "next dev",
+    "dev": "next dev",
     "build": "next build",
     "postbuild": "next-sitemap && yarn ogp:gen",
     "fmt": "yarn lint --fix && prettier --write .",
