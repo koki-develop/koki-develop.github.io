@@ -2,11 +2,12 @@
 title: '【JavaScript】元の配列を変更せずに並び替えした配列を作る'
 tags: ['JavaScript', 'Node.js']
 createdAt: 2021-08-23
+updatedAt: 2022-02-19
 ---
 
 # 検証環境
 
-- node v14.17.5
+- node v16.13.1
 
 # 元の配列を変更せずに並び替えした配列を作る
 
@@ -41,5 +42,5 @@ console.log(ary); // => [ 2, 4, 3, 5, 1 ]
 
 # 参考
 
-https://zenn.dev/kou_pg_0131/articles/js-clone-array
+https://koki.me/notes/js-clone-array
 https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
