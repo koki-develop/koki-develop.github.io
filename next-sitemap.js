@@ -10,7 +10,7 @@ module.exports = {
     const matches = pathname.match(/^\/notes\/([a-zA-Z-]+)$/);
     if (matches) {
       const slug = matches[1];
-      const filepath = path.join(process.cwd(), 'src/notes', `${slug}.md`);
+      const filepath = path.join(process.cwd(), 'notes', `${slug}.md`);
       const content = fs.readFileSync(filepath);
       const { data } = matter(content);
       const lastmod =
