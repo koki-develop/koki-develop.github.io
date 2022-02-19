@@ -8,7 +8,7 @@ import React from 'react';
 import Link from '@/components/utils/Link';
 import { Routes } from '@/routes';
 import { config } from '@/config';
-import { isDown } from '@/hooks/breakpointsHooks';
+import { useDown } from '@/hooks/breakpointsHooks';
 
 export type HeaderProps = {
   content?: React.ReactNode;
@@ -17,7 +17,7 @@ export type HeaderProps = {
 const Header: React.VFC<HeaderProps> = React.memo(props => {
   const { content } = props;
 
-  const isMdDown = isDown('md');
+  const isMdDown = useDown('md');
 
   return (
     <AppBar position={isMdDown ? 'sticky' : 'static'}>

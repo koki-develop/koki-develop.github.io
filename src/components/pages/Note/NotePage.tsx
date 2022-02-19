@@ -11,7 +11,7 @@ import Meta from '@/components/utils/Meta';
 import { Note } from '@/types/note';
 import { Routes } from '@/routes';
 import Layout from '@/components/Layout';
-import { isDown } from '@/hooks/breakpointsHooks';
+import { useDown } from '@/hooks/breakpointsHooks';
 
 export type NotePageProps = {
   note: Note;
@@ -20,7 +20,7 @@ export type NotePageProps = {
 const NotePage: React.VFC<NotePageProps> = React.memo(props => {
   const { note } = props;
 
-  const isMdDown = isDown('md');
+  const isMdDown = useDown('md');
 
   return (
     <Layout

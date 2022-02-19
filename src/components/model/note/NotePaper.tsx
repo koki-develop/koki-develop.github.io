@@ -10,7 +10,7 @@ import 'zenn-content-css';
 import NoteTagChipList from '@/components/model/note/NoteTagChipList';
 import Time from '@/components/utils/Time';
 import { Note } from '@/types/note';
-import { isDown } from '@/hooks/breakpointsHooks';
+import { useDown } from '@/hooks/breakpointsHooks';
 
 export type NotePaperProps = {
   note: Note;
@@ -19,7 +19,7 @@ export type NotePaperProps = {
 const NotePaper: React.VFC<NotePaperProps> = React.memo(props => {
   const { note } = props;
 
-  const isMdDown = isDown('md');
+  const isMdDown = useDown('md');
 
   const yearsElapsed = useMemo(() => {
     return Math.trunc(
