@@ -24,7 +24,7 @@ const WorkCard: React.VFC<WorkCardProps> = React.memo(props => {
             <CardMedia
               image={urlJoin('/images/works', `${work.name}.png`)}
               sx={{
-                backgroundPosition: 'center',
+                backgroundPosition: work.imagePosition ?? 'center',
                 height: { xs: 140 },
               }}
             />

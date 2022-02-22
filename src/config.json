@@ -91,6 +91,7 @@
       "url": "https://lgtmgen.org",
       "repositoryUrl": "https://github.com/koki-develop/lgtm-generator",
       "hasImage": true,
+      "imagePosition": "top",
       "description": "シンプルな LGTM 画像生成サービス。",
       "skills": [
         "TypeScript",
@@ -111,6 +112,7 @@
       "url": "https://chrome.google.com/webstore/detail/awesome-notes/oahbimjdpmgidnloajppdlhlpkepmipo",
       "repositoryUrl": "https://github.com/koki-develop/awesome-notes",
       "hasImage": true,
+      "imagePosition": "top",
       "description": "マークダウンショートカット機能つきのシンプルなメモを提供する Chrome Extension 。",
       "skills": ["TypeScript", "React"]
     },
@@ -121,6 +123,15 @@
       "hasImage": true,
       "description": "Qiita の LGTM ランキング記事を毎日自動更新するシステム。",
       "skills": ["Go", "AWS", "CircleCI", "Serverless"]
+    },
+    {
+      "name": "Hyper Statusbar",
+      "url": "https://github.com/koki-develop/hyper-statusbar",
+      "repositoryUrl": "https://github.com/koki-develop/hyper-statusbar",
+      "hasImage": true,
+      "imagePosition": "bottom",
+      "description": "ステータスバーを表示する Hyper プラグイン。",
+      "skills": ["TypeScript", "GitHub Actions"]
     },
     {
       "name": "CheckIP",
