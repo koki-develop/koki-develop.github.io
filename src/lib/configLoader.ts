@@ -1,6 +1,7 @@
 import { Config } from '@/types/config';
 import { History } from '@/types/history';
 import { Skill } from '@/types/skill';
+import { Work } from '@/types/work';
 import config from '@/config.json';
 
 export class ConfigLoader {
@@ -28,7 +29,7 @@ export class ConfigLoader {
 
     return {
       ...config,
-      works,
+      works: works as Work[],
       histories,
     };
   }
