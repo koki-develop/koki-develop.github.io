@@ -86,7 +86,7 @@ Qiita の LGTM ランキング記事を毎日自動更新するシステム。
 
 [View on GitHub](https://github.com/koki-develop/qiita-lgtm-ranking)
 
-## [Hyper Statusbar](https://github.com/koki-develop/hyper-statusbar)
+## [Hyper Statusbar](https://github.com/koki-develop/hyper-statusbar#readme)
 
 ステータスバーを表示する Hyper プラグイン。
 
