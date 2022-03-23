@@ -3,6 +3,7 @@
 <%= config.profile.description %>
 
 [<img src="https://github-readme-stats.vercel.app/api?username=koki-develop&show_icons=true&theme=dark"/>](https://github.com/koki-develop?tab=repositories&type=source)
+[<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=koki-develop&theme=dark&layout=compact" />](https://github.com/koki-develop?tab=repositories&type=source)
 
 # Social
 
