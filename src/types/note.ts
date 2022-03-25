@@ -10,6 +10,7 @@ export type Note = {
 
   // NOTE: Zenn, Qiita 用
   // TODO: 移行完了したら削除する
+  zenn?: boolean;
   url?: string;
 };
 

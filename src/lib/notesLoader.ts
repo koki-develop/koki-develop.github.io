@@ -93,6 +93,7 @@ export class NotesLoader {
       .map(
         article =>
           ({
+            zenn: true,
             title: article.title,
             url: `https://zenn.dev/kou_pg_0131/articles/${article.slug}`,
             tags: article.topics.map(topic => topic.display_name),
