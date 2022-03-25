@@ -79,7 +79,7 @@ export class NotesLoader {
       return this.load(slug, options);
     });
 
-    if (options.withZennArticles) {
+    if (options?.withZennArticles) {
       const zennNotes = await this._fetchZennArticles();
       notes.push(...zennNotes);
     }
