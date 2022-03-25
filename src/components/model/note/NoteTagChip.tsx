@@ -1,3 +1,4 @@
+import TagIcon from '@mui/icons-material/Tag';
 import Chip from '@mui/material/Chip';
 import React from 'react';
 import { NoteTag } from '@/types/note';
@@ -13,11 +14,15 @@ const NoteTagChip: React.VFC<NoteTagChipProps> = React.memo(props => {
     <Chip
       label={tag.name}
       avatar={
-        <img
-          src={tag.imageUrl}
-          style={{ maxHeight: '50%', maxWidth: '50%' }}
-          alt={tag.name}
-        />
+        tag.imageUrl ? (
+          <img
+            src={tag.imageUrl}
+            style={{ maxHeight: '50%', maxWidth: '50%' }}
+            alt={tag.name}
+          />
+        ) : (
+          <TagIcon fontSize='small' />
+        )
       }
       sx={{
         backgroundColor: theme => theme.palette.primary.main,

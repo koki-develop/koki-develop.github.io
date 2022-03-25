@@ -33,7 +33,7 @@ export class NotesLoader {
     const html = markdownToHtml(mattered.content);
     const tags = mattered.data.tags.map(tag => ({
       name: tag,
-      imageUrl: urlJoin('/images/icons', `${tag}.svg`),
+      imageUrl: this._getTagImageUrl(tag),
     }));
     const createdAt = mattered.data.createdAt.toISOString();
     const updatedAt = mattered.data.updatedAt?.toISOString() ?? createdAt;
@@ -87,6 +87,14 @@ export class NotesLoader {
     return notes.sort((a, b) => (a.createdAt < b.createdAt ? 1 : -1));
   }
 
+  private static _getTagImageUrl(name: string): string | null {
+    const exists = fs.existsSync(
+      path.join(process.cwd(), 'public/images/icons', `${name}.svg`),
+    );
+    if (!exists) return null;
+    return urlJoin('/images/icons', `${name}.svg`);
+  }
+
   private static _getNotesDirectoryPath(): string {
     return path.join(process.cwd(), 'notes');
   }
@@ -114,7 +122,7 @@ export class NotesLoader {
             url: `https://zenn.dev/kou_pg_0131/articles/${article.slug}`,
             tags: article.topics.map(topic => ({
               name: topic.display_name,
-              imageUrl: urlJoin('/images/icons', `${topic.display_name}.svg`),
+              imageUrl: this._getTagImageUrl(topic.display_name),
             })),
             createdAt: article.published_at,
           } as Note),

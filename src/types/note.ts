@@ -16,7 +16,7 @@ export type Note = {
 
 export type NoteTag = {
   name: string;
-  imageUrl: string;
+  imageUrl: string | null;
 };
 
 export type TableOfContentsItem = {
