@@ -14,7 +14,12 @@ const NoteCardList: React.VFC<NoteCardListProps> = React.memo(props => {
   return (
     <Grid container spacing={2}>
       {notes.map(note => (
-        <Grid key={note.slug} item xs={12} sm={stacked ? 12 : 6}>
+        <Grid
+          key={`${note.zenn ? 'zenn-' : ''}${note.slug}`}
+          item
+          xs={12}
+          sm={stacked ? 12 : 6}
+        >
           <NoteCard note={note} />
         </Grid>
       ))}

@@ -1,9 +1,10 @@
 import Chip from '@mui/material/Chip';
 import React from 'react';
 import urlJoin from 'url-join';
+import { NoteTag } from '@/types/note';
 
 export type NoteTagChipProps = {
-  tag: string;
+  tag: NoteTag;
 };
 
 const NoteTagChip: React.VFC<NoteTagChipProps> = React.memo(props => {
@@ -11,12 +12,12 @@ const NoteTagChip: React.VFC<NoteTagChipProps> = React.memo(props => {
 
   return (
     <Chip
-      label={tag}
+      label={tag.name}
       avatar={
         <img
-          src={urlJoin('/images/icons', `${tag}.svg`)}
+          src={tag.imageUrl}
           style={{ maxHeight: '50%', maxWidth: '50%' }}
-          alt={tag}
+          alt={tag.name}
         />
       }
       sx={{

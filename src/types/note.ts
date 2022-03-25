@@ -3,7 +3,7 @@ export type Note = {
   title: string;
   description?: string;
   content: string;
-  tags: string[];
+  tags: NoteTag[];
   tableOfContents: TableOfContentsItem[];
   createdAt: string;
   updatedAt: string;
@@ -12,6 +12,11 @@ export type Note = {
   // TODO: 移行完了したら削除する
   zenn?: boolean;
   url?: string;
+};
+
+export type NoteTag = {
+  name: string;
+  imageUrl: string;
 };
 
 export type TableOfContentsItem = {

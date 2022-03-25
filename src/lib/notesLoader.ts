@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import axios from 'axios';
 import matter from 'gray-matter';
+import urlJoin from 'url-join';
 import markdownToHtml from 'zenn-markdown-html';
 import { HtmlParser } from '@/lib/htmlParser';
 import { Note } from '@/types/note';
@@ -30,6 +31,10 @@ export class NotesLoader {
     const content = fs.readFileSync(filepath);
     const mattered = matter(content);
     const html = markdownToHtml(mattered.content);
+    const tags = mattered.data.tags.map(tag => ({
+      name: tag,
+      imageUrl: urlJoin('/images/icons', `${tag.name}.svg`),
+    }));
     const createdAt = mattered.data.createdAt.toISOString();
     const updatedAt = mattered.data.updatedAt?.toISOString() ?? createdAt;
 
@@ -51,6 +56,7 @@ export class NotesLoader {
 
     const note = {
       ...mattered.data,
+      tags,
       slug,
       content: html,
       tableOfContents,
@@ -103,9 +109,13 @@ export class NotesLoader {
         article =>
           ({
             zenn: true,
+            slug: article.slug,
             title: article.title,
             url: `https://zenn.dev/kou_pg_0131/articles/${article.slug}`,
-            tags: article.topics.map(topic => topic.display_name),
+            tags: article.topics.map(topic => ({
+              name: topic.display_name,
+              imageUrl: urlJoin('/images/icons', `${topic.display_name}.svg`),
+            })),
             createdAt: article.published_at,
           } as Note),
       );
