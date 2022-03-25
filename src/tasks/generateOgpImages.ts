@@ -19,7 +19,7 @@ cloudinary.config({
 (async () => {
   console.info('OGP 画像を生成します');
 
-  const notes = NotesLoader.loadAll();
+  const notes = await NotesLoader.loadAll();
 
   const noteTemplatePath = path.join(
     process.cwd(),

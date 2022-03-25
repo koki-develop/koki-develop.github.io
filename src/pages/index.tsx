@@ -4,8 +4,11 @@ import { NotesLoader } from '@/lib/notesLoader';
 
 export default HomePage;
 
-export const getStaticProps: GetStaticProps<HomePageProps> = () => {
-  const notes = NotesLoader.loadAll({ withoutContent: true });
+export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
+  const notes = await NotesLoader.loadAll({
+    withoutContent: true,
+    withZennArticles: true,
+  });
   const latestNotes = notes.slice(0, 10);
 
   return {

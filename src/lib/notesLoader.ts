@@ -1,12 +1,27 @@
 import fs from 'fs';
 import path from 'path';
+import axios from 'axios';
 import matter from 'gray-matter';
 import markdownToHtml from 'zenn-markdown-html';
 import { HtmlParser } from '@/lib/htmlParser';
 import { Note } from '@/types/note';
 
+type ZennArticle = {
+  published: boolean;
+  slug: string;
+  title: string;
+  published_at: string;
+  topics: ZennArticleTopic[];
+};
+
+type ZennArticleTopic = {
+  display_name: string;
+};
+
 export type LoadOptions = {
   withoutContent?: boolean;
+  // TODO: Zenn からの移行が完了したら削除する
+  withZennArticles?: boolean;
 };
 
 export class NotesLoader {
@@ -50,7 +65,7 @@ export class NotesLoader {
     return note;
   }
 
-  public static loadAll(options?: LoadOptions): Note[] {
+  public static async loadAll(options?: LoadOptions): Promise<Note[]> {
     const filenames = fs.readdirSync(this._getNotesDirectoryPath());
 
     const notes = filenames.map(filename => {
@@ -58,10 +73,31 @@ export class NotesLoader {
       return this.load(slug, options);
     });
 
+    if (options.withZennArticles) {
+      const zennNotes = await this._fetchZennArticles();
+      notes.push(...zennNotes);
+    }
+
     return notes.sort((a, b) => (a.createdAt < b.createdAt ? 1 : -1));
   }
 
   private static _getNotesDirectoryPath(): string {
     return path.join(process.cwd(), 'notes');
+  }
+
+  private static async _fetchZennArticles(): Promise<Note[]> {
+    const endpoint = 'https://zenn.dev/api/articles?username=kou_pg_0131';
+    const { data } = await axios.get<{ articles: ZennArticle[] }>(endpoint);
+    return data.articles
+      .filter(article => article.published)
+      .map(
+        article =>
+          ({
+            title: article.title,
+            url: `https://zenn.dev/kou_pg_0131/articles/${article.slug}`,
+            tags: article.topics.map(topic => topic.display_name),
+            createdAt: article.published_at,
+          } as Note),
+      );
   }
 }

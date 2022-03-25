@@ -5,9 +5,12 @@ export type Note = {
   content: string;
   tags: string[];
   tableOfContents: TableOfContentsItem[];
-
   createdAt: string;
   updatedAt: string;
+
+  // NOTE: Zenn, Qiita 用
+  // TODO: 移行完了したら削除する
+  url?: string;
 };
 
 export type TableOfContentsItem = {

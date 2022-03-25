@@ -16,7 +16,10 @@ const NoteCard: React.VFC<NoteCardProps> = React.memo(props => {
   const { note } = props;
 
   return (
-    <Link href={Routes.note(note.slug)}>
+    <Link
+      href={note.url ?? Routes.note(note.slug)}
+      external={Boolean(note.url)}
+    >
       <ClickableCard>
         <CardContent
           sx={{ display: 'flex', flexDirection: 'column', height: '100%' }}
