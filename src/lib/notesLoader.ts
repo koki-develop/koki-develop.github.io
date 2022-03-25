@@ -33,7 +33,7 @@ export class NotesLoader {
     const html = markdownToHtml(mattered.content);
     const tags = mattered.data.tags.map(tag => ({
       name: tag,
-      imageUrl: urlJoin('/images/icons', `${tag.name}.svg`),
+      imageUrl: urlJoin('/images/icons', `${tag}.svg`),
     }));
     const createdAt = mattered.data.createdAt.toISOString();
     const updatedAt = mattered.data.updatedAt?.toISOString() ?? createdAt;

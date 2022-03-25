@@ -1,6 +1,5 @@
 import Chip from '@mui/material/Chip';
 import React from 'react';
-import urlJoin from 'url-join';
 import { NoteTag } from '@/types/note';
 
 export type NoteTagChipProps = {
