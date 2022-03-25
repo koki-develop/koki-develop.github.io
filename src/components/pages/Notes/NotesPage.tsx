@@ -27,7 +27,20 @@ const NotesPage: React.VFC<NotesPageProps> = React.memo(props => {
     return notes.filter(note => {
       const trimmedKeyword = keyword.trim();
       if (trimmedKeyword === '') return note;
-      return note.title.toLowerCase().includes(trimmedKeyword.toLowerCase());
+      const keywords = trimmedKeyword
+        .split(/\s+/)
+        .map(keyword => keyword.toLowerCase());
+
+      return keywords.every(keyword => {
+        if (note.title.toLowerCase().includes(keyword)) {
+          return true;
+        }
+        if (note.tags.some(tag => tag.name.toLowerCase().includes(keyword))) {
+          return true;
+        }
+
+        return false;
+      });
     });
   }, [keyword, notes]);
 
