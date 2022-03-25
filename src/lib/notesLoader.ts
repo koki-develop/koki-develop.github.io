@@ -86,10 +86,19 @@ export class NotesLoader {
   }
 
   private static async _fetchZennArticles(): Promise<Note[]> {
+    const movedSlugs: string[] = [
+      'ruby-aes-enc-dec',
+      'js-clone-array',
+      'js-sort-array-without-changing-original-array',
+    ];
+
     const endpoint = 'https://zenn.dev/api/articles?username=kou_pg_0131';
     const { data } = await axios.get<{ articles: ZennArticle[] }>(endpoint);
+
     return data.articles
-      .filter(article => article.published)
+      .filter(
+        article => article.published && !movedSlugs.includes(article.slug),
+      )
       .map(
         article =>
           ({
