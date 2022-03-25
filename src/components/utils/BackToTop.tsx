@@ -1,7 +1,7 @@
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import Fab from '@mui/material/Fab';
-import useScrollTrigger from '@mui/material/useScrollTrigger';
 import Zoom from '@mui/material/Zoom';
+import useScrollTrigger from '@mui/material/useScrollTrigger';
 import React, { useCallback } from 'react';
 import Scroll from 'react-scroll';
 
