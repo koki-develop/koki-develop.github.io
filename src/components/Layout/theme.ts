@@ -38,6 +38,7 @@ export const theme = responsiveFontSizes(
           },
           body: {
             backgroundColor: primary.dark,
+            overscrollBehaviorY: 'none',
             fontFamily,
             letterSpacing: 1,
           },
