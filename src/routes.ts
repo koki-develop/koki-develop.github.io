@@ -1,3 +1,6 @@
+import urlJoin from 'url-join';
+import { config } from '@/config';
+
 export class Routes {
   public static home(): string {
     return '/';
@@ -7,8 +10,12 @@ export class Routes {
     return '/notes';
   }
 
-  public static note(slug: string): string {
-    return `/notes/${slug}`;
+  public static note(slug: string, options?: { full?: boolean }): string {
+    const path = `/notes/${slug}`;
+    if (!options?.full) {
+      return path;
+    }
+    return urlJoin(config.url, path);
   }
 
   public static privacyPolicy(): string {

@@ -1,4 +1,6 @@
 import CreateIcon from '@mui/icons-material/Create';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import TwitterIcon from '@mui/icons-material/Twitter';
 import UpdateIcon from '@mui/icons-material/Update';
 import Alert from '@mui/material/Alert';
 import Box from '@mui/material/Box';
@@ -8,8 +10,11 @@ import { differenceInCalendarDays } from 'date-fns';
 import React, { useMemo } from 'react';
 import 'zenn-content-css';
 import NoteTagChipList from '@/components/model/note/NoteTagChipList';
+import Link from '@/components/utils/Link';
 import Time from '@/components/utils/Time';
 import { Note } from '@/types/note';
+import { Routes } from '@/routes';
+import { config } from '@/config';
 import { useDown } from '@/hooks/breakpointsHooks';
 
 export type NotePaperProps = {
@@ -91,8 +96,33 @@ const NotePaper: React.VFC<NotePaperProps> = React.memo(props => {
 
       <Box
         className='znc note'
+        sx={{ mb: 2 }}
         dangerouslySetInnerHTML={{ __html: note.content }}
       />
+
+      <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
+        <Link
+          external
+          href={`https://twitter.com/share?url=${encodeURIComponent(
+            Routes.note(note.slug, {
+              full: true,
+            }),
+          )}&text=${encodeURIComponent(
+            `${note.title} | ${config.profile.name}`,
+          )}`}
+          sx={{ mr: 1 }}
+        >
+          <TwitterIcon fontSize='large' htmlColor='#1DA1F2' />
+        </Link>
+        <Link
+          external
+          href={`https://www.facebook.com/share.php?u=${encodeURIComponent(
+            Routes.note(note.slug, { full: true }),
+          )}`}
+        >
+          <FacebookIcon fontSize='large' htmlColor='#1877F2' />
+        </Link>
+      </Box>
     </Paper>
   );
 });
