@@ -83,8 +83,7 @@
       "url": "https://koki.me",
       "repositoryUrl": "https://github.com/koki-develop/koki-develop",
       "hasImage": true,
-      "description": "個人用ポートフォリオサイト。",
-      "skills": ["TypeScript", "React", "AWS", "Vercel", "GitHub Actions"]
+      "description": "個人用ポートフォリオサイト。"
     },
     {
       "name": "LGTM Generator",
@@ -92,20 +91,7 @@
       "repositoryUrl": "https://github.com/koki-develop/lgtm-generator",
       "hasImage": true,
       "imagePosition": "top",
-      "description": "シンプルな LGTM 画像生成サービス。",
-      "skills": [
-        "TypeScript",
-        "Go",
-        "React",
-        "Next.js",
-        "Gin",
-        "Vercel",
-        "GCP",
-        "AWS",
-        "CircleCI",
-        "Serverless",
-        "Terraform"
-      ]
+      "description": "シンプルな LGTM 画像生成サービス。"
     },
     {
       "name": "Awesome Notes",
@@ -113,16 +99,14 @@
       "repositoryUrl": "https://github.com/koki-develop/awesome-notes",
       "hasImage": true,
       "imagePosition": "top",
-      "description": "マークダウンショートカット機能つきのシンプルなメモを提供する Chrome Extension 。",
-      "skills": ["TypeScript", "React"]
+      "description": "マークダウンショートカット機能つきのシンプルなメモを提供する Chrome Extension 。"
     },
     {
       "name": "Qiita LGTM Ranking",
       "url": "https://qiita.com/items/b6cfc81906990b3a3e72",
       "repositoryUrl": "https://github.com/koki-develop/qiita-lgtm-ranking",
       "hasImage": true,
-      "description": "Qiita の LGTM ランキング記事を毎日自動更新するシステム。",
-      "skills": ["Go", "AWS", "CircleCI", "Serverless"]
+      "description": "Qiita の LGTM ランキング記事を毎日自動更新するシステム。"
     },
     {
       "name": "Hyper Statusbar",
@@ -130,16 +114,14 @@
       "repositoryUrl": "https://github.com/koki-develop/hyper-statusbar",
       "hasImage": true,
       "imagePosition": "bottom",
-      "description": "ステータスバーを表示する Hyper プラグイン。",
-      "skills": ["TypeScript", "GitHub Actions"]
+      "description": "ステータスバーを表示する Hyper プラグイン。"
     },
     {
       "name": "CheckIP",
       "url": "https://checkip.dev",
       "repositoryUrl": "https://github.com/koki-develop/checkip",
       "hasImage": false,
-      "description": "クライアントの IP アドレスを返すシンプルな API 。",
-      "skills": ["Go", "chi", "AWS", "Heroku", "GitHub Actions", "Terraform"]
+      "description": "クライアントの IP アドレスを返すシンプルな API 。"
     }
   ],
   "histories": [
