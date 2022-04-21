@@ -33,6 +33,6 @@ jobs:
         run: |
           git add README.md
           if ! git diff --staged --exit-code --quiet; then
-            git commit -m 'update README.md'
+            git commit -m '[skip ci] update README.md'
             git push origin main
           fi
