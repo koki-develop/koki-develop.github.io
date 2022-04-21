@@ -90,7 +90,7 @@
       "repositoryUrl": "https://github.com/koki-develop/lgtm-generator",
       "hasImage": true,
       "imagePosition": "top",
-      "description": "LGTM 画像生成サービス。"
+      "description": "LGTM 画像生成ツール。"
     },
     {
       "name": "Todo Box",
