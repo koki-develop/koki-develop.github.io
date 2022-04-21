@@ -70,7 +70,7 @@
 
 ## [LGTM Generator](https://lgtmgen.org)
 
-LGTM 画像生成サービス。
+LGTM 画像生成ツール。
 
 [View on GitHub](https://github.com/koki-develop/lgtm-generator)
 
