@@ -12,7 +12,6 @@ type ZennArticle = {
   slug: string;
   title: string;
   published_at: string;
-  topics: ZennArticleTopic[];
 };
 
 type ZennArticleTopic = {
@@ -120,10 +119,7 @@ export class NotesLoader {
             slug: article.slug,
             title: article.title,
             url: `https://zenn.dev/kou_pg_0131/articles/${article.slug}`,
-            tags: article.topics.map(topic => ({
-              name: topic.display_name,
-              imageUrl: this._getTagImageUrl(topic.display_name),
-            })),
+            tags: [],
             createdAt: article.published_at,
           } as Note),
       );
