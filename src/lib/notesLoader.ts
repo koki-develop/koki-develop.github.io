@@ -14,10 +14,6 @@ type ZennArticle = {
   published_at: string;
 };
 
-type ZennArticleTopic = {
-  display_name: string;
-};
-
 export type LoadOptions = {
   withoutContent?: boolean;
   // TODO: Zenn からの移行が完了したら削除する
