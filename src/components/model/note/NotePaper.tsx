@@ -1,7 +1,5 @@
-import CreateIcon from '@mui/icons-material/Create';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
-import UpdateIcon from '@mui/icons-material/Update';
 import Alert from '@mui/material/Alert';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
@@ -9,9 +7,9 @@ import Typography from '@mui/material/Typography';
 import { differenceInCalendarDays } from 'date-fns';
 import React, { useMemo } from 'react';
 import 'zenn-content-css';
+import NotePaperDate from '@/components/model/note/NotePaperDate';
 import NoteTagChipList from '@/components/model/note/NoteTagChipList';
 import Link from '@/components/utils/Link';
-import Time from '@/components/utils/Time';
 import { Note } from '@/types/note';
 import { Routes } from '@/routes';
 import { config } from '@/config';
@@ -48,34 +46,9 @@ const NotePaper: React.VFC<NotePaperProps> = React.memo(props => {
 
       <Box sx={{ mb: 4 }}>
         <Box sx={{ display: 'flex', mb: 2 }}>
-          <Typography
-            component='span'
-            variant='body2'
-            sx={{
-              color: theme => theme.palette.text.secondary,
-              display: 'flex',
-            }}
-          >
-            <CreateIcon fontSize='small' sx={{ mr: 0.5 }} />
-            <Box>
-              <Time datetime={note.createdAt} /> に作成
-            </Box>
-          </Typography>
+          <NotePaperDate type='created' date={note.createdAt} />
           {note.createdAt !== note.updatedAt && (
-            <Typography
-              component='span'
-              variant='body2'
-              sx={{
-                color: theme => theme.palette.text.secondary,
-                display: 'flex',
-                ml: 1,
-              }}
-            >
-              <UpdateIcon fontSize='small' sx={{ mr: 0.5 }} />
-              <Box>
-                <Time datetime={note.updatedAt} /> に更新
-              </Box>
-            </Typography>
+            <NotePaperDate type='updated' date={note.updatedAt} />
           )}
         </Box>
 
