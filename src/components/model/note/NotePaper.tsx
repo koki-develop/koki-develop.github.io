@@ -1,5 +1,3 @@
-import FacebookIcon from '@mui/icons-material/Facebook';
-import TwitterIcon from '@mui/icons-material/Twitter';
 import Alert from '@mui/material/Alert';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
@@ -9,7 +7,7 @@ import React, { useMemo } from 'react';
 import 'zenn-content-css';
 import NotePaperDate from '@/components/model/note/NotePaperDate';
 import NoteTagChipList from '@/components/model/note/NoteTagChipList';
-import Link from '@/components/utils/Link';
+import ShareButton from '@/components/utils/ShareButton';
 import { Note } from '@/types/note';
 import { Routes } from '@/routes';
 import { config } from '@/config';
@@ -29,6 +27,10 @@ const NotePaper: React.VFC<NotePaperProps> = React.memo(props => {
       differenceInCalendarDays(new Date(), new Date(note.updatedAt)) / 365,
     );
   }, [note.updatedAt]);
+
+  const shareUrl = useMemo(() => {
+    return Routes.note(note.slug, { full: true });
+  }, [note.slug]);
 
   return (
     <Paper
@@ -74,27 +76,13 @@ const NotePaper: React.VFC<NotePaperProps> = React.memo(props => {
       />
 
       <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
-        <Link
-          external
-          href={`https://twitter.com/share?url=${encodeURIComponent(
-            Routes.note(note.slug, {
-              full: true,
-            }),
-          )}&text=${encodeURIComponent(
-            `${note.title} | ${config.profile.name}`,
-          )}`}
+        <ShareButton
+          sns='twitter'
+          url={shareUrl}
+          text={`${note.title} | ${config.profile.name}`}
           sx={{ mr: 1 }}
-        >
-          <TwitterIcon fontSize='large' htmlColor='#1DA1F2' />
-        </Link>
-        <Link
-          external
-          href={`https://www.facebook.com/share.php?u=${encodeURIComponent(
-            Routes.note(note.slug, { full: true }),
-          )}`}
-        >
-          <FacebookIcon fontSize='large' htmlColor='#1877F2' />
-        </Link>
+        />
+        <ShareButton sns='facebook' url={shareUrl} />
       </Box>
     </Paper>
   );
