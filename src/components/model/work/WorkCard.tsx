@@ -1,3 +1,4 @@
+import { useTheme } from '@mui/material';
 import Card from '@mui/material/Card';
 import CardActionArea from '@mui/material/CardActionArea';
 import CardContent from '@mui/material/CardContent';
@@ -15,6 +16,8 @@ export type WorkCardProps = {
 
 const WorkCard: React.VFC<WorkCardProps> = React.memo(props => {
   const { work } = props;
+
+  const theme = useTheme();
 
   return (
     <Card raised>
@@ -37,7 +40,7 @@ const WorkCard: React.VFC<WorkCardProps> = React.memo(props => {
             external
             href={work.url}
             sx={{
-              color: theme => theme.palette.primary.contrastText,
+              color: theme.palette.primary.contrastText,
               fontWeight: 'bold',
             }}
           >
@@ -52,7 +55,7 @@ const WorkCard: React.VFC<WorkCardProps> = React.memo(props => {
       <CardContent sx={{ pt: 0 }}>
         <Typography
           sx={{
-            fontSize: theme => theme.typography.body2.fontSize,
+            fontSize: theme.typography.body2.fontSize,
             mb: 1,
           }}
         >
@@ -61,7 +64,7 @@ const WorkCard: React.VFC<WorkCardProps> = React.memo(props => {
         <Link
           external
           href={work.repositoryUrl}
-          sx={{ color: theme => theme.palette.primary.contrastText }}
+          sx={{ color: theme.palette.primary.contrastText }}
         >
           View on GitHub
         </Link>

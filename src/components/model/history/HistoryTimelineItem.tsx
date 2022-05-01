@@ -3,6 +3,7 @@ import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 import TimelineItem from '@mui/lab/TimelineItem';
 import TimelineSeparator from '@mui/lab/TimelineSeparator';
+import { useTheme } from '@mui/material';
 import React from 'react';
 import HistoryCard from '@/components/model/history/HistoryCard';
 import { History } from '@/types/history';
@@ -16,16 +17,18 @@ const HistoryTimelineItem: React.VFC<HistoryTimelineItemProps> = React.memo(
   props => {
     const { history, connector } = props;
 
+    const theme = useTheme();
+
     return (
       <TimelineItem
-        sx={theme => ({
+        sx={{
           [theme.breakpoints.down('md')]: {
             '::before': {
               flex: 0,
               p: theme.spacing(1),
             },
           },
-        })}
+        }}
       >
         <TimelineSeparator>
           <TimelineDot

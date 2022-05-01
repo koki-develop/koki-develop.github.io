@@ -1,3 +1,4 @@
+import { useTheme } from '@mui/material';
 import CardContent from '@mui/material/CardContent';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
@@ -26,6 +27,8 @@ export type SkillCardProps = {
 const SkillCard: React.VFC<SkillCardProps> = React.memo(props => {
   const { skill } = props;
 
+  const theme = useTheme();
+
   return (
     <Grid key={skill.name} item xs={6} sm={4} md={3}>
       <Link external href={skill.url}>
@@ -48,7 +51,7 @@ const SkillCard: React.VFC<SkillCardProps> = React.memo(props => {
             />
             <Typography
               sx={{
-                fontSize: theme => theme.typography.body2.fontSize,
+                fontSize: theme.typography.body2.fontSize,
                 fontWeight: 'bold',
                 whiteSpace: 'pre',
               }}

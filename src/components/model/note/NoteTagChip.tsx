@@ -1,4 +1,5 @@
 import TagIcon from '@mui/icons-material/Tag';
+import { useTheme } from '@mui/material';
 import Chip from '@mui/material/Chip';
 import React from 'react';
 import { NoteTag } from '@/types/note';
@@ -9,6 +10,8 @@ export type NoteTagChipProps = {
 
 const NoteTagChip: React.VFC<NoteTagChipProps> = React.memo(props => {
   const { tag } = props;
+
+  const theme = useTheme();
 
   return (
     <Chip
@@ -25,7 +28,7 @@ const NoteTagChip: React.VFC<NoteTagChipProps> = React.memo(props => {
         )
       }
       sx={{
-        backgroundColor: theme => theme.palette.primary.main,
+        backgroundColor: theme.palette.primary.main,
         border: '1px solid',
         borderColor: 'divider',
         cursor: 'inherit',

@@ -1,5 +1,6 @@
 import DoneIcon from '@mui/icons-material/Done';
 import MailIcon from '@mui/icons-material/Mail';
+import { useTheme } from '@mui/material';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import React, { useCallback, useEffect, useState } from 'react';
@@ -13,6 +14,8 @@ export type ProfileEmailProps = {
 
 const ProfileEmail: React.VFC<ProfileEmailProps> = React.memo(props => {
   const { email } = props;
+
+  const theme = useTheme();
 
   const [showCopiedMessage, setShowCopiedMessage] = useState<boolean>(false);
 
@@ -55,7 +58,7 @@ const ProfileEmail: React.VFC<ProfileEmailProps> = React.memo(props => {
             startIcon={showCopiedMessage ? <DoneIcon color='success' /> : null}
             sx={{
               backgroundColor: 'transparent',
-              color: theme => theme.palette.primary.contrastText,
+              color: theme.palette.primary.contrastText,
             }}
           >
             {showCopiedMessage ? 'コピーしました' : 'クリップボードにコピー'}

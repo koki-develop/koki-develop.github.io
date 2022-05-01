@@ -1,3 +1,4 @@
+import { useTheme } from '@mui/material';
 import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
 import Paper, { PaperProps } from '@mui/material/Paper';
@@ -16,16 +17,18 @@ const NoteTableOfContentsPaper: React.VFC<NoteTableOfContentsPaperProps> =
   React.forwardRef((props, ref) => {
     const { items, onClickItem, ...paperProps } = props;
 
+    const theme = useTheme();
+
     return (
       <Paper
         ref={ref}
         {...paperProps}
-        sx={theme => ({
+        sx={{
           ...paperProps.sx,
           [theme.breakpoints.down('md')]: {
             width: 300,
           },
-        })}
+        }}
       >
         <Box sx={{ px: 2, py: 1 }}>
           <Typography>目次</Typography>

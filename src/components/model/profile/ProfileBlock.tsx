@@ -1,3 +1,4 @@
+import { useTheme } from '@mui/material';
 import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
@@ -10,6 +11,8 @@ export type ProfileBlockProps = {
 
 const ProfileBlock: React.VFC<ProfileBlockProps> = React.memo(props => {
   const { profile } = props;
+
+  const theme = useTheme();
 
   return (
     <Box>
@@ -38,7 +41,7 @@ const ProfileBlock: React.VFC<ProfileBlockProps> = React.memo(props => {
         <Typography
           component='p'
           variant='h6'
-          sx={{ color: theme => theme.palette.text.secondary }}
+          sx={{ color: theme.palette.text.secondary }}
         >
           Developer
         </Typography>

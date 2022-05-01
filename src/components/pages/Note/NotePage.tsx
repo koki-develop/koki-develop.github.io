@@ -1,3 +1,4 @@
+import { useTheme } from '@mui/material';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
@@ -19,6 +20,8 @@ export type NotePageProps = {
 
 const NotePage: React.VFC<NotePageProps> = React.memo(props => {
   const { note } = props;
+
+  const theme = useTheme();
 
   const isMdDown = useDown('md');
 
@@ -65,7 +68,7 @@ const NotePage: React.VFC<NotePageProps> = React.memo(props => {
             <NoteTableOfContentsPaper
               sx={{
                 position: 'sticky',
-                top: theme => theme.spacing(2),
+                top: theme.spacing(2),
               }}
               items={note.tableOfContents}
             />
