@@ -1,4 +1,171 @@
-import { ConfigLoader } from '@/lib/configLoader';
+import { Config } from '@/types/config';
+import { History } from '@/types/history';
+import { Profile } from '@/types/profile';
+import { SkillGroup } from '@/types/skillGroup';
+import { Social } from '@/types/social';
+import { Work } from '@/types/work';
 
-const config = ConfigLoader.load();
-export { config };
+const profile: Profile = {
+  name: 'Koki Sato',
+  tag: 'Developer',
+  email: 'kou.pg.0131@gmail.com',
+  description: '埼玉県在住の24歳。\nのんびり生きています。',
+};
+
+const socials: Social[] = [
+  { name: 'GitHub', url: 'https://github.com/koki-develop' },
+  { name: 'Twitter', url: 'https://twitter.com/koki_develop' },
+  { name: 'Zenn', url: 'https://zenn.dev/kou_pg_0131' },
+];
+
+const skillGroups: SkillGroup[] = [
+  {
+    name: 'Language',
+    skills: [
+      { name: 'Go', url: 'https://golang.org/' },
+      { name: 'TypeScript', url: 'https://www.typescriptlang.org/' },
+      {
+        name: 'JavaScript',
+        url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
+      },
+      { name: 'Ruby', url: 'https://www.ruby-lang.org/ja/' },
+      { name: 'Python', url: 'https://www.python.org/' },
+    ],
+  },
+  {
+    name: 'Framework/Library',
+    skills: [
+      { name: 'Gin', url: 'https://gin-gonic.com/' },
+      { name: 'chi', url: 'https://go-chi.io/' },
+      { name: 'Express', url: 'https://expressjs.com/' },
+      { name: 'React', url: 'https://reactjs.org/' },
+      { name: 'Next.js', url: 'https://nextjs.org/' },
+      { name: 'Rails', url: 'https://rubyonrails.org/' },
+      { name: 'Django', url: 'https://docs.djangoproject.com/' },
+    ],
+  },
+  {
+    name: 'RDB/NoSQL',
+    skills: [
+      { name: 'MySQL', url: 'https://www.mysql.com/' },
+      { name: 'PostgreSQL', url: 'https://www.postgresql.org/' },
+      { name: 'SQLite', url: 'http://www.sqlite.org/' },
+      { name: 'Redis', url: 'https://redis.io/' },
+    ],
+  },
+  {
+    name: 'Cloud',
+    skills: [
+      { name: 'AWS', url: 'https://aws.amazon.com/' },
+      { name: 'GCP', url: 'https://console.cloud.google.com/' },
+      { name: 'Vercel', url: 'https://vercel.com/' },
+      { name: 'Heroku', url: 'https://www.heroku.com/' },
+    ],
+  },
+  {
+    name: 'CI/CD',
+    skills: [
+      { name: 'CircleCI', url: 'https://circleci.com/' },
+      {
+        name: 'GitHub Actions',
+        url: 'https://github.co.jp/features/actions',
+      },
+    ],
+  },
+  {
+    name: 'Other',
+    skills: [
+      { name: 'Docker', url: 'https://www.docker.com/' },
+      { name: 'Serverless', url: 'https://www.serverless.com/' },
+      { name: 'Terraform', url: 'https://www.terraform.io/' },
+      { name: 'GraphQL', url: 'https://graphql.org/' },
+      { name: 'Cypress', url: 'https://www.cypress.io/' },
+    ],
+  },
+];
+
+const works: Work[] = [
+  {
+    name: 'Koki Sato',
+    url: 'https://koki.me',
+    repositoryUrl: 'https://github.com/koki-develop/koki-develop',
+    hasImage: true,
+    description: '個人用ポートフォリオサイト。',
+  },
+  {
+    name: 'LGTM Generator',
+    url: 'https://lgtmgen.org',
+    repositoryUrl: 'https://github.com/koki-develop/lgtm-generator',
+    hasImage: true,
+    imagePosition: 'top',
+    description: 'LGTM 画像生成ツール。',
+  },
+  {
+    name: 'Todo Box',
+    url: 'https://todobox.xyz',
+    repositoryUrl: 'https://github.com/koki-develop/todobox',
+    hasImage: true,
+    imagePosition: 'top',
+    description: 'Todo アプリ。 (開発中) ',
+  },
+  {
+    name: 'Awesome Notes',
+    url: 'https://chrome.google.com/webstore/detail/awesome-notes/oahbimjdpmgidnloajppdlhlpkepmipo',
+    repositoryUrl: 'https://github.com/koki-develop/awesome-notes',
+    hasImage: true,
+    imagePosition: 'top',
+    description:
+      'マークダウンショートカット機能つきのシンプルなメモを提供する Chrome Extension 。',
+  },
+  {
+    name: 'Qiita LGTM Ranking',
+    url: 'https://qiita.com/items/b6cfc81906990b3a3e72',
+    repositoryUrl: 'https://github.com/koki-develop/qiita-lgtm-ranking',
+    hasImage: true,
+    description: 'Qiita の LGTM ランキング記事を毎日自動更新するシステム。',
+  },
+  {
+    name: 'Hyper Statusbar',
+    url: 'https://github.com/koki-develop/hyper-statusbar#readme',
+    repositoryUrl: 'https://github.com/koki-develop/hyper-statusbar',
+    hasImage: true,
+    imagePosition: 'bottom',
+    description: 'ステータスバーを表示する Hyper プラグイン。',
+  },
+  {
+    name: 'CheckIP',
+    url: 'https://checkip.dev',
+    repositoryUrl: 'https://github.com/koki-develop/checkip',
+    description: 'クライアントの IP アドレスを返すシンプルな API 。',
+  },
+];
+
+const histories: History[] = [
+  {
+    title: 'DX 推進企業に業務委託として勤務',
+    from: '2021-08',
+    description: '業務改善ツールの新規機能開発・保守を担当。',
+  },
+  {
+    title: 'デジタルマーケティング企業に入社',
+    from: '2019-07',
+    description:
+      'ジオターゲティング広告配信システムの管理画面や MEO 対策支援ツール等の新規機能開発・保守を担当。',
+  },
+  {
+    title: '未経験で SES 企業に入社',
+    from: '2018-06',
+    to: '2019-05',
+    description:
+      '自社にて 3 ヶ月の研修を受けたのち、都内の某信託銀行にて常駐勤務。従業員向けの顧客管理システムの新規開発を担当。',
+  },
+];
+
+export const config: Config = {
+  url: 'https://koki.me',
+  profile,
+  socials,
+  skillGroups,
+  works,
+  histories,
+};

@@ -29,8 +29,8 @@ const HistoryTimelineItem: React.VFC<HistoryTimelineItemProps> = React.memo(
       >
         <TimelineSeparator>
           <TimelineDot
-            variant={history.isActive ? 'filled' : 'outlined'}
-            sx={{ backgroundColor: history.isActive ? 'red' : 'transparent' }}
+            variant={history.to ? 'outlined' : 'filled'}
+            sx={{ backgroundColor: history.to ? 'transparent' : 'red' }}
           />
           {connector && <TimelineConnector />}
         </TimelineSeparator>

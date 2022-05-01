@@ -1,7 +1,6 @@
 export type History = {
   title: string;
   from: string;
-  to: string;
-  isActive: boolean;
+  to?: string;
   description: string;
 };
