@@ -1,4 +1,3 @@
-import { Config } from '@/types/config';
 import { History } from '@/types/history';
 import { Profile } from '@/types/profile';
 import { SkillGroup } from '@/types/skillGroup';
@@ -161,7 +160,7 @@ const histories: History[] = [
   },
 ];
 
-export const config: Config = {
+export const config = {
   url: 'https://koki.me',
   profile,
   socials,
