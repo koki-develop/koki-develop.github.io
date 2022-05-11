@@ -131,12 +131,6 @@ const works: Work[] = [
     imagePosition: 'bottom',
     description: 'ステータスバーを表示する Hyper プラグイン。',
   },
-  {
-    name: 'CheckIP',
-    url: 'https://checkip.dev',
-    repositoryUrl: 'https://github.com/koki-develop/checkip',
-    description: 'クライアントの IP アドレスを返すシンプルな API 。',
-  },
 ];
 
 const histories: History[] = [
