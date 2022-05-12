@@ -1,6 +1,3 @@
-import urlJoin from 'url-join';
-import { config } from '@/config';
-
 export class Routes {
   public static home(): string {
     return '/';
