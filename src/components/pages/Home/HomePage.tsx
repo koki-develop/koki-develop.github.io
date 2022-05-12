@@ -4,7 +4,6 @@ import { useRouter } from 'next/router';
 import React, { useCallback, useMemo } from 'react';
 import HomeTabs, { HomeTabValue } from '@/components/pages/Home/HomeTabs';
 import HistoryTimeline from '@/components/model/history/HistoryTimeline';
-import NoteCardList from '@/components/model/note/NoteCardList';
 import ProfileBlock from '@/components/model/profile/ProfileBlock';
 import ProfileEmail from '@/components/model/profile/ProfileEmail';
 import SkillCardList from '@/components/model/skill/SkillCardList';
@@ -13,18 +12,11 @@ import WorkCardList from '@/components/model/work/WorkCardList';
 import LinkButton from '@/components/utils/LinkButton';
 import Meta from '@/components/utils/Meta';
 import Section from '@/components/utils/Section';
-import { Note } from '@/types/note';
 import { Routes } from '@/routes';
 import { config } from '@/config';
 import Layout from '@/components/Layout';
 
-export type HomePageProps = {
-  latestNotes: Note[];
-};
-
-const HomePage: React.VFC<HomePageProps> = React.memo(props => {
-  const { latestNotes } = props;
-
+const HomePage: React.VFC = React.memo(() => {
   const router = useRouter();
 
   const selectedTab = useMemo(() => {
@@ -65,21 +57,6 @@ const HomePage: React.VFC<HomePageProps> = React.memo(props => {
             <LinkButton
               href={Routes.repositories()}
               external
-              size='large'
-              endIcon={<KeyboardArrowRightIcon />}
-            >
-              More
-            </LinkButton>
-          </Box>
-        </Section>
-      </Box>
-
-      <Box hidden={selectedTab !== HomeTabValue.notes}>
-        <Section title='Notes'>
-          <NoteCardList notes={latestNotes} />
-          <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
-            <LinkButton
-              href={Routes.notes()}
               size='large'
               endIcon={<KeyboardArrowRightIcon />}
             >

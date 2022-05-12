@@ -1,4 +1,3 @@
-import HomePage, { HomePageProps } from './HomePage';
+import HomePage from './HomePage';
 
 export default HomePage;
-export type { HomePageProps };

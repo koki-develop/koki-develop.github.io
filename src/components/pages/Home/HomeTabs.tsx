@@ -5,7 +5,6 @@ import React, { useCallback } from 'react';
 export const HomeTabValue = {
   about: 'about',
   works: 'works',
-  notes: 'notes',
 } as const;
 
 export type HomeTabValue = typeof HomeTabValue[keyof typeof HomeTabValue];
@@ -21,8 +20,6 @@ const valueToLabel = (value: HomeTabValue) => {
       return 'About';
     case HomeTabValue.works:
       return 'Works';
-    case HomeTabValue.notes:
-      return 'Notes';
   }
 };
 

@@ -1,19 +1,3 @@
-import { GetStaticProps } from 'next';
-import HomePage, { HomePageProps } from '@/components/pages/Home';
-import { NotesLoader } from '@/lib/notesLoader';
+import HomePage from '@/components/pages/Home';
 
 export default HomePage;
-
-export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
-  const notes = await NotesLoader.loadAll({
-    withoutContent: true,
-    withZennArticles: true,
-  });
-  const latestNotes = notes.slice(0, 10);
-
-  return {
-    props: {
-      latestNotes,
-    },
-  };
-};
