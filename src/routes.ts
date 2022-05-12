@@ -6,18 +6,6 @@ export class Routes {
     return '/';
   }
 
-  public static notes(): string {
-    return '/notes';
-  }
-
-  public static note(slug: string, options?: { full?: boolean }): string {
-    const path = `/notes/${slug}`;
-    if (!options?.full) {
-      return path;
-    }
-    return urlJoin(config.url, path);
-  }
-
   public static privacyPolicy(): string {
     return '/privacy-policy';
   }
