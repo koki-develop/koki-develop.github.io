@@ -39,6 +39,7 @@ const skillGroups: SkillGroup[] = [
       { name: 'Express', url: 'https://expressjs.com/' },
       { name: 'React', url: 'https://reactjs.org/' },
       { name: 'Next.js', url: 'https://nextjs.org/' },
+      { name: 'Remix', url: 'https://remix.run/' },
       { name: 'Rails', url: 'https://rubyonrails.org/' },
       { name: 'Django', url: 'https://docs.djangoproject.com/' },
     ],
