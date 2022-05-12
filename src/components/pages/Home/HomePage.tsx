@@ -57,8 +57,10 @@ const HomePage: React.VFC = React.memo(() => {
             <LinkButton
               href={Routes.repositories()}
               external
-              size='large'
-              endIcon={<KeyboardArrowRightIcon />}
+              buttonProps={{
+                size: 'large',
+                endIcon: <KeyboardArrowRightIcon />,
+              }}
             >
               More
             </LinkButton>

@@ -39,12 +39,14 @@ const ProfileEmail: React.VFC<ProfileEmailProps> = React.memo(props => {
     <Box sx={{ alignItems: 'center', display: 'flex', flexFlow: 'column' }}>
       <Box>
         <LinkButton
-          startIcon={<MailIcon />}
           href={Routes.mailto(email)}
           external
-          sx={{
-            fontWeight: 'bold',
-            marginBottom: 0.8,
+          buttonProps={{
+            startIcon: <MailIcon />,
+            sx: {
+              fontWeight: 'bold',
+              marginBottom: 0.8,
+            },
           }}
         >
           {email}

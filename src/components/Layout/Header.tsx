@@ -23,10 +23,7 @@ const Header: React.VFC<HeaderProps> = React.memo(props => {
     <AppBar position={isMdDown ? 'sticky' : 'static'}>
       <Container maxWidth='lg'>
         <Toolbar>
-          <Link
-            href={Routes.home()}
-            sx={{ alignItems: 'center', display: 'flex' }}
-          >
+          <Link className='flex items-center' href={Routes.home()}>
             <Avatar src='/images/profile.png' sx={{ mr: 1 }} alt='Logo' />
             <Typography component='h1' variant='h6'>
               {config.profile.name}

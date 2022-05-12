@@ -1,24 +1,23 @@
-import MuiLink, { LinkProps as MuiLinkProps } from '@mui/material/Link';
 import NextLink from 'next/link';
 import React from 'react';
 
-export type LinkProps = MuiLinkProps & {
+export type LinkProps = Omit<React.HTMLProps<HTMLAnchorElement>, 'href'> & {
+  href: string;
   external?: boolean;
 };
 
 const Link: React.VFC<LinkProps> = React.memo(props => {
   const { external, ...linkProps } = props;
 
-  if (external) {
-    return <MuiLink target='_blank' rel='noreferrer noopener' {...linkProps} />;
+  if (!external) {
+    <NextLink {...linkProps} />;
   }
 
-  const { href, ...otherLinkProps } = linkProps;
-
   return (
-    <NextLink href={href} passHref>
-      <MuiLink {...otherLinkProps} />
-    </NextLink>
+    <a
+      {...linkProps}
+      {...(external && { target: '_blank', rel: 'noreferrer' })}
+    />
   );
 });
 

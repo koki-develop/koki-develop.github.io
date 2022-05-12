@@ -1,29 +1,17 @@
 import Button, { ButtonProps } from '@mui/material/Button';
-import Link from 'next/link';
 import React from 'react';
+import Link, { LinkProps } from '@/components/utils/Link';
 
-export type LinkButtonProps = ButtonProps<'a'> & {
-  external?: boolean;
+export type LinkButtonProps = LinkProps & {
+  buttonProps: ButtonProps;
 };
 
 const LinkButton: React.VFC<LinkButtonProps> = React.memo(props => {
-  const { external, ...buttonProps } = props;
-  const { href, ...otherButtonProps } = buttonProps;
-
-  if (external) {
-    return (
-      <Button
-        href={href}
-        target='_blank'
-        rel='noreferrer'
-        {...otherButtonProps}
-      />
-    );
-  }
+  const { buttonProps, ...linkProps } = props;
 
   return (
-    <Link href={href}>
-      <Button href={href} {...otherButtonProps} />
+    <Link {...linkProps}>
+      <Button {...buttonProps} />
     </Link>
   );
 });
