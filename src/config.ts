@@ -109,6 +109,13 @@ const works: Work[] = [
     description: 'Todo アプリ。 (開発中) ',
   },
   {
+    name: 'OGP Messenger',
+    url: 'https://ogp-messenger.koki-develop.workers.dev',
+    repositoryUrl: 'https://github.com/koki-develop/ogp-messenger',
+    hasImage: true,
+    description: 'OGP 画像でメッセージを発信できるツール。',
+  },
+  {
     name: 'Awesome Notes',
     url: 'https://chrome.google.com/webstore/detail/awesome-notes/oahbimjdpmgidnloajppdlhlpkepmipo',
     repositoryUrl: 'https://github.com/koki-develop/awesome-notes',
