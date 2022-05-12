@@ -1,5 +1,5 @@
-import Button, { ButtonProps } from '@mui/material/Button';
 import React from 'react';
+import Button, { ButtonProps } from '@/components/utils/Button';
 import Link, { LinkProps } from '@/components/utils/Link';
 
 export type LinkButtonProps = LinkProps & {
@@ -7,11 +7,11 @@ export type LinkButtonProps = LinkProps & {
 };
 
 const LinkButton: React.VFC<LinkButtonProps> = React.memo(props => {
-  const { buttonProps, ...linkProps } = props;
+  const { children, buttonProps, ...linkProps } = props;
 
   return (
     <Link {...linkProps}>
-      <Button {...buttonProps} />
+      <Button {...buttonProps}>{children}</Button>
     </Link>
   );
 });

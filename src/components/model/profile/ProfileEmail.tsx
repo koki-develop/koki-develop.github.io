@@ -1,10 +1,10 @@
 import DoneIcon from '@mui/icons-material/Done';
-import MailIcon from '@mui/icons-material/Mail';
 import { useTheme } from '@mui/material';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import React, { useCallback, useEffect, useState } from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
+import { IoMail } from 'react-icons/io5';
 import LinkButton from '@/components/utils/LinkButton';
 import { Routes } from '@/routes';
 
@@ -42,11 +42,8 @@ const ProfileEmail: React.VFC<ProfileEmailProps> = React.memo(props => {
           href={Routes.mailto(email)}
           external
           buttonProps={{
-            startIcon: <MailIcon />,
-            sx: {
-              fontWeight: 'bold',
-              marginBottom: 0.8,
-            },
+            className: 'font-bold mb-1',
+            startIcon: <IoMail />,
           }}
         >
           {email}

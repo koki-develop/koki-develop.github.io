@@ -1,7 +1,7 @@
-import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import Box from '@mui/material/Box';
 import { useRouter } from 'next/router';
 import React, { useCallback, useMemo } from 'react';
+import { IoChevronForward } from 'react-icons/io5';
 import HomeTabs, { HomeTabValue } from '@/components/pages/Home/HomeTabs';
 import HistoryTimeline from '@/components/model/history/HistoryTimeline';
 import ProfileBlock from '@/components/model/profile/ProfileBlock';
@@ -59,7 +59,7 @@ const HomePage: React.VFC = React.memo(() => {
               external
               buttonProps={{
                 size: 'large',
-                endIcon: <KeyboardArrowRightIcon />,
+                endIcon: <IoChevronForward />,
               }}
             >
               More
