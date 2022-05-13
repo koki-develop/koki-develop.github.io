@@ -25,7 +25,7 @@ const Button: React.VFC<ButtonProps> = React.memo(props => {
       type='button'
       className={classNames(
         className,
-        'flex items-center bg-white hover:bg-gray-100 transition shadow-md hover:shadow-lg border rounded',
+        'flex items-center rounded border bg-white shadow-md transition hover:bg-gray-100 hover:shadow-lg',
         {
           'px-4 py-2': size === 'medium',
           'px-6 py-2': size === 'large',
@@ -33,9 +33,9 @@ const Button: React.VFC<ButtonProps> = React.memo(props => {
       )}
       {...buttonProps}
     >
-      {startIcon && <span className='text-lg mr-1'>{startIcon}</span>}
+      {startIcon && <span className='mr-1 text-lg'>{startIcon}</span>}
       {children}
-      {endIcon && <span className='text-lg ml-1'>{endIcon}</span>}
+      {endIcon && <span className='ml-1 text-lg'>{endIcon}</span>}
     </button>
   );
 });

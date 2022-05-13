@@ -11,11 +11,11 @@ const Container: React.VFC<ContainerProps> = React.memo(props => {
       {...divProps}
       className={classNames(
         className,
-        'w-full flex justify-center flex-col items-center',
+        'flex w-full flex-col items-center justify-center',
       )}
     >
       <div
-        className={classNames('px-4 w-full sm:w-11/12 md:w-10/12 lg:w-9/12')}
+        className={classNames('w-full px-4 sm:w-11/12 md:w-10/12 lg:w-9/12')}
       >
         {children}
       </div>

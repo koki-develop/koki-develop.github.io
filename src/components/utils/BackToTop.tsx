@@ -28,10 +28,10 @@ const BackToTop: React.VFC = React.memo(() => {
   return (
     <button
       className={classNames(
-        'bg-white rounded-full z-50 fixed right-4 bottom-4 p-5 border shadow-lg',
+        'fixed right-4 bottom-4 z-50 rounded-full border bg-white p-5 shadow-lg',
         {
           'animate-fade-in': show,
-          'animate-fade-out pointer-events-none': !show,
+          'pointer-events-none animate-fade-out': !show,
         },
       )}
       onClick={handleClickBackToTop}
