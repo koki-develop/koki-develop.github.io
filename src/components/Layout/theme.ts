@@ -1,3 +1,5 @@
+// TODO: ファイルごと消す
+
 import {
   createTheme,
   responsiveFontSizes,
