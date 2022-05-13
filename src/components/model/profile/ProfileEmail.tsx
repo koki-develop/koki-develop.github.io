@@ -31,7 +31,7 @@ const ProfileEmail: React.VFC<ProfileEmailProps> = React.memo(props => {
   }, [showCopiedMessage]);
 
   return (
-    <div className='flex flex-col items-center'>
+    <div className='mb-4 flex flex-col items-center'>
       <div className='mb-2'>
         <LinkButton
           href={Routes.mailto(email)}

@@ -10,7 +10,7 @@ const SkillCardList: React.VFC<SkillCardListProps> = React.memo(props => {
   const { skillGroups } = props;
 
   return (
-    <div>
+    <div className='mb-4'>
       {skillGroups.map(group => (
         <div className='mb-4' key={group.name}>
           <h3 className='mb-2 text-center font-bold'>{group.name}</h3>
