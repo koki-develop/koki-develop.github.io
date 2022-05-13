@@ -1,9 +1,5 @@
-import { useTheme } from '@mui/material';
-import Box from '@mui/material/Box';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import Typography from '@mui/material/Typography';
 import React from 'react';
+import Card from '@/components/utils/Card';
 import { History } from '@/types/history';
 
 export type HistoryCardProps = {
@@ -13,33 +9,17 @@ export type HistoryCardProps = {
 const HistoryCard: React.VFC<HistoryCardProps> = React.memo(props => {
   const { history } = props;
 
-  const theme = useTheme();
-
   return (
-    <Card>
-      <CardContent>
-        <Box
-          sx={{
-            [theme.breakpoints.down('md')]: {
-              textAlign: 'left',
-            },
-          }}
-        >
-          <Typography variant='caption'>
-            {history.from} - {history.to ?? 'now'}
-          </Typography>
-          <Typography
-            component='h2'
-            variant='body1'
-            sx={{ fontWeight: 'bold', my: 1 }}
-          >
-            {history.title}
-          </Typography>
-        </Box>
-        <Box sx={{ textAlign: 'left' }}>
-          <Typography variant='body2'>{history.description}</Typography>
-        </Box>
-      </CardContent>
+    <Card className='p-4'>
+      <div>
+        <p className='mb-2 text-sm'>
+          {history.from} - {history.to ?? 'now'}
+        </p>
+        <h3 className='mb-2 font-bold'>{history.title}</h3>
+      </div>
+      <div className='text-left text-sm'>
+        <p>{history.description}</p>
+      </div>
     </Card>
   );
 });
