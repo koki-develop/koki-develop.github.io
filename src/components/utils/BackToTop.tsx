@@ -28,7 +28,7 @@ const BackToTop: React.VFC = React.memo(() => {
   return (
     <button
       className={classNames(
-        'fixed right-4 bottom-4 z-50 rounded-full border bg-white p-5 shadow-lg',
+        'fixed right-4 bottom-4 z-50 rounded-full border bg-white p-5 shadow',
         {
           'animate-fade-in': show,
           'pointer-events-none animate-fade-out': !show,

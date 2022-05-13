@@ -28,8 +28,7 @@ const Button: React.VFC<ButtonProps> = React.memo(props => {
       className={classNames(className, 'flex items-center rounded transition', {
         'px-4 py-2': size === 'medium',
         'px-6 py-2': size === 'large',
-        'border bg-white shadow-md hover:bg-gray-100 hover:shadow-lg':
-          variant === 'contained',
+        'bg-white shadow hover:bg-gray-100': variant === 'contained',
       })}
       {...buttonProps}
     >
