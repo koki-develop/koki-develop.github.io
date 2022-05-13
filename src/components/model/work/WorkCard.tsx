@@ -1,12 +1,6 @@
-import { useTheme } from '@mui/material';
-import Card from '@mui/material/Card';
-import CardActionArea from '@mui/material/CardActionArea';
-import CardContent from '@mui/material/CardContent';
-import CardHeader from '@mui/material/CardHeader';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
 import React from 'react';
 import urlJoin from 'url-join';
+import Card from '@/components/utils/Card';
 import Link from '@/components/utils/Link';
 import { Work } from '@/types/work';
 
@@ -17,58 +11,30 @@ export type WorkCardProps = {
 const WorkCard: React.VFC<WorkCardProps> = React.memo(props => {
   const { work } = props;
 
-  const theme = useTheme();
-
   return (
-    <Card raised>
+    <Card className='overflow-hidden'>
       {work.hasImage && (
-        <CardActionArea>
-          <Link external href={work.url}>
-            <CardMedia
-              image={urlJoin('/images/works', `${work.name}.png`)}
-              sx={{
-                backgroundPosition: work.imagePosition ?? 'center',
-                height: { xs: 140 },
-              }}
-            />
-          </Link>
-        </CardActionArea>
+        <Link className='relative' external href={work.url}>
+          <div className='absolute h-36 w-full bg-gray-500 opacity-0 transition hover:opacity-10' />
+          <img
+            className='h-36 w-full object-cover'
+            style={{ objectPosition: work.imagePosition ?? 'center' }}
+            src={urlJoin('/images/works', `${work.name}.png`)}
+            alt={work.name}
+          />
+        </Link>
       )}
-      <CardHeader
-        title={
-          <Link
-            external
-            href={work.url}
-            sx={{
-              color: theme.palette.primary.contrastText,
-              fontWeight: 'bold',
-            }}
-          >
+      <div className='p-2 px-4 pb-4 text-sm'>
+        <h3 className='mb-2 text-2xl font-bold'>
+          <Link external href={work.url}>
             {work.name}
           </Link>
-        }
-        titleTypographyProps={{
-          component: 'h2',
-        }}
-        sx={{ pb: 1 }}
-      />
-      <CardContent sx={{ pt: 0 }}>
-        <Typography
-          sx={{
-            fontSize: theme.typography.body2.fontSize,
-            mb: 1,
-          }}
-        >
-          {work.description}
-        </Typography>
-        <Link
-          external
-          href={work.repositoryUrl}
-          sx={{ color: theme.palette.primary.contrastText }}
-        >
+        </h3>
+        <p className='mb-2'>{work.description}</p>
+        <Link external href={work.repositoryUrl}>
           View on GitHub
         </Link>
-      </CardContent>
+      </div>
     </Card>
   );
 });
