@@ -21,9 +21,9 @@ const PrivacyPolicyPage: React.VFC = React.memo(() => {
         Cookie
         を無効にすることで収集を拒否することが出来ますので、お使いのブラウザの設定をご確認ください。この規約に関して、詳しくは{' '}
         <Link
+          className='underline'
           external
           href='https://marketingplatform.google.com/about/analytics/terms/jp/'
-          sx={{ textDecoration: 'underline' }}
         >
           Google アナリティクス利用規約
         </Link>{' '}
