@@ -1,4 +1,3 @@
-import Box from '@mui/material/Box';
 import React from 'react';
 import Link from '@/components/utils/Link';
 import { Social } from '@/types/social';
@@ -11,9 +10,9 @@ const SocialList: React.VFC<SocialListProps> = React.memo(props => {
   const { socials } = props;
 
   return (
-    <Box component='ul' sx={{ display: 'flex', justifyContent: 'center' }}>
+    <ul className='flex justify-center'>
       {socials.map(social => (
-        <Box key={social.name} component='li' sx={{ mx: 2 }}>
+        <li key={social.name} className='mx-4'>
           <Link external href={social.url}>
             <img
               src={`/images/icons/${social.name}.svg`}
@@ -22,9 +21,9 @@ const SocialList: React.VFC<SocialListProps> = React.memo(props => {
               width={40}
             />
           </Link>
-        </Box>
+        </li>
       ))}
-    </Box>
+    </ul>
   );
 });
 
