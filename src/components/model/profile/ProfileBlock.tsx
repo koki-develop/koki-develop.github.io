@@ -1,7 +1,3 @@
-import { useTheme } from '@mui/material';
-import Avatar from '@mui/material/Avatar';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
 import React from 'react';
 import { Profile } from '@/types/profile';
 
@@ -12,47 +8,25 @@ export type ProfileBlockProps = {
 const ProfileBlock: React.VFC<ProfileBlockProps> = React.memo(props => {
   const { profile } = props;
 
-  const theme = useTheme();
-
   return (
-    <Box>
-      <Box
-        sx={{
-          alignItems: 'center',
-          display: 'flex',
-          flexDirection: 'column',
-          mb: 1,
-        }}
-      >
-        <Box>
-          <Avatar
+    <div className='mb-4'>
+      <div className='mb-2 flex flex-col items-center'>
+        <div>
+          <img
             src='/images/profile.png'
-            sx={{
-              height: 150,
-              width: 150,
-            }}
+            style={{ height: 150, width: 150 }}
             alt={profile.name}
           />
-        </Box>
+        </div>
 
-        <Typography component='h1' variant='h5'>
-          {profile.name}
-        </Typography>
-        <Typography
-          component='p'
-          variant='h6'
-          sx={{ color: theme.palette.text.secondary }}
-        >
-          Developer
-        </Typography>
-      </Box>
+        <h2 className='text-2xl'>{profile.name}</h2>
+        <p className='text-xl text-gray-500'>Developer</p>
+      </div>
 
-      <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-        <Typography sx={{ textAlign: 'center', whiteSpace: 'pre' }}>
-          {profile.description}
-        </Typography>
-      </Box>
-    </Box>
+      <div className='flex justify-center'>
+        <p className='whitespace-pre text-center'>{profile.description}</p>
+      </div>
+    </div>
   );
 });
 
