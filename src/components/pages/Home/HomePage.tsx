@@ -1,7 +1,6 @@
-import Box from '@mui/material/Box';
+import classNames from 'classnames';
 import { useRouter } from 'next/router';
 import React, { useCallback, useMemo } from 'react';
-import { IoChevronForward } from 'react-icons/io5';
 import HomeTabs, { HomeTabValue } from '@/components/pages/Home/HomeTabs';
 import HistoryTimeline from '@/components/model/history/HistoryTimeline';
 import ProfileBlock from '@/components/model/profile/ProfileBlock';
@@ -9,10 +8,8 @@ import ProfileEmail from '@/components/model/profile/ProfileEmail';
 import SkillCardList from '@/components/model/skill/SkillCardList';
 import SocialList from '@/components/model/social/SocialList';
 import WorkCardList from '@/components/model/work/WorkCardList';
-import LinkButton from '@/components/utils/LinkButton';
 import Meta from '@/components/utils/Meta';
 import Section from '@/components/utils/Section';
-import { Routes } from '@/routes';
 import { config } from '@/config';
 import Layout from '@/components/Layout';
 
@@ -41,38 +38,30 @@ const HomePage: React.VFC = React.memo(() => {
 
       <HomeTabs value={selectedTab} onChange={handleChangeTab} />
 
-      <Box hidden={selectedTab !== HomeTabValue.about}>
+      <div
+        className={classNames({ hidden: selectedTab !== HomeTabValue.about })}
+      >
         <Section title='Skills'>
           <SkillCardList skillGroups={config.skillGroups} />
         </Section>
         <Section title='History'>
           <HistoryTimeline histories={config.histories} />
         </Section>
-      </Box>
+      </div>
 
-      <Box hidden={selectedTab !== HomeTabValue.works}>
+      <div
+        className={classNames({ hidden: selectedTab !== HomeTabValue.works })}
+      >
         <Section title='Works'>
           <WorkCardList works={config.works} />
-          <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
-            <LinkButton
-              href={Routes.repositories()}
-              external
-              buttonProps={{
-                size: 'large',
-                endIcon: <IoChevronForward />,
-              }}
-            >
-              More
-            </LinkButton>
-          </Box>
         </Section>
-      </Box>
+      </div>
 
-      <Box>
+      <div>
         <Section title='Contact'>
           <ProfileEmail email={config.profile.email} />
         </Section>
-      </Box>
+      </div>
     </Layout>
   );
 });
