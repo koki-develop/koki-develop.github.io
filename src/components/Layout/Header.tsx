@@ -1,32 +1,30 @@
-import AppBar from '@mui/material/AppBar';
-import Avatar from '@mui/material/Avatar';
-import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
 import React from 'react';
+import Container from '@/components/utils/Container';
 import Link from '@/components/utils/Link';
 import { Routes } from '@/routes';
 import { config } from '@/config';
-import { useDown } from '@/hooks/breakpointsHooks';
 
 const Header: React.VFC = React.memo(() => {
-  const isMdDown = useDown('md');
-
   return (
-    <AppBar position={isMdDown ? 'sticky' : 'static'}>
-      <Container maxWidth='lg'>
-        <Toolbar>
-          <Link className='flex items-center' href={Routes.home()}>
-            <Avatar src='/images/profile.png' sx={{ mr: 1 }} alt='Logo' />
-            <Typography component='h1' variant='h6'>
-              {config.profile.name}
-            </Typography>
-          </Link>
-          <Box sx={{ flexGrow: 1 }} />
-        </Toolbar>
+    <div className='sticky top-0 z-50 bg-white py-3 shadow md:static'>
+      <Container>
+        <Link
+          className='inline-flex items-center align-middle'
+          href={Routes.home()}
+        >
+          <img
+            className='mr-1'
+            style={{
+              height: 40,
+              width: 40,
+            }}
+            src='/images/profile.png'
+            alt='Logo'
+          />
+          <h1 className='text-xl font-normal'>{config.profile.name}</h1>
+        </Link>
       </Container>
-    </AppBar>
+    </div>
   );
 });
 
