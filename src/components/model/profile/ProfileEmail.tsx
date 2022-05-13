@@ -1,10 +1,7 @@
-import DoneIcon from '@mui/icons-material/Done';
-import { useTheme } from '@mui/material';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import React, { useCallback, useEffect, useState } from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import { IoMail } from 'react-icons/io5';
+import { IoCheckmarkSharp, IoMail } from 'react-icons/io5';
+import Button from '@/components/utils/Button';
 import LinkButton from '@/components/utils/LinkButton';
 import { Routes } from '@/routes';
 
@@ -14,8 +11,6 @@ export type ProfileEmailProps = {
 
 const ProfileEmail: React.VFC<ProfileEmailProps> = React.memo(props => {
   const { email } = props;
-
-  const theme = useTheme();
 
   const [showCopiedMessage, setShowCopiedMessage] = useState<boolean>(false);
 
@@ -36,35 +31,34 @@ const ProfileEmail: React.VFC<ProfileEmailProps> = React.memo(props => {
   }, [showCopiedMessage]);
 
   return (
-    <Box sx={{ alignItems: 'center', display: 'flex', flexFlow: 'column' }}>
-      <Box>
+    <div className='flex flex-col items-center'>
+      <div className='mb-2'>
         <LinkButton
           href={Routes.mailto(email)}
           external
           buttonProps={{
-            className: 'font-bold mb-1',
             startIcon: <IoMail />,
           }}
         >
           {email}
         </LinkButton>
-      </Box>
+      </div>
 
-      <Box>
+      <div>
         <CopyToClipboard text={email} onCopy={handleCopyEmail}>
           <Button
             variant='text'
-            startIcon={showCopiedMessage ? <DoneIcon color='success' /> : null}
-            sx={{
-              backgroundColor: 'transparent',
-              color: theme.palette.primary.contrastText,
-            }}
+            startIcon={
+              showCopiedMessage ? (
+                <IoCheckmarkSharp className='text-green-900' />
+              ) : null
+            }
           >
             {showCopiedMessage ? 'コピーしました' : 'クリップボードにコピー'}
           </Button>
         </CopyToClipboard>
-      </Box>
-    </Box>
+      </div>
+    </div>
   );
 });
 

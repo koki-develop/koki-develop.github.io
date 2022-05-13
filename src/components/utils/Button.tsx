@@ -5,6 +5,7 @@ export type ButtonProps = Omit<
   React.HTMLProps<HTMLButtonElement>,
   'type' | 'size'
 > & {
+  variant?: 'text' | 'contained';
   size?: 'medium' | 'large';
   startIcon?: React.ReactNode;
   endIcon?: React.ReactNode;
@@ -14,6 +15,7 @@ const Button: React.VFC<ButtonProps> = React.memo(props => {
   const {
     children,
     className,
+    variant = 'contained',
     size = 'medium',
     startIcon,
     endIcon,
@@ -23,14 +25,12 @@ const Button: React.VFC<ButtonProps> = React.memo(props => {
   return (
     <button
       type='button'
-      className={classNames(
-        className,
-        'flex items-center rounded border bg-white shadow-md transition hover:bg-gray-100 hover:shadow-lg',
-        {
-          'px-4 py-2': size === 'medium',
-          'px-6 py-2': size === 'large',
-        },
-      )}
+      className={classNames(className, 'flex items-center rounded transition', {
+        'px-4 py-2': size === 'medium',
+        'px-6 py-2': size === 'large',
+        'border bg-white shadow-md hover:bg-gray-100 hover:shadow-lg':
+          variant === 'contained',
+      })}
       {...buttonProps}
     >
       {startIcon && <span className='mr-1 text-lg'>{startIcon}</span>}
