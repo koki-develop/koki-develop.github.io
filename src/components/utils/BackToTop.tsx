@@ -1,18 +1,10 @@
-import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
-import { useTheme } from '@mui/material';
-import Fab from '@mui/material/Fab';
-import Zoom from '@mui/material/Zoom';
-import useScrollTrigger from '@mui/material/useScrollTrigger';
-import React, { useCallback } from 'react';
+import classNames from 'classnames';
+import React, { useCallback, useEffect, useState } from 'react';
+import { IoChevronUp } from 'react-icons/io5';
 import Scroll from 'react-scroll';
 
 const BackToTop: React.VFC = React.memo(() => {
-  const theme = useTheme();
-
-  const trigger = useScrollTrigger({
-    disableHysteresis: true,
-    threshold: 100,
-  });
+  const [show, setShow] = useState<boolean>(false);
 
   const handleClickBackToTop = useCallback(() => {
     Scroll.animateScroll.scrollToTop({
@@ -21,21 +13,31 @@ const BackToTop: React.VFC = React.memo(() => {
     });
   }, []);
 
+  const handleScroll = useCallback(() => {
+    const scroll = window.scrollY;
+    setShow(scroll > 100);
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [handleScroll]);
+
   return (
-    <Zoom in={trigger}>
-      <Fab
-        color='primary'
-        onClick={handleClickBackToTop}
-        sx={{
-          bottom: theme.spacing(2),
-          position: 'fixed',
-          right: theme.spacing(2),
-          zIndex: theme.zIndex.modal,
-        }}
-      >
-        <KeyboardArrowUpIcon />
-      </Fab>
-    </Zoom>
+    <button
+      className={classNames(
+        'bg-white rounded-full z-50 fixed right-4 bottom-4 p-5 border shadow-lg',
+        {
+          'animate-fade-in': show,
+          'animate-fade-out pointer-events-none': !show,
+        },
+      )}
+      onClick={handleClickBackToTop}
+    >
+      <IoChevronUp className='text-lg' />
+    </button>
   );
 });
 
