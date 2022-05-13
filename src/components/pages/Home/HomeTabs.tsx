@@ -1,6 +1,5 @@
-import Tab from '@mui/material/Tab';
-import Tabs from '@mui/material/Tabs';
-import React, { useCallback } from 'react';
+import React from 'react';
+import HomeTab from '@/components/pages/Home/HomeTab';
 
 export const HomeTabValue = {
   about: 'about',
@@ -11,45 +10,23 @@ export type HomeTabValue = typeof HomeTabValue[keyof typeof HomeTabValue];
 
 export type HomeTabsProps = {
   value: HomeTabValue;
-  onChange: (value: HomeTabValue) => void;
-};
-
-const valueToLabel = (value: HomeTabValue) => {
-  switch (value) {
-    case HomeTabValue.about:
-      return 'About';
-    case HomeTabValue.works:
-      return 'Works';
-  }
+  onSelect: (value: HomeTabValue) => void;
 };
 
 const HomeTabs: React.VFC<HomeTabsProps> = React.memo(props => {
-  const { value, onChange } = props;
-
-  const handleChangeTab = useCallback(
-    (_event: React.SyntheticEvent, tab: HomeTabValue) => {
-      onChange(tab);
-    },
-    [onChange],
-  );
+  const { value, onSelect: onChange } = props;
 
   return (
-    <Tabs
-      textColor='secondary'
-      indicatorColor='secondary'
-      value={value}
-      onChange={handleChangeTab}
-      centered
-    >
+    <ul className='flex justify-center'>
       {Object.values(HomeTabValue).map(tab => (
-        <Tab
+        <HomeTab
           key={tab}
           value={tab}
-          label={valueToLabel(tab)}
-          sx={{ fontWeight: value === tab ? 'bold' : null }}
+          active={value === tab}
+          onSelect={onChange}
         />
       ))}
-    </Tabs>
+    </ul>
   );
 });
 

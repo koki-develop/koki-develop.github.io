@@ -23,7 +23,7 @@ const HomePage: React.VFC = React.memo(() => {
     );
   }, [router.query.tab]);
 
-  const handleChangeTab = useCallback(
+  const handleSelectTab = useCallback(
     (tab: HomeTabValue) => {
       router.replace({ search: `tab=${tab}` }, undefined, { scroll: false });
     },
@@ -36,7 +36,7 @@ const HomePage: React.VFC = React.memo(() => {
       <ProfileBlock profile={config.profile} />
       <SocialList socials={config.socials} />
 
-      <HomeTabs value={selectedTab} onChange={handleChangeTab} />
+      <HomeTabs value={selectedTab} onSelect={handleSelectTab} />
 
       <div
         className={classNames({ hidden: selectedTab !== HomeTabValue.about })}
