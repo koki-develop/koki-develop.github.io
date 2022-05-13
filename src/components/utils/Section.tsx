@@ -1,8 +1,5 @@
-import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
-import Divider from '@mui/material/Divider';
-import Typography from '@mui/material/Typography';
 import React from 'react';
+import Container from '@/components/utils/Container';
 
 export type SectionProps = {
   children: React.ReactNode;
@@ -13,23 +10,13 @@ const Section: React.VFC<SectionProps> = React.memo(props => {
   const { children, title } = props;
 
   return (
-    <Box>
-      <Divider />
-      <Container maxWidth='md' component='section' sx={{ my: 2 }}>
-        <Typography
-          component='h1'
-          variant='h4'
-          sx={{
-            fontWeight: 'bold',
-            mb: 2,
-            textAlign: 'center',
-          }}
-        >
-          {title}
-        </Typography>
-        <Box>{children}</Box>
+    <div className='mb-2'>
+      <div className='border-t mb-2' />
+      <Container>
+        <h2 className='text-3xl text-center font-bold mb-2'>{title}</h2>
+        <div>{children}</div>
       </Container>
-    </Box>
+    </div>
   );
 });
 
