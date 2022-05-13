@@ -10,13 +10,7 @@ import { Routes } from '@/routes';
 import { config } from '@/config';
 import { useDown } from '@/hooks/breakpointsHooks';
 
-export type HeaderProps = {
-  content?: React.ReactNode;
-};
-
-const Header: React.VFC<HeaderProps> = React.memo(props => {
-  const { content } = props;
-
+const Header: React.VFC = React.memo(() => {
   const isMdDown = useDown('md');
 
   return (
@@ -30,7 +24,6 @@ const Header: React.VFC<HeaderProps> = React.memo(props => {
             </Typography>
           </Link>
           <Box sx={{ flexGrow: 1 }} />
-          {content && <Box>{content}</Box>}
         </Toolbar>
       </Container>
     </AppBar>
