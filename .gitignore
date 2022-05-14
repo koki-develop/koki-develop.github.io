@@ -1,15 +1,15 @@
-/node_modules/
-/.next/
-/.env.local
-/.envrc
-/tsconfig.tsbuildinfo
+node_modules
+
+.cache
+.env
+.vercel
+.output
+
+/build/
+/public/build
+/api/index.js
+/api/index.js.map
+/app/styles/app.compiled.css
 
 /public/robots.txt
-/public/sitemap*.xml
-/public/notes/
-
-# terraform
-**/.terraform/*
-*.tfstate
-*.tfstate.*
-*.tfvars
+/public/sitemap.xml
