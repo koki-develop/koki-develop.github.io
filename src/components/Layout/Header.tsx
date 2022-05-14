@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 import Container from '@/components/utils/Container';
 import Link from '@/components/utils/Link';
@@ -12,12 +13,10 @@ const Header: React.VFC = React.memo(() => {
           className='inline-flex items-center align-middle'
           href={Routes.home()}
         >
-          <img
+          <Image
             className='mr-1'
-            style={{
-              height: 40,
-              width: 40,
-            }}
+            height={40}
+            width={40}
             src='/images/profile.png'
             alt='Logo'
           />

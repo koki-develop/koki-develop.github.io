@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 import Link from '@/components/utils/Link';
 import { Social } from '@/types/social';
@@ -14,7 +15,7 @@ const SocialList: React.VFC<SocialListProps> = React.memo(props => {
       {socials.map(social => (
         <li key={social.name} className='mx-3'>
           <Link external href={social.url}>
-            <img
+            <Image
               src={`/images/icons/${social.name}.svg`}
               alt={social.name}
               height={40}

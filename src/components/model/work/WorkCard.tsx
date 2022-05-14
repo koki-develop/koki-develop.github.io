@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 import urlJoin from 'url-join';
 import Card from '@/components/utils/Card';
@@ -16,12 +17,15 @@ const WorkCard: React.VFC<WorkCardProps> = React.memo(props => {
       {work.hasImage && (
         <Link className='relative' external href={work.url}>
           <div className='absolute h-36 w-full bg-gray-500 opacity-0 transition hover:opacity-10' />
-          <img
-            className='h-36 w-full object-cover'
-            style={{ objectPosition: work.imagePosition ?? 'center' }}
-            src={urlJoin('/images/works', `${work.name}.png`)}
-            alt={work.name}
-          />
+          <div className='h-36 w-full'>
+            <Image
+              layout='fill'
+              className='object-cover'
+              objectPosition={work.imagePosition ?? 'center'}
+              src={urlJoin('/images/works', `${work.name}.png`)}
+              alt={work.name}
+            />
+          </div>
         </Link>
       )}
       <div className='p-2 px-4 pb-4 text-sm'>

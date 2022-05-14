@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 import { Profile } from '@/types/profile';
 
@@ -12,9 +13,10 @@ const ProfileBlock: React.VFC<ProfileBlockProps> = React.memo(props => {
     <div className='mb-4'>
       <div className='mb-2 flex flex-col items-center'>
         <div>
-          <img
+          <Image
             src='/images/profile.png'
-            style={{ height: 150, width: 150 }}
+            height={150}
+            width={150}
             alt={profile.name}
           />
         </div>
