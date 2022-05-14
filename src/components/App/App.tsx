@@ -1,8 +1,9 @@
+import { NextPage } from 'next';
 import { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
-import React, { memo, useEffect } from 'react';
+import { createElement, memo, useEffect } from 'react';
 
-const App: React.VFC<AppProps> = memo(({ Component, pageProps }) => {
+const App: NextPage<AppProps> = memo(({ Component, pageProps }) => {
   const router = useRouter();
 
   useEffect(() => {
@@ -12,7 +13,7 @@ const App: React.VFC<AppProps> = memo(({ Component, pageProps }) => {
     });
   }, [router.pathname]);
 
-  return <Component {...pageProps} />;
+  return createElement(Component, pageProps);
 });
 
 App.displayName = 'App';
