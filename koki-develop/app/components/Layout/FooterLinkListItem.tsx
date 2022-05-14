@@ -1,5 +1,6 @@
 import React, { memo } from 'react';
-import Link, { LinkProps } from '@/components/utils/Link';
+import type { LinkProps } from '@/components/utils/Link';
+import Link from '@/components/utils/Link';
 
 export type LinkListItemProps = {
   children: React.ReactNode;

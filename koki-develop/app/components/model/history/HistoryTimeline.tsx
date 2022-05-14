@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import HistoryTimelineItem from '@/components/model/history/HistoryTimelineItem';
-import { History } from '@/types/history';
+import type { History } from '@/types/history';
 
 export type HistoryTimelineProps = {
   histories: History[];

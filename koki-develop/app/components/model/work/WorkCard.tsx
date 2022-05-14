@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import urlJoin from 'url-join';
 import Card from '@/components/utils/Card';
 import Link from '@/components/utils/Link';
-import { Work } from '@/types/work';
+import type { Work } from '@/types/work';
 
 export type WorkCardProps = {
   work: Work;

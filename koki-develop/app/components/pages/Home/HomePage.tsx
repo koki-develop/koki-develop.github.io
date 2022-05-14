@@ -9,7 +9,8 @@ import SocialList from '@/components/model/social/SocialList';
 import WorkCardList from '@/components/model/work/WorkCardList';
 import Section from '@/components/utils/Section';
 import { config } from '@/config';
-import { json, LoaderFunction } from '@remix-run/node';
+import type { LoaderFunction } from '@remix-run/node';
+import { json } from '@remix-run/node';
 import { useLoaderData, useNavigate } from '@remix-run/react';
 
 type LoaderData = {

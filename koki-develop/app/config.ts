@@ -1,8 +1,8 @@
-import { History } from '@/types/history';
-import { Profile } from '@/types/profile';
-import { SkillGroup } from '@/types/skillGroup';
-import { Social } from '@/types/social';
-import { Work } from '@/types/work';
+import type { History } from '@/types/history';
+import type { Profile } from '@/types/profile';
+import type { SkillGroup } from '@/types/skillGroup';
+import type { Social } from '@/types/social';
+import type { Work } from '@/types/work';
 
 const profile: Profile = {
   name: 'Koki Sato',

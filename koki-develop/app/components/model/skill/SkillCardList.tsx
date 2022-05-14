@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import SkillCard from '@/components/model/skill/SkillCard';
-import { SkillGroup } from '@/types/skillGroup';
+import type { SkillGroup } from '@/types/skillGroup';
 
 export type SkillCardListProps = {
   skillGroups: SkillGroup[];

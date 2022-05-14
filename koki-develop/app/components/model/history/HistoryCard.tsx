@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import Card from '@/components/utils/Card';
-import { History } from '@/types/history';
+import type { History } from '@/types/history';
 
 export type HistoryCardProps = {
   history: History;

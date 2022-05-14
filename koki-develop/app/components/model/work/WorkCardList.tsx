@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import { IoChevronForward } from 'react-icons/io5';
 import WorkCard from '@/components/model/work/WorkCard';
 import LinkButton from '@/components/utils/LinkButton';
-import { Work } from '@/types/work';
+import type { Work } from '@/types/work';
 import { Routes } from '@/routes';
 
 export type WorkCardListProps = {
