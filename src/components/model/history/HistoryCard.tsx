@@ -12,7 +12,7 @@ const HistoryCard: React.VFC<HistoryCardProps> = React.memo(props => {
   return (
     <Card className='p-4'>
       <div>
-        <p className='mb-2 text-sm'>
+        <p className='mb-2 text-xs text-gray-500'>
           {history.from} - {history.to ?? 'now'}
         </p>
         <h3 className='mb-2 font-bold'>{history.title}</h3>

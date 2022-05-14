@@ -12,7 +12,7 @@ const SocialList: React.VFC<SocialListProps> = React.memo(props => {
   return (
     <ul className='mb-4 flex justify-center'>
       {socials.map(social => (
-        <li key={social.name} className='mx-4'>
+        <li key={social.name} className='mx-3'>
           <Link external href={social.url}>
             <img
               src={`/images/icons/${social.name}.svg`}

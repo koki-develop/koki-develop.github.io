@@ -17,7 +17,7 @@ const HomeTabs: React.VFC<HomeTabsProps> = React.memo(props => {
   const { value, onSelect: onChange } = props;
 
   return (
-    <ul className='flex justify-center'>
+    <ul className='flex justify-center' style={{ marginBottom: '-1px' }}>
       {Object.values(HomeTabValue).map(tab => (
         <HomeTab
           key={tab}

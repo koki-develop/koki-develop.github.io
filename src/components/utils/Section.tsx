@@ -11,10 +11,10 @@ const Section: React.VFC<SectionProps> = React.memo(props => {
 
   return (
     <section {...divProps} className={classNames(className, 'mb-4')}>
-      <div className='mb-2 border-t' />
+      <div className='mb-4 border-t border-gray-300' />
       <Container>
         <h2 className='mb-2 text-center text-3xl font-bold'>{title}</h2>
-        <div>{children}</div>
+        <div className='py-2'>{children}</div>
       </Container>
     </section>
   );
