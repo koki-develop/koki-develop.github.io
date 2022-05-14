@@ -1,12 +1,15 @@
 import NextLink from 'next/link';
-import React from 'react';
+import React, { memo } from 'react';
 
-export type LinkProps = Omit<React.HTMLProps<HTMLAnchorElement>, 'href'> & {
+export type LinkProps = Omit<
+  React.HTMLProps<HTMLAnchorElement>,
+  'ref' | 'href'
+> & {
   href: string;
   external?: boolean;
 };
 
-const Link: React.VFC<LinkProps> = React.memo(props => {
+const Link: React.VFC<LinkProps> = memo(props => {
   const { external, ...linkProps } = props;
 
   if (!external) {

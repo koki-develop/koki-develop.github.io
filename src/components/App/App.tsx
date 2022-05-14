@@ -1,8 +1,8 @@
 import { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
-import React, { useEffect } from 'react';
+import React, { memo, useEffect } from 'react';
 
-const App: React.VFC<AppProps> = React.memo(({ Component, pageProps }) => {
+const App: React.VFC<AppProps> = memo(({ Component, pageProps }) => {
   const router = useRouter();
 
   useEffect(() => {

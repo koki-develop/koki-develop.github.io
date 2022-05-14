@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import Card from '@/components/utils/Card';
 import { History } from '@/types/history';
 
@@ -6,7 +6,7 @@ export type HistoryCardProps = {
   history: History;
 };
 
-const HistoryCard: React.VFC<HistoryCardProps> = React.memo(props => {
+const HistoryCard: React.VFC<HistoryCardProps> = memo(props => {
   const { history } = props;
 
   return (

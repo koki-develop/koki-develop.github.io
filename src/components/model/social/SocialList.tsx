@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import React from 'react';
+import React, { memo } from 'react';
 import Link from '@/components/utils/Link';
 import { Social } from '@/types/social';
 
@@ -7,7 +7,7 @@ export type SocialListProps = {
   socials: Social[];
 };
 
-const SocialList: React.VFC<SocialListProps> = React.memo(props => {
+const SocialList: React.VFC<SocialListProps> = memo(props => {
   const { socials } = props;
 
   return (

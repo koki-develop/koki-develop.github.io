@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { useRouter } from 'next/router';
-import React, { useCallback, useMemo } from 'react';
+import React, { memo, useCallback, useMemo } from 'react';
 import HomeTabs, { HomeTabValue } from '@/components/pages/Home/HomeTabs';
 import HistoryTimeline from '@/components/model/history/HistoryTimeline';
 import ProfileBlock from '@/components/model/profile/ProfileBlock';
@@ -13,7 +13,7 @@ import Section from '@/components/utils/Section';
 import { config } from '@/config';
 import Layout from '@/components/Layout';
 
-const HomePage: React.VFC = React.memo(() => {
+const HomePage: React.VFC = memo(() => {
   const router = useRouter();
 
   const selectedTab = useMemo(() => {

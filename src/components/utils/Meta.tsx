@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import React, { useMemo } from 'react';
+import React, { memo, useMemo } from 'react';
 import urlJoin from 'url-join';
 import { config } from '@/config';
 
@@ -13,7 +13,7 @@ export type MetaProps = {
   twitterCard?: string;
 };
 
-const Meta: React.VFC<MetaProps> = React.memo(props => {
+const Meta: React.VFC<MetaProps> = memo(props => {
   const {
     hideSiteName,
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import SkillCard from '@/components/model/skill/SkillCard';
 import { SkillGroup } from '@/types/skillGroup';
 
@@ -6,7 +6,7 @@ export type SkillCardListProps = {
   skillGroups: SkillGroup[];
 };
 
-const SkillCardList: React.VFC<SkillCardListProps> = React.memo(props => {
+const SkillCardList: React.VFC<SkillCardListProps> = memo(props => {
   const { skillGroups } = props;
 
   return (

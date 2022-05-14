@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { memo, useCallback, useEffect, useState } from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { IoCheckmarkSharp, IoMail } from 'react-icons/io5';
 import Button from '@/components/utils/Button';
@@ -9,7 +9,7 @@ export type ProfileEmailProps = {
   email: string;
 };
 
-const ProfileEmail: React.VFC<ProfileEmailProps> = React.memo(props => {
+const ProfileEmail: React.VFC<ProfileEmailProps> = memo(props => {
   const { email } = props;
 
   const [showCopiedMessage, setShowCopiedMessage] = useState<boolean>(false);

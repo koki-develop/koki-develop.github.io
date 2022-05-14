@@ -1,9 +1,9 @@
 import classNames from 'classnames';
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { memo, useCallback, useEffect, useState } from 'react';
 import { IoChevronUp } from 'react-icons/io5';
 import Scroll from 'react-scroll';
 
-const BackToTop: React.VFC = React.memo(() => {
+const BackToTop: React.VFC = memo(() => {
   const [show, setShow] = useState<boolean>(false);
 
   const handleClickBackToTop = useCallback(() => {

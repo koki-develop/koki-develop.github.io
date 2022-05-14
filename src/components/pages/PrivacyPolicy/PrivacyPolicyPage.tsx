@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { memo } from 'react';
 import PrivacyPolicyItem from '@/components/pages/PrivacyPolicy/PrivacyPolicyItem';
 import Link from '@/components/utils/Link';
 import Meta from '@/components/utils/Meta';
 import Layout from '@/components/Layout';
 
-const PrivacyPolicyPage: React.VFC = React.memo(() => {
+const PrivacyPolicyPage: React.VFC = memo(() => {
   return (
     <Layout>
       <Meta title='プライバシーポリシー' />

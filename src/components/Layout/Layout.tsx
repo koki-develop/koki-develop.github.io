@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import Footer from '@/components/Layout/Footer';
 import Header from '@/components/Layout/Header';
 import BackToTop from '@/components/utils/BackToTop';
@@ -7,7 +7,7 @@ export type LayoutProps = {
   children: React.ReactNode;
 };
 
-const Layout: React.VFC<LayoutProps> = React.memo(props => {
+const Layout: React.VFC<LayoutProps> = memo(props => {
   const { children } = props;
 
   return (

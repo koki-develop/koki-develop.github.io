@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { memo } from 'react';
 import FooterLinkListItem from '@/components/Layout/FooterLinkListItem';
 import { Routes } from '@/routes';
 
-const FooterLinkList: React.VFC = React.memo(() => {
+const FooterLinkList: React.VFC = memo(() => {
   return (
     <ul>
       <FooterLinkListItem

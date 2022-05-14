@@ -1,12 +1,12 @@
 import Image from 'next/image';
-import React from 'react';
+import React, { memo } from 'react';
 import { Profile } from '@/types/profile';
 
 export type ProfileBlockProps = {
   profile: Profile;
 };
 
-const ProfileBlock: React.VFC<ProfileBlockProps> = React.memo(props => {
+const ProfileBlock: React.VFC<ProfileBlockProps> = memo(props => {
   const { profile } = props;
 
   return (

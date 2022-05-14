@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { IoChevronForward } from 'react-icons/io5';
 import WorkCard from '@/components/model/work/WorkCard';
 import LinkButton from '@/components/utils/LinkButton';
@@ -9,7 +9,7 @@ export type WorkCardListProps = {
   works: Work[];
 };
 
-const WorkCardList: React.VFC<WorkCardListProps> = React.memo(props => {
+const WorkCardList: React.VFC<WorkCardListProps> = memo(props => {
   const { works } = props;
 
   return (

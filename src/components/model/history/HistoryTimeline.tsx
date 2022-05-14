@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import HistoryTimelineItem from '@/components/model/history/HistoryTimelineItem';
 import { History } from '@/types/history';
 
@@ -6,7 +6,7 @@ export type HistoryTimelineProps = {
   histories: History[];
 };
 
-const HistoryTimeline: React.VFC<HistoryTimelineProps> = React.memo(props => {
+const HistoryTimeline: React.VFC<HistoryTimelineProps> = memo(props => {
   const { histories } = props;
 
   return (

@@ -1,9 +1,9 @@
 import classNames from 'classnames';
-import React from 'react';
+import React, { memo } from 'react';
 
 export type CardProps = React.HTMLProps<HTMLDivElement>;
 
-const Card: React.VFC<CardProps> = React.memo(props => {
+const Card: React.VFC<CardProps> = memo(props => {
   const { className, ...divProps } = props;
 
   return (

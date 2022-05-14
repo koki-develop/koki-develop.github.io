@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React from 'react';
+import React, { memo } from 'react';
 
 export type ButtonProps = Omit<
   React.HTMLProps<HTMLButtonElement>,
@@ -11,7 +11,7 @@ export type ButtonProps = Omit<
   endIcon?: React.ReactNode;
 };
 
-const Button: React.VFC<ButtonProps> = React.memo(props => {
+const Button: React.VFC<ButtonProps> = memo(props => {
   const {
     children,
     className,

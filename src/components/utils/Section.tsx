@@ -1,12 +1,12 @@
 import classNames from 'classnames';
-import React from 'react';
+import React, { memo } from 'react';
 import Container from '@/components/utils/Container';
 
 export type SectionProps = React.HTMLProps<HTMLDivElement> & {
   title: string;
 };
 
-const Section: React.VFC<SectionProps> = React.memo(props => {
+const Section: React.VFC<SectionProps> = memo(props => {
   const { children, className, title, ...divProps } = props;
 
   return (

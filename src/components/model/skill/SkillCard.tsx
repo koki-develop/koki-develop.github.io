@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import React from 'react';
+import React, { memo } from 'react';
 import urlJoin from 'url-join';
 import Card from '@/components/utils/Card';
 import Link from '@/components/utils/Link';
@@ -9,7 +9,7 @@ export type SkillCardProps = {
   skill: Skill;
 };
 
-const SkillCard: React.VFC<SkillCardProps> = React.memo(props => {
+const SkillCard: React.VFC<SkillCardProps> = memo(props => {
   const { skill } = props;
 
   return (

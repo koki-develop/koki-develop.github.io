@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React, { useCallback } from 'react';
+import React, { memo, useCallback } from 'react';
 import { HomeTabValue } from '@/components/pages/Home/HomeTabs';
 
 export type HomeTabProps = {
@@ -17,7 +17,7 @@ const valueToLabel = (value: HomeTabValue) => {
   }
 };
 
-const HomeTab: React.VFC<HomeTabProps> = React.memo(props => {
+const HomeTab: React.VFC<HomeTabProps> = memo(props => {
   const { value, active, onSelect } = props;
 
   const handleSelect = useCallback(() => {

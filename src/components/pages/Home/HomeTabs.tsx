@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import HomeTab from '@/components/pages/Home/HomeTab';
 
 export const HomeTabValue = {
@@ -13,7 +13,7 @@ export type HomeTabsProps = {
   onSelect: (value: HomeTabValue) => void;
 };
 
-const HomeTabs: React.VFC<HomeTabsProps> = React.memo(props => {
+const HomeTabs: React.VFC<HomeTabsProps> = memo(props => {
   const { value, onSelect: onChange } = props;
 
   return (
