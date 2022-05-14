@@ -1,12 +1,12 @@
 import React, { memo } from 'react';
 import HomeTab from '@/components/pages/Home/HomeTab';
 
-export const HomeTabValue = {
+export const HomeTabValues = {
   about: 'about',
   works: 'works',
 } as const;
 
-export type HomeTabValue = typeof HomeTabValue[keyof typeof HomeTabValue];
+export type HomeTabValue = typeof HomeTabValues[keyof typeof HomeTabValues];
 
 export type HomeTabsProps = {
   value: HomeTabValue;
@@ -18,7 +18,7 @@ const HomeTabs: React.VFC<HomeTabsProps> = memo(props => {
 
   return (
     <ul className='flex justify-center' style={{ marginBottom: '-1px' }}>
-      {Object.values(HomeTabValue).map(tab => (
+      {Object.values(HomeTabValues).map(tab => (
         <HomeTab
           key={tab}
           value={tab}

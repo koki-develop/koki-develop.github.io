@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import React, { memo, useCallback, useMemo, useState } from 'react';
-import HomeTabs, { HomeTabValue } from '@/components/pages/Home/HomeTabs';
+import type { HomeTabValue } from '@/components/pages/Home/HomeTabs';
+import HomeTabs, { HomeTabValues } from '@/components/pages/Home/HomeTabs';
 import HistoryTimeline from '@/components/model/history/HistoryTimeline';
 import ProfileBlock from '@/components/model/profile/ProfileBlock';
 import ProfileEmail from '@/components/model/profile/ProfileEmail';
@@ -31,7 +32,7 @@ const HomePage: React.VFC = memo(() => {
 
   const selectedTab = useMemo(() => {
     return (
-      Object.values(HomeTabValue).find(v => v === tab) || HomeTabValue.about
+      Object.values(HomeTabValues).find(v => v === tab) || HomeTabValues.about
     );
   }, [tab]);
 
@@ -51,7 +52,7 @@ const HomePage: React.VFC = memo(() => {
       <HomeTabs value={selectedTab} onSelect={handleSelectTab} />
 
       <div
-        className={classNames({ hidden: selectedTab !== HomeTabValue.about })}
+        className={classNames({ hidden: selectedTab !== HomeTabValues.about })}
       >
         <Section title='Skills'>
           <SkillCardList skillGroups={config.skillGroups} />
@@ -62,7 +63,7 @@ const HomePage: React.VFC = memo(() => {
       </div>
 
       <div
-        className={classNames({ hidden: selectedTab !== HomeTabValue.works })}
+        className={classNames({ hidden: selectedTab !== HomeTabValues.works })}
       >
         <Section title='Works'>
           <WorkCardList works={config.works} />

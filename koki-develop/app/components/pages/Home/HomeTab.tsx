@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import React, { memo, useCallback } from 'react';
-import { HomeTabValue } from '@/components/pages/Home/HomeTabs';
+import type { HomeTabValue } from '@/components/pages/Home/HomeTabs';
+import { HomeTabValues } from '@/components/pages/Home/HomeTabs';
 
 export type HomeTabProps = {
   value: HomeTabValue;
@@ -10,9 +11,9 @@ export type HomeTabProps = {
 
 const valueToLabel = (value: HomeTabValue) => {
   switch (value) {
-    case HomeTabValue.about:
+    case HomeTabValues.about:
       return 'About';
-    case HomeTabValue.works:
+    case HomeTabValues.works:
       return 'Works';
   }
 };
