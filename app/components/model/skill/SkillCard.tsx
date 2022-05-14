@@ -1,5 +1,5 @@
+import path from 'path';
 import React, { memo } from 'react';
-import urlJoin from 'url-join';
 import type { Skill } from '@/types/skill';
 import Card from '@/components/utils/Card';
 import Link from '@/components/utils/Link';
@@ -17,7 +17,7 @@ const SkillCard: React.VFC<SkillCardProps> = memo(props => {
         <div className='relative mb-1 h-12 w-12 sm:h-14 sm:h-14 md:h-16 md:w-16'>
           <img
             className='h-full w-full'
-            src={urlJoin('/images/icons', `${skill.name}.svg`)}
+            src={path.join('/images/icons', `${skill.name}.svg`)}
             alt={skill.name}
           />
         </div>

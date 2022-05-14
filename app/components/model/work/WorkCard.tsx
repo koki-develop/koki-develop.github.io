@@ -1,5 +1,5 @@
+import path from 'path';
 import React, { memo } from 'react';
-import urlJoin from 'url-join';
 import type { Work } from '@/types/work';
 import Card from '@/components/utils/Card';
 import Link from '@/components/utils/Link';
@@ -22,7 +22,7 @@ const WorkCard: React.VFC<WorkCardProps> = memo(props => {
               style={{
                 objectPosition: work.imagePosition ?? 'center',
               }}
-              src={urlJoin('/images/works', `${work.name}.png`)}
+              src={path.join('/images/works', `${work.name}.png`)}
               alt={work.name}
             />
           </div>
