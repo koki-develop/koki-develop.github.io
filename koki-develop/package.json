@@ -9,7 +9,8 @@
     "dev": "run-p dev:*",
     "dev:remix": "remix dev",
     "dev:css": "tailwindcss -w -i ./app/styles/app.css -o app/styles/app.compiled.css",
-    "lint": "eslint --max-warnings 0 --ext .js,.ts,.tsx ."
+    "lint": "eslint --max-warnings 0 --ext .js,.ts,.tsx .",
+    "fmt": "yarn lint --fix && prettier --write ."
   },
   "dependencies": {
     "@remix-run/node": "^1.4.3",
