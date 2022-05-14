@@ -1,12 +1,5 @@
 import type { LinksFunction, MetaFunction } from '@remix-run/node';
-import {
-  Links,
-  LiveReload,
-  Meta,
-  Outlet,
-  Scripts,
-  ScrollRestoration,
-} from '@remix-run/react';
+import { Links, LiveReload, Meta, Outlet, Scripts } from '@remix-run/react';
 import Layout from '@/components/Layout';
 import styles from '@/styles/app.compiled.css';
 
@@ -31,7 +24,6 @@ export default function App() {
         <Layout>
           <Outlet />
         </Layout>
-        <ScrollRestoration />
         <Scripts />
         <LiveReload />
       </body>
