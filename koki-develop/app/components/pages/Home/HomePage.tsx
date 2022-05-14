@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React, { memo, useCallback, useMemo } from 'react';
+import React, { memo, useCallback, useMemo, useState } from 'react';
 import HomeTabs, { HomeTabValue } from '@/components/pages/Home/HomeTabs';
 import HistoryTimeline from '@/components/model/history/HistoryTimeline';
 import ProfileBlock from '@/components/model/profile/ProfileBlock';
@@ -9,19 +9,38 @@ import SocialList from '@/components/model/social/SocialList';
 import WorkCardList from '@/components/model/work/WorkCardList';
 import Section from '@/components/utils/Section';
 import { config } from '@/config';
+import { json, LoaderFunction } from '@remix-run/node';
+import { useLoaderData, useNavigate } from '@remix-run/react';
+
+type LoaderData = {
+  tab: string | null;
+};
+
+export const loader: LoaderFunction = async ({ request }) => {
+  const url = new URL(request.url);
+  const tab = url.searchParams.get('tab');
+
+  return json<LoaderData>({ tab });
+};
 
 const HomePage: React.VFC = memo(() => {
-  // TODO: 後で直す
+  const { tab: defaultTab } = useLoaderData<LoaderData>();
+  const navigate = useNavigate();
+  const [tab, setTab] = useState<string | null>(defaultTab);
+
   const selectedTab = useMemo(() => {
     return (
-      // Object.values(HomeTabValue).find(v => v === router.query.tab) ||
-      HomeTabValue.about
+      Object.values(HomeTabValue).find(v => v === tab) || HomeTabValue.about
     );
-  }, []);
+  }, [tab]);
 
-  const handleSelectTab = useCallback((tab: HomeTabValue) => {
-    console.log('tab:', tab);
-  }, []);
+  const handleSelectTab = useCallback(
+    (tab: HomeTabValue) => {
+      setTab(tab);
+      navigate({ search: `tab=${tab}` }, { replace: true });
+    },
+    [navigate],
+  );
 
   return (
     <div>
