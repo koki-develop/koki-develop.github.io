@@ -1,7 +1,7 @@
-import type { NextPage } from 'next';
-import type { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
 import { createElement, memo, useEffect } from 'react';
+import type { NextPage } from 'next';
+import type { AppProps } from 'next/app';
 
 const App: NextPage<AppProps> = memo(({ Component, pageProps }) => {
   const router = useRouter();

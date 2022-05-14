@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
-import Link from '@/components/utils/Link';
 import type { Social } from '@/types/social';
+import Link from '@/components/utils/Link';
 
 export type SocialListProps = {
   socials: Social[];

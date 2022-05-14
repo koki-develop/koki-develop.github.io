@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
-import FooterLinkListItem from '@/components/Layout/FooterLinkListItem';
 import { Routes } from '@/routes';
+import FooterLinkListItem from '@/components/Layout/FooterLinkListItem';
 
 const FooterLinkList: React.VFC = memo(() => {
   return (

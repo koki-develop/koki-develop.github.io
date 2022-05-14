@@ -1,9 +1,9 @@
 import React, { memo, useCallback, useEffect, useState } from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { IoCheckmarkSharp, IoMail } from 'react-icons/io5';
+import { Routes } from '@/routes';
 import Button from '@/components/utils/Button';
 import LinkButton from '@/components/utils/LinkButton';
-import { Routes } from '@/routes';
 
 export type ProfileEmailProps = {
   email: string;

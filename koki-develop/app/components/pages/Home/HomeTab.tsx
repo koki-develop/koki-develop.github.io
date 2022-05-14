@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import React, { memo, useCallback } from 'react';
-import type { HomeTabValue } from '@/components/pages/Home/HomeTabs';
 import { HomeTabValues } from '@/components/pages/Home/HomeTabs';
+import type { HomeTabValue } from '@/components/pages/Home/HomeTabs';
 
 export type HomeTabProps = {
   value: HomeTabValue;

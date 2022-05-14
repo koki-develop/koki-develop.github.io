@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
-import Meta from '@/components/utils/Meta';
 import Layout from '@/components/Layout';
+import Meta from '@/components/utils/Meta';
 
 const NotFoundPage: React.VFC = memo(() => {
   const message = 'お探しのページは見つかりませんでした';

@@ -1,8 +1,8 @@
 import React, { memo } from 'react';
-import type { ButtonProps } from '@/components/utils/Button';
 import Button from '@/components/utils/Button';
-import type { LinkProps } from '@/components/utils/Link';
 import Link from '@/components/utils/Link';
+import type { ButtonProps } from '@/components/utils/Button';
+import type { LinkProps } from '@/components/utils/Link';
 
 export type LinkButtonProps = LinkProps & {
   buttonProps: ButtonProps;

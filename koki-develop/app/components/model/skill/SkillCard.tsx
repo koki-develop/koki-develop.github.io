@@ -1,8 +1,8 @@
 import React, { memo } from 'react';
 import urlJoin from 'url-join';
+import type { Skill } from '@/types/skill';
 import Card from '@/components/utils/Card';
 import Link from '@/components/utils/Link';
-import type { Skill } from '@/types/skill';
 
 export type SkillCardProps = {
   skill: Skill;

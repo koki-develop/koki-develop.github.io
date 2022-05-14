@@ -1,18 +1,18 @@
+import { json } from '@remix-run/node';
+import { useLoaderData, useNavigate } from '@remix-run/react';
 import classNames from 'classnames';
 import React, { memo, useCallback, useMemo, useState } from 'react';
-import type { HomeTabValue } from '@/components/pages/Home/HomeTabs';
-import HomeTabs, { HomeTabValues } from '@/components/pages/Home/HomeTabs';
+import { config } from '@/config';
 import HistoryTimeline from '@/components/model/history/HistoryTimeline';
 import ProfileBlock from '@/components/model/profile/ProfileBlock';
 import ProfileEmail from '@/components/model/profile/ProfileEmail';
 import SkillCardList from '@/components/model/skill/SkillCardList';
 import SocialList from '@/components/model/social/SocialList';
 import WorkCardList from '@/components/model/work/WorkCardList';
+import HomeTabs, { HomeTabValues } from '@/components/pages/Home/HomeTabs';
 import Section from '@/components/utils/Section';
-import { config } from '@/config';
+import type { HomeTabValue } from '@/components/pages/Home/HomeTabs';
 import type { LoaderFunction } from '@remix-run/node';
-import { json } from '@remix-run/node';
-import { useLoaderData, useNavigate } from '@remix-run/react';
 
 type LoaderData = {
   tab: string | null;
