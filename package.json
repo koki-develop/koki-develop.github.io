@@ -7,13 +7,15 @@
   "scripts": {
     "build": "remix build",
     "prebuild": "yarn run build:css",
+    "postbuild": "yarn run robots:gen",
     "build:css": "tailwindcss -m -i ./app/styles/app.css -o app/styles/app.compiled.css",
     "dev": "run-p dev:*",
     "dev:remix": "remix dev",
     "dev:css": "tailwindcss -w -i ./app/styles/app.css -o app/styles/app.compiled.css",
     "lint": "eslint --max-warnings 0 --ext .js,.ts,.tsx .",
     "fmt": "yarn lint --fix && prettier --write .",
-    "readme:gen": "ts-node -r tsconfig-paths/register ./tasks/readmeGen.ts"
+    "readme:gen": "ts-node -r tsconfig-paths/register ./tasks/readmeGen.ts",
+    "robots:gen": "ts-node -r tsconfig-paths/register ./tasks/robotsGen.ts"
   },
   "dependencies": {
     "@remix-run/node": "^1.4.3",
