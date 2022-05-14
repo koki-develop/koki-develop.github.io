@@ -18,7 +18,7 @@ const HistoryCard: React.VFC<HistoryCardProps> = React.memo(props => {
         <h3 className='mb-2 font-bold'>{history.title}</h3>
       </div>
       <div className='text-left text-sm'>
-        <p>{history.description}</p>
+        <p className='font-light'>{history.description}</p>
       </div>
     </Card>
   );
