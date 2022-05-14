@@ -17,69 +17,98 @@ const socials: Social[] = [
   { name: 'Zenn', url: 'https://zenn.dev/kou_pg_0131' },
 ];
 
+const skills = {
+  // languages
+  Go: { name: 'Go', url: 'https://golang.org/' },
+  TypeScript: { name: 'TypeScript', url: 'https://www.typescriptlang.org/' },
+  JavaScript: {
+    name: 'JavaScript',
+    url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
+  },
+  Ruby: { name: 'Ruby', url: 'https://www.ruby-lang.org/ja/' },
+  Python: { name: 'Python', url: 'https://www.python.org/' },
+
+  // Framework / Library
+  Gin: { name: 'Gin', url: 'https://gin-gonic.com/' },
+  chi: { name: 'chi', url: 'https://go-chi.io/' },
+  Express: { name: 'Express', url: 'https://expressjs.com/' },
+  React: { name: 'React', url: 'https://reactjs.org/' },
+  Nextjs: { name: 'Next.js', url: 'https://nextjs.org/' },
+  Remix: { name: 'Remix', url: 'https://remix.run/' },
+  Rails: { name: 'Rails', url: 'https://rubyonrails.org/' },
+  Django: { name: 'Django', url: 'https://docs.djangoproject.com/' },
+
+  // RDB / NoSQL
+  MySQL: { name: 'MySQL', url: 'https://www.mysql.com/' },
+  PostgreSQL: { name: 'PostgreSQL', url: 'https://www.postgresql.org/' },
+  SQLite: { name: 'SQLite', url: 'http://www.sqlite.org/' },
+  Redis: { name: 'Redis', url: 'https://redis.io/' },
+
+  // Cloud
+  AWS: { name: 'AWS', url: 'https://aws.amazon.com/' },
+  GCP: { name: 'GCP', url: 'https://console.cloud.google.com/' },
+  Vercel: { name: 'Vercel', url: 'https://vercel.com/' },
+  Heroku: { name: 'Heroku', url: 'https://www.heroku.com/' },
+
+  // CI / CD
+  CircleCI: { name: 'CircleCI', url: 'https://circleci.com/' },
+  GitHubActions: {
+    name: 'GitHub Actions',
+    url: 'https://github.co.jp/features/actions',
+  },
+
+  // Other
+  Docker: { name: 'Docker', url: 'https://www.docker.com/' },
+  Serverless: { name: 'Serverless', url: 'https://www.serverless.com/' },
+  Terraform: { name: 'Terraform', url: 'https://www.terraform.io/' },
+  GraphQL: { name: 'GraphQL', url: 'https://graphql.org/' },
+  Cypress: { name: 'Cypress', url: 'https://www.cypress.io/' },
+} as const;
+
 const skillGroups: SkillGroup[] = [
   {
     name: 'Language',
     skills: [
-      { name: 'Go', url: 'https://golang.org/' },
-      { name: 'TypeScript', url: 'https://www.typescriptlang.org/' },
-      {
-        name: 'JavaScript',
-        url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
-      },
-      { name: 'Ruby', url: 'https://www.ruby-lang.org/ja/' },
-      { name: 'Python', url: 'https://www.python.org/' },
+      skills.Go,
+      skills.TypeScript,
+      skills.JavaScript,
+      skills.Ruby,
+      skills.Python,
     ],
   },
   {
     name: 'Framework/Library',
     skills: [
-      { name: 'Gin', url: 'https://gin-gonic.com/' },
-      { name: 'chi', url: 'https://go-chi.io/' },
-      { name: 'Express', url: 'https://expressjs.com/' },
-      { name: 'React', url: 'https://reactjs.org/' },
-      { name: 'Next.js', url: 'https://nextjs.org/' },
-      { name: 'Remix', url: 'https://remix.run/' },
-      { name: 'Rails', url: 'https://rubyonrails.org/' },
-      { name: 'Django', url: 'https://docs.djangoproject.com/' },
+      skills.Gin,
+      skills.chi,
+      skills.Express,
+      skills.React,
+      skills.Nextjs,
+      skills.Remix,
+      skills.Rails,
+      skills.Django,
     ],
   },
   {
     name: 'RDB/NoSQL',
-    skills: [
-      { name: 'MySQL', url: 'https://www.mysql.com/' },
-      { name: 'PostgreSQL', url: 'https://www.postgresql.org/' },
-      { name: 'SQLite', url: 'http://www.sqlite.org/' },
-      { name: 'Redis', url: 'https://redis.io/' },
-    ],
+    skills: [skills.MySQL, skills.PostgreSQL, skills.SQLite, skills.Redis],
   },
   {
     name: 'Cloud',
-    skills: [
-      { name: 'AWS', url: 'https://aws.amazon.com/' },
-      { name: 'GCP', url: 'https://console.cloud.google.com/' },
-      { name: 'Vercel', url: 'https://vercel.com/' },
-      { name: 'Heroku', url: 'https://www.heroku.com/' },
-    ],
+    skills: [skills.AWS, skills.GCP, skills.Vercel, skills.Heroku],
   },
   {
     name: 'CI/CD',
-    skills: [
-      { name: 'CircleCI', url: 'https://circleci.com/' },
-      {
-        name: 'GitHub Actions',
-        url: 'https://github.co.jp/features/actions',
-      },
-    ],
+    skills: [skills.CircleCI, skills.GitHubActions],
   },
   {
     name: 'Other',
     skills: [
-      { name: 'Docker', url: 'https://www.docker.com/' },
-      { name: 'Serverless', url: 'https://www.serverless.com/' },
-      { name: 'Terraform', url: 'https://www.terraform.io/' },
-      { name: 'GraphQL', url: 'https://graphql.org/' },
-      { name: 'Cypress', url: 'https://www.cypress.io/' },
+      skills.Docker,
+      skills.Serverless,
+      skills.Terraform,
+      skills.GraphQL,
+      skills.Cypress,
     ],
   },
 ];
