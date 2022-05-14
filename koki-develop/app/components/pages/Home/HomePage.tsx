@@ -7,10 +7,8 @@ import ProfileEmail from '@/components/model/profile/ProfileEmail';
 import SkillCardList from '@/components/model/skill/SkillCardList';
 import SocialList from '@/components/model/social/SocialList';
 import WorkCardList from '@/components/model/work/WorkCardList';
-import Meta from '@/components/utils/Meta';
 import Section from '@/components/utils/Section';
 import { config } from '@/config';
-import Layout from '@/components/Layout';
 
 const HomePage: React.VFC = memo(() => {
   // TODO: 後で直す
@@ -26,8 +24,7 @@ const HomePage: React.VFC = memo(() => {
   }, []);
 
   return (
-    <Layout>
-      <Meta description={config.profile.description} />
+    <div>
       <ProfileBlock profile={config.profile} />
       <SocialList socials={config.socials} />
 
@@ -57,7 +54,7 @@ const HomePage: React.VFC = memo(() => {
           <ProfileEmail email={config.profile.email} />
         </Section>
       </div>
-    </Layout>
+    </div>
   );
 });
 
