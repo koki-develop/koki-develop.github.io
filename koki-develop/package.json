@@ -8,7 +8,8 @@
     "build": "remix build",
     "dev": "run-p dev:*",
     "dev:remix": "remix dev",
-    "dev:css": "tailwindcss -w -i ./app/styles/app.css -o app/styles/app.compiled.css"
+    "dev:css": "tailwindcss -w -i ./app/styles/app.css -o app/styles/app.compiled.css",
+    "lint": "eslint --max-warnings 0 --ext .js,.ts,.tsx ."
   },
   "dependencies": {
     "@remix-run/node": "^1.4.3",
