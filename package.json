@@ -6,6 +6,8 @@
   "sideEffects": false,
   "scripts": {
     "build": "remix build",
+    "prebuild": "yarn run build:css",
+    "build:css": "tailwindcss -m -i ./app/styles/app.css -o app/styles/app.compiled.css",
     "dev": "run-p dev:*",
     "dev:remix": "remix dev",
     "dev:css": "tailwindcss -w -i ./app/styles/app.css -o app/styles/app.compiled.css",
