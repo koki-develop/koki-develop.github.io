@@ -10,18 +10,22 @@ export type LinkProps = Omit<
 };
 
 const Link: React.VFC<LinkProps> = memo(props => {
-  const { external, ...linkProps } = props;
+  const { external, children, ...linkProps } = props;
 
   if (!external) {
     const { href, ...otherProps } = linkProps;
-    <RemixLink to={href} {...otherProps} />;
+    <RemixLink to={href} {...otherProps}>
+      {children}
+    </RemixLink>;
   }
 
   return (
     <a
       {...linkProps}
       {...(external && { target: '_blank', rel: 'noreferrer' })}
-    />
+    >
+      {children}
+    </a>
   );
 });
 
