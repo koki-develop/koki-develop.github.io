@@ -1,8 +1,7 @@
 {
-  "name": "remix-template-vercel",
+  "name": "koki-develop",
   "private": true,
-  "description": "",
-  "license": "",
+  "license": "UNLICENSED",
   "sideEffects": false,
   "scripts": {
     "build": "remix build",
