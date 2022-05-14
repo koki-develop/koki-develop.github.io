@@ -15,8 +15,8 @@ const WorkCard: React.VFC<WorkCardProps> = memo(props => {
     <Card className='overflow-hidden'>
       {work.hasImage && (
         <Link className='relative' external href={work.url}>
-          <div className='absolute h-36 w-full bg-gray-500 opacity-0 transition hover:opacity-10' />
-          <div className='h-36 w-full'>
+          <div className='absolute h-36 w-full bg-gray-500 opacity-0 transition hover:opacity-10 lg:h-48' />
+          <div className='h-36 w-full lg:h-48'>
             <img
               className='h-full w-full object-cover'
               style={{
