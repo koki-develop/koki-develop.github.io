@@ -1,4 +1,4 @@
-import NextLink from 'next/link';
+import { Link as RemixLink } from '@remix-run/react';
 import React, { memo } from 'react';
 
 export type LinkProps = Omit<
@@ -13,7 +13,8 @@ const Link: React.VFC<LinkProps> = memo(props => {
   const { external, ...linkProps } = props;
 
   if (!external) {
-    <NextLink {...linkProps} />;
+    const { href, ...otherProps } = linkProps;
+    <RemixLink to={href} {...otherProps} />;
   }
 
   return (

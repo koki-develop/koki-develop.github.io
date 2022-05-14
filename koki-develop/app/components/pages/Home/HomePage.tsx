@@ -1,5 +1,4 @@
 import classNames from 'classnames';
-import { useRouter } from 'next/router';
 import React, { memo, useCallback, useMemo } from 'react';
 import HomeTabs, { HomeTabValue } from '@/components/pages/Home/HomeTabs';
 import HistoryTimeline from '@/components/model/history/HistoryTimeline';
@@ -14,21 +13,17 @@ import { config } from '@/config';
 import Layout from '@/components/Layout';
 
 const HomePage: React.VFC = memo(() => {
-  const router = useRouter();
-
+  // TODO: 後で直す
   const selectedTab = useMemo(() => {
     return (
-      Object.values(HomeTabValue).find(v => v === router.query.tab) ||
+      // Object.values(HomeTabValue).find(v => v === router.query.tab) ||
       HomeTabValue.about
     );
-  }, [router.query.tab]);
+  }, []);
 
-  const handleSelectTab = useCallback(
-    (tab: HomeTabValue) => {
-      router.replace({ search: `tab=${tab}` }, undefined, { scroll: false });
-    },
-    [router],
-  );
+  const handleSelectTab = useCallback((tab: HomeTabValue) => {
+    console.log('tab:', tab);
+  }, []);
 
   return (
     <Layout>
