@@ -1,9 +1,22 @@
 import path from 'path';
-import { Links, LiveReload, Meta, Outlet, Scripts } from '@remix-run/react';
+import { json } from '@remix-run/node';
+import {
+  Links,
+  LiveReload,
+  Meta,
+  Outlet,
+  Scripts,
+  useLoaderData,
+} from '@remix-run/react';
+import { useEffect } from 'react';
 import { config } from '@/config';
 import styles from '@/styles/app.compiled.css';
 import Layout from '@/components/Layout';
-import type { LinksFunction, MetaFunction } from '@remix-run/node';
+import type {
+  LinksFunction,
+  LoaderFunction,
+  MetaFunction,
+} from '@remix-run/node';
 
 const urlJoin = (urlString: string, ...paths: string[]): string => {
   const url = new URL(urlString);
@@ -35,7 +48,32 @@ export const meta: MetaFunction = ({ location }) => ({
   'twitter:site': '@koki_develop',
 });
 
+type LoaderData = {
+  stage: 'development' | 'production';
+  gaMeasurementId: string;
+  pathname: string;
+};
+
+export const loader: LoaderFunction = async ({ request }) => {
+  const url = new URL(request.url);
+
+  return json<LoaderData>({
+    stage: process.env.STAGE,
+    gaMeasurementId: process.env.GA_MEASUREMENT_ID,
+    pathname: url.pathname,
+  });
+};
+
 export default function App() {
+  const { stage, gaMeasurementId, pathname } = useLoaderData<LoaderData>();
+
+  useEffect(() => {
+    if (stage !== 'production') return;
+    window.gtag('config', gaMeasurementId, {
+      page_path: pathname,
+    });
+  }, [gaMeasurementId, pathname, stage]);
+
   return (
     <html lang='ja'>
       <head>
@@ -46,6 +84,25 @@ export default function App() {
         <Layout>
           <Outlet />
         </Layout>
+        {stage === 'production' && (
+          <>
+            <script
+              async
+              src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}
+            />
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+
+                    gtag('config', '${gaMeasurementId}');
+                  `,
+              }}
+            />
+          </>
+        )}
         <Scripts />
         <LiveReload />
       </body>
