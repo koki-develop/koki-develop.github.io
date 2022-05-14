@@ -6,8 +6,10 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  background-color: #FAFAFA;
-  font-family: 'Open Sans', sans-serif;
-  letter-spacing: 1px;
+@layer base {
+  body {
+    @apply bg-gray-50;
+    @apply tracking-wider;
+    @apply font-sans;
+  }
 }

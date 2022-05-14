@@ -13,6 +13,25 @@ module.exports = {
         'fade-in': 'fadeIn 0.25s ease-in-out forwards',
         'fade-out': 'fadeOut 0.25s ease-in-out forwards',
       },
+      fontFamily: {
+        sans: [
+          '"Open Sans"',
+          'ui-sans-serif',
+          'system-ui',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          '"Segoe UI"',
+          'Roboto',
+          '"Helvetica Neue"',
+          'Arial',
+          '"Noto Sans"',
+          'sans-serif',
+          '"Apple Color Emoji"',
+          '"Segoe UI Emoji"',
+          '"Segoe UI Symbol"',
+          '"Noto Color Emoji"',
+        ],
+      },
       keyframes: {
         fadeIn: {
           '0%': { opacity: 0 },
