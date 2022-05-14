@@ -6,12 +6,14 @@ import {
   Meta,
   Outlet,
   Scripts,
+  useCatch,
   useLoaderData,
 } from '@remix-run/react';
-import { useEffect } from 'react';
+import { memo, useEffect, useMemo } from 'react';
 import { config } from '@/config';
 import styles from '@/styles/app.compiled.css';
 import Layout from '@/components/Layout';
+import ErrorPage from '@/components/pages/ErrorPage';
 import type {
   LinksFunction,
   LoaderFunction,
@@ -63,6 +65,36 @@ export const loader: LoaderFunction = async ({ request }) => {
     pathname: url.pathname,
   });
 };
+
+export const CatchBoundary = memo(() => {
+  const caught = useCatch();
+
+  const message = useMemo(() => {
+    switch (caught.status) {
+      case 404:
+        return 'お探しのページは見つかりませんでした';
+      default:
+        return '予期しないエラーが発生しました';
+    }
+  }, [caught.status]);
+
+  return (
+    <html>
+      <head>
+        <Meta />
+        <Links />
+      </head>
+      <body>
+        <Layout>
+          <ErrorPage message={message} />
+        </Layout>
+        <Scripts />
+      </body>
+    </html>
+  );
+});
+
+CatchBoundary.displayName = 'CatchBoundary';
 
 export default function App() {
   const { stage, gaMeasurementId, pathname } = useLoaderData<LoaderData>();
