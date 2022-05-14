@@ -12,3 +12,4 @@ node_modules
 /app/styles/app.compiled.css
 
 /public/robots.txt
+/public/sitemap.xml
