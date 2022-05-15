@@ -12,13 +12,13 @@ const WorkCard: React.VFC<WorkCardProps> = memo(props => {
   const { work } = props;
 
   return (
-    <Card className='overflow-hidden'>
+    <Card>
       {work.hasImage && (
-        <Link className='relative' external href={work.url}>
-          <div className='absolute h-36 w-full bg-gray-500 opacity-0 transition hover:opacity-10 lg:h-48' />
+        <Link className='relative overflow-hidden' external href={work.url}>
+          <div className='absolute h-36 w-full rounded-t bg-gray-500 opacity-0 transition hover:opacity-10 lg:h-48' />
           <div className='h-36 w-full lg:h-48'>
             <img
-              className='h-full w-full object-cover'
+              className='h-full w-full rounded-t object-cover'
               style={{
                 objectPosition: work.imagePosition ?? 'center',
               }}
@@ -36,15 +36,25 @@ const WorkCard: React.VFC<WorkCardProps> = memo(props => {
         </h3>
         <div className='mb-2 flex flex-row-reverse items-center justify-end pl-1'>
           {work.skills.reverse().map((skill, i) => (
-            <img
+            <div
               key={skill.name}
-              className='-ml-2 h-6 w-6 overflow-hidden rounded-full border border-gray-400 bg-white transition hover:z-50 hover:-translate-y-1'
-              src={path.join('/images/icons', `${skill.name}.svg`)}
-              alt={skill.name}
-            />
+              className='group relative -ml-2 h-6 w-6 hover:z-50'
+            >
+              <p className='pointer-events-none absolute left-1/2 -top-8 -translate-x-1/2 whitespace-nowrap rounded bg-black py-1 px-2 text-xs text-white opacity-0 transition before:absolute before:-bottom-1 before:right-0 before:left-0 before:m-auto before:w-0 before:border-4 before:border-b-0 before:border-transparent before:border-t-black before:content-[""] group-hover:opacity-100'>
+                {skill.name}
+              </p>
+              <div className='h-6 w-6 overflow-hidden rounded-full border border-gray-400 bg-white transition'>
+                <img
+                  className='h-full w-full'
+                  src={path.join('/images/icons', `${skill.name}.svg`)}
+                  alt={skill.name}
+                />
+              </div>
+            </div>
           ))}
         </div>
         <p className='mb-2'>{work.description}</p>
+
         <Link external href={work.repositoryUrl}>
           View on GitHub
         </Link>
