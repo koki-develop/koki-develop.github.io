@@ -1,3 +1,5 @@
+import type { Skill } from '@/types/skill';
+
 export type Work = {
   name: string;
   url: string;
@@ -5,4 +7,5 @@ export type Work = {
   imagePosition?: 'bottom' | 'top';
   repositoryUrl: string;
   description: string;
+  skills: Skill[];
 };

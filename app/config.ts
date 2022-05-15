@@ -47,8 +47,10 @@ const skills = {
   // Cloud
   AWS: { name: 'AWS', url: 'https://aws.amazon.com/' },
   GCP: { name: 'GCP', url: 'https://console.cloud.google.com/' },
+  Firebase: { name: 'Firebase', url: 'https://firebase.google.com/' },
   Vercel: { name: 'Vercel', url: 'https://vercel.com/' },
   Heroku: { name: 'Heroku', url: 'https://www.heroku.com/' },
+  CloudFlare: { name: 'CloudFlare', url: 'https://www.cloudflare.com/' },
 
   // CI / CD
   CircleCI: { name: 'CircleCI', url: 'https://circleci.com/' },
@@ -63,6 +65,9 @@ const skills = {
   Terraform: { name: 'Terraform', url: 'https://www.terraform.io/' },
   GraphQL: { name: 'GraphQL', url: 'https://graphql.org/' },
   Cypress: { name: 'Cypress', url: 'https://www.cypress.io/' },
+  TailwindCSS: { name: 'Tailwind CSS', url: 'https://tailwindcss.com/' },
+  Vite: { name: 'Vite', url: 'https://vitejs.dev/' },
+  Webpack: { name: 'Webpack', url: 'https://webpack.js.org/' },
 } as const;
 
 const skillGroups: SkillGroup[] = [
@@ -120,6 +125,14 @@ const works: Work[] = [
     repositoryUrl: 'https://github.com/koki-develop/koki-develop',
     hasImage: true,
     description: '個人用ポートフォリオサイト。',
+    skills: [
+      skills.React,
+      skills.TypeScript,
+      skills.Remix,
+      skills.TailwindCSS,
+      skills.Vercel,
+      skills.GitHubActions,
+    ],
   },
   {
     name: 'LGTM Generator',
@@ -128,6 +141,20 @@ const works: Work[] = [
     hasImage: true,
     imagePosition: 'top',
     description: 'LGTM 画像生成ツール。',
+    skills: [
+      skills.Go,
+      skills.TypeScript,
+      skills.Gin,
+      skills.React,
+      skills.Nextjs,
+      skills.AWS,
+      skills.Vercel,
+      skills.CircleCI,
+      skills.Serverless,
+      skills.Terraform,
+      skills.Docker,
+      skills.Cypress,
+    ],
   },
   {
     name: 'Todo Box',
@@ -136,6 +163,15 @@ const works: Work[] = [
     hasImage: true,
     imagePosition: 'top',
     description: 'Todo アプリ。 (開発中) ',
+    skills: [
+      skills.TypeScript,
+      skills.React,
+      skills.Vite,
+      skills.Firebase,
+      skills.GitHubActions,
+      skills.AWS,
+      skills.Terraform,
+    ],
   },
   {
     name: 'OGP Messenger',
@@ -143,6 +179,14 @@ const works: Work[] = [
     repositoryUrl: 'https://github.com/koki-develop/ogp-messenger',
     hasImage: true,
     description: 'OGP 画像でメッセージを発信できるツール。',
+    skills: [
+      skills.TypeScript,
+      skills.React,
+      skills.Remix,
+      skills.TailwindCSS,
+      skills.CloudFlare,
+      skills.GitHubActions,
+    ],
   },
   {
     name: 'Awesome Notes',
@@ -152,6 +196,7 @@ const works: Work[] = [
     imagePosition: 'top',
     description:
       'マークダウンショートカット機能つきのシンプルなメモを提供する Chrome Extension 。',
+    skills: [skills.TypeScript, skills.React, skills.Vite],
   },
   {
     name: 'Qiita LGTM Ranking',
@@ -159,6 +204,13 @@ const works: Work[] = [
     repositoryUrl: 'https://github.com/koki-develop/qiita-lgtm-ranking',
     hasImage: true,
     description: 'Qiita の LGTM ランキング記事を毎日自動更新するシステム。',
+    skills: [
+      skills.Go,
+      skills.Serverless,
+      skills.AWS,
+      skills.CircleCI,
+      skills.Terraform,
+    ],
   },
   {
     name: 'Hyper Statusbar',
@@ -167,6 +219,7 @@ const works: Work[] = [
     hasImage: true,
     imagePosition: 'bottom',
     description: 'ステータスバーを表示する Hyper プラグイン。',
+    skills: [skills.TypeScript, skills.React, skills.Webpack],
   },
 ];
 
