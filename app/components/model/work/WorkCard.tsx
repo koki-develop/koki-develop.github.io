@@ -29,11 +29,21 @@ const WorkCard: React.VFC<WorkCardProps> = memo(props => {
         </Link>
       )}
       <div className='p-2 px-4 pb-4 text-sm'>
-        <h3 className='mb-2 text-2xl font-bold'>
+        <h3 className='mb-1 text-2xl font-bold'>
           <Link external href={work.url}>
             {work.name}
           </Link>
         </h3>
+        <div className='mb-2 flex flex-row-reverse items-center justify-end pl-1'>
+          {work.skills.reverse().map((skill, i) => (
+            <img
+              key={skill.name}
+              className='-ml-2 h-6 w-6 overflow-hidden rounded-full border border-gray-400 bg-white transition hover:z-50 hover:-translate-y-1'
+              src={path.join('/images/icons', `${skill.name}.svg`)}
+              alt={skill.name}
+            />
+          ))}
+        </div>
         <p className='mb-2'>{work.description}</p>
         <Link external href={work.repositoryUrl}>
           View on GitHub
