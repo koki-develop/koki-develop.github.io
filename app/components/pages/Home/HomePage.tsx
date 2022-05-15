@@ -72,6 +72,7 @@ const HomePage: React.VFC = memo(() => {
 
       <div>
         <Section title='Contact'>
+          <SocialList socials={config.socials} />
           <ProfileEmail email={config.profile.email} />
         </Section>
       </div>

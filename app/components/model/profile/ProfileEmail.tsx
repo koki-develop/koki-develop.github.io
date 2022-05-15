@@ -47,6 +47,7 @@ const ProfileEmail: React.VFC<ProfileEmailProps> = memo(props => {
       <div>
         <CopyToClipboard text={email} onCopy={handleCopyEmail}>
           <Button
+            className='text-sm'
             variant='text'
             startIcon={
               showCopiedMessage ? (
