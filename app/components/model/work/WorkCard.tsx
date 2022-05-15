@@ -36,13 +36,10 @@ const WorkCard: React.VFC<WorkCardProps> = memo(props => {
         </h3>
         <div className='mb-2 flex flex-row-reverse items-center justify-end pl-1'>
           {work.skills.reverse().map((skill, i) => (
-            <div
-              key={skill.name}
-              className='group relative -ml-2 h-6 w-6 hover:z-50'
-            >
-              <p className='pointer-events-none absolute left-1/2 -top-8 -translate-x-1/2 whitespace-nowrap rounded bg-black py-1 px-2 text-xs text-white opacity-0 transition before:absolute before:-bottom-1 before:right-0 before:left-0 before:m-auto before:w-0 before:border-4 before:border-b-0 before:border-transparent before:border-t-black before:content-[""] group-hover:opacity-100'>
+            <span key={skill.name} className='group relative -ml-2 hover:z-50'>
+              <span className='pointer-events-none absolute left-1/2 -top-8 -translate-x-1/2 whitespace-nowrap rounded bg-black py-1 px-2 text-xs text-white opacity-0 transition before:absolute before:-bottom-1 before:right-0 before:left-0 before:m-auto before:w-0 before:border-4 before:border-b-0 before:border-transparent before:border-t-black before:content-[""] group-hover:opacity-100'>
                 {skill.name}
-              </p>
+              </span>
               <div className='h-6 w-6 overflow-hidden rounded-full border border-gray-400 bg-white transition'>
                 <img
                   className='h-full w-full'
@@ -50,7 +47,7 @@ const WorkCard: React.VFC<WorkCardProps> = memo(props => {
                   alt={skill.name}
                 />
               </div>
-            </div>
+            </span>
           ))}
         </div>
         <p className='mb-2'>{work.description}</p>
