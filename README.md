@@ -21,18 +21,15 @@
 [<img src="public/images/icons/TypeScript.svg" alt="TypeScript" width="40" height="40"/>](https://www.typescriptlang.org/)
 [<img src="public/images/icons/JavaScript.svg" alt="JavaScript" width="40" height="40"/>](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [<img src="public/images/icons/Ruby.svg" alt="Ruby" width="40" height="40"/>](https://www.ruby-lang.org/ja/)
-[<img src="public/images/icons/Python.svg" alt="Python" width="40" height="40"/>](https://www.python.org/)
 
 ## Framework/Library
 
 [<img src="public/images/icons/Gin.svg" alt="Gin" width="40" height="40"/>](https://gin-gonic.com/)
-[<img src="public/images/icons/chi.svg" alt="chi" width="40" height="40"/>](https://go-chi.io/)
 [<img src="public/images/icons/Express.svg" alt="Express" width="40" height="40"/>](https://expressjs.com/)
 [<img src="public/images/icons/React.svg" alt="React" width="40" height="40"/>](https://reactjs.org/)
 [<img src="public/images/icons/Next.js.svg" alt="Next.js" width="40" height="40"/>](https://nextjs.org/)
 [<img src="public/images/icons/Remix.svg" alt="Remix" width="40" height="40"/>](https://remix.run/)
 [<img src="public/images/icons/Rails.svg" alt="Rails" width="40" height="40"/>](https://rubyonrails.org/)
-[<img src="public/images/icons/Django.svg" alt="Django" width="40" height="40"/>](https://docs.djangoproject.com/)
 
 ## RDB/NoSQL
 
