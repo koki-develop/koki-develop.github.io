@@ -26,17 +26,14 @@ const skills = {
     url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
   },
   Ruby: { name: 'Ruby', url: 'https://www.ruby-lang.org/ja/' },
-  Python: { name: 'Python', url: 'https://www.python.org/' },
 
   // Framework / Library
   Gin: { name: 'Gin', url: 'https://gin-gonic.com/' },
-  chi: { name: 'chi', url: 'https://go-chi.io/' },
   Express: { name: 'Express', url: 'https://expressjs.com/' },
   React: { name: 'React', url: 'https://reactjs.org/' },
   Nextjs: { name: 'Next.js', url: 'https://nextjs.org/' },
   Remix: { name: 'Remix', url: 'https://remix.run/' },
   Rails: { name: 'Rails', url: 'https://rubyonrails.org/' },
-  Django: { name: 'Django', url: 'https://docs.djangoproject.com/' },
 
   // RDB / NoSQL
   MySQL: { name: 'MySQL', url: 'https://www.mysql.com/' },
@@ -73,25 +70,17 @@ const skills = {
 const skillGroups: SkillGroup[] = [
   {
     name: 'Language',
-    skills: [
-      skills.Go,
-      skills.TypeScript,
-      skills.JavaScript,
-      skills.Ruby,
-      skills.Python,
-    ],
+    skills: [skills.Go, skills.TypeScript, skills.JavaScript, skills.Ruby],
   },
   {
     name: 'Framework/Library',
     skills: [
       skills.Gin,
-      skills.chi,
       skills.Express,
       skills.React,
       skills.Nextjs,
       skills.Remix,
       skills.Rails,
-      skills.Django,
     ],
   },
   {
