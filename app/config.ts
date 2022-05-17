@@ -18,7 +18,7 @@ const socials: Social[] = [
 ];
 
 const skills = {
-  // languages
+  // Languages
   Go: { name: 'Go', url: 'https://golang.org/' },
   TypeScript: { name: 'TypeScript', url: 'https://www.typescriptlang.org/' },
   JavaScript: {
@@ -126,12 +126,18 @@ const works: Work[] = [
     hasImage: true,
     description: '個人用ポートフォリオサイト。',
     skills: [
-      skills.React,
+      // Languages
       skills.TypeScript,
+      // Framework / Library
+      skills.React,
       skills.Remix,
-      skills.TailwindCSS,
+      // RDB / NoSQL
+      // Cloud
       skills.Vercel,
+      // CI / CD
       skills.GitHubActions,
+      // Other
+      skills.TailwindCSS,
     ],
   },
   {
@@ -142,17 +148,23 @@ const works: Work[] = [
     imagePosition: 'top',
     description: 'LGTM 画像生成ツール。',
     skills: [
+      // Languages
       skills.Go,
       skills.TypeScript,
+      // Framework / Library
       skills.Gin,
       skills.React,
       skills.Nextjs,
+      // RDB / NoSQL
+      // Cloud
       skills.AWS,
       skills.Vercel,
+      // CI / CD
       skills.CircleCI,
+      // Other
+      skills.Docker,
       skills.Serverless,
       skills.Terraform,
-      skills.Docker,
       skills.Cypress,
     ],
   },
@@ -164,13 +176,19 @@ const works: Work[] = [
     imagePosition: 'top',
     description: 'Todo アプリ。 (開発中) ',
     skills: [
+      // Languages
       skills.TypeScript,
+      // Framework / Library
       skills.React,
-      skills.Vite,
-      skills.Firebase,
-      skills.GitHubActions,
+      // RDB / NoSQL
+      // Cloud
       skills.AWS,
+      skills.Firebase,
+      // CI / CD
+      skills.GitHubActions,
+      // Other
       skills.Terraform,
+      skills.Vite,
     ],
   },
   {
@@ -180,12 +198,18 @@ const works: Work[] = [
     hasImage: true,
     description: 'OGP 画像でメッセージを発信できるツール。',
     skills: [
+      // Languages
       skills.TypeScript,
+      // Framework / Library
       skills.React,
       skills.Remix,
-      skills.TailwindCSS,
+      // RDB / NoSQL
+      // Cloud
       skills.CloudFlare,
+      // CI / CD
       skills.GitHubActions,
+      // Other
+      skills.TailwindCSS,
     ],
   },
   {
@@ -196,7 +220,17 @@ const works: Work[] = [
     imagePosition: 'top',
     description:
       'マークダウンショートカット機能つきのシンプルなメモを提供する Chrome Extension 。',
-    skills: [skills.TypeScript, skills.React, skills.Vite],
+    skills: [
+      // Languages
+      skills.TypeScript,
+      // Framework / Library
+      skills.React,
+      // RDB / NoSQL
+      // Cloud
+      // CI / CD
+      // Other
+      skills.Vite,
+    ],
   },
   {
     name: 'Qiita LGTM Ranking',
@@ -205,10 +239,16 @@ const works: Work[] = [
     hasImage: true,
     description: 'Qiita の LGTM ランキング記事を毎日自動更新するシステム。',
     skills: [
+      // Languages
       skills.Go,
-      skills.Serverless,
+      // Framework / Library
+      // RDB / NoSQL
+      // Cloud
       skills.AWS,
+      // CI / CD
       skills.CircleCI,
+      // Other
+      skills.Serverless,
       skills.Terraform,
     ],
   },
@@ -219,7 +259,17 @@ const works: Work[] = [
     hasImage: true,
     imagePosition: 'bottom',
     description: 'ステータスバーを表示する Hyper プラグイン。',
-    skills: [skills.TypeScript, skills.React, skills.Webpack],
+    skills: [
+      // Languages
+      skills.TypeScript,
+      // Framework / Library
+      skills.React,
+      // RDB / NoSQL
+      // Cloud
+      // CI / CD
+      // Other
+      skills.Webpack,
+    ],
   },
 ];
 
