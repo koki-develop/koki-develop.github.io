@@ -1,22 +1,19 @@
 import React, { memo } from 'react';
+import { Outlet } from 'react-router-dom';
 import Footer from '@/components/Layout/Footer';
 import Header from '@/components/Layout/Header';
 import BackToTop from '@/components/utils/BackToTop';
 
-export type LayoutProps = {
-  children: React.ReactNode;
-};
-
-const Layout: React.VFC<LayoutProps> = memo(props => {
-  const { children } = props;
-
+const Layout: React.FC = memo(() => {
   return (
     <div>
       <BackToTop />
 
       <Header />
 
-      <main>{children}</main>
+      <main>
+        <Outlet />
+      </main>
 
       <Footer />
     </div>
