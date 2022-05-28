@@ -260,6 +260,23 @@ const works: Work[] = [
       skills.Webpack,
     ],
   },
+  {
+    name: 'CheckIP',
+    url: 'https://checkip.dev',
+    repositoryUrl: 'https://github.com/koki-develop/checkip',
+    hasImage: false,
+    description: 'クライアントの IP アドレスを返す API 。',
+    skills: [
+      // Languages
+      // Framework / Library
+      // RDB / NoSQL
+      // Cloud
+      skills.AWS,
+      // CI / CD
+      // Other
+      skills.Terraform,
+    ],
+  },
 ];
 
 const histories: History[] = [
