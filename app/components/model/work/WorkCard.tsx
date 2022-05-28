@@ -36,21 +36,24 @@ const WorkCard: React.VFC<WorkCardProps> = memo(props => {
           </Link>
         </h3>
         <div className='mb-2 flex flex-row-reverse items-center justify-end pl-1'>
-          {work.skills.reverse().map((skill, i) => (
-            <Tooltip
-              key={skill.name}
-              className='-ml-2 hover:z-50'
-              text={skill.name}
-            >
-              <div className='h-6 w-6 overflow-hidden rounded-full border border-gray-400 bg-white transition'>
-                <img
-                  className='h-full w-full'
-                  src={path.join('/images/icons', `${skill.name}.svg`)}
-                  alt={skill.name}
-                />
-              </div>
-            </Tooltip>
-          ))}
+          {work.skills
+            .concat()
+            .reverse()
+            .map((skill, i) => (
+              <Tooltip
+                key={skill.name}
+                className='-ml-2 hover:z-50'
+                text={skill.name}
+              >
+                <div className='h-6 w-6 overflow-hidden rounded-full border border-gray-400 bg-white transition'>
+                  <img
+                    className='h-full w-full'
+                    src={path.join('/images/icons', `${skill.name}.svg`)}
+                    alt={skill.name}
+                  />
+                </div>
+              </Tooltip>
+            ))}
         </div>
         <p className='mb-2'>{work.description}</p>
 
