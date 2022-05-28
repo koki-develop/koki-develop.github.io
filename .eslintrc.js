@@ -47,7 +47,32 @@ module.exports = {
         ],
         pathGroupsExcludedImportTypes: ['builtin'],
         alphabetize: { order: 'asc', caseInsensitive: true },
-        pathGroups: [],
+        pathGroups: [
+          {
+            pattern: '@/src/components/Layout/**',
+            group: 'internal',
+            position: 'before',
+          },
+          {
+            pattern: '@/src/components/pages/**',
+            group: 'internal',
+            position: 'before',
+          },
+          {
+            pattern: '@/src/components/model/**',
+            group: 'internal',
+            position: 'before',
+          },
+          {
+            pattern: '@/src/components/utils/**',
+            group: 'internal',
+            position: 'before',
+          },
+          { pattern: '@/types/**', group: 'internal', position: 'before' },
+          { pattern: '@/routes', group: 'internal', position: 'before' },
+          { pattern: '@/config', group: 'internal', position: 'before' },
+          { pattern: '@/styles/**', group: 'internal', position: 'before' },
+        ],
       },
     ],
   },
