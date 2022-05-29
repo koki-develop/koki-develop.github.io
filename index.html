@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Koki Sato</title>
+    <meta name="og:title" content="Koki Sato" />
+    <meta name="og:site_name" content="Koki Sato" />
+    <meta name="og:url" content="https://koki.me" />
+    <meta name="og:type" content="website" />
+    <meta name="og:locale" content="ja_JP" />
+    <meta name="og:image" content="https://koki.me/images/profile.jpg" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@koki_develop" />
+
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=<%- gaMeasurementId %>"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', '<%- gaMeasurementId %>');
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

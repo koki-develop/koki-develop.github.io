@@ -20,11 +20,10 @@ jobs:
         uses: actions/setup-node@v2
         with:
           cache: yarn
-          cache-dependency-path: yarn.lock
-          node-version: '14.x'
+          node-version: '16.x'
 
       - name: install dependencies
-        run: yarn install
+        run: yarn install --frozen-lockfile
 
       - name: Generate README.md
         run: yarn run readme:gen

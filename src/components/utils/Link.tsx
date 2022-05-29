@@ -1,5 +1,5 @@
-import { Link as RemixLink } from '@remix-run/react';
 import React, { memo } from 'react';
+import { Link as ReactRouterLink } from 'react-router-dom';
 
 export type LinkProps = Omit<
   React.HTMLProps<HTMLAnchorElement>,
@@ -14,9 +14,11 @@ const Link: React.VFC<LinkProps> = memo(props => {
 
   if (!external) {
     const { href, ...otherProps } = linkProps;
-    <RemixLink to={href} {...otherProps}>
-      {children}
-    </RemixLink>;
+    return (
+      <ReactRouterLink to={href} {...otherProps}>
+        {children}
+      </ReactRouterLink>
+    );
   }
 
   return (

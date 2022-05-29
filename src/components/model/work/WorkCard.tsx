@@ -1,4 +1,3 @@
-import path from 'path';
 import React, { memo } from 'react';
 import type { Work } from '@/types/work';
 import Card from '@/components/utils/Card';
@@ -9,7 +8,7 @@ export type WorkCardProps = {
   work: Work;
 };
 
-const WorkCard: React.VFC<WorkCardProps> = memo(props => {
+const WorkCard: React.FC<WorkCardProps> = memo(props => {
   const { work } = props;
 
   return (
@@ -24,7 +23,7 @@ const WorkCard: React.VFC<WorkCardProps> = memo(props => {
                 style={{
                   objectPosition: work.imagePosition ?? 'center',
                 }}
-                src={path.join('/images/works', `${work.name}.png`)}
+                src={`/images/works/${work.name}.png`}
                 alt={work.name}
               />
             </div>
@@ -40,7 +39,7 @@ const WorkCard: React.VFC<WorkCardProps> = memo(props => {
             {work.skills
               .concat()
               .reverse()
-              .map((skill, i) => (
+              .map(skill => (
                 <Tooltip
                   key={skill.name}
                   className='-ml-2 hover:z-50'
@@ -49,7 +48,7 @@ const WorkCard: React.VFC<WorkCardProps> = memo(props => {
                   <div className='h-6 w-6 overflow-hidden rounded-full border border-gray-400 bg-white transition'>
                     <img
                       className='h-full w-full'
-                      src={path.join('/images/icons', `${skill.name}.svg`)}
+                      src={`/images/icons/${skill.name}.svg`}
                       alt={skill.name}
                     />
                   </div>
