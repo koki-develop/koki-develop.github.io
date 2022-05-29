@@ -9,6 +9,7 @@ import SkillCardList from '@/components/model/skill/SkillCardList';
 import SocialList from '@/components/model/social/SocialList';
 import WorkCardList from '@/components/model/work/WorkCardList';
 import HomeTabs, { HomeTabValues } from '@/components/pages/Home/HomeTabs';
+import Meta from '@/components/utils/Meta';
 import Section from '@/components/utils/Section';
 import type { HomeTabValue } from '@/components/pages/Home/HomeTabs';
 
@@ -33,6 +34,8 @@ const HomePage: React.VFC = memo(() => {
 
   return (
     <div>
+      <Meta />
+
       <ProfileBlock profile={config.profile} />
       <SocialList socials={config.socials} />
 
