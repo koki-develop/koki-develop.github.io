@@ -119,7 +119,6 @@ const works: Work[] = [
       skills.TypeScript,
       // Framework / Library
       skills.React,
-      skills.Remix,
       // RDB / NoSQL
       // Cloud
       skills.Vercel,
@@ -127,6 +126,7 @@ const works: Work[] = [
       skills.GitHubActions,
       // Other
       skills.TailwindCSS,
+      skills.Vite,
     ],
   },
   {
