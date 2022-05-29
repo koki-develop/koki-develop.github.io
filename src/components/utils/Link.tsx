@@ -14,9 +14,11 @@ const Link: React.VFC<LinkProps> = memo(props => {
 
   if (!external) {
     const { href, ...otherProps } = linkProps;
-    <ReactRouterLink to={href} {...otherProps}>
-      {children}
-    </ReactRouterLink>;
+    return (
+      <ReactRouterLink to={href} {...otherProps}>
+        {children}
+      </ReactRouterLink>
+    );
   }
 
   return (
