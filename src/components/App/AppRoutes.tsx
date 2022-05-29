@@ -11,6 +11,10 @@ const AppRoutes: React.FC = memo(() => {
   const { pathname } = useLocation();
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  useEffect(() => {
     if (rendered.current) {
       window.gtag('config', import.meta.env.VITE_GA_MEASUREMENT_ID, {
         page_path: pathname,
