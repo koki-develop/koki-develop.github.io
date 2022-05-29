@@ -25,7 +25,8 @@ const HomePage: React.VFC = memo(() => {
 
   const handleSelectTab = useCallback(
     (tab: HomeTabValue) => {
-      navigate({ search: `tab=${tab}` }, { replace: true });
+      const search = tab === 'about' ? '' : `tab=${tab}`;
+      navigate({ search }, { replace: true });
     },
     [navigate],
   );
