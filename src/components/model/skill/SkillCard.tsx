@@ -1,4 +1,3 @@
-import path from 'path';
 import React, { memo } from 'react';
 import type { Skill } from '@/types/skill';
 import Card from '@/components/utils/Card';
@@ -17,7 +16,7 @@ const SkillCard: React.VFC<SkillCardProps> = memo(props => {
         <div className='relative mb-1 h-12 w-12 sm:h-14 sm:h-14 md:h-16 md:w-16'>
           <img
             className='h-full w-full'
-            src={path.join('/images/icons', `${skill.name}.svg`)}
+            src={`/images/icons/${skill.name}.svg`}
             alt={skill.name}
           />
         </div>
