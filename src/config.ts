@@ -281,13 +281,20 @@ const works: Work[] = [
 
 const histories: History[] = [
   {
+    title: 'TODO: 後で書く',
+    from: '2022-06',
+    description: '時間あるときに書いておきます',
+  },
+  {
     title: 'DX 推進企業に業務委託として勤務',
     from: '2021-08',
+    to: '2022-05',
     description: '業務改善ツールの新規機能開発・保守を担当。',
   },
   {
     title: 'デジタルマーケティング企業に入社',
     from: '2019-07',
+    to: '2022-05',
     description:
       'ジオターゲティング広告配信システムの管理画面や MEO 対策支援ツール等の新規機能開発・保守を担当。',
   },
