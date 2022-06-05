@@ -28,10 +28,11 @@ jobs:
       - name: Generate README.md
         run: yarn run readme:gen
 
-      - name: commit and push
-        run: |
-          git add README.md
-          if ! git diff --staged --exit-code --quiet; then
-            git commit -m '[skip ci] update README.md'
-            git push origin main
-          fi
+      # TODO: koki-develop にプッシュするようにする
+      # - name: commit and push
+      #   run: |
+      #     git add README.md
+      #     if ! git diff --staged --exit-code --quiet; then
+      #       git commit -m '[skip ci] update README.md'
+      #       git push origin main
+      #     fi
