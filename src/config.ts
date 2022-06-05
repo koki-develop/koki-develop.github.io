@@ -121,7 +121,6 @@ const works: Work[] = [
       skills.React,
       // RDB / NoSQL
       // Cloud
-      skills.Vercel,
       // CI / CD
       skills.GitHubActions,
       // Other
