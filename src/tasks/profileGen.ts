@@ -5,9 +5,9 @@ import { config } from '@/config';
 
 (async () => {
   const template = fs
-    .readFileSync(path.join(process.cwd(), 'README.template.md'))
+    .readFileSync(path.join(process.cwd(), 'profile.template.md'))
     .toString();
-  const readme = ejs.render(template, { config });
+  const profile = ejs.render(template, { config });
 
-  fs.writeFileSync('README.md', readme);
+  fs.writeFileSync('profile.md', profile);
 })();
