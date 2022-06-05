@@ -26,6 +26,7 @@ jobs:
           repository: koki-develop/koki-develop
           ref: main
           path: koki-develop
+          token: ${{ secrets.PROFILE_PERSONAL_ACCESS_TOKEN }}
 
       - name: Generate Profile
         run: |
