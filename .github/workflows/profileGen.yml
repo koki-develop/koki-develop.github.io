@@ -38,6 +38,8 @@ jobs:
           git config user.email github-actions@github.com
           git switch --orphan tmp
           cp ../profile.md ./README.md
-          git add README.md
-          git commit -m 'update README.md'
+          mkdir public
+          cp -r ../public/images ./public/
+          git add .
+          git commit -m 'update'
           git push origin tmp:main --force
