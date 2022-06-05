@@ -111,7 +111,7 @@ const works: Work[] = [
   {
     name: 'Koki Sato',
     url: 'https://koki.me',
-    repositoryUrl: 'https://github.com/koki-develop/koki-develop',
+    repositoryUrl: 'https://github.com/koki-develop/koki-develop.github.io',
     hasImage: true,
     description: '個人用ポートフォリオサイト。',
     skills: [

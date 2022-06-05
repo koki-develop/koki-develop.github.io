@@ -7,7 +7,7 @@ const FooterLinkList: React.VFC = memo(() => {
     <ul>
       <FooterLinkListItem
         external
-        href='https://github.com/koki-develop/koki-develop'
+        href='https://github.com/koki-develop/koki-develop.github.io'
       >
         View on GitHub
       </FooterLinkListItem>
