@@ -20,6 +20,9 @@ jobs:
       - name: install dependencies
         run: yarn install --frozen-lockfile
 
+      - name: Generate Profile
+        run: yarn run profile:gen
+
       - name: Checkout koki-develop repository
         uses: actions/checkout@v3
         with:
@@ -27,9 +30,6 @@ jobs:
           ref: main
           path: koki-develop
           token: ${{ secrets.PROFILE_PERSONAL_ACCESS_TOKEN }}
-
-      - name: Generate Profile
-        run: yarn run profile:gen
 
       - name: Update Profile
         working-directory: koki-develop
