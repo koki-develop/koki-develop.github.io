@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+  schedule:
+    - cron: "0 15 * * *" # 毎日 0 時
 
 jobs:
   deploy:
