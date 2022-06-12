@@ -4,6 +4,7 @@
   "license": "UNLICENSED",
   "scripts": {
     "dev": "vite",
+    "prebuild": "yarn run notes:gen",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "lint": "eslint --max-warnings 0 --ext .js,.ts,.tsx .",
