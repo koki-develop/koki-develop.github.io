@@ -60,6 +60,12 @@ const HomePage: React.VFC = memo(() => {
         </Section>
       </div>
 
+      <div
+        className={classNames({ hidden: selectedTab !== HomeTabValues.notes })}
+      >
+        <Section title='Notes'>hello world</Section>
+      </div>
+
       <div>
         <Section title='Contact'>
           <SocialList socials={config.socials} />

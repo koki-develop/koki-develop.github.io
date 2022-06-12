@@ -15,6 +15,8 @@ const valueToLabel = (value: HomeTabValue) => {
       return 'About';
     case HomeTabValues.works:
       return 'Works';
+    case HomeTabValues.notes:
+      return 'Notes';
   }
 };
 

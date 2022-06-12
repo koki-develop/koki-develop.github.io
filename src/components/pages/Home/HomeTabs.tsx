@@ -4,6 +4,7 @@ import HomeTab from '@/components/pages/Home/HomeTab';
 export const HomeTabValues = {
   about: 'about',
   works: 'works',
+  notes: 'notes',
 } as const;
 
 export type HomeTabValue = typeof HomeTabValues[keyof typeof HomeTabValues];
