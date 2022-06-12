@@ -3,6 +3,7 @@ import React, { memo, useCallback, useMemo } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { config } from '@/config';
 import HistoryTimeline from '@/components/model/history/HistoryTimeline';
+import NoteCardList from '@/components/model/note/NoteCardList';
 import ProfileBlock from '@/components/model/profile/ProfileBlock';
 import ProfileEmail from '@/components/model/profile/ProfileEmail';
 import SkillCardList from '@/components/model/skill/SkillCardList';
@@ -11,11 +12,15 @@ import WorkCardList from '@/components/model/work/WorkCardList';
 import HomeTabs, { HomeTabValues } from '@/components/pages/Home/HomeTabs';
 import Meta from '@/components/utils/Meta';
 import Section from '@/components/utils/Section';
+import notes from '@/notes.json';
 import type { HomeTabValue } from '@/components/pages/Home/HomeTabs';
 
 const HomePage: React.VFC = memo(() => {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
+
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+  const zennSocial = config.socials.find(social => social.name === 'Zenn')!;
 
   const selectedTab = useMemo(() => {
     return (
@@ -63,7 +68,9 @@ const HomePage: React.VFC = memo(() => {
       <div
         className={classNames({ hidden: selectedTab !== HomeTabValues.notes })}
       >
-        <Section title='Notes'>hello world</Section>
+        <Section title='Notes'>
+          <NoteCardList notes={notes} zennUrl={zennSocial.url} />
+        </Section>
       </div>
 
       <div>
