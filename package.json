@@ -8,7 +8,8 @@
     "preview": "vite preview",
     "lint": "eslint --max-warnings 0 --ext .js,.ts,.tsx .",
     "fmt": "yarn lint --fix && prettier --write .",
-    "profile:gen": "ts-node -r tsconfig-paths/register src/tasks/profileGen.ts"
+    "profile:gen": "ts-node -r tsconfig-paths/register src/tasks/profileGen.ts",
+    "notes:gen": "ts-node -r tsconfig-paths/register src/tasks/notesGen.ts"
   },
   "dependencies": {
     "classnames": "^2.3.1",
