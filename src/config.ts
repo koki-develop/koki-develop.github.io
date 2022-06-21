@@ -25,7 +25,6 @@ const skills = {
     name: 'JavaScript',
     url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
   },
-  Ruby: { name: 'Ruby', url: 'https://www.ruby-lang.org/ja/' },
 
   // Framework / Library
   Gin: { name: 'Gin', url: 'https://gin-gonic.com/' },
@@ -33,7 +32,6 @@ const skills = {
   React: { name: 'React', url: 'https://reactjs.org/' },
   Nextjs: { name: 'Next.js', url: 'https://nextjs.org/' },
   Remix: { name: 'Remix', url: 'https://remix.run/' },
-  Rails: { name: 'Rails', url: 'https://rubyonrails.org/' },
 
   // RDB / NoSQL
   MySQL: { name: 'MySQL', url: 'https://www.mysql.com/' },
@@ -70,7 +68,7 @@ const skills = {
 const skillGroups: SkillGroup[] = [
   {
     name: 'Language',
-    skills: [skills.Go, skills.TypeScript, skills.JavaScript, skills.Ruby],
+    skills: [skills.Go, skills.TypeScript, skills.JavaScript],
   },
   {
     name: 'Framework/Library',
@@ -80,7 +78,6 @@ const skillGroups: SkillGroup[] = [
       skills.React,
       skills.Nextjs,
       skills.Remix,
-      skills.Rails,
     ],
   },
   {
