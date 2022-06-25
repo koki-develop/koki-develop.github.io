@@ -257,6 +257,22 @@ const works: Work[] = [
     ],
   },
   {
+    name: 'docker-tags',
+    url: 'https://github.com/koki-develop/docker-tags#readme',
+    repositoryUrl: 'https://github.com/koki-develop/docker-tags',
+    description: 'Docker イメージのタグ一覧を出力する CLI ツール。',
+    skills: [
+      // Languages
+      skills.Go,
+      // Framework / Library
+      // RDB / NoSQL
+      // Cloud
+      // CI / CD
+      skills.GitHubActions,
+      // Other
+    ],
+  },
+  {
     name: 'CheckIP',
     url: 'https://checkip.dev',
     repositoryUrl: 'https://github.com/koki-develop/checkip',
