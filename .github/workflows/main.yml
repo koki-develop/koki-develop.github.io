@@ -2,8 +2,7 @@ name: deploy
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
   schedule:
     - cron: "0 15 * * *" # 毎日 0 時
 
@@ -17,8 +16,8 @@ jobs:
       - name: setup nodejs
         uses: actions/setup-node@v3
         with:
-          node-version: 16
           cache: yarn
+          node-version: '16.x'
       - name: install dependencies
         run: yarn install --frozen-lockfile
 
