@@ -7,6 +7,13 @@ import * as Parser from 'rss-parser';
   const { items } = await parser.parseURL('https://zenn.dev/kou_pg_0131/feed');
   fs.writeFileSync(
     path.join(process.cwd(), 'src/notes.json'),
-    JSON.stringify(items),
+    JSON.stringify(
+      items.map(({ guid, title, link, isoDate }) => ({
+        guid,
+        title,
+        link,
+        isoDate,
+      })),
+    ),
   );
 })();
