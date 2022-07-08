@@ -21,6 +21,11 @@ jobs:
       - name: install dependencies
         run: yarn install --frozen-lockfile
 
+      - name: create dotenv
+        run: |
+          echo 'VITE_STAGE=production' >> .env
+          echo 'VITE_GA_MEASUREMENT_ID=${{ secrets.GA_MEASUREMENT_ID }}' >> .env
+
       - name: build
         run: yarn run build
 
