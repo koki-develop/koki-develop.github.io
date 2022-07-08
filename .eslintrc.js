@@ -27,11 +27,6 @@ module.exports = {
   plugins: ['react', 'react-hooks', 'import', 'unused-imports'],
   rules: {
     'react/prop-types': 'off',
-    semi: ['error', 'always'],
-    'comma-dangle': ['error', 'always-multiline'],
-    quotes: ['error', 'single'],
-    'object-curly-spacing': ['error', 'always'],
-    'react/jsx-tag-spacing': ['error'],
     'unused-imports/no-unused-imports': 'error',
     'import/order': [
       'error',
