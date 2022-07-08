@@ -1,2 +1,2 @@
-export VITE_STAGE=development
+export VITE_STAGE=local
 export VITE_GA_MEASUREMENT_ID=
