@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import type { Profile } from '@/types/profile';
+import type { Profile } from '@/models/profile';
 
 export type ProfileBlockProps = {
   profile: Profile;

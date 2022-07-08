@@ -1,6 +1,6 @@
 import { differenceInMonths, format, formatDistance } from 'date-fns';
 import React, { memo, useMemo } from 'react';
-import { Note } from '@/types/note';
+import { Note } from '@/models/note';
 import Card from '@/components/utils/Card';
 import Link from '@/components/utils/Link';
 

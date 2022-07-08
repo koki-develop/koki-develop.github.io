@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import type { History } from '@/types/history';
+import type { History } from '@/models/history';
 import HistoryTimelineItem from '@/components/model/history/HistoryTimelineItem';
 
 export type HistoryTimelineProps = {

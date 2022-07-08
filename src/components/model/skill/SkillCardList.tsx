@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import type { SkillGroup } from '@/types/skillGroup';
+import type { SkillGroup } from '@/models/skillGroup';
 import SkillCard from '@/components/model/skill/SkillCard';
 
 export type SkillCardListProps = {

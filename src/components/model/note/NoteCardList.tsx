@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import { IoChevronForward } from 'react-icons/io5';
-import { Note } from '@/types/note';
+import { Note } from '@/models/note';
 import NoteCard from '@/components/model/note/NoteCard';
 import LinkButton from '@/components/utils/LinkButton';
 

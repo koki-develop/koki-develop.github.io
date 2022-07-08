@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import type { History } from '@/types/history';
+import type { History } from '@/models/history';
 import Card from '@/components/utils/Card';
 
 export type HistoryCardProps = {

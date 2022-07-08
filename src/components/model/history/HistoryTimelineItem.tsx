@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import React, { memo, useMemo } from 'react';
-import type { History } from '@/types/history';
+import type { History } from '@/models/history';
 import HistoryCard from '@/components/model/history/HistoryCard';
 
 export type HistoryTimelineItemProps = {

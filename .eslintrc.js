@@ -63,7 +63,7 @@ module.exports = {
             group: 'internal',
             position: 'before',
           },
-          { pattern: '@/types/**', group: 'internal', position: 'before' },
+          { pattern: '@/models/**', group: 'internal', position: 'before' },
           { pattern: '@/routes', group: 'internal', position: 'before' },
           { pattern: '@/config', group: 'internal', position: 'before' },
           { pattern: '@/styles/**', group: 'internal', position: 'before' },

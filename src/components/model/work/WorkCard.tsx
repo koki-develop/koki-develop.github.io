@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import type { Work } from '@/types/work';
+import type { Work } from '@/models/work';
 import Card from '@/components/utils/Card';
 import Link from '@/components/utils/Link';
 import Tooltip from '@/components/utils/Tooltip';

@@ -1,4 +1,4 @@
-import type { Skill } from '@/types/skill';
+import type { Skill } from '@/models/skill';
 
 export type SkillGroup = {
   name: string;
