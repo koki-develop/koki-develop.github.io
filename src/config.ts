@@ -44,7 +44,6 @@ const skills = {
   GCP: { name: 'GCP', url: 'https://console.cloud.google.com/' },
   Firebase: { name: 'Firebase', url: 'https://firebase.google.com/' },
   Vercel: { name: 'Vercel', url: 'https://vercel.com/' },
-  Heroku: { name: 'Heroku', url: 'https://www.heroku.com/' },
   CloudFlare: { name: 'CloudFlare', url: 'https://www.cloudflare.com/' },
 
   // CI / CD
@@ -86,7 +85,7 @@ const skillGroups: SkillGroup[] = [
   },
   {
     name: 'Cloud',
-    skills: [skills.AWS, skills.GCP, skills.Vercel, skills.Heroku],
+    skills: [skills.AWS, skills.GCP],
   },
   {
     name: 'CI/CD',
