@@ -7,7 +7,7 @@
 
 # Social
 
-<% config.socials.forEach(function(social) { %>[<img src="public/images/icons/<%= social.name %>.svg" alt="<%= social.name %>" width="40" height="40"/>](<%= social.url %>)
+<% Object.values(config.socials).forEach(function(social) { %>[<img src="public/images/icons/<%= social.name %>.svg" alt="<%= social.name %>" width="40" height="40"/>](<%= social.url %>)
 <% }); %>
 
 # Skill
