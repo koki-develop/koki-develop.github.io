@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import type { Work } from '@/models/work';
-import WorkCardSkillIcon from '@/components/model/work/WorkCardSkillIcon';
+import WorkCardSkillIconList from '@/components/model/work/WorkCardSkillIconList';
 import Card from '@/components/utils/Card';
 import Link from '@/components/utils/Link';
 
@@ -35,14 +35,7 @@ const WorkCard: React.FC<WorkCardProps> = memo(props => {
               {work.name}
             </Link>
           </h3>
-          <div className='mb-2 flex flex-row-reverse items-center justify-end pl-1'>
-            {work.skills
-              .concat()
-              .reverse()
-              .map(skill => (
-                <WorkCardSkillIcon key={skill.name} skill={skill} />
-              ))}
-          </div>
+          <WorkCardSkillIconList skills={work.skills} />
           <p className='mb-2'>{work.description}</p>
 
           <Link external href={work.repositoryUrl}>
