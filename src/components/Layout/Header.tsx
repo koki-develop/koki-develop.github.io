@@ -4,7 +4,7 @@ import { config } from '@/config';
 import Container from '@/components/utils/Container';
 import Link from '@/components/utils/Link';
 
-const Header: React.VFC = memo(() => {
+const Header: React.FC = memo(() => {
   return (
     <div className='sticky top-0 z-50 bg-white py-3 shadow md:static'>
       <Container>

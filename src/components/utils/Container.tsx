@@ -3,7 +3,7 @@ import React, { memo } from 'react';
 
 export type ContainerProps = React.HTMLProps<HTMLDivElement>;
 
-const Container: React.VFC<ContainerProps> = memo(props => {
+const Container: React.FC<ContainerProps> = memo(props => {
   const { children, className, ...divProps } = props;
 
   return (

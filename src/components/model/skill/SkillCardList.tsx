@@ -6,7 +6,7 @@ export type SkillCardListProps = {
   skillGroups: SkillGroup[];
 };
 
-const SkillCardList: React.VFC<SkillCardListProps> = memo(props => {
+const SkillCardList: React.FC<SkillCardListProps> = memo(props => {
   const { skillGroups } = props;
 
   return (

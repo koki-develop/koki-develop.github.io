@@ -5,7 +5,7 @@ export type ErrorPageProps = {
   message: string;
 };
 
-const ErrorPage: React.VFC<ErrorPageProps> = memo(props => {
+const ErrorPage: React.FC<ErrorPageProps> = memo(props => {
   const { message } = props;
 
   return (

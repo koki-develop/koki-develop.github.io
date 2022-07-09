@@ -7,7 +7,7 @@ export type SkillCardProps = {
   skill: Skill;
 };
 
-const SkillCard: React.VFC<SkillCardProps> = memo(props => {
+const SkillCard: React.FC<SkillCardProps> = memo(props => {
   const { skill } = props;
 
   return (

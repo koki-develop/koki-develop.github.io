@@ -9,7 +9,7 @@ export type LinkProps = Omit<
   external?: boolean;
 };
 
-const Link: React.VFC<LinkProps> = memo(props => {
+const Link: React.FC<LinkProps> = memo(props => {
   const { external, children, ...linkProps } = props;
 
   if (!external) {

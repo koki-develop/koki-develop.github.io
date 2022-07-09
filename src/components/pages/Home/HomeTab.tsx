@@ -20,7 +20,7 @@ const valueToLabel = (value: HomeTabValue) => {
   }
 };
 
-const HomeTab: React.VFC<HomeTabProps> = memo(props => {
+const HomeTab: React.FC<HomeTabProps> = memo(props => {
   const { value, active, onSelect } = props;
 
   const handleSelect = useCallback(() => {

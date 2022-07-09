@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import FooterLinkList from '@/components/Layout/FooterLinkList';
 
-const Footer: React.VFC = memo(() => {
+const Footer: React.FC = memo(() => {
   return (
     <footer className='mb-4 flex flex-col items-center p-4'>
       <small className='mb-2'>&copy;2021</small>

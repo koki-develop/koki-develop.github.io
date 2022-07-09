@@ -6,7 +6,7 @@ export type SocialListProps = {
   socials: Social[];
 };
 
-const SocialList: React.VFC<SocialListProps> = memo(props => {
+const SocialList: React.FC<SocialListProps> = memo(props => {
   const { socials } = props;
 
   return (

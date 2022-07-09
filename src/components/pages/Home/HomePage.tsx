@@ -15,7 +15,7 @@ import Section from '@/components/utils/Section';
 import notes from '@/notes.json';
 import type { HomeTabValue } from '@/components/pages/Home/HomeTabs';
 
-const HomePage: React.VFC = memo(() => {
+const HomePage: React.FC = memo(() => {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
 

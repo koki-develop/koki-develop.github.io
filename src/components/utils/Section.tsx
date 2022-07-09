@@ -6,7 +6,7 @@ export type SectionProps = React.HTMLProps<HTMLDivElement> & {
   title: string;
 };
 
-const Section: React.VFC<SectionProps> = memo(props => {
+const Section: React.FC<SectionProps> = memo(props => {
   const { children, className, title, ...divProps } = props;
 
   return (

@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import { Routes } from '@/routes';
 import FooterLinkListItem from '@/components/Layout/FooterLinkListItem';
 
-const FooterLinkList: React.VFC = memo(() => {
+const FooterLinkList: React.FC = memo(() => {
   return (
     <ul>
       <FooterLinkListItem

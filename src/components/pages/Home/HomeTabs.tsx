@@ -14,7 +14,7 @@ export type HomeTabsProps = {
   onSelect: (value: HomeTabValue) => void;
 };
 
-const HomeTabs: React.VFC<HomeTabsProps> = memo(props => {
+const HomeTabs: React.FC<HomeTabsProps> = memo(props => {
   const { value, onSelect: onChange } = props;
 
   return (

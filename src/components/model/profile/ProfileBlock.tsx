@@ -5,7 +5,7 @@ export type ProfileBlockProps = {
   profile: Profile;
 };
 
-const ProfileBlock: React.VFC<ProfileBlockProps> = memo(props => {
+const ProfileBlock: React.FC<ProfileBlockProps> = memo(props => {
   const { profile } = props;
 
   return (

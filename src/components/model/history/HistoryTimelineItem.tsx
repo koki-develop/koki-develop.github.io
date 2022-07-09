@@ -8,7 +8,7 @@ export type HistoryTimelineItemProps = {
   connector: boolean;
 };
 
-const HistoryTimelineItem: React.VFC<HistoryTimelineItemProps> = memo(props => {
+const HistoryTimelineItem: React.FC<HistoryTimelineItemProps> = memo(props => {
   const { history, connector } = props;
 
   const active = useMemo(() => {

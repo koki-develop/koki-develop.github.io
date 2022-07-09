@@ -3,7 +3,7 @@ import React, { memo } from 'react';
 
 export type CardProps = React.HTMLProps<HTMLDivElement>;
 
-const Card: React.VFC<CardProps> = memo(props => {
+const Card: React.FC<CardProps> = memo(props => {
   const { className, ...divProps } = props;
 
   return (

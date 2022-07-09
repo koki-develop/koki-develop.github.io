@@ -8,7 +8,7 @@ export type LinkButtonProps = LinkProps & {
   buttonProps: ButtonProps;
 };
 
-const LinkButton: React.VFC<LinkButtonProps> = memo(props => {
+const LinkButton: React.FC<LinkButtonProps> = memo(props => {
   const { children, buttonProps, ...linkProps } = props;
 
   return (

@@ -6,7 +6,7 @@ export type HistoryTimelineProps = {
   histories: History[];
 };
 
-const HistoryTimeline: React.VFC<HistoryTimelineProps> = memo(props => {
+const HistoryTimeline: React.FC<HistoryTimelineProps> = memo(props => {
   const { histories } = props;
 
   return (

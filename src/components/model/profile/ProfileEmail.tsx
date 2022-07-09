@@ -9,7 +9,7 @@ export type ProfileEmailProps = {
   email: string;
 };
 
-const ProfileEmail: React.VFC<ProfileEmailProps> = memo(props => {
+const ProfileEmail: React.FC<ProfileEmailProps> = memo(props => {
   const { email } = props;
 
   const [showCopiedMessage, setShowCopiedMessage] = useState<boolean>(false);

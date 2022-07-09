@@ -3,7 +3,7 @@ import PrivacyPolicyItem from '@/components/pages/PrivacyPolicy/PrivacyPolicyIte
 import Link from '@/components/utils/Link';
 import Meta from '@/components/utils/Meta';
 
-const PrivacyPolicyPage: React.VFC = memo(() => {
+const PrivacyPolicyPage: React.FC = memo(() => {
   return (
     <div>
       <Meta title='プライバシーポリシー' />

@@ -6,7 +6,7 @@ export type HistoryCardProps = {
   history: History;
 };
 
-const HistoryCard: React.VFC<HistoryCardProps> = memo(props => {
+const HistoryCard: React.FC<HistoryCardProps> = memo(props => {
   const { history } = props;
 
   return (

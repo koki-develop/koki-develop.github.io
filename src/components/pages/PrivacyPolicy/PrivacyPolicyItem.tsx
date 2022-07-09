@@ -6,7 +6,7 @@ export type PrivacyPolicyItemProps = {
   title: string;
 };
 
-const PrivacyPolicyItem: React.VFC<PrivacyPolicyItemProps> = memo(props => {
+const PrivacyPolicyItem: React.FC<PrivacyPolicyItemProps> = memo(props => {
   const { children, title } = props;
 
   return <Section title={title}>{children}</Section>;

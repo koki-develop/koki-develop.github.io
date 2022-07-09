@@ -11,7 +11,7 @@ export type ButtonProps = Omit<
   endIcon?: React.ReactNode;
 };
 
-const Button: React.VFC<ButtonProps> = memo(props => {
+const Button: React.FC<ButtonProps> = memo(props => {
   const {
     children,
     className,

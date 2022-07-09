@@ -9,7 +9,7 @@ export type WorkCardListProps = {
   works: Work[];
 };
 
-const WorkCardList: React.VFC<WorkCardListProps> = memo(props => {
+const WorkCardList: React.FC<WorkCardListProps> = memo(props => {
   const { works } = props;
 
   return (
