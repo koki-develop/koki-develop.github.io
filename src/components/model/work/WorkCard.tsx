@@ -24,7 +24,7 @@ const WorkCard: React.FC<WorkCardProps> = memo(props => {
                   objectPosition: work.imagePosition ?? 'center',
                 }}
                 src={`/images/works/${work.name}.png`}
-                alt={work.name}
+                alt=''
               />
             </div>
           </Link>

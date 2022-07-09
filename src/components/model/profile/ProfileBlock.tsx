@@ -12,12 +12,7 @@ const ProfileBlock: React.FC<ProfileBlockProps> = memo(props => {
     <div className='mb-4'>
       <div className='mb-2 flex flex-col items-center'>
         <div>
-          <img
-            src='/images/profile.png'
-            height={150}
-            width={150}
-            alt={profile.name}
-          />
+          <img src='/images/profile.png' height={150} width={150} alt='' />
         </div>
 
         <h2 className='text-2xl'>{profile.name}</h2>

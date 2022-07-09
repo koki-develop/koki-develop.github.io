@@ -17,7 +17,7 @@ const SkillCard: React.FC<SkillCardProps> = memo(props => {
           <img
             className='h-full w-full'
             src={`/images/icons/${skill.name}.svg`}
-            alt={skill.name}
+            alt=''
           />
         </div>
         <p className='text-sm font-bold'>{props.skill.name}</p>

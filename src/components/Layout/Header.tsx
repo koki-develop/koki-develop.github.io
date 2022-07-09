@@ -17,7 +17,7 @@ const Header: React.FC = memo(() => {
             height={40}
             width={40}
             src='/images/profile.png'
-            alt='Logo'
+            alt=''
           />
           <h1 className='text-xl font-normal'>{config.profile.name}</h1>
         </Link>
