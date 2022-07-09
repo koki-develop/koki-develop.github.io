@@ -1,8 +1,8 @@
 import React, { memo } from 'react';
 import type { Work } from '@/models/work';
+import WorkCardSkillIcon from '@/components/model/work/WorkCardSkillIcon';
 import Card from '@/components/utils/Card';
 import Link from '@/components/utils/Link';
-import Tooltip from '@/components/utils/Tooltip';
 
 export type WorkCardProps = {
   work: Work;
@@ -40,19 +40,7 @@ const WorkCard: React.FC<WorkCardProps> = memo(props => {
               .concat()
               .reverse()
               .map(skill => (
-                <Tooltip
-                  key={skill.name}
-                  className='-ml-2 hover:z-50'
-                  text={skill.name}
-                >
-                  <div className='h-6 w-6 overflow-hidden rounded-full border border-gray-400 bg-white transition'>
-                    <img
-                      className='h-full w-full'
-                      src={`/images/icons/${skill.name}.svg`}
-                      alt={skill.name}
-                    />
-                  </div>
-                </Tooltip>
+                <WorkCardSkillIcon key={skill.name} skill={skill} />
               ))}
           </div>
           <p className='mb-2'>{work.description}</p>
