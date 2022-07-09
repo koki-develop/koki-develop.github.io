@@ -16,7 +16,7 @@ const HistoryTimelineItem: React.VFC<HistoryTimelineItemProps> = memo(props => {
   }, [history.to]);
 
   return (
-    <div className='flex lg:even:flex-row-reverse lg:even:text-right'>
+    <div className='group flex lg:even:flex-row-reverse'>
       <div className='hidden grow basis-0 lg:block' />
       <div className='flex grow-0 flex-col items-center px-4 pt-2'>
         <div
