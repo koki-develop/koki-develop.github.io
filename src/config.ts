@@ -1,7 +1,7 @@
 import type { History } from '@/models/history';
 import type { Profile } from '@/models/profile';
 import type { SkillGroup } from '@/models/skillGroup';
-import type { Social } from '@/models/social';
+import type { Socials } from '@/models/social';
 import type { Work } from '@/models/work';
 
 const profile: Profile = {
@@ -11,11 +11,11 @@ const profile: Profile = {
   description: '埼玉県在住の24歳。\nのんびり生きています。',
 };
 
-const socials: Social[] = [
-  { name: 'GitHub', url: 'https://github.com/koki-develop' },
-  { name: 'Twitter', url: 'https://twitter.com/koki_develop' },
-  { name: 'Zenn', url: 'https://zenn.dev/kou_pg_0131' },
-];
+const socials: Socials = {
+  github: { name: 'GitHub', url: 'https://github.com/koki-develop' },
+  twitter: { name: 'Twitter', url: 'https://twitter.com/koki_develop' },
+  zenn: { name: 'Zenn', url: 'https://zenn.dev/kou_pg_0131' },
+};
 
 const skills = {
   // Languages

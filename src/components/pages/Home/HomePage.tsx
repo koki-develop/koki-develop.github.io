@@ -19,9 +19,6 @@ const HomePage: React.FC = memo(() => {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
 
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-  const zennSocial = config.socials.find(social => social.name === 'Zenn')!;
-
   const selectedTab = useMemo(() => {
     return (
       Object.values(HomeTabValues).find(v => v === searchParams.get('tab')) ||
@@ -69,7 +66,7 @@ const HomePage: React.FC = memo(() => {
         className={classNames({ hidden: selectedTab !== HomeTabValues.notes })}
       >
         <Section title='Notes'>
-          <NoteCardList notes={notes} zennUrl={zennSocial.url} />
+          <NoteCardList notes={notes} zennUrl={config.socials.zenn.url} />
         </Section>
       </div>
 

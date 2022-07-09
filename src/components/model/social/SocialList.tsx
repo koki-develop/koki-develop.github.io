@@ -1,17 +1,21 @@
-import React, { memo } from 'react';
-import type { Social } from '@/models/social';
+import React, { memo, useMemo } from 'react';
+import type { Socials } from '@/models/social';
 import Link from '@/components/utils/Link';
 
 export type SocialListProps = {
-  socials: Social[];
+  socials: Socials;
 };
 
 const SocialList: React.FC<SocialListProps> = memo(props => {
   const { socials } = props;
 
+  const socialList = useMemo(() => {
+    return Object.values(socials);
+  }, [socials]);
+
   return (
     <ul className='mb-4 flex justify-center'>
-      {socials.map(social => (
+      {socialList.map(social => (
         <li key={social.name} className='mx-3'>
           <Link external href={social.url}>
             <img
