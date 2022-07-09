@@ -6,6 +6,7 @@
     "dev": "vite",
     "prebuild": "run-p build:*",
     "build:notes": "ts-node -r tsconfig-paths/register src/tasks/notesGen.ts",
+    "build:sitemap": "ts-node -r tsconfig-paths/register src/tasks/sitemapGen.ts",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "lint": "eslint --max-warnings 0 --ext .js,.ts,.tsx .",
