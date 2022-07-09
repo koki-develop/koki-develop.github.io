@@ -9,7 +9,7 @@ export class Routes {
   }
 
   public static privacyPolicy(options?: Options): string {
-    return this._buildUrl('/privacy-policy', options);
+    return this._buildUrl('/privacy', options);
   }
 
   public static repositories(): string {
