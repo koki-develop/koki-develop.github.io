@@ -126,7 +126,7 @@ const works: Work[] = [
   },
   {
     name: 'LGTM Generator',
-    url: 'https://lgtmgen.org',
+    url: 'https://www.lgtmgen.org',
     repositoryUrl: 'https://github.com/koki-develop/lgtm-generator',
     hasImage: true,
     imagePosition: 'top',
