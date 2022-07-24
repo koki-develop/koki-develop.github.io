@@ -153,29 +153,6 @@ const works: Work[] = [
     ],
   },
   {
-    name: 'Todo Box',
-    url: 'https://todobox.xyz',
-    repositoryUrl: 'https://github.com/koki-develop/todobox',
-    hasImage: true,
-    imagePosition: 'top',
-    description: 'Todo アプリ。 (開発中) ',
-    skills: [
-      // Languages
-      skills.TypeScript,
-      // Framework / Library
-      skills.React,
-      // RDB / NoSQL
-      // Cloud
-      skills.AWS,
-      skills.Firebase,
-      // CI / CD
-      skills.GitHubActions,
-      // Other
-      skills.Terraform,
-      skills.Vite,
-    ],
-  },
-  {
     name: 'OGP Messenger',
     url: 'https://ogp-messenger.koki-develop.workers.dev',
     repositoryUrl: 'https://github.com/koki-develop/ogp-messenger',
