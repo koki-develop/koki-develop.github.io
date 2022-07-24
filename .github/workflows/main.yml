@@ -1,4 +1,4 @@
-name: deploy
+name: build
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
     - cron: '0 15 * * *' # 毎日 0 時
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
@@ -34,6 +34,7 @@ jobs:
         run: yarn run build
 
       - name: deploy
+        if: ${{ steps.extract-branch.outputs.name == 'main' }}
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
