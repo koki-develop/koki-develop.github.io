@@ -2,7 +2,6 @@ name: deploy
 
 on:
   push:
-    branches: [main]
   schedule:
     - cron: '0 15 * * *' # 毎日 0 時
 
@@ -12,6 +11,13 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v3
+
+      # https://stackoverflow.com/questions/58033366/how-to-get-the-current-branch-within-github-actions
+      - name: extract branch name
+        run: echo "::set-output name=name::${GITHUB_REF#refs/heads/}"
+        id: extract-branch
+      - name: echo branch
+        run: echo ${{ steps.extract-branch.outputs.name }}
 
       - name: setup nodejs
         uses: actions/setup-node@v3
