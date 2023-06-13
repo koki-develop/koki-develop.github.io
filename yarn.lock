@@ -336,9 +336,9 @@
     tabbable "^6.0.1"
 
 "@fontsource/open-sans@^5.0.0":
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/@fontsource/open-sans/-/open-sans-5.0.1.tgz#01123a667858f631059cafa6aa0b3d043c5fd6e1"
-  integrity sha512-lhgNXJDMmNzd0U02+xNRuBOyELZ0ZBOBLXcrX3ta5ccpUTZoL0XR0c4WkGh4Jow4yi7I1O8Cp6Nddc5p6XM7Eg==
+  version "5.0.3"
+  resolved "https://registry.yarnpkg.com/@fontsource/open-sans/-/open-sans-5.0.3.tgz#1a5d1528b507a5ba43f8b231d1e4cc0775efdf8c"
+  integrity sha512-L86qrEfW7IWSGojCtiPpw2/M6qKjxDG+EV4k1xMVFCkhh6Z6gyZwevqCt0yOvd1BmjrtUAIAfSzFTjBn3DeZJw==
 
 "@humanwhocodes/config-array@^0.11.10":
   version "0.11.10"
